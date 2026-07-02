@@ -1,1 +1,10 @@
+# Virtual environments
 venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# SQLite database
+*.sqlite3
+db.sqlite3
