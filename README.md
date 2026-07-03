@@ -4,14 +4,12 @@
 </p>
 
 ## Getting Started
-
-### Clone the repository
-```bash
-git clone https://github.com/F1894125/fur_and_feather.git
-cd fur_and_feather
-```
+First, set up your local Git repository by following `git_workflow.md` inside `docs\`.<br>
+Following that, team-wise instructions are as follows:
 
 ### For the back-end team
+From the root `fur_and_feather`:
+
 ```bash
 cd backend
 python -m venv venv
@@ -34,15 +32,13 @@ python manage.py runserver
 > Front-end setup instructions will be added once the React project is initialized.
 
 ## Documentation
-Project documentation is available inside the `docs/` sub-directory.
+All the necessary project documentation is available inside the `docs/` sub-directory.
 
-Current documents:
+Current documents and directories:
+- `images\` containing all the images used in documentation.
+- `erd.md` containing Entity-Relationship Diagrams for all the database models used across the back-end.
+- `git_workflow.md` describing the steps to operate with local and remote Git repositories.
 - `hld.md` describing the High-Level Design (HLD).
+- `project_logs.md` containing a periodic and brief log of contributions made by each member.
 
-Additional documents such as the ERD, API specification, and Low-Level Design (LLD) will be added as development progresses.
-
-## Development Workflow
-- Create or switch to your assigned branch.
-- Keep your branch synchronized with `main`.
-- Test your changes locally.
-- Open a Pull Request before merging into `main`.
+Additional/existing documents will be added/updated as development progresses.
