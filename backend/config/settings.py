@@ -1,6 +1,7 @@
 from pathlib import Path
 from decouple import config
 from datetime import timedelta
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,11 +29,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'django_extensions',
+
+    'accounts.apps.AccountsConfig',
 
     'corsheaders',
     'rest_framework',
     'dj_rest_auth',
-    
     'dj_rest_auth.registration',
     'allauth',
     'allauth.account',
@@ -40,7 +43,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.facebook',
 
-    'accounts.apps.AccountsConfig',
     'pets.apps.PetsConfig',
 ]
 
@@ -161,8 +163,8 @@ REST_FRAMEWORK = {
 }
 
 AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
+    'django.contrib.auth.backends.ModelBackend',
 ]
 
 ACCOUNT_SIGNUP_FIELDS = ['username*', 'email*', 'password1*', 'password2*']
@@ -182,7 +184,8 @@ REST_AUTH = {
     'JWT_AUTH_SECURE': True,
     'JWT_AUTH_SAMESITE': 'Lax',
     'REGISTER_SERIALIZER': 'accounts.serializers.CustomRegisterSerializer',
-    'TOKEN_MODEL': None
+    'PASSWORD_RESET_SERIALIZER': 'accounts.serializers.CustomPasswordResetSerializer',
+    'TOKEN_MODEL': None,
 }
 
 # SimpleJWT configuration
@@ -225,3 +228,64 @@ SOCIALACCOUNT_PROVIDERS = {
 
 # To handle login with a social account already linked to a different email
 SOCIALACCOUNT_EMAIL_AUTHENTICATION_AUTO_CONNECT = True
+
+# E-mail configuration
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    pass
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
+
+FRONTEND_PASSWORD_RESET_URL = config('FRONTEND_PASSWORD_RESET_URL')
+
+# App-level logging configuration
+# LOGGING = {
+#     "version": 1,
+#     "disable_existing_loggers": False,  # Keeps Django's default loggers alive
+#     "formatters": {
+#         "verbose": {
+#             "format": "{asctime} [{levelname}] {name} (line {lineno}): {message}",
+#             "style": "{",
+#         },
+#         "simple": {
+#             "format": "{levelname} {message}",
+#             "style": "{",
+#         },
+#     },
+#     "handlers": {
+#         "console": {
+#             "class": "logging.StreamHandler",
+#             "formatter": "verbose",
+#         },
+#     },
+#     "loggers": {
+#         "django": {
+#             "handlers": ["console"],
+#             "level": "INFO",
+#             "propagate": False,
+#         },
+#     },
+# }
+
+# PROJECT_APPS = ["accounts", "pets"]
+
+# for app_name in PROJECT_APPS:
+#     log_dir = BASE_DIR / app_name / "logs"
+#     os.makedirs(log_dir, exist_ok=True)
+
+#     handler_name = f"{app_name}_file"
+
+#     LOGGING["handlers"][handler_name] = {
+#         "level": "INFO",
+#         "class": "logging.handlers.RotatingFileHandler",
+#         "filename": log_dir / f"{app_name}.log",
+#         "maxBytes": 1024 * 1024 * 5,  # 15 MB
+#         "backupCount": 3,
+#         "formatter": "verbose",
+#     }
+
+#     LOGGING["loggers"][app_name] = {
+#         "handlers": ["console", handler_name],
+#         "level": "INFO",
+#         "propagate": False,
+#     }

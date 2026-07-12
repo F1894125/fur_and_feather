@@ -11,22 +11,25 @@ User = get_user_model()
 @receiver(pre_save, sender=User)
 def generate_custom_username(sender, instance, **kwargs):
     """
-    Generates a unique username before saving the User instance
-    if one isn't explicitly provided.
+    Generates a unique username when a new User instance
+    is created, if one isn't explicitly provided.
     
     Args:
         sender (User): The User model class.
         instance (User): The instance of the User model being saved.
         **kwargs: Additional keyword arguments.
     """
-    unique_suffix: str = uuid.uuid4().hex[:6]
-    instance.username = f"{slugify(instance.first_name)}_{unique_suffix}"
+    # Only generate a username if the instance is being created by
+    # checking the adding attribute
+    if instance._state.adding and not instance.username:
+        unique_suffix: str = uuid.uuid4().hex[:6]
+        instance.username = f"{slugify(instance.first_name)}_{unique_suffix}"
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     """
-    Automatically creates a corresponding Profile record whenever 
-    a brand new User instance is committed to the database.
+    Automatically creates a corresponding Profile record
+    whenever a new User instance is created.
 
     Args:
         sender (User): The User model class.

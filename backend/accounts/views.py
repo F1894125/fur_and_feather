@@ -4,6 +4,7 @@ from allauth.socialaccount.providers.oauth2.client import OAuth2Client
 from dj_rest_auth.registration.views import SocialLoginView
 from rest_framework.generics import RetrieveUpdateAPIView
 from rest_framework.permissions import IsAuthenticated
+from django.db.models.query import QuerySet
 from .models import Profile
 from .serializers import ProfileSerializer
 
@@ -28,10 +29,10 @@ class FacebookLoginAPIView(SocialLoginView):
 
 class ProfileDetailAPIView(RetrieveUpdateAPIView):
     """
-    API endpoint that returns a specific profile instance
-    and allows the user to update it.
+    API endpoint that returns a user's profile
+    information and allows them to update it.
     """
-    queryset = Profile.objects.select_related('user').all()
+    queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
     permission_classes = [IsAuthenticated]
     lookup_field = 'user__username'

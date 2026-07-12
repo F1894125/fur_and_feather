@@ -1,7 +1,10 @@
 from rest_framework import serializers
 from django.http import HttpRequest
+from django.conf import settings
 from django.db.models.fields.files import ImageFieldFile
 from dj_rest_auth.registration.serializers import RegisterSerializer
+from dj_rest_auth.serializers import PasswordResetSerializer
+from allauth.account.utils import user_pk_to_url_str
 import re
 from datetime import date
 from .models import Profile
@@ -209,3 +212,40 @@ class ProfileSerializer(serializers.ModelSerializer):
             canonical_url (str): The canonical API URL.
         """
         return profile.get_absolute_url()
+
+class CustomPasswordResetSerializer(PasswordResetSerializer):
+    """
+    Extends the default PasswordResetSerializer to support a decoupled 
+    frontend architecture. 
+    
+    Overrides the URL generation logic to point the password reset 
+    email links to the frontend application rather than the backend
+    application.
+    """
+
+    def get_email_options(self):
+        """
+        Overrides the email configuration to inject a custom URL generator.
+
+        Returns:
+            dict: Configuration dictionary containing the 'url_generator' 
+                  function used by the underlying password reset form.
+        """
+        def custom_url_generator(request, user, temp_key):
+            """
+            Constructs a frontend-compatible password reset URL.
+
+            Args:
+                request (HttpRequest): The incoming request object.
+                user (User): The user instance requesting the reset.
+                temp_key (str): The secure, time-sensitive reset token.
+
+            Returns:
+                str: The fully qualified URL for the frontend password reset page.
+            """
+            uid = user_pk_to_url_str(user)
+            return f"{settings.FRONTEND_PASSWORD_RESET_URL}/{uid}/{temp_key}/"
+        
+        return {
+            "url_generator": custom_url_generator
+        }
