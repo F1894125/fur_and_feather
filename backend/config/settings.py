@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.facebook',
 
     'pets.apps.PetsConfig',
+
+    'contact.apps.ContactConfig'
 ]
 
 SITE_ID = 1

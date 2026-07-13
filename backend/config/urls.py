@@ -22,6 +22,8 @@ urlpatterns = [
         name='facebook_login'
     ),
     path('accounts/', include('accounts.urls', namespace='accounts')),
+
+    path('contact/', include('contact.urls', namespace='contact')),
 ]
 
 if settings.DEBUG:
