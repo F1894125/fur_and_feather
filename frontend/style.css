@@ -1,0 +1,104 @@
+@font-face {
+    font-family: "Fredoka";
+    src: url(fonts/Fredoka/static/Fredoka-Regular.ttf) format(truetype);
+}
+@font-face {
+    font-family: "Poppins";
+    src: url(fonts/Poppins/Poppins-Regular.ttf) format(truetype);
+}
+@font-face {
+  font-family: "Manrope";
+  src: url(fonts/Manrope/static/Manrope-Regular.ttf) format(truetype);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --font-Fredoka: "Fredoka";
+    --font-poppins: "Poppins";
+    --font-Manrope: "Manrope";
+    --primary-color-1: #0A3044;
+    --btn-color:#F04336;
+    --heading-text:#F4F1EA;
+}
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+figure {
+  display: block;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+/* Header */
+.header{
+  background: url(Images/header.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* min-height: calc(100%)+335px; */
+}
+.nav-items{
+    position: relative;
+    transition: .5s ease;
+}
+
+.nav-items.active{
+    transform: scale(1.1);
+    color: var(--btn-color)!important;
+}
+
+.nav-items::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background: var(--btn-color);
+    transition: 0.5s ease-in-out;
+}
+
+.nav-items:hover{
+    color: var(--btn-color);
+}
+
+.nav-items:hover::after,
+.nav-items.active::after{
+    width: 100%;
+}
+.contact-btn::before{
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 100%;
+  background: var(--primary-color-1);
+  border-top-right-radius: 15%;
+  border-bottom-right-radius: 15%;
+  top: 0;
+  left: 0;
+  transition: 0.5s ease-in-out;
+}
+.contact-btn:hover::before{
+  width: 100%;
+}
+/* Banner */
+.banner{
+  background: url(Images/Hero\ Banner.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
