@@ -23,6 +23,7 @@
     --primary-color-1: #0A3044;
     --btn-color:#F04336;
     --heading-text:#F4F1EA;
+    --primary-color-2: #D5E6EB;
 }
 ul li {
   list-style: none;
@@ -80,22 +81,31 @@ img {
 .nav-items.active::after{
     width: 100%;
 }
-.contact-btn::before{
+.contact-btn, .friend-btn{
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.contact-btn::before, .friend-btn::before{
   content: "";
   position: absolute;
   z-index: -1;
   width: 0;
   height: 100%;
-  background: var(--primary-color-1);
+  background: #fff;
   border-top-right-radius: 15%;
   border-bottom-right-radius: 15%;
   top: 0;
   left: 0;
-  transition: 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
 }
-.contact-btn:hover::before{
+.contact-btn:hover::before, .friend-btn:hover::before{
   width: 100%;
 }
+.friend-btn::before{
+  background: var(--primary-color-2);
+}
+
 /* Banner */
 .banner{
   background: url(Images/Hero\ Banner.png) no-repeat;
