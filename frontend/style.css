@@ -1,10 +1,22 @@
 @font-face {
     font-family: "Fredoka";
     src: url(fonts/Fredoka/static/Fredoka-Regular.ttf) format(truetype);
+    font-weight: 400;
+}
+@font-face {
+  font-family: "Fredoka";
+  src: url(fonts/Fredoka/static/Fredoka-Bold.ttf) format(truetype);
+  font-weight: 700;
 }
 @font-face {
     font-family: "Poppins";
     src: url(fonts/Poppins/Poppins-Regular.ttf) format(truetype);
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url(fonts/Poppins/Poppins-Bold.ttf) format(truetype);
+    font-weight: 700;
 }
 @font-face {
   font-family: "Manrope";
@@ -45,6 +57,20 @@ img {
   max-width: 100%;
   height: auto;
 }
+/* Login */
+.login-banner{
+  background: url("Images/login-banner.png") no-repeat center;
+  background-size: cover;
+  background-position: center;
+  background-attachment:scroll;
+}
+/* @media (min-width: 1920px) {
+  .login-banner {
+    min-height: 1260px;
+    background-size: cover;
+    background-position: center;
+  }
+} */
 /* Header */
 .header{
   background: url(Images/header.png) no-repeat;
@@ -111,4 +137,27 @@ img {
   background: url(Images/Hero\ Banner.png) no-repeat;
   background-size: cover;
   background-position: center;
+}
+.heart {
+  display: inline-block;
+  animation: heartbeat 1.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.25);
+  }
+  30% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.15);
+  }
+  60% {
+    transform: scale(1);
+  }
 }

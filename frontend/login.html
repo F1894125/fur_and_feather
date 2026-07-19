@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Aos Animation CDN -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Swiper CSS CDN -->
@@ -27,7 +27,7 @@
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <!-- Fontawesome CDN -->
     <link
       rel="stylesheet"
@@ -39,13 +39,378 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon" />
     <title>LogIn-Fur & Feather</title>
-</head>
-<body class="bg-[#F4F1EA]">
-    <div class="container max-w-[1350px] mx-auto px-[15px]">
-        <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2">
-            
+  </head>
+
+  <body
+    class="font-[family-name:--font-poppins] text-xl font-semibold text-[#0A303A]"
+  >
+    <section class="bg-[#F4F1EA] relative overflow-hidden min-h-screen">
+      <div>
+        <img
+          src="Images/left-frame.png"
+          class="hidden relative lg:block lg:w-[426px] xl:w-[41%] lg:min-h-[835px] 2xl:w-[960px] object-fill xl:min-h-[960px] 2xl:min-h-screen"
+          alt="left-frame"
+          loading="lazy"
+        />
+      </div>
+      <div class="absolute z-10 top-0 right-0">
+        <img
+          src="Images/Right-login-frame.png"
+          class="hidden lg:block lg:w-[490px] xl:w-[650px] 2xl:w-[739px] min-[1920px]:w-[970px] lg:min-h-[1400px] object-fill"
+          alt=""
+          loading="lazy"
+        />
+      </div>
+      <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
+        <div class="flex flex-wrap mx-[-15px]">
+          <!-- left -->
+          <div class="hidden lg:block lg:basis-[60%] lg:max-w-[60%] px-[15px]">
+            <!-- Cat vector -->
+            <div>
+              <img
+                src="Images/cat-vector.png"
+                alt=""
+                class="absolute z-10 lg:left-[34px] lg:top-[31px] xl:left-[57px] xl:top-[45px] 2xl:left-[107px] 2xl:top-[57px] lg:w-[65px] xl:w-[75px] 2xl:w-[85px] object-contain"
+              />
+            </div>
+            <div class="absolute z-20 inset-0">
+              <!-- headings -->
+              <div
+                class="flex flex-wrap gap-4 lg:pt-[60px] lg:ps-[144px] xl:pt-[100px] xl:ps-[210px] 2xl:pt-[108px] 2xl:ps-[273px]"
+              >
+                <h2
+                  class="font-[family-name:--font-Fredoka] font-bold text-[--primary-color-1] leading-none lg:text-[50px] xl:text-[60px] 2xl:text-[80px]"
+                >
+                  Welcome
+                </h2>
+                <img
+                  src="Images/arrow.png"
+                  alt=""
+                  class="mt-[20px] w-[109px] select-none object-contain"
+                  loading="lazy"
+                />
+              </div>
+              <h4
+                class="mt-[10px] lg:ms-[189px] xl:ms-[254px] 2xl:ms-[323px] font-[family-name:--font-Fredoka] font-bold text-[--primary-color-1] leading-none lg:text-[36px] xl:text-[50px] 2xl:text-[70px]"
+              >
+                Back <span class="text-brand text-[--btn-color]">Friend!</span>
+              </h4>
+              <!-- Subtitle -->
+              <p
+                class="mt-[35px] lg:max-w-[450px] xl:max-w-[597px] 2xl:max-w-[744px] lg:ms-[83px] xl:ms-[79px] 2xl:ms-[102px] max-[1920px]:ms-[149px] text-center font-[family-name:--font-poppins] font-semibold leading-[1.55] lg:text-sm xl:text-xl 2xl:text-2xl"
+              >
+                Welcome back! Continue exploring
+                <span class="text-brand text-[--btn-color]"
+                  >loving companions</span
+                >
+                and make every login the start of a
+                <span class="text-brand text-[--btn-color]"
+                  >new friendship.</span
+                >
+              </p>
+              <!-- Heart -->
+              <div>
+                <img
+                  src="Images/heart.png"
+                  class="heart absolute z-30 right-1/2 -translate-x-1/2 lg:w-[40px] 2xl:w-[60px] lg:mt-[44px] xl:mt-[119px] 2xl:mt-[76px] object-contain"
+                  alt="heart"
+                  loading="lazy"
+                />
+                <!-- red vector and dog -->
+                <div>
+                  <img
+                    src="Images/red-vector.svg"
+                    class="absolute z-30 object-contain lg:w-[410px] lg:mt-36 lg:ms-24 xl:w-[550px] xl:mt-[135px] 2xl:ms-[60px] min-[1920px]:mt-[184px] min-[1920px]:ms-[100px] xl:ms-[40px] 2xl:ms-[127px] 2xl:w-[744px]"
+                    alt="red-vector"
+                    loading="lazy"
+                  />
+                  <img
+                    src="Images/dog.png"
+                    alt="dog"
+                    class="absolute z-40 object-contain xl:mt-[14px] xl:ms-[19px] 2xl:mt-[11px] min-[1920px]:mt-[44px] 2xl:ms-[60px] min-[1920px]:ms-[93px] lg:w-[44%] lg:mt-[34px] lg:ms-[86px] 2xl:w-[744px]"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <!-- Banner-dog -->
+              <div>
+                <img
+                  src="Images/banner-right-dog.png"
+                  class="absolute z-10 lg:top-[224px] xl:top-[256px] 2xl:top-[385px] lg:w-[160px] xl:w-fit"
+                  alt="right-dog"
+                  loading="lazy"
+                />
+              </div>
+              <!-- Paw -->
+              <img
+                src="Images/paw.png"
+                alt="paw"
+                class="absolute z-[999] xl:left-[30px] lg:top-[78%] xl:top-[87%] 2xl:left-[35px] min-[1920px]:left-[61px] w-[138px] object-contain lg:w-[100px] 2xl:w-[150px] lg:left-[50px]"
+              />
+              <!-- blue vector -->
+              <div>
+                <img
+                  src="Images/blue vector.svg"
+                  class="object-contain absolute z-30 bottom-0 xl:left-[26%] 2xl:left-[27%] min-[1920px]:left-[21%] lg:w-[40%] lg:left-[20%] xl:w-[30%]"
+                  alt="blue-vector"
+                  loading="lazy"
+                />
+                <div
+                  class="absolute z-40 bottom-0 lg:left-[39%] xl:left-[42%] 2xl:left-[43%] min-[1920px]:left-[36%] "
+                >
+                  <img
+                    src="Images/bone.png"
+                    class="object-contain -ms-[50px] lg:w-[60%]"
+                    alt="bone"
+                    loading="lazy"
+                  />
+                  <img
+                    src="Images/bone.png"
+                    class="object-contain lg:w-[60%]"
+                    alt="bone"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Right -->
+          <div
+            class="w-full max-w-full lg:max-w-[40%] lg:basis-[40%] px-3 sm:px-5 lg:px-[15px] mx-auto"
+          >
+            <div class="lg:absolute lg:top-0 lg:z-20">
+              <div
+                class="border border-[#F4F1EA] rounded-[20px] p-4 max-[375px]:p-5 max-[480px]:p-6 max-[576px]:p-7 lg:px-5 lg:py-5 m-0 lg:mt-[20px]"
+              >
+                <a
+                  href="login.html"
+                  class="block mx-auto w-[150px] max-[375px]:w-[170px] max-[480px]:w-[190px] max-[576px]:w-[210px] sm:w-[230px] md:w-[250px] lg:w-[280px] xl:w-[320px] 2xl:w-full object-contain"
+                >
+                  <img
+                    src="Images/Logo  for bright bg.png"
+                    class="mx-auto w-[160px] max-[375px]:w-[180px] max-[480px]:w-[200px] max-[576px]:w-[240px] md:w-[280px] lg:w-full object-contain"
+                  />
+                </a>
+              </div>
+              <h1
+                class="mt-0 lg:mt-[21px] max-w-[648px] font-[family-name:--font-Fredoka] font-bold text-[--primary-color-1] leading-none text-center font-bold leading-tight text-[20px] max-[375px]:text-[22px] max-[480px]:text-[26px] max-[576px]:text-[30px] md:text-[34px] lg:text-[27px] xl:text-[35px] 2xl:text-4xl min-[1920px]:text-5xl text-center mx-auto"
+              >
+                Welcome Back To
+                <span class="text-brand text-[--btn-color]">Compassion</span>
+              </h1>
+              <form action="#" method="post" class="mt-10 lg:mt-[11px] xl:mt-[30px] 2xl:mt-[82px]">
+                <!-- Email -->
+                <div id="emailField">
+                  <label
+                    for="email"
+                    class="block mb-2 lg:mb-5 font-[family-name:--font-poppins] text-[--primary-color-1] text-sm max-[375px]:text-[15px] max-[480px]:text-base max-[576px]:text-[17px] md:text-md lg:text-lg xl:text-xl 2xl:text-2xl font-bold"
+                    >Email Address</label
+                  >
+                  <div class="relative">
+                    <svg
+                      width="22"
+                      height="19"
+                      viewBox="0 0 22 19"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="pointer-events-none absolute left-[24px] top-1/2 w-[20px] h-[17px] -translate-y-1/2 text-[#0A303A]"
+                    >
+                      <path
+                        d="M5.75 5.75L8.69202 7.4894C10.4072 8.5035 11.0928 8.5035 12.808 7.4894L15.75 5.75M0.76577 10.7256C0.83114 13.7912 0.86383 15.3239 1.99496 16.4594C3.12608 17.5948 4.70033 17.6343 7.84883 17.7134C9.7893 17.7622 11.7107 17.7622 13.6512 17.7134C16.7997 17.6343 18.3739 17.5948 19.5051 16.4594C20.6362 15.3239 20.6689 13.7912 20.7342 10.7256C20.7553 9.7399 20.7553 8.7601 20.7342 7.7744C20.6689 4.70886 20.6362 3.17609 19.5051 2.04066C18.3739 0.905231 16.7997 0.865681 13.6512 0.786571C11.7107 0.737811 9.7893 0.737811 7.84882 0.786561C4.70033 0.865661 3.12608 0.905211 1.99495 2.04065C0.86382 3.17608 0.83114 4.70885 0.76576 7.7744C0.74474 8.7601 0.74475 9.7399 0.76577 10.7256Z"
+                        stroke="#0A303A"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      placeholder="Enter your email"
+                      class="w-full border-[1.5px] border-[#0A303A]/80 bg-white pl-[62px] pr-[24px] font-regular font-[family-name:--font-poppins] placeholder:text-[#0A303A]/40 outline-none transition focus:border-[#0A303A] focus:ring-2 focus:ring-[#0A303A]/20 w-full h-[48px] max-[375px]:h-[50px] max-[480px]:h-[52px] max-[576px]:h-[54px] md:h-[56px] lg:h-[60px] pl-10 max-[480px]:pl-12 lg:pl-16 text-sm max-[375px]:text-[15px] max-[480px]:text-base max-[576px]:text-[17px] md:text-md lg:text-lg xl:text-xl 2xl:text-2xl rounded-[18px] lg:rounded-[26px]"
+                    />
+                  </div>
+                  <p
+                    class="error-msg mt-1 text-[14px] font-normal text-red-600"
+                    role="alert"
+                  >
+                    Please enter a valid email address.
+                  </p>
+                </div>
+                <!-- Password -->
+                <div class="mt-[20px] lg:mt-[11px] xl:mt-[30px] 2xl:mt-10" id="passwordField">
+                  <div
+                    class="mb-2 lg:mb-3 xl:mb-5 flex flex-wrap items-center justify-between"
+                  >
+                    <label
+                      for="password"
+                      class="block font-[family-name:--font-poppins] text-[--primary-color-1] text-sm max-[375px]:text-[15px] max-[480px]:text-base max-[576px]:text-[17px] md:text-md lg:text-lg xl:text-xl 2xl:text-2xl leading-none font-bold"
+                      >Password</label
+                    >
+                    <a
+                      href="#"
+                      class="text-[13px] text-sm max-[375px]:text-[15px] max-[480px]:text-base max-[576px]:text-[17px] md:text-md lg:text-lg xl:text-xl 2xl:text-2xl leading-none font-[family-name:--font-poppins] font-semibold text-[--primary-color-2] transition hover:text-[--primary-color-1]"
+                      >Forgot password?</a
+                    >
+                  </div>
+                  <div class="relative">
+                    <svg
+                      width="24"
+                      height="26"
+                      viewBox="0 0 24 26"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="pointer-events-none absolute left-[24px] top-1/2 w-[20px] h-[17px] -translate-y-1/2 text-[#0A303A]"
+                    >
+                      <path
+                        opacity="0.8"
+                        d="M17.8611 9.85751C17.2807 9.512 16.6121 9.3012 15.8994 9.26891C14.1744 9.19076 12.422 9.15 10.4922 9.15C8.56237 9.15 6.80996 9.19076 5.08486 9.26891C3.0347 9.36179 1.34999 10.932 1.07614 12.9364C0.8974 14.2444 0.75 15.5849 0.75 16.95C0.75 18.3151 0.897412 19.6556 1.07614 20.9636C1.34999 22.968 3.0347 24.5382 5.08486 24.6311C6.80996 24.7092 8.56237 24.75 10.4922 24.75C12.2422 24.75 13.8465 24.7165 15.4167 24.652M5.02778 9.15V6.15C5.02778 3.16766 7.49021 0.75 10.5278 0.75C13.5654 0.75 16.0278 3.16766 16.0278 6.15V9.15M11.9028 16.95H11.75M20.4583 24.45H20.3056M7.01389 16.95H6.86111M17.8611 16.35C17.8611 15.0245 18.9555 13.95 20.3056 13.95C21.6556 13.95 22.75 15.0245 22.75 16.35C22.75 17.0434 22.4506 17.668 21.9717 18.1061C21.231 18.7838 20.3056 19.5559 20.3056 20.55M12.0556 16.95C12.0556 17.1157 11.9188 17.25 11.75 17.25C11.5812 17.25 11.4444 17.1157 11.4444 16.95C11.4444 16.7843 11.5812 16.65 11.75 16.65C11.9188 16.65 12.0556 16.7843 12.0556 16.95ZM20.6111 24.45C20.6111 24.6157 20.4743 24.75 20.3056 24.75C20.1368 24.75 20 24.6157 20 24.45C20 24.2843 20.1368 24.15 20.3056 24.15C20.4743 24.15 20.6111 24.2843 20.6111 24.45ZM7.16667 16.95C7.16667 17.1157 7.02986 17.25 6.86111 17.25C6.69236 17.25 6.55556 17.1157 6.55556 16.95C6.55556 16.7843 6.69236 16.65 6.86111 16.65C7.02986 16.65 7.16667 16.7843 7.16667 16.95Z"
+                        stroke="#0A303A"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      placeholder="Enter your password"
+                      class="w-full border-[1.5px] border-[#0A303A]/80 bg-white pl-[62px] pr-[24px] font-regular font-[family-name:--font-poppins] placeholder:text-[#0A303A]/40 outline-none transition focus:border-[#0A303A] focus:ring-2 focus:ring-[#0A303A]/20 w-full h-[48px] min-[375px]:h-[50px] min-[480px]:h-[52px] min-[576px]:h-[54px] md:h-[56px] lg:h-[64px] pl-10 max-[480px]:pl-12 lg:pl-16 text-sm max-[375px]:text-[15px] max-[480px]:text-base max-[576px]:text-[17px] md:text-md lg:text-lg xl:text-xl 2xl:text-2xl rounded-[18px] lg:rounded-[26px]"
+                    />
+                    <!-- eye-off -->
+                    <a
+                      href="#"
+                      id="togglePassword"
+                      aria-label="Show password"
+                      aria-pressed="false"
+                      class="absolute right-[22px] top-1/2 -translate-y-1/2 rounded p-1 text-[#0A303A]/60 transition hover:text-[#0A303A] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A303A]/30"
+                    >
+                      <svg
+                        id="eyeOffIcon"
+                        class="h-[22px] w-[22px]"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 22 22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          opacity="0.5"
+                          d="M5.57873 5.90716C5.93088 5.68907 6.03956 5.22681 5.82148 4.87465C5.60339 4.5225 5.14113 4.41382 4.78897 4.6319L5.18385 5.26953L5.57873 5.90716ZM1.06858 9.7839L0.404609 9.43513L0.404608 9.43513L1.06858 9.7839ZM0.75 10.7582L0 10.7581V10.7581L0.75 10.7582ZM1.06755 11.7309L1.73158 11.3823L1.73158 11.3822L1.06755 11.7309ZM16.6449 16.8848C16.9971 16.6667 17.1057 16.2044 16.8876 15.8523C16.6695 15.5001 16.2072 15.3915 15.8551 15.6096L16.25 16.2472L16.6449 16.8848ZM9.15903 9.159C9.45191 8.86609 9.4519 8.39122 9.159 8.09834C8.86609 7.80545 8.39122 7.80546 8.09834 8.09836L8.62868 8.62868L9.15903 9.159ZM13.4016 13.4016C13.6945 13.1087 13.6945 12.6339 13.4016 12.341C13.1087 12.0481 12.6339 12.0481 12.341 12.341L12.8713 12.8713L13.4016 13.4016ZM1.28033 0.21967C0.987437 -0.0732233 0.512563 -0.0732233 0.21967 0.21967C-0.0732233 0.512563 -0.0732233 0.987437 0.21967 1.28033L0.75 0.75L1.28033 0.21967ZM20.2197 21.2803C20.5126 21.5732 20.9874 21.5732 21.2803 21.2803C21.5732 20.9874 21.5732 20.5126 21.2803 20.2197L20.75 20.75L20.2197 21.2803ZM8.63032 3.15808C8.22141 3.22418 7.94351 3.60924 8.00961 4.01815C8.07571 4.42706 8.46077 4.70496 8.86968 4.63886L8.75 3.89847L8.63032 3.15808ZM20.4279 9.7017L19.768 10.0581L19.7681 10.0583L20.4279 9.7017ZM20.427 11.6208L21.0865 11.978L21.0868 11.9773L20.427 11.6208ZM20.4265 11.6217L19.7671 11.2644L19.7667 11.2651L20.4265 11.6217ZM18.396 13.2634C18.1272 13.5786 18.1649 14.0519 18.4801 14.3207C18.7953 14.5895 19.2686 14.5518 19.5374 14.2366L18.9667 13.75L18.396 13.2634ZM5.18385 5.26953L4.78897 4.6319C2.4173 6.10065 1.05158 8.20347 0.404609 9.43513L1.06858 9.7839L1.73255 10.1327C2.31404 9.02567 3.52287 7.18033 5.57873 5.90716L5.18385 5.26953ZM1.06858 9.7839L0.404608 9.43513C0.196431 9.83145 4.68493e-05 10.1841 0 10.7581L0.75 10.7582L1.5 10.7583C1.50001 10.5966 1.51608 10.5448 1.73255 10.1327L1.06858 9.7839ZM0.75 10.7582L0 10.7581C-4.67896e-05 11.3321 0.195741 11.6838 0.403518 12.0796L1.06755 11.7309L1.73158 11.3822C1.5159 10.9715 1.49999 10.9201 1.5 10.7583L0.75 10.7582ZM1.06755 11.7309L0.403511 12.0795C1.46023 14.0922 4.49512 18.5195 10.7169 18.5195V17.7695V17.0195C5.33892 17.0195 2.6969 13.2208 1.73158 11.3823L1.06755 11.7309ZM10.7169 17.7695V18.5195C13.1431 18.5195 15.1004 17.8414 16.6449 16.8848L16.25 16.2472L15.8551 15.6096C14.5334 16.4282 12.8477 17.0195 10.7169 17.0195V17.7695ZM8.62868 8.62868L8.09834 8.09836C7.42056 8.77617 7 9.71469 7 10.75H7.75H8.5C8.5 10.1285 8.75102 9.56703 9.15903 9.159L8.62868 8.62868ZM7.75 10.75H7C7 12.8211 8.67889 14.5 10.75 14.5V13.75V13C9.50731 13 8.5 11.9927 8.5 10.75H7.75ZM10.75 13.75V14.5C11.7853 14.5 12.7238 14.0794 13.4016 13.4016L12.8713 12.8713L12.341 12.341C11.933 12.749 11.3715 13 10.75 13V13.75ZM0.75 0.75L0.21967 1.28033L20.2197 21.2803L20.75 20.75L21.2803 20.2197L1.28033 0.21967L0.75 0.75ZM8.75 3.89847L8.86968 4.63886C9.42286 4.54944 10.0134 4.5 10.6436 4.5V3.75V3C9.93458 3 9.26394 3.05566 8.63032 3.15808L8.75 3.89847ZM10.6436 3.75V4.5C16.1138 4.5 18.7937 8.25427 19.768 10.0581L20.4279 9.7017L21.0878 9.34527C20.0119 7.35343 16.9356 3 10.6436 3V3.75ZM20.4279 9.7017L19.7681 10.0583C19.8833 10.2714 19.9348 10.3701 19.9663 10.4551C19.9881 10.5139 20 10.5658 20 10.6606H20.75H21.5C21.5 10.0864 21.2979 9.73414 21.0877 9.34515L20.4279 9.7017ZM20.75 10.6606H20C20 10.7549 19.9882 10.8068 19.9662 10.866C19.9345 10.9514 19.8826 11.0505 19.7672 11.2642L20.427 11.6208L21.0868 11.9773C21.2972 11.5881 21.5 11.2349 21.5 10.6606H20.75ZM20.427 11.6208L19.7676 11.2635L19.7671 11.2644L20.4265 11.6217L21.0859 11.979L21.0865 11.978L20.427 11.6208ZM20.4265 11.6217L19.7667 11.2651C19.4774 11.8003 19.0298 12.5201 18.396 13.2634L18.9667 13.75L19.5374 14.2366C20.2534 13.3969 20.7582 12.5853 21.0863 11.9783L20.4265 11.6217Z"
+                          fill="#0A303A"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                  <p
+                    class="error-msg mt-1 text-[14px] font-normal text-red-600"
+                    role="alert"
+                  >
+                    Password must be at least 8 characters.
+                  </p>
+                </div>
+                <!-- remember me -->
+                <label
+                  class="mt-6 lg:mt-5 xl:mt-[30px] 2xl:mt-10 flex cursor-pointer items-center gap-3 font-normal text-[#0A303A] text-sm max-[375px]:text-[15px] max-[480px]:text-base max-[576px]:text-[17px] md:text-lg lg:text-lg xl:text-xl 2xl:text-2xl"
+                >
+                  <input
+                    type="checkbox"
+                    id="remember"
+                    class="h-[22px] w-[22px] rounded border-[#0A303A]"
+                  />
+                  Remember me
+                </label>
+                <!-- logIn Button -->
+                <button
+                  type="submit"
+                  id="loginBtn"
+                  class="my-6 lg:my-5 xl:mt-[30px] 2xl:mt-10 w-full flex flex-wrap items-center justify-center bg-[--btn-color] py-2 min-[375px]:py-4 min-[480px]:py-4 min-[576px]:py-5 lg:py-4 lg:px-5 rounded-[30px] border-none outline-none shadow-xl transition hover:-translate-y-px hover:bg-[--btn-color]-dark active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/50 focus-visible:ring-offset-2 text-white hover:text-[--primary-color-1] font-regular font-[family-name:--font-poppins] text-sm max-[480px]:text-base lg:text-lg xl:text-xl 2xl:text-2xl rounded-[20px] lg:rounded-[30px]"
+                >
+                  <span id="loginBtnLabel" class="flex items-center gap-3"
+                    >logIn<i class="fa-solid fa-paw ml-2"></i
+                  ></span>
+                </button>
+              </form>
+              <!-- Divider -->
+              <div class="my-[30px] lg:mt-[20px] xl:mt-[23px] 2xl:mt-[56px] flex items-center gap-4">
+                <span class="h-[1px] flex-1 bg-[--primary-color-1]"></span>
+                <span
+                  class="lg:text-base xl:text-[24px] font-normal text-red-600 font-[family-name:--font-poppins]"
+                  >or continue with</span
+                >
+                <span class="h-[1px] flex-1 bg-[--primary-color-1]"></span>
+              </div>
+              <!-- social links -->
+              <div class="socials lg:mt-[22px] xl:mt-[36px] 2xl:mt-[42px] grid grid-cols-2 gap-[26px]">
+                <button
+                  type="button"
+                  data-provider="Google"
+                  class="social-btn flex h-[40px] lg:h-[44px] xl:h-[62px] items-center justify-center rounded-full border-[1.5px] border-navy/70 bg-white transition hover:bg-[#F7F8F9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy/30"
+                  aria-label="Continue with Google"
+                >
+                  <svg
+                    class="h-[26px] w-[26px]"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="#4285F4"
+                      d="M23.5 12.27c0-.85-.08-1.66-.22-2.45H12v4.64h6.45a5.52 5.52 0 0 1-2.4 3.62v3h3.88c2.27-2.1 3.57-5.17 3.57-8.81Z"
+                    ></path>
+                    <path
+                      fill="#34A853"
+                      d="M12 24c3.24 0 5.96-1.07 7.94-2.91l-3.88-3c-1.08.72-2.45 1.15-4.06 1.15-3.13 0-5.78-2.11-6.72-4.95H1.27v3.1A12 12 0 0 0 12 24Z"
+                    ></path>
+                    <path
+                      fill="#FBBC05"
+                      d="M5.28 14.29a7.2 7.2 0 0 1 0-4.58v-3.1H1.27a12 12 0 0 0 0 10.78l4.01-3.1Z"
+                    ></path>
+                    <path
+                      fill="#EA4335"
+                      d="M12 4.76c1.76 0 3.34.6 4.59 1.8l3.44-3.44A11.98 11.98 0 0 0 1.27 6.6l4.01 3.1C6.22 6.87 8.87 4.76 12 4.76Z"
+                    ></path>
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  data-provider="Facebook"
+                  class="social-btn flex h-[40px] lg:h-[44px] xl:h-[62px] items-center justify-center rounded-full border-[1.5px] border-navy/70 bg-white transition hover:bg-[#F7F8F9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy/30"
+                  aria-label="Continue with Facebook"
+                >
+                  <svg
+                    class="h-[26px] w-[26px]"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="#1877F2"
+                      d="M24 12a12 12 0 1 0-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.95.92-1.95 1.87V12h3.32l-.53 3.47h-2.79v8.38A12 12 0 0 0 24 12Z"
+                    ></path>
+                    <path
+                      fill="#fff"
+                      d="M16.67 15.47 17.2 12h-3.32V9.75c0-.95.46-1.87 1.95-1.87h1.51V4.93s-1.37-.24-2.68-.24c-2.74 0-4.53 1.67-4.53 4.67V12H7.08v3.47h3.04v8.38a12.1 12.1 0 0 0 3.76 0v-8.38h2.79Z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <!-- footer -->
+              <p
+                class="my-[40px] text-sm lg:mt-[25px] xl:mt-[23px] 2xl:mt-[56px] lg:mb-[20px] text-center lg:text-base xl:text-[24px] font-bold text-[--primary-color-1] font-[family-name:--font-poppins]"
+              >
+                New here ?
+                <a
+                  href="#"
+                  class="text-[--btn-color] transition hover:text-[primary-color-1] hover:underline"
+                  >Create an account</a
+                >
+              </p>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
     <!-- AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Swiper JS CDN  -->
@@ -62,5 +427,5 @@
         // Your custom options
       });
     </script>
-</body>
+  </body>
 </html>
