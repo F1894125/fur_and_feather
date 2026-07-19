@@ -1,10 +1,22 @@
 @font-face {
     font-family: "Fredoka";
     src: url(fonts/Fredoka/static/Fredoka-Regular.ttf) format(truetype);
+    font-weight: 400;
+}
+@font-face {
+  font-family: "Fredoka";
+  src: url(fonts/Fredoka/static/Fredoka-Bold.ttf) format(truetype);
+  font-weight: 700;
 }
 @font-face {
     font-family: "Poppins";
     src: url(fonts/Poppins/Poppins-Regular.ttf) format(truetype);
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url(fonts/Poppins/Poppins-Bold.ttf) format(truetype);
+    font-weight: 700;
 }
 @font-face {
   font-family: "Manrope";
@@ -23,6 +35,7 @@
     --primary-color-1: #0A3044;
     --btn-color:#F04336;
     --heading-text:#F4F1EA;
+    --primary-color-2: #D5E6EB;
 }
 ul li {
   list-style: none;
@@ -44,6 +57,20 @@ img {
   max-width: 100%;
   height: auto;
 }
+/* Login */
+.login-banner{
+  background: url("Images/login-banner.png") no-repeat center;
+  background-size: cover;
+  background-position: center;
+  background-attachment:scroll;
+}
+/* @media (min-width: 1920px) {
+  .login-banner {
+    min-height: 1260px;
+    background-size: cover;
+    background-position: center;
+  }
+} */
 /* Header */
 .header{
   background: url(Images/header.png) no-repeat;
@@ -80,25 +107,83 @@ img {
 .nav-items.active::after{
     width: 100%;
 }
-.contact-btn::before{
+.contact-btn, .friend-btn{
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.contact-btn::before, .friend-btn::before{
   content: "";
   position: absolute;
   z-index: -1;
   width: 0;
   height: 100%;
-  background: var(--primary-color-1);
+  background: #fff;
   border-top-right-radius: 15%;
   border-bottom-right-radius: 15%;
   top: 0;
   left: 0;
-  transition: 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
 }
-.contact-btn:hover::before{
+.contact-btn:hover::before, .friend-btn:hover::before{
   width: 100%;
 }
+.friend-btn::before{
+  background: var(--primary-color-2);
+}
+
 /* Banner */
 .banner{
   background: url(Images/Hero\ Banner.png) no-repeat;
   background-size: cover;
   background-position: center;
+}
+.heart {
+  display: inline-block;
+  animation: heartbeat 1.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.25);
+  }
+  30% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.15);
+  }
+  60% {
+    transform: scale(1);
+  }
+}
+.has-error input {
+    border-color: #dc2626;
+}
+
+.error-msg {
+    display: none;
+}
+
+.has-error .error-msg {
+    display: block;
+}
+.spinner {
+    width:20px;
+    height:20px;
+    border:3px solid #fff;
+    border-top-color:transparent;
+    border-radius:50%;
+    display:inline-block;
+    animation:spin .7s linear infinite;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
 }
