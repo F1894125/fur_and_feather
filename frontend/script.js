@@ -78,7 +78,8 @@ $(document).ready(function () {
 
     if ($remember.prop("checked")) {
       localStorage.setItem(REMEMBER_KEY, $.trim($email.val()));
-    } else {
+    } 
+    else {
       localStorage.removeItem(REMEMBER_KEY);
     }
 
