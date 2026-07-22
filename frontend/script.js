@@ -1,6 +1,6 @@
 // Login form
 $(document).ready(function () {
-    const $form = $("#loginForm");
+  const $form = $("#loginForm");
   const $email = $("#email");
   const $password = $("#password");
   const $emailField = $("#emailField");
@@ -98,6 +98,188 @@ $(document).ready(function () {
   $(".social-btn").on("click", function () {
     alert("Continue with " + $(this).data("provider") + " — connect your OAuth flow here.");
   });
+});
+// Create Form
+$(document).ready(function () {
+
+    const $form = $("#create-form");
+    const $fname = $("#fname");
+    const $lname = $("#lname");
+    const $email = $("#createEmail");
+    const $password = $("#createPassword");
+    const $confirmPassword = $("#confirmPassword");
+    const $number = $("#number");
+    const $terms = $("#terms");
+    const $togglecreateBtn = $("#toggleCreatePassword");
+    const $CreateeyeIcon = $("#createEyeIcon");
+    const $CreateeyeOffIcon = $("#createEyeOffIcon");
+    const $toggleconfirmBtn = $("#toggleConfirmPassword");
+    const $ConfirmeyeIcon = $("#confirmEyeIcon");
+    const $ConfirmeyeOffIcon = $("#confirmEyeOffIcon");
+
+    const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    const PHONE_RE = /^[6-9]\d{9}$/;
+
+    function showError($field, message) {
+        $field.addClass("has-error");
+        $field.find(".error-msg").text(message).show();
+    }
+
+    function hideError($field) {
+        $field.removeClass("has-error");
+        $field.find(".error-msg").hide();
+    }
+
+    function validateFirstName() {
+        if ($.trim($fname.val()) === "") {
+            showError($("#fnameField"), "First name is required.");
+            return false;
+        }
+        hideError($("#fnameField"));
+        return true;
+    }
+
+    function validateLastName() {
+        if ($.trim($lname.val()) === "") {
+            showError($("#lnameField"), "Last name is required.");
+            return false;
+        }
+        hideError($("#lnameField"));
+        return true;
+    }
+
+    function validateEmail() {
+        if (!EMAIL_RE.test($.trim($email.val()))) {
+            showError($("#emailField"), "Enter a valid email.");
+            return false;
+        }
+        hideError($("#emailField"));
+        return true;
+    }
+
+    function validatePhone() {
+
+        let phone = $.trim($number.val());
+
+        if (phone === "") {
+            hideError($("#numberField"));
+            return true;
+        }
+
+        if (!PHONE_RE.test(phone)) {
+            showError($("#numberField"), "Enter a valid 10-digit mobile number.");
+            return false;
+        }
+
+        hideError($("#numberField"));
+        return true;
+    }
+
+    function validatePassword() {
+
+        if ($password.val().length < 8) {
+            showError($("#passwordField"), "Password must be at least 8 characters.");
+            return false;
+        }
+
+        hideError($("#passwordField"));
+        return true;
+    }
+
+    function validateConfirmPassword() {
+
+    if ($.trim($confirmPassword.val()) === "") {
+        showError($("#confirmpasswordField"), "Confirm password is required.");
+        return false;
+    }
+
+    if ($password.val() !== $confirmPassword.val()) {
+        showError($("#confirmpasswordField"), "Passwords do not match.");
+        return false;
+    }
+
+    hideError($("#confirmpasswordField"));
+    return true;
+}
+$confirmPassword.on("input", validateConfirmPassword);
+$password.on("input", function () {
+    if ($confirmPassword.val() !== "") {
+        validateConfirmPassword();
+    }
+});
+/* ---------- Password visibility toggle ---------- */
+  $togglecreateBtn.on("click", function () {
+    const show = $password.attr("type") === "password";
+    $password.attr("type", show ? "text" : "password");
+    $CreateeyeIcon.toggleClass("hidden", !show);
+    $CreateeyeOffIcon.toggleClass("hidden", show);
+    $(this)
+      .attr("aria-pressed", String(show))
+      .attr("aria-label", show ? "Hide password" : "Show password");
+  });
+  /* ---------- Password visibility toggle ---------- */
+  $toggleconfirmBtn.on("click", function () {
+    const show = $confirmPassword.attr("type") === "password";
+    $confirmPassword.attr("type", show ? "text" : "password");
+    $ConfirmeyeIcon.toggleClass("hidden", !show);
+    $ConfirmeyeOffIcon.toggleClass("hidden", show);
+    $(this)
+      .attr("aria-pressed", String(show))
+      .attr("aria-label", show ? "Hide password" : "Show password");
+  });
+
+    function validateTerms() {
+
+        if (!$terms.is(":checked")) {
+            alert("Please accept the Terms & Conditions.");
+            return false;
+        }
+
+        return true;
+    }
+
+    $("input").on("input", function () {
+
+        validateFirstName();
+        validateLastName();
+        validateEmail();
+        validatePhone();
+        validatePassword();
+        validateConfirmPassword();
+
+    });
+
+    $form.on("submit", function (e) {
+
+        e.preventDefault();
+
+        const valid =
+            validateFirstName() &&
+            validateLastName() &&
+            validateEmail() &&
+            validatePhone() &&
+            validatePassword() &&
+            validateConfirmPassword() &&
+            validateTerms();
+
+        if (!valid) return;
+
+        $("#loginBtn").prop("disabled", true);
+        $("#loginBtnLabel").html('<span class="spinner"></span> Creating...');
+
+        setTimeout(function () {
+
+            $("#loginBtn").prop("disabled", false);
+            $("#loginBtnLabel").html('Create Account <i class="fa-solid fa-paw"></i>');
+
+            alert("Account created successfully!");
+
+            $form[0].reset();
+
+        }, 1500);
+
+    });
+
 });
 
 // Humbarger Menu
