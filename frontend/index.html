@@ -46,7 +46,7 @@
   >
     <!-- Header Section -->
     <header
-      class="header absolute top-0 left-0 w-full z-[999] pb-[60px] pt-8"
+      class="header absolute top-0 left-0 w-full z-[999] pb-[60px] pt-8 min-[1920px]:pt-24"
       id="header"
     >
       <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
@@ -199,13 +199,16 @@
         <!--Destop Nav-Bar -->
         <nav class="flex flex-wrap justify-between items-center">
           <!-- Logo -->
-          <a
+          <div>          
+            <a
             href="index.html"
             class="block max-w-[180px] min-[576px]:max-w-[185px] sm:max-w-[194px] md:max-w-[198px] min-[992px]:max-w-[200px] lg:max-w-[200px] xl:max-w-[280px]"
           >
             <img src="Images/Logo  for bright bg.png" alt="logo" loading="lazy"
           /></a>
+          </div>
           <!-- Destop menu-->
+          <div>
           <ul class="hidden lg:flex lg:items-center lg:gap-6 xl:gap-12">
             <li
               class="nav-items active relative font-[family-name:--font-Manrope] text-lg font-semibold text-[--primary-color-1] transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
@@ -215,31 +218,34 @@
             <li
               class="nav-items relative font-[family-name:--font-Manrope] text-lg font-semibold text-[--primary-color-1] transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
             >
-              <a href="page.html">Pages</a>
+              <a href="pets.html">Pets</a>
             </li>
             <li
               class="nav-items relative font-[family-name:--font-Manrope] text-lg font-semibold text-[--primary-color-1] transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
             >
-              <a href="service.html">Services</a>
+              <a href="shelters.html">Shelters</a>
             </li>
             <li
               class="nav-items relative font-[family-name:--font-Manrope] text-lg font-semibold text-[--primary-color-1] transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
             >
-              <a href="blog.html">Blog</a>
+              <a href="#">Pages</a>
             </li>
             <li
               class="nav-items relative font-[family-name:--font-Manrope] text-lg font-semibold text-[--primary-color-1] transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
             >
-              <a href="shop.html">Shop</a>
+              <a href="contact.html">Contact Us</a>
             </li>
           </ul>
+          </div>
           <!-- Right Nav -->
+          <div class="flex flex-wrap items-center gap-4">
           <div
-            class="flex flex-wrap items-center gap-3 md:ms-[292px] min-[992px]:ms-[400px] lg:ms-0 lg:gap-2 xl:gap-4"
+            class="flex flex-wrap items-center gap-3 lg:ms-0 lg:gap-2 xl:gap-4"
           >
             <ul
-              class="hidden flex flex-wrap items-center gap-4 md:flex md:justify-items-end xl:gap-6"
+              class="flex flex-wrap items-center gap-4 xl:gap-6"
             >
+            <!-- Wish list -->
               <li>
                 <a href="#"
                   ><svg
@@ -260,60 +266,29 @@
                   </svg>
                 </a>
               </li>
-              <li>
-                <a href="#"
-                  ><svg
-                    width="28"
-                    height="25"
-                    viewBox="0 0 28 25"
-                    fill="none"
-                    class="transition ease-in duration-300 hover:scale-[1.1]"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M1.25 1.25002H1.5083C3.16405 1.25002 3.99193 1.25002 4.53188 1.74161C5.07181 2.23317 5.1308 3.04057 5.24877 4.65532L5.56294 8.95608C5.74049 11.3866 5.82928 12.6019 6.20595 13.5897C7.03164 15.755 8.85286 17.4132 11.1206 18.0641C12.1551 18.3611 13.4084 18.3611 15.9146 18.3611C18.5466 18.3611 19.8625 18.3611 20.9271 18.0453C23.3241 17.3343 25.1999 15.5003 25.927 13.1565C26.1783 12.3469 26.234 11.3932 26.2465 9.80557M13.75 4.91668H5.625M11.875 22.3333C11.875 22.8396 11.4553 23.25 10.9375 23.25C10.4197 23.25 10 22.8396 10 22.3333C10 21.8271 10.4197 21.4167 10.9375 21.4167C11.4553 21.4167 11.875 21.8271 11.875 22.3333ZM22.5 22.3333C22.5 22.8396 22.0803 23.25 21.5625 23.25C21.0447 23.25 20.625 22.8396 20.625 22.3333C20.625 21.8271 21.0447 21.4167 21.5625 21.4167C22.0803 21.4167 22.5 21.8271 22.5 22.3333ZM21.875 8.58335C21.875 8.58335 17.5 5.99511 17.5 3.49075C17.5 2.25323 18.421 1.25002 19.6875 1.25002C20.3437 1.25002 21 1.4657 21.875 2.32844C22.75 1.4657 23.4063 1.25002 24.0625 1.25002C25.329 1.25002 26.25 2.25323 26.25 3.49075C26.25 5.99511 21.875 8.58335 21.875 8.58335Z"
-                      stroke="#F04336"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#"
-                  ><svg
-                    width="28"
-                    height="28"
-                    viewBox="0 0 28 28"
-                    fill="none"
-                    class="transition ease-in duration-300 hover:scale-[1.1]"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M17.6974 17.6974L19.6711 19.6711M20.2412 22.9937C19.4811 22.2336 19.4811 21.0012 20.2412 20.2412C21.0012 19.4811 22.2336 19.4811 22.9937 20.2412L25.6799 22.9274C26.44 23.6875 26.44 24.9199 25.6799 25.6799C24.9199 26.44 23.6875 26.44 22.9274 25.6799L20.2412 22.9937ZM19.6711 10.4605C19.6711 5.3737 15.5474 1.25 10.4605 1.25C5.3737 1.25 1.25 5.3737 1.25 10.4605C1.25 15.5474 5.3737 19.6711 10.4605 19.6711C15.5474 19.6711 19.6711 15.5474 19.6711 10.4605Z"
-                      stroke="#F04336"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </a>
-              </li>
             </ul>
-            <!-- Contact US Button -->
+            <!-- Login Button -->
             <a
-              href="contact.html"
-              class="hidden contact-btn lg:inline-flex items-center justify-center gap-2 bg-[var(--btn-color)] border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] px-5 lg:py-2 xl:py-3 rounded-full font-[family-name:--font-poppins] font-bold text-xl text-white hover:text-[var(--btn-color)] overflow-hidden relative z-[999] transition-all ease-in duration-300"
+              href="login.html"
+              class="hidden contact-btn lg:inline-flex items-center justify-center gap-2 bg-[var(--btn-color)] border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] px-5 lg:py-2 xl:py-3 rounded-full font-[family-name:--font-poppins] font-bold lg:text-lg xl:text-xl text-white hover:text-[var(--btn-color)] overflow-hidden relative z-[999] transition-all ease-in duration-300"
             >
-              Contact Us
+              LogIn
+              <i class="fa-solid fa-paw"></i>
+            </a>
+            <!-- SignUp Button -->
+            <a
+              href="#"
+              class="hidden friend-btn lg:inline-flex items-center justify-center gap-2 bg-[--heading-text] hover:border-[2px] hover:border-[--btn-color] lg:px-3 xl:px-5 lg:py-2 xl:py-3 rounded-full font-[family-name:--font-poppins] font-bold text-[--primary-color-1] lg:text-lg xl:text-xl
+              border-[2px] border-[--primary-color-1] shadow-xl hover:border-[--btn-color] rounded-full hover:text-[var(--btn-color)] overflow-hidden transition-all ease-in duration-300"
+            >
+              SignUp
               <i class="fa-solid fa-paw"></i>
             </a>
             <!-- User Icon -->
             <div
-              class="w-[30px] h-[30px] cursor-pointer min-[480px]:ml-40 sm:ml-[295px] md:ml-[14px] min-[992px]:w-[50px] min-[992px]:h-[50px] lg:ms-0"
+              class="w-[30px] h-[30px] cursor-pointer sm:ml-[295px] md:ml-[14px] min-[992px]:w-[50px] min-[992px]:h-[50px] lg:ms-0"
             >
-              <a href="login.html"><img
+              <a href="#"><img
                 src="Images/user.png"
                 class="object-fit-contain"
                 alt="user"
@@ -321,6 +296,7 @@
               /></a>
             </div>
           </div>
+          
           <!-- Humbarger menu -->
           <a
             href="#"
@@ -328,7 +304,11 @@
             id="menu-btn"
             ><i class="fa-solid fa-bars"></i
           ></a>
+          </div>
         </nav>
+
+        <!-- Mobile/Tablet View -->
+
         <!-- overlay -->
         <div id="overlay" class="fixed inset-0 bg-black/40 z-40 hidden"></div>
         <!-- Mobile Menu -->
@@ -363,27 +343,27 @@
               <li
                 class="nav-items relative font-[family-name:--font-Manrope] text-lg font-semibold text-[--primary-color-1] min-[992px]:text-2xl"
               >
-                <a href="page.html">Pages</a>
+                <a href="pets.html">Pets</a>
               </li>
               <li
                 class="nav-items relative font-[family-name:--font-Manrope] text-lg font-semibold text-[--primary-color-1] min-[992px]:text-2xl"
               >
-                <a href="service.html">Services</a>
+                <a href="shelters.html">Shelters</a>
               </li>
               <li
                 class="nav-items relative font-[family-name:--font-Manrope] text-lg font-semibold text-[--primary-color-1] min-[992px]:text-2xl"
               >
-                <a href="blog.html">Blog</a>
+                <a href="aboutus.html">About Us</a>
               </li>
               <li
                 class="nav-items relative font-[family-name:--font-Manrope] text-lg font-semibold text-[--primary-color-1] min-[992px]:text-2xl"
               >
-                <a href="shop.html">Shop</a>
+                <a href="contact.html">Contact Us</a>
               </li>
             </ul>
             <!-- Mobile shop -->
-            <ul
-              class="flex flex-wrap items-center justify-center gap-4 my-6 md:hidden"
+            <!-- <ul
+              class="flex flex-wrap items-center justify-center gap-4 my-6"
             >
               <li>
                 <a href="#"
@@ -405,54 +385,26 @@
                   </svg>
                 </a>
               </li>
-              <li>
-                <a href="#"
-                  ><svg
-                    width="28"
-                    height="25"
-                    viewBox="0 0 28 25"
-                    fill="none"
-                    class="transition ease-in duration-300 hover:scale-[1.1]"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M1.25 1.25002H1.5083C3.16405 1.25002 3.99193 1.25002 4.53188 1.74161C5.07181 2.23317 5.1308 3.04057 5.24877 4.65532L5.56294 8.95608C5.74049 11.3866 5.82928 12.6019 6.20595 13.5897C7.03164 15.755 8.85286 17.4132 11.1206 18.0641C12.1551 18.3611 13.4084 18.3611 15.9146 18.3611C18.5466 18.3611 19.8625 18.3611 20.9271 18.0453C23.3241 17.3343 25.1999 15.5003 25.927 13.1565C26.1783 12.3469 26.234 11.3932 26.2465 9.80557M13.75 4.91668H5.625M11.875 22.3333C11.875 22.8396 11.4553 23.25 10.9375 23.25C10.4197 23.25 10 22.8396 10 22.3333C10 21.8271 10.4197 21.4167 10.9375 21.4167C11.4553 21.4167 11.875 21.8271 11.875 22.3333ZM22.5 22.3333C22.5 22.8396 22.0803 23.25 21.5625 23.25C21.0447 23.25 20.625 22.8396 20.625 22.3333C20.625 21.8271 21.0447 21.4167 21.5625 21.4167C22.0803 21.4167 22.5 21.8271 22.5 22.3333ZM21.875 8.58335C21.875 8.58335 17.5 5.99511 17.5 3.49075C17.5 2.25323 18.421 1.25002 19.6875 1.25002C20.3437 1.25002 21 1.4657 21.875 2.32844C22.75 1.4657 23.4063 1.25002 24.0625 1.25002C25.329 1.25002 26.25 2.25323 26.25 3.49075C26.25 5.99511 21.875 8.58335 21.875 8.58335Z"
-                      stroke="#F04336"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#"
-                  ><svg
-                    width="28"
-                    height="28"
-                    viewBox="0 0 28 28"
-                    fill="none"
-                    class="transition ease-in duration-300 hover:scale-[1.1]"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M17.6974 17.6974L19.6711 19.6711M20.2412 22.9937C19.4811 22.2336 19.4811 21.0012 20.2412 20.2412C21.0012 19.4811 22.2336 19.4811 22.9937 20.2412L25.6799 22.9274C26.44 23.6875 26.44 24.9199 25.6799 25.6799C24.9199 26.44 23.6875 26.44 22.9274 25.6799L20.2412 22.9937ZM19.6711 10.4605C19.6711 5.3737 15.5474 1.25 10.4605 1.25C5.3737 1.25 1.25 5.3737 1.25 10.4605C1.25 15.5474 5.3737 19.6711 10.4605 19.6711C15.5474 19.6711 19.6711 15.5474 19.6711 10.4605Z"
-                      stroke="#F04336"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </a>
-              </li>
-            </ul>
+            </ul> -->
             <!-- Button -->
-            <div class="flex flex-wrap justify-center items-center">
+            <div class="flex flex-col justify-center items-center gap-4">
+              <!-- Login Button -->
               <a
-                href="contact.html"
-                class="lg:hidden contact-btn inline-flex items-center justify-center gap-2 bg-[var(--btn-color)] border-4 border-[#F4F1EA] border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] px-5 py-2 lg:py-2 xl:py-3 rounded-full font-[family-name:--font-poppins] font-bold text-xl text-white hover:text-[var(--btn-color)] overflow-hidden transition-all duration-300"
-                >Contact Us<i class="fa-solid fa-paw"></i>
-              </a>
+              href="login.html"
+              class="lg:hidden contact-btn lg:inline-flex items-center justify-center gap-2 bg-[var(--btn-color)] border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] px-6 py-3 lg:py-2 xl:py-3 mt-5 rounded-full font-[family-name:--font-poppins] font-bold lg:text-lg xl:text-xl text-white hover:text-[var(--btn-color)] overflow-hidden relative z-[999] transition-all ease-in duration-300"
+            >
+              LogIn
+              <i class="fa-solid fa-paw"></i>
+            </a>
+            <!-- SignUp Button -->
+            <a
+              href="#"
+              class="lg:hidden friend-btn lg:inline-flex items-center justify-center gap-2 bg-[--heading-text] hover:border-[2px] hover:border-[--btn-color] px-5 py-3 lg:px-3 xl:px-5 lg:py-2 xl:py-3 rounded-full font-[family-name:--font-poppins] font-bold text-[--primary-color-1] lg:text-lg xl:text-xl
+              border-[2px] border-[--primary-color-1] shadow-xl hover:border-[--btn-color] rounded-full hover:text-[var(--btn-color)] overflow-hidden transition-all ease-in duration-300"
+            >
+              SignUp
+              <i class="fa-solid fa-paw"></i>
+            </a>
             </div>
           </div>
         </div>
