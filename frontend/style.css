@@ -32,7 +32,7 @@
     --font-Fredoka: "Fredoka";
     --font-poppins: "Poppins";
     --font-Manrope: "Manrope";
-    --primary-color-1: #0A3044;
+    --primary-color-1: #0A303A;
     --btn-color:#F04336;
     --heading-text:#F4F1EA;
     --primary-color-2: #D5E6EB;
@@ -57,26 +57,12 @@ img {
   max-width: 100%;
   height: auto;
 }
-/* Login */
-.login-banner{
-  background: url("Images/login-banner.png") no-repeat center;
-  background-size: cover;
-  background-position: center;
-  background-attachment:scroll;
-}
-/* @media (min-width: 1920px) {
-  .login-banner {
-    min-height: 1260px;
-    background-size: cover;
-    background-position: center;
-  }
-} */
+
 /* Header */
 .header{
   background: url(Images/header.png) no-repeat;
   background-size: cover;
   background-position: center;
-  /* min-height: calc(100%)+335px; */
 }
 .nav-items{
     position: relative;
@@ -138,6 +124,7 @@ img {
   background-size: cover;
   background-position: center;
 }
+/* Heart */
 .heart {
   display: inline-block;
   animation: heartbeat 1.2s ease-in-out infinite;
