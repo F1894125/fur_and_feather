@@ -45,10 +45,10 @@
   >
     <!-- Header Section -->
     <header
-      class="header absolute top-0 left-0 w-full z-[999] pb-[60px] pt-8 min-[1920px]:pt-24"
+      class="header absolute top-0 left-0 w-full z-[999] pb-[60px] pt-8 min-[1920px]:pt-24 min-[1920px]:max-w-screen"
       id="header"
     >
-      <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
+      <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px] min-[1920px]:max-w-[1950px]">
         <!-- Sub-header -->
         <div
           class="flex flex-col justify-between min-[992px]:flex-row min-[992px]:items-center"
@@ -491,12 +491,12 @@
                   loading="lazy"
                 />
                 <div
-                  class="-mt-12 flex flex-col items-center text-center sm:-mt-16 lg:-mt-[84px]"
+                  class="-mt-[72px] min-[480px]:-mt-[90px] flex flex-col items-center text-center sm:-mt-16 lg:-mt-[84px]"
                 >
                   <img
                     src="Images/about-logo.png"
                     alt="about-logo"
-                    class="max-w-[200px] object-contain sm:max-w-full"
+                    class="max-w-[220px] object-contain sm:max-w-full"
                     loading="lazy"
                   />
                   <div
@@ -514,22 +514,22 @@
             </div>
             <!-- Right text -->
             <div
-              class="w-full mx-auto min-[992px]:max-w-[60%] min-[992px]:basis-[60%] min-[992px]:px-[15px] pt-5 min-[992px]:pt-28"
+              class="w-full mx-auto min-[992px]:max-w-[60%] min-[992px]:basis-[60%] min-[992px]:px-[15px]"
             >
               <span
-                class="mb-5 flex items-center gap-2 font-[family-name:--font-poppins] text-sm font-semibold tracking-[2px] text-[--primary-color-1] sm:mb-9 sm:gap-3 sm:text-xl sm:tracking-[4px]"
+                class=" pt-5 min-[992px]:pt-14 xl:pt-28 mb-5 flex items-center gap-2 font-[family-name:--font-poppins] text-sm font-semibold tracking-[2px] text-[--primary-color-1] sm:mb-9 sm:gap-3 sm:text-xl sm:tracking-[4px]"
               >
                 <i class="fa-solid fa-paw"></i>
                 Our Story
               </span>
               <h2
-                class="max-w-[766px] font-[family-name:--font-Fredoka] text-[30px] leading-[1.25] sm:text-4xl lg:text-5xl lg:leading-[1.3]"
+                class="max-w-[766px] xl:max-w-[500px]  font-[family-name:--font-Fredoka] text-[30px] leading-[1.25] sm:text-4xl lg:text-5xl xl:text-4xl lg:leading-[1.3] 2xl:max-w-[550px] min-[1920px]:max-w-[766px] min-[1920px]:text-5xl"
               >
                 More Than Adoption. We're Creating
                 <span class="text-[--btn-color]">Forever Families</span>
               </h2>
               <p
-                class="mt-5 mb-5 max-w-[766px] font-[family-name:--font-poppins] text-base font-semibold leading-[1.5] text-[--primary-color-1] opacity-[60%] sm:mt-9 sm:mb-10 sm:text-xl"
+                class="mt-5 mb-5 max-w-[766px] xl:max-w-[450px] 2xl:max-w-[500px] min-[1920px]:max-w-[672px] font-[family-name:--font-poppins] text-base font-semibold leading-[1.5] text-[--primary-color-1] opacity-[60%] sm:mt-9 sm:mb-10 sm:text-xl xl:text-lg"
               >
                 At Fur & Feather, we believe every pet deserves more than a
                 home—they deserve a family. We connect loving people with dogs,
@@ -556,19 +556,36 @@
                 </a>
               </div>
             </div>
+            </div>
+        </div>
             <!-- image -->
             <div
-              class="hidden 2xl:absolute 2xl:right-0 2xl:z-[999] 2xl:block 2xl:w-[471px]"
+              class="hidden xl:absolute xl:top-[15%] xl:right-0 xl:z-[999] xl:block xl:w-[360px] 2xl:w-[471px]"
             >
               <img
                 src="Images/about-us-dog.png"
                 alt="about-us-dog"
-                class="object-contain"
+                class="w-full object-contain"
                 loading="lazy"
               />
             </div>
+      </section>
+      <!-- Meet your match -->
+      <section class="pt-[70px] pb-[164px] relative">
+        <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
+          <span
+                class="flex justify-center items-center gap-2 font-[family-name:--font-poppins] text-sm font-semibold tracking-[2px] text-[--primary-color-1] sm:mb-9 sm:gap-3 sm:text-xl sm:tracking-[4px]"
+              >
+                <i class="fa-solid fa-paw"></i>
+                Meet Your Match
+              </span>
+          <h2 class="mx-auto text-center font-[family-name:--font-Fredoka] font-semibold text-5xl text-[--primary-color-1]">Find the Companion<span class="text-[--btn-color]"> Meant for You</span></h2>
+          <p></p>
           </div>
-        </div>
+          <!-- bird image -->
+          <div class="absolute top-[-142px]">
+            <img src="Images/bird.png" alt="bird" loading="lazy"/>
+          </div>
       </section>
     </main>
     <!-- AOS Animation -->
