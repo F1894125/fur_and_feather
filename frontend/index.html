@@ -45,10 +45,12 @@
   >
     <!-- Header Section -->
     <header
-      class="header absolute top-0 left-0 w-full z-[999] pb-[60px] pt-8 min-[1920px]:pt-24 min-[1920px]:max-w-screen"
+      class="header absolute top-0 left-0 w-full z-[999] pb-[60px] pt-8 min-[1920px]:pt-12 min-[1920px]:pb-[55px]"
       id="header"
     >
-      <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px] min-[1920px]:max-w-[1950px]">
+      <div
+        class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px] min-[1920px]:max-w-[1950px]"
+      >
         <!-- Sub-header -->
         <div
           class="flex flex-col justify-between min-[992px]:flex-row min-[992px]:items-center"
@@ -201,7 +203,7 @@
           <div>
             <a
               href="index.html"
-              class="block max-w-[150px] min-[375px]:max-w-[190px] min-[480px]:max-w-[254px] min-[576px]:max-w-[200px] sm:max-w-[194px] md:max-w-[198px] min-[992px]:max-w-[200px] lg:max-w-[200px] xl:max-w-[280px]"
+              class="block max-w-[150px] min-[375px]:max-w-[190px] min-[480px]:max-w-[254px] min-[576px]:max-w-[200px] sm:max-w-[194px] md:max-w-[198px] min-[992px]:max-w-[200px] lg:max-w-[200px] xl:max-w-[280px] 2xl:max-w-[300px] min-[1920px]:max-w-[400px]"
             >
               <img
                 src="Images/Logo  for bright bg.png"
@@ -475,7 +477,7 @@
       </section>
       <!-- About us -->
       <section class="about relative py-12 sm:py-16 lg:py-[100px]">
-        <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
+        <div class="relative max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
           <div class="flex flex-wrap gap-y-10 lg:gap-y-0 lg:mx-[-15px]">
             <div
               class="w-full min-[992px]:max-w-[40%] min-[992px]:basis-[40%] min-[992px]:px-[15px]"
@@ -517,13 +519,13 @@
               class="w-full mx-auto min-[992px]:max-w-[60%] min-[992px]:basis-[60%] min-[992px]:px-[15px]"
             >
               <span
-                class=" pt-5 min-[992px]:pt-14 xl:pt-28 mb-5 flex items-center gap-2 font-[family-name:--font-poppins] text-sm font-semibold tracking-[2px] text-[--primary-color-1] sm:mb-9 sm:gap-3 sm:text-xl sm:tracking-[4px]"
+                class="pt-5 min-[992px]:pt-14 xl:pt-28 mb-5 flex items-center gap-2 font-[family-name:--font-poppins] text-sm font-semibold tracking-[2px] text-[--primary-color-1] sm:mb-9 sm:gap-3 sm:text-xl sm:tracking-[4px]"
               >
                 <i class="fa-solid fa-paw"></i>
                 Our Story
               </span>
               <h2
-                class="max-w-[766px] xl:max-w-[500px]  font-[family-name:--font-Fredoka] text-[30px] leading-[1.25] sm:text-4xl lg:text-5xl xl:text-4xl lg:leading-[1.3] 2xl:max-w-[550px] min-[1920px]:max-w-[766px] min-[1920px]:text-5xl"
+                class="max-w-[766px] xl:max-w-[500px] font-[family-name:--font-Fredoka] text-[30px] leading-[1.25] sm:text-4xl lg:text-5xl xl:text-4xl lg:leading-[1.3] 2xl:max-w-[550px] min-[1920px]:max-w-[766px] min-[1920px]:text-5xl"
               >
                 More Than Adoption. We're Creating
                 <span class="text-[--btn-color]">Forever Families</span>
@@ -541,7 +543,7 @@
                 <!-- Learn More Button -->
                 <a
                   href="#"
-                  class="friend-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border-[2px] border-[--primary-color-1] shadow-xl hover:border-[--btn-color]  bg-[--heading-text] px-5 py-3 font-[family-name:--font-poppins] text-[15px] font-extrabold text-[--primary-color-1] shadow-xl transition-all duration-300 ease-in hover:border-[--btn-color] hover:text-[--btn-color] min-[375px]:text-base min-[480px]:text-[17px] min-[576px]:w-auto md:px-7 md:text-lg min-[992px]:py-4 xl:px-[30px] xl:py-[15px] xl:text-xl"
+                  class="friend-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border-[2px] border-[--primary-color-1] shadow-xl hover:border-[--btn-color] bg-[--heading-text] px-5 py-3 font-[family-name:--font-poppins] text-[15px] font-extrabold text-[--primary-color-1] shadow-xl transition-all duration-300 ease-in hover:border-[--btn-color] hover:text-[--btn-color] min-[375px]:text-base min-[480px]:text-[17px] min-[576px]:w-auto md:px-7 md:text-lg min-[992px]:py-4 xl:px-[30px] xl:py-[15px] xl:text-xl"
                 >
                   Learn More
                   <i class="fa-solid fa-paw"></i>
@@ -556,36 +558,554 @@
                 </a>
               </div>
             </div>
-            </div>
+          </div>
         </div>
-            <!-- image -->
-            <div
-              class="hidden xl:absolute xl:top-[15%] xl:right-0 xl:z-[999] xl:block xl:w-[360px] 2xl:w-[471px]"
-            >
-              <img
-                src="Images/about-us-dog.png"
-                alt="about-us-dog"
-                class="w-full object-contain"
-                loading="lazy"
-              />
-            </div>
+        <!-- image -->
+        <div
+          class="hidden xl:absolute xl:top-[15%] xl:right-0 xl:z-[999] xl:block xl:w-[360px] 2xl:w-[471px]"
+        >
+          <img
+            src="Images/about-us-dog.png"
+            alt="about-us-dog"
+            class="w-full object-contain"
+            loading="lazy"
+          />
+        </div>
       </section>
       <!-- Meet your match -->
-      <section class="pt-[70px] pb-[164px] relative">
+      <section class="relative py-12 sm:pt-[70px] sm:pb-24 lg:pb-[164px]">
         <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
           <span
-                class="flex justify-center items-center gap-2 font-[family-name:--font-poppins] text-sm font-semibold tracking-[2px] text-[--primary-color-1] sm:mb-9 sm:gap-3 sm:text-xl sm:tracking-[4px]"
-              >
-                <i class="fa-solid fa-paw"></i>
-                Meet Your Match
+            class="mb-4 flex items-center justify-center gap-2 text-center font-[family-name:--font-poppins] text-xs font-semibold tracking-[2px] text-[--primary-color-1] sm:mb-9 sm:gap-3 sm:text-xl sm:tracking-[4px]"
+          >
+            <i class="fa-solid fa-paw"></i>
+            Meet Your Match
+          </span>
+          <h2
+            class="mx-auto max-w-[300px] text-center font-[family-name:--font-Fredoka] text-3xl font-semibold leading-[1.2] text-[--primary-color-1] sm:max-w-[650px] sm:text-4xl lg:text-5xl"
+          >
+            Find the Companion<span class="text-[--btn-color]">
+              Meant for You</span
+            >
+          </h2>
+          <p
+            class="mx-auto mt-4 mb-8 max-w-[310px] text-center font-[family-name:--font-poppins] text-sm font-semibold leading-6 text-[--primary-color-1] opacity-60 sm:mt-6 sm:mb-14 sm:max-w-[850px] sm:text-xl sm:leading-normal"
+          >
+            From playful puppies and curious kittens to gentle rabbits and
+            cheerful birds, discover companions ready to become part of your
+            story.
+          </p>
+          <div class="responsive">
+            <!-- Card 1 -->
+            <div
+              class="w-full rounded-[21px] border-[3px] border-[--primary-color-1] p-3 sm:p-4 mx-4"
+            >
+              <div class="relative">
+                <div class="overflow-hidden rounded-[21px]">
+                  <img
+                    src="Images/persian.png"
+                    alt="persian"
+                    loading="lazy"
+                    class="block w-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
+                  />
+                </div>
+                <!-- Right Badge -->
+                <div
+                  class="bg-[--heading-text] pl-2 pb-2 rounded-bl-[21px] absolute top-0 right-[-3px] flex gap-2"
+                >
+                  <!-- Pet details -->
+                  <a
+                    href="#"
+                    class="border border-[--primary-color-1] rounded-[11px] p-[6px] lg:p-[10px] hover:bg-[--btn-color] hover:text-white transition-all duration-300 flex items-center justify-center text-lg lg:text-xl"
+                    ><i class="fa-solid fa-magnifying-glass"></i
+                  ></a>
+                  <!-- Wish list -->
+                  <a
+                    href="#"
+                    class="border border-[--primary-color-1] rounded-[11px] p-[6px] lg:p-[10px] flex items-center justify-center heartBtn text-lg lg:text-xl"
+                    ><i class="fa-regular fa-heart"></i
+                  ></a>
+                </div>
+                <!-- Bottom Badge -->
+                <div class="absolute bottom-3 left-3 flex items-center gap-2">
+                  <i class="fa-solid fa-heart text-[#F04336]"></i>
+                  <span
+                    class="font-semibold font-[family-name:--font-poppins] font-semibold text-lg lg:text-xl text-[#F4F1EA]"
+                  >
+                    (12k+)
+                  </span>
+                </div>
+              </div>
+              <!-- Content -->
+              <div class="mt-4">
+                <h3
+                  class="text-[20px] min-[480px]:text-[14px] sm:text-[11px] md:text-[15px] min-[992px]:text-[22px] lg:text-[23px] xl:text-[24px] font-bold text-[#0A303A]"
+                >
+                  Luna (Persian Cat)
+                </h3>
+                <p
+                  class="mt-2 text-base min-[480px]:text-sm sm:text-xs md:text-sm lg:text-base text-[#0A303A] opacity-0.8"
+                >
+                  Female
+                </p>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div
+              class="w-full rounded-[21px] border-[3px] border-[--primary-color-1] p-3 sm:p-4 mx-4"
+            >
+              <div class="relative">
+                <div class="overflow-hidden rounded-[21px]">
+                  <img
+                    src="Images/labrador.png"
+                    alt="labrador"
+                    loading="lazy"
+                    class="block w-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
+                  />
+                </div>
+                <!-- Right Badge -->
+                <div
+                  class="bg-[--heading-text] pl-2 pb-2 rounded-bl-[21px] absolute top-0 right-[-3px] flex gap-2"
+                >
+                  <!-- Pet details -->
+                  <a
+                    href="#"
+                    class="border border-[--primary-color-1] rounded-[11px] p-[6px] lg:p-[10px] hover:bg-[--btn-color] hover:text-white transition-all duration-300 flex items-center justify-center text-lg lg:text-xl"
+                    ><i class="fa-solid fa-magnifying-glass"></i
+                  ></a>
+                  <!-- Wish list -->
+                  <a
+                    href="#"
+                    class="border border-[--primary-color-1] rounded-[11px] p-[6px] lg:p-[10px] flex items-center justify-center heartBtn text-lg lg:text-xl"
+                    ><i class="fa-regular fa-heart"></i
+                  ></a>
+                </div>
+                <!-- Bottom Badge -->
+                <div class="absolute bottom-3 left-3 flex items-center gap-2">
+                  <i class="fa-solid fa-heart text-[#F04336]"></i>
+                  <span
+                    class="font-semibold font-[family-name:--font-poppins] font-semibold text-lg lg:text-xl text-[#F4F1EA]"
+                  >
+                    (12k+)
+                  </span>
+                </div>
+              </div>
+              <!-- Content -->
+              <div class="mt-4">
+                <h3
+                  class="text-[20px] min-[480px]:text-[14px] sm:text-[11px] md:text-[15px] min-[992px]:text-[22px] lg:text-[23px] xl:text-[24px] font-bold text-[#0A303A]"
+                >
+                  Max (Labrador)
+                </h3>
+                <p
+                  class="mt-2 text-base min-[480px]:text-sm sm:text-xs lg:text-base text-[#0A303A] opacity-0.8"
+                >
+                  Male
+                </p>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div
+              class="w-full rounded-[21px] border-[3px] border-[--primary-color-1] p-3 sm:p-4 mx-4"
+            >
+              <div class="relative">
+                <div class="overflow-hidden rounded-[21px]">
+                  <img
+                    src="Images/lovebird.png"
+                    alt="lovebird"
+                    loading="lazy"
+                    class="block w-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
+                  />
+                </div>
+                <!-- Right Badge -->
+                <div
+                  class="bg-[--heading-text] pl-2 pb-2 rounded-bl-[21px] absolute top-0 right-[-3px] flex gap-2"
+                >
+                  <!-- Pet details -->
+                  <a
+                    href="#"
+                    class="border border-[--primary-color-1] rounded-[11px] p-[6px] lg:p-[10px] hover:bg-[--btn-color] hover:text-white transition-all duration-300 flex items-center justify-center text-lg lg:text-xl"
+                    ><i class="fa-solid fa-magnifying-glass"></i
+                  ></a>
+                  <!-- Wish list -->
+                  <a
+                    href="#"
+                    class="border border-[--primary-color-1] rounded-[11px] p-[6px] lg:p-[10px] flex items-center justify-center heartBtn text-lg lg:text-xl"
+                    ><i class="fa-regular fa-heart"></i
+                  ></a>
+                </div>
+                <!-- Bottom Badge -->
+                <div class="absolute bottom-3 left-3 flex items-center gap-2">
+                  <i class="fa-solid fa-heart text-[#F04336]"></i>
+                  <span
+                    class="font-semibold font-[family-name:--font-poppins] font-semibold text-lg lg:text-xl text-[#F4F1EA]"
+                  >
+                    (12k+)
+                  </span>
+                </div>
+              </div>
+              <!-- Content -->
+              <div class="mt-4">
+                <h3
+                  class="text-[20px] min-[480px]:text-[14px] sm:text-[11px] md:text-[15px] min-[992px]:text-[22px] lg:text-[23px] xl:text-[24px] font-bold text-[#0A303A]"
+                >
+                  Rio (Lovebird)
+                </h3>
+                <p
+                  class="mt-2 text-base min-[480px]:text-sm sm:text-xs lg:text-base text-[#0A303A] opacity-0.8"
+                >
+                  Female
+                </p>
+              </div>
+            </div>
+            <!-- Card 4 -->
+            <div
+              class="w-full rounded-[21px] border-[3px] border-[--primary-color-1] p-3 sm:p-4 mx-4"
+            >
+              <div class="relative">
+                <div class="overflow-hidden rounded-[21px]">
+                  <img
+                    src="Images/syrian.png"
+                    alt="syrian"
+                    loading="lazy"
+                    class="block w-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
+                  />
+                </div>
+                <!-- Right Badge -->
+                <div
+                  class="bg-[--heading-text] pl-2 pb-2 rounded-bl-[21px] absolute top-0 right-[-3px] flex gap-2"
+                >
+                  <!-- Pet details -->
+                  <a
+                    href="#"
+                    class="border border-[--primary-color-1] rounded-[11px] p-[6px] lg:p-[10px] hover:bg-[--btn-color] hover:text-white transition-all duration-300 flex items-center justify-center text-lg lg:text-xl"
+                    ><i class="fa-solid fa-magnifying-glass"></i
+                  ></a>
+                  <!-- Wish list -->
+                  <a
+                    href="#"
+                    class="border border-[--primary-color-1] rounded-[11px] p-[6px] lg:p-[10px] flex items-center justify-center heartBtn text-lg lg:text-xl"
+                    ><i class="fa-regular fa-heart"></i
+                  ></a>
+                </div>
+                <!-- Bottom Badge -->
+                <div class="absolute bottom-3 left-3 flex items-center gap-2">
+                  <i class="fa-solid fa-heart text-[#F04336]"></i>
+                  <span
+                    class="font-semibold font-[family-name:--font-poppins] font-semibold text-lg lg:text-xl text-[#F4F1EA]"
+                  >
+                    (12k+)
+                  </span>
+                </div>
+              </div>
+              <!-- Content -->
+              <div class="mt-4">
+                <h3
+                  class="text-[20px] min-[480px]:text-[14px] sm:text-[11px] md:text-[15px] min-[992px]:text-[22px] lg:text-[23px] xl:text-[24px] font-bold text-[#0A303A]"
+                >
+                  Bil (Syrian Hamster)
+                </h3>
+                <p
+                  class="mt-2 text-base min-[480px]:text-sm sm:text-xs lg:text-base text-[#0A303A] opacity-0.8"
+                >
+                  Male
+                </p>
+              </div>
+            </div>
+            <!-- Card 5 -->
+            <div
+              class="w-full rounded-[21px] border-[3px] border-[--primary-color-1] p-3 sm:p-4 mx-4"
+            >
+              <div class="relative">
+                <div class="overflow-hidden rounded-[21px]">
+                  <img
+                    src="Images/rabit.png"
+                    alt="rabit"
+                    loading="lazy"
+                    class="block w-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
+                  />
+                </div>
+                <!-- Right Badge -->
+                <div
+                  class="bg-[--heading-text] pl-2 pb-2 rounded-bl-[21px] absolute top-0 right-[-3px] flex gap-2"
+                >
+                  <!-- Pet details -->
+                  <a
+                    href="#"
+                    class="border border-[--primary-color-1] rounded-[11px] p-[6px] lg:p-[10px] hover:bg-[--btn-color] hover:text-white transition-all duration-300 flex items-center justify-center text-lg lg:text-xl"
+                    ><i class="fa-solid fa-magnifying-glass"></i
+                  ></a>
+                  <!-- Wish list -->
+                  <a
+                    href="#"
+                    class="border border-[--primary-color-1] rounded-[11px] p-[6px] lg:p-[10px] flex items-center justify-center heartBtn text-lg lg:text-xl"
+                    ><i class="fa-regular fa-heart"></i
+                  ></a>
+                </div>
+                <!-- Bottom Badge -->
+                <div class="absolute bottom-3 left-3 flex items-center gap-2">
+                  <i class="fa-solid fa-heart text-[#F04336]"></i>
+                  <span
+                    class="font-semibold font-[family-name:--font-poppins] font-semibold text-lg lg:text-xl text-[#F4F1EA]"
+                  >
+                    (12k+)
+                  </span>
+                </div>
+              </div>
+              <!-- Content -->
+              <div class="mt-4">
+                <h3
+                  class="text-[20px] min-[480px]:text-[14px] sm:text-[11px] md:text-[15px] min-[992px]:text-[22px] lg:text-[23px] xl:text-[24px] font-bold text-[#0A303A]"
+                >
+                  Snowy (White Rabbit)
+                </h3>
+                <p
+                  class="mt-2 text-base min-[480px]:text-sm sm:text-xs lg:text-base text-[#0A303A] opacity-0.8"
+                >
+                  Male
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Companion Button -->
+          <div class="flex flex-wrap justify-center items-center mt-[51px]">
+            <a
+              href="#"
+              class="contact-btn inline-flex items-center justify-center gap-2 w-full min-[576px]:w-auto px-5 md:px-7 py-3 min-[992px]:py-4 xl:px-5 lg:py-2 xl:py-3 bg-[var(--btn-color)] border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] rounded-full font-[family-name:--font-poppins] font-bold text-[15px] min-[375px]:text-base min-[480px]:text-[17px] md:text-lg xl:text-xl text-white hover:text-[var(--btn-color)] overflow-hidden transition-all ease-in duration-300"
+            >
+              View All Companions
+              <i class="fa-solid fa-paw"></i>
+            </a>
+          </div>
+        </div>
+        <!-- bird image -->
+        <div
+          class="hidden xl:absolute xl:top-[-142px] xl:z-[999] xl:block xl:w-[480px] 2xl:w-full"
+        >
+          <img
+            src="Images/bird.png"
+            alt="bird"
+            loading="lazy"
+            class="object-contain"
+          />
+        </div>
+      </section>
+      <!-- Who Finds You -->
+       <section class="overflow-visible bg-[#D5E6EB] pt-[52px] pb-[90px] lg:pt-[130px] lg:pb-[130px] 2xl:pt-[187px] 2xl:pb-[140px]">
+        <div class="mx-auto max-w-[1350px] px-4 sm:px-5 lg:px-[15px]">
+          <!-- Left Content -->
+          <div class="relative text-center lg:text-left">
+            <!-- heading -->
+             <div class="grid font-[family-name:--font-Fredoka] text-[38px] font-bold leading-[0.98] tracking-wide text-[#0A303A] sm:text-5xl lg:text-[73px] xl:text-[80px]">
+              <!-- Outline layer -->
+              <span aria-hidden="true" class="absolute z-20 col-start-1 row-start-1  text-transparent [-webkit-text-stroke:2px_#F4F1EA] left-0 min-[576px]:left-[16px] sm:left-0 md:left-[40px] min-[992px]:left-[151px] top-0 lg:left-0 lg:top-0">
+                Find the One Who Finds You.
               </span>
-          <h2 class="mx-auto text-center font-[family-name:--font-Fredoka] font-semibold text-5xl text-[--primary-color-1]">Find the Companion<span class="text-[--btn-color]"> Meant for You</span></h2>
-          <p></p>
+              <!-- Main layer -->
+              <span class="relative z-10 col-start-1 row-start-1">
+              Find the One Who Finds You.
+              </span>
           </div>
-          <!-- bird image -->
-          <div class="absolute top-[-142px]">
-            <img src="Images/bird.png" alt="bird" loading="lazy"/>
+          <!-- Dog -->
+            <img src="Images/finds-dog.png"
+                    class="absolute bottom-[-357px] lg:bottom-[-400px] xl:bottom-[-402px] 2xl:bottom-[-411px] right-0 z-10 hidden md:block md:max-w-[100px] min-[992px]:max-w-[200px] lg:max-w-[434px] 2xl:max-w-[460px] object-contain"
+                    alt="Dog"/>
           </div>
+          <!-- Content -->
+            <p
+              class="mt-8 text-[#38535B] text-lg leading-8 max-w-[520px] mx-auto lg:mx-0 font-['Poppins']"
+            >
+              At Fur & Feather, we make pet adoption simple, trusted, and full
+              of heart. Browse adorable companions, connect with experts, book
+              vet appointments, and shop everything your new best friend
+              needs—all in one place.
+            </p>
+            <div
+              class="flex flex-wrap justify-center lg:justify-start gap-5 mt-10"
+            >
+            <!-- Adopt now button -->
+              <a
+                  href="#"
+                  class="contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] bg-[--btn-color] px-5 py-3 font-[family-name:--font-poppins] text-[15px] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[375px]:text-base min-[480px]:text-[17px] min-[576px]:w-auto md:px-7 md:text-lg min-[992px]:py-4 xl:px-5 xl:py-3 xl:text-xl"
+                >
+                  Adopt Now
+                  <i class="fa-solid fa-paw"></i>
+                </a>
+              <!-- Meet Your Friend button -->
+              <a
+                  href="#"
+                  class="friend-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border-[2px] border-[--primary-color-1] shadow-xl hover:border-[--btn-color] bg-[--heading-text] px-5 py-3 font-[family-name:--font-poppins] text-[15px] font-extrabold text-[--primary-color-1] shadow-xl transition-all duration-300 ease-in hover:border-[--btn-color] hover:text-[--btn-color] min-[375px]:text-base min-[480px]:text-[17px] min-[576px]:w-auto md:px-7 md:text-lg min-[992px]:py-4 xl:px-[30px] xl:py-[15px] xl:text-xl"
+                >
+                  Meet Your Friend
+                  <i class="fa-solid fa-paw"></i>
+                </a>
+            </div>
+        </div>
+       </section>
+      <!-- Number counting section -->
+      <section class="py-12 sm:py-16 lg:py-24">
+        <div class="bg-white py-12 sm:py-16 lg:py-24">
+        <div class="mx-auto max-w-[1350px] px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-8 text-center sm:grid-cols-3 sm:gap-0">
+        <!-- 1st number -->
+        <div class="border-b border-red-800 pb-8 sm:border-b-0 sm:border-r sm:pb-0">
+          <h2
+            class="counter-number text-5xl leading-none text-[#f54842] sm:text-6xl lg:text-7xl xl:text-[80px] hover:text-[--primary-color-1] ease-in-out duration-300"
+            data-target="12"
+            data-suffix="k"
+          >
+            0
+          </h2>
+          <p class="mt-2 px-3 text-sm font-medium text-[#f54842] sm:text-base lg:text-lg">
+            Happy Customers Who Trusted
+          </p>
+        </div>
+
+        <!-- 2nd number -->
+        <div class="border-b border-red-800 pb-8 sm:border-b-0 sm:border-r sm:pb-0">
+          <h2
+            class="counter-number text-5xl leading-none text-[#f54842] sm:text-6xl lg:text-7xl xl:text-[80px] hover:text-[--primary-color-1] ease-in-out duration-300"
+            data-target="250"
+            data-suffix="+"
+          >
+            0
+          </h2>
+          <p class="mt-2 px-3 text-sm font-medium text-[#f54842] sm:text-base lg:text-lg">
+            Projects Completed in Last 5 Years
+          </p>
+        </div>
+
+        <!-- 3rd number -->
+        <div>
+          <h2
+            class="counter-number text-5xl leading-none text-[#f54842] sm:text-6xl lg:text-7xl xl:text-[80px] hover:text-[--primary-color-1] ease-in-out duration-300"
+            data-target="155"
+          >
+            0
+          </h2>
+          <p class="mt-2 px-3 text-sm font-medium text-[#f54842] sm:text-base lg:text-lg">
+            Awards For Success Projects
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+      </section>
+      <!-- Shelter -->
+      <section class="">
+        <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
+          <span
+            class="mb-4 flex items-center justify-center gap-2 text-center font-[family-name:--font-poppins] text-xs font-semibold tracking-[2px] text-[--primary-color-1] sm:mb-9 sm:gap-3 sm:text-xl sm:tracking-[4px]"
+          >
+            <i class="fa-solid fa-paw"></i>
+            Shelters
+          </span>
+          <h2
+            class="mx-auto max-w-[358px] text-center font-[family-name:--font-Fredoka] text-3xl font-semibold leading-[1.2] text-[--primary-color-1] sm:max-w-[650px] sm:text-4xl lg:text-5xl lg:max-w-[756px]"
+          >A Little <span class="text-[--btn-color]">Shelter</span>. A Lifetime of <span class="text-[--btn-color]">Love</span>.
+          </h2> 
+          <p
+            class="mx-auto mt-4 mb-8 max-w-[310px] text-center font-[family-name:--font-poppins] text-sm font-semibold leading-6 text-[--primary-color-1] opacity-60 sm:mt-6 sm:mb-14 sm:max-w-[850px] sm:text-xl sm:leading-normal"
+          >
+            Explore expert advice, real journeys, and thoughtful tips to help you and your companion thrive together.
+          </p>
+          <div class="swiper mySwiper">
+            <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                  <div class="swiper-slide">
+                    <!-- Card 1 -->
+                     <div class="max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300">
+                        <div class="overflow-hidden rounded-[30px]">
+                          <img src="Images/shelter-1.png" alt="shelter-1" class="object-contain ease-in-out duration-300 hover:scale-110" loading="lazy"/>
+                        </div>
+                        <div class="mx-auto text-center mt-[-11px]">
+                          <i class="fa-solid fa-paw text-3xl"></i>
+                        </div>
+                        <div class="mx-auto text-center mt-[33px]">
+                          <h6 class="mb-[21px] font-[family-name:--font-poppins] text-xl font-semibold">Maple Tails Rescue</h6>
+                          <p class="font-[family-name:--font-poppins] text-lg font-semibold">Baner, Pune</p>
+                        </div>
+                     </div>
+                     </div>
+                     <div class="swiper-slide">
+                     <!-- Card 2 -->
+                     <div class="max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300">
+                        <div class="overflow-hidden rounded-[30px]">
+                          <img src="Images/shelter-2.png" alt="shelter-2" class="object-contain ease-in-out duration-300 hover:scale-110" loading="lazy"/>
+                        </div>
+                        <div class="mx-auto text-center mt-[-11px]">
+                          <i class="fa-solid fa-paw text-3xl"></i>
+                        </div>
+                        <div class="mx-auto text-center mt-[33px]">
+                          <h6 class="mb-[21px] font-[family-name:--font-poppins] text-xl font-semibold">The Nest & Nook Sanctuary</h6>
+                          <p class="font-[family-name:--font-poppins] text-lg font-semibold">Jubilee Hills, Hyderabad</p>
+                        </div>
+                     </div>
+                     </div>
+                     <div class="swiper-slide">
+                     <!-- Card 3 -->
+                     <div class="max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300">
+                        <div class="overflow-hidden rounded-[30px]">
+                          <img src="Images/shelter-3.png" alt="shelter-3" class="object-contain ease-in-out duration-300 hover:scale-110" loading="lazy"/>
+                        </div>
+                        <div class="mx-auto text-center mt-[-11px]">
+                          <i class="fa-solid fa-paw text-3xl"></i>
+                        </div>
+                        <div class="mx-auto text-center mt-[33px]">
+                          <h6 class="mb-[21px] font-[family-name:--font-poppins] text-xl font-semibold">Happy Tails Rescue Home</h6>
+                          <p class="font-[family-name:--font-poppins] text-lg font-semibold">Banjara Hills, Hyderabad</p>
+                        </div>
+                     </div>
+                     </div>
+                     <div class="swiper-slide">
+                     <!-- Card 4 -->
+                     <div class="max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300">
+                        <div class="overflow-hidden rounded-[30px]">
+                          <img src="Images/shelter-4.png" alt="shelter-4" class="object-contain ease-in-out duration-300 hover:scale-110" loading="lazy"/>
+                        </div>
+                        <div class="mx-auto text-center mt-[-11px]">
+                          <i class="fa-solid fa-paw text-3xl"></i>
+                        </div>
+                        <div class="mx-auto text-center mt-[33px]">
+                          <h6 class="mb-[21px] font-[family-name:--font-poppins] text-xl font-semibold">Golden Paws Rescue Home</h6>
+                          <p class="font-[family-name:--font-poppins] text-lg font-semibold">Andheri West, Mumbai</p>
+                        </div>
+                     </div>
+                     </div>
+                     <div class="swiper-slide">
+                     <!-- Card 5 -->
+                     <div class="max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300">
+                        <div class="overflow-hidden rounded-[30px]">
+                          <img src="Images/shelter-5.png" alt="shelter-5" class="object-contain ease-in-out duration-300 hover:scale-110" loading="lazy"/>
+                        </div>
+                        <div class="mx-auto text-center mt-[-11px]">
+                          <i class="fa-solid fa-paw text-3xl"></i>
+                        </div>
+                        <div class="mx-auto text-center mt-[33px]">
+                          <h6 class="mb-[21px] font-[family-name:--font-poppins] text-xl font-semibold">Bloom & Bark Shelter</h6>
+                          <p class="font-[family-name:--font-poppins] text-lg font-semibold">Sector 29, Gurugram</p>
+                        </div>
+                     </div>
+                     </div>
+                     <div class="swiper-slide">
+                     <!-- Card 6 -->
+                     <div class="max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300">
+                        <div class="overflow-hidden rounded-[30px]">
+                          <img src="Images/shelter-6.png" alt="shelter-6" class="object-contain ease-in-out duration-300 hover:scale-110" loading="lazy"/>
+                        </div>
+                        <div class="mx-auto text-center mt-[-11px]">
+                          <i class="fa-solid fa-paw text-3xl"></i>
+                        </div>
+                        <div class="mx-auto text-center mt-[33px]">
+                          <h6 class="mb-[21px] font-[family-name:--font-poppins] text-xl font-semibold">The Gentle Nest</h6>
+                          <p class="font-[family-name:--font-poppins] text-lg font-semibold">Salt Lake, Kolkata</p>
+                        </div>
+                     </div>
+                  </div>
+              </div>
+          </div>
+        </div>
       </section>
     </main>
     <!-- AOS Animation -->

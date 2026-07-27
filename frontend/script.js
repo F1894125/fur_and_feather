@@ -307,3 +307,102 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+// Heart Button
+
+const heartBtns = document.querySelectorAll(".heartBtn");
+
+heartBtns.forEach((heartBtn) => {
+  heartBtn.addEventListener("click", () => {
+    const icon = heartBtn.querySelector("i");
+
+    icon.classList.toggle("fa-regular");
+    icon.classList.toggle("fa-solid");
+    icon.classList.toggle("text-red-500");
+  });
+});
+
+// Companion Slider
+$('.responsive').slick({
+  dots: false,
+  arrows: false,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+      }
+    },
+    {
+      breakpoint: 640,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+});
+
+// Number Count
+const counters = document.querySelectorAll("[data-target]");
+
+    counters.forEach((counter) => {
+      const target = Number(counter.dataset.target);
+      const suffix = counter.dataset.suffix || "";
+      const duration = 1200;
+      const startTime = performance.now();
+
+      function updateCounter(currentTime) {
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        const value = Math.floor(progress * target);
+
+        counter.textContent = value + suffix;
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCounter);
+        } else {
+          counter.textContent = target + suffix;
+        }
+      }
+
+      requestAnimationFrame(updateCounter);
+    });
+// Shelter slider
+var swiper = new Swiper('.mySwiper', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+          },
+        },
+      });
+
