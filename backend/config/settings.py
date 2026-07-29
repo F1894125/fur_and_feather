@@ -1,7 +1,7 @@
-from pathlib import Path
-from decouple import config
 from datetime import timedelta
-import os
+from decouple import config
+from pathlib import Path
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django_extensions',
+    'django_filters',
 
     'accounts.apps.AccountsConfig',
 
@@ -44,8 +45,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.facebook',
 
     'pets.apps.PetsConfig',
-    'rest_framework',
-    'django_filters'
+    'shelters.apps.SheltersConfig',
 ]
 
 SITE_ID = 1
@@ -147,23 +147,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
-# REST_FRAMEWORK = {
-#     "DEFAULT_FILTER_BACKENDS": [
-#         "django_filters.rest_framework.DjangoFilterBackend",
-#         "rest_framework.filters.SearchFilter",
-#         "rest_framework.filters.OrderingFilter",
-#     ]
-# }
-REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES": [
-        "dj_rest_auth.jwt_auth.JWTCookieAuthentication",
-    ],
-    "DEFAULT_FILTER_BACKENDS": [
-        "django_filters.rest_framework.DjangoFilterBackend",
-        "rest_framework.filters.SearchFilter",
-        "rest_framework.filters.OrderingFilter",
-    ],
-}
 # CORS configuration
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000", # For standard React development port
@@ -175,11 +158,16 @@ CORS_ALLOWED_ORIGINS = [
 # Important for dj-rest-auth JWT cookies to pass from frontend to backend
 CORS_ALLOW_CREDENTIALS = True
 # DRF configuration
-# REST_FRAMEWORK = {
-#     'DEFAULT_AUTHENTICATION_CLASSES': [
-#         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
-#     ]
-# }
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
+    ],
+    "DEFAULT_FILTER_BACKENDS": [
+            "django_filters.rest_framework.DjangoFilterBackend",
+            "rest_framework.filters.SearchFilter",
+            "rest_framework.filters.OrderingFilter",
+    ],
+}
 
 AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
@@ -286,7 +274,7 @@ FRONTEND_PASSWORD_RESET_URL = config('FRONTEND_PASSWORD_RESET_URL')
 #     },
 # }
 
-# PROJECT_APPS = ["accounts", "pets"]
+# PROJECT_APPS = ["accounts", "pets", "applications"]
 
 # for app_name in PROJECT_APPS:
 #     log_dir = BASE_DIR / app_name / "logs"
