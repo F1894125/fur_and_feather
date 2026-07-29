@@ -383,7 +383,7 @@ const counters = document.querySelectorAll("[data-target]");
     });
 // Shelter slider
 var swiper = new Swiper('.mySwiper', {
-        slidesPerView: 3,
+        slidesPerView: 1,
         spaceBetween: 30,
         loop: true,
         autoplay: {
@@ -391,16 +391,42 @@ var swiper = new Swiper('.mySwiper', {
           disableOnInteraction: false,
         },
         breakpoints: {
-          640: {
+          480: {
             slidesPerView: 1,
             spaceBetween: 20,
           },
-          768: {
+          640: {
             slidesPerView: 2,
             spaceBetween: 40,
           },
           1024: {
             slidesPerView: 3,
+            spaceBetween: 50,
+          },
+        },
+      });
+
+// blog slider
+var swiper = new Swiper('.blogSwiper', {
+        slidesPerView: 1,
+        slidesToScroll: 1,
+        spaceBetween: 80,
+        loop: true,
+        // autoplay: {
+        //   delay: 2500,
+        //   disableOnInteraction: false,
+        // },
+        breakpoints: {
+          480: {
+            slidesPerView: 1,
+            spaceBetween: 60,
+          },
+          640: {
+            slidesPerView: 1.8,
+            spaceBetween: 80,
+          },
+          1024: {
+            slidesPerView: 1.4,
             spaceBetween: 50,
           },
         },

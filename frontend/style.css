@@ -22,6 +22,11 @@
   font-family: "Manrope";
   src: url(fonts/Manrope/static/Manrope-Regular.ttf) format(truetype);
 }
+@font-face {
+  font-family: "Fredericka";
+  src: url(fonts/Fredericka_the_Great/FrederickatheGreat-Regular.ttf) format(truetype);
+  font-weight: 400;
+}
 
 *{
     margin: 0;
@@ -32,6 +37,7 @@
     --font-Fredoka: "Fredoka";
     --font-poppins: "Poppins";
     --font-Manrope: "Manrope";
+    --font-fredricka: "Fredericka";
     --primary-color-1: #0A303A;
     --btn-color:#F04336;
     --heading-text:#F4F1EA;
@@ -56,6 +62,11 @@ html {
 img {
   max-width: 100%;
   height: auto;
+}
+.fredericka-the-great-regular {
+  font-family: "Fredericka the Great", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* Header */
@@ -93,12 +104,12 @@ img {
 .nav-items.active::after{
     width: 100%;
 }
-.contact-btn, .friend-btn{
+.contact-btn, .friend-btn, .read-btn{
     position: relative;
     z-index: 1;
     overflow: hidden;
 }
-.contact-btn::before, .friend-btn::before{
+.contact-btn::before, .friend-btn::before, .read-btn::before{
   content: "";
   position: absolute;
   z-index: -1;
@@ -111,11 +122,14 @@ img {
   left: 0;
   transition: width 0.5s ease-in-out;
 }
-.contact-btn:hover::before, .friend-btn:hover::before{
+.contact-btn:hover::before, .friend-btn:hover::before, .read-btn:hover::before{
   width: 100%;
 }
 .friend-btn::before{
   background: var(--primary-color-2);
+}
+.read-btn::before{
+  background: var(--btn-color);
 }
 
 /* Banner */
