@@ -412,18 +412,18 @@ var swiper = new Swiper('.blogSwiper', {
         slidesToScroll: 1,
         spaceBetween: 80,
         loop: true,
-        // autoplay: {
-        //   delay: 2500,
-        //   disableOnInteraction: false,
-        // },
+        autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+        },
         breakpoints: {
           480: {
             slidesPerView: 1,
             spaceBetween: 60,
           },
           640: {
-            slidesPerView: 1.8,
-            spaceBetween: 80,
+            slidesPerView: 1,
+            spaceBetween: 60,
           },
           1024: {
             slidesPerView: 1.4,
