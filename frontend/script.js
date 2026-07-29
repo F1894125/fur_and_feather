@@ -387,8 +387,8 @@ var swiper = new Swiper('.mySwiper', {
         spaceBetween: 30,
         loop: true,
         autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
+        delay: 2500,
+        disableOnInteraction: false,
         },
         breakpoints: {
           480: {
@@ -428,6 +428,32 @@ var swiper = new Swiper('.blogSwiper', {
           1024: {
             slidesPerView: 1.4,
             spaceBetween: 50,
+          },
+        },
+      });
+
+// Shelter slider
+var swiper = new Swiper('.storySwiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        slidesToScroll: 1,
+        loop: true,
+        autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+        },
+        breakpoints: {
+          480: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 60,
           },
         },
       });
