@@ -458,3 +458,40 @@ var swiper = new Swiper('.storySwiper', {
         },
       });
 
+// Accordian
+const buttons = document.querySelectorAll(".faq-btn");
+
+buttons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const currentContent = button.nextElementSibling;
+        const currentIcon = button.querySelector("i");
+
+        // Close all items
+        document.querySelectorAll(".faq-content").forEach(content => {
+            if(content !== currentContent){
+                content.classList.add("hidden");
+            }
+        });
+
+        document.querySelectorAll(".faq-btn i").forEach(icon=>{
+            icon.classList.remove("fa-minus");
+            icon.classList.add("fa-plus");
+        });
+
+        // Toggle current item
+        currentContent.classList.toggle("hidden");
+
+        if(currentContent.classList.contains("hidden")){
+            currentIcon.classList.remove("fa-minus");
+            currentIcon.classList.add("fa-plus");
+        }else{
+            currentIcon.classList.remove("fa-plus");
+            currentIcon.classList.add("fa-minus");
+        }
+
+    });
+
+});
+

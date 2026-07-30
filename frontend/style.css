@@ -188,4 +188,10 @@ img {
         transform:rotate(360deg);
     }
 }
-
+/* Forever banner */
+.forever-banner{
+ background: url("Images/forever banner.png") no-repeat;
+ background-size: cover;
+ background-position: center;
+ min-height: 888px;
+}

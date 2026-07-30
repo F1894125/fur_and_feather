@@ -891,9 +891,7 @@
         </div>
       </section>
       <!-- Who Finds You -->
-      <section
-        class="overflow-visible bg-[#D5E6EB] pt-[52px] pb-[90px] lg:pt-[130px] lg:pb-[130px] 2xl:pt-[187px] 2xl:pb-[140px]"
-      >
+      <section class="overflow-visible bg-[#D5E6EB] pt-[52px] pb-[90px] lg:pt-[130px] lg:pb-[130px] 2xl:pt-[187px] 2xl:pb-[140px]">
         <div class="mx-auto max-w-[1350px] px-4 sm:px-5 lg:px-[15px]">
           <!-- Left Content -->
           <div class="relative text-center lg:text-left">
@@ -904,7 +902,7 @@
               <!-- Outline layer -->
               <span
                 aria-hidden="true"
-                class="absolute z-20 col-start-1 row-start-1 text-transparent [-webkit-text-stroke:2px_#F4F1EA] left-0 min-[576px]:left-[16px] sm:left-0 md:left-[40px] min-[992px]:left-[151px] top-0 lg:left-0 lg:top-0"
+                class="hidden absolute z-20 col-start-1 row-start-1 text-transparent [-webkit-text-stroke:2px_#F4F1EA] lg:block lg:left-0 lg:top-0"
               >
                 Find the One Who Finds You.
               </span>
@@ -916,7 +914,7 @@
             <!-- Dog -->
             <img
               src="Images/finds-dog.png"
-              class="absolute bottom-[-357px] lg:bottom-[-400px] xl:bottom-[-402px] 2xl:bottom-[-411px] right-0 z-10 hidden md:block md:max-w-[100px] min-[992px]:max-w-[200px] lg:max-w-[434px] 2xl:max-w-[460px] object-contain"
+              class="absolute bottom-[-357px] lg:bottom-[-400px] xl:bottom-[-402px] 2xl:bottom-[-411px] right-0 z-10 hidden lg:block lg:max-w-[434px] 2xl:max-w-[460px] object-contain"
               alt="Dog"
             />
           </div>
@@ -1555,11 +1553,12 @@
                 </div>
                 <!-- Card -->
                 <div
-                  class="bg-[#D5E6EB] hover:bg-white border border-[--primary-color-1] rounded-[20px] py-[50px] px-[30px] text-center ease-in-out duration-300 flex flex-col justify-between
-        h-full w-full gap-3 xl:gap-6"
+                  class="bg-[#D5E6EB] hover:bg-white border border-[--primary-color-1] rounded-[20px] py-[50px] px-[30px] text-center ease-in-out duration-300 flex flex-col justify-between h-full w-full gap-3 xl:gap-6"
                 >
                   <div class="flex justify-center items-center gap-2">
-                    <span class="text-yellow-400 text-xl"><i class="fa-solid fa-star"></i></span>
+                    <span class="text-yellow-400 text-xl"
+                      ><i class="fa-solid fa-star"></i
+                    ></span>
                     <span class="text-[--primary-color-1] text-[24px] font-bold"
                       >4.9</span
                     >
@@ -1592,11 +1591,12 @@
                 </div>
                 <!-- Card -->
                 <div
-                  class="bg-[#D5E6EB] hover:bg-white border border-[--primary-color-1] rounded-[20px] py-[50px] px-[30px] text-center ease-in-out duration-300 flex flex-col justify-between
-        h-full w-full gap-3 xl:gap-6"
+                  class="bg-[#D5E6EB] hover:bg-white border border-[--primary-color-1] rounded-[20px] py-[50px] px-[30px] text-center ease-in-out duration-300 flex flex-col justify-between h-full w-full gap-3 xl:gap-6"
                 >
                   <div class="flex justify-center items-center gap-2">
-                    <span class="text-yellow-400 text-xl"><i class="fa-solid fa-star"></i></span>
+                    <span class="text-yellow-400 text-xl"
+                      ><i class="fa-solid fa-star"></i
+                    ></span>
                     <span class="text-[--primary-color-1] text-[24px] font-bold"
                       >4.8</span
                     >
@@ -1618,7 +1618,7 @@
                 </div>
               </div>
               <!-- Slide 3 -->
-             <div class="swiper-slide h-auto flex">
+              <div class="swiper-slide h-auto flex">
                 <div
                   class="absolute left-1/2 -translate-x-1/2 top-[-57px] z-20"
                 >
@@ -1630,11 +1630,12 @@
                 </div>
                 <!-- Card -->
                 <div
-                  class="bg-[#D5E6EB] hover:bg-white border border-[--primary-color-1] rounded-[20px] py-[50px] px-[30px] text-center ease-in-out duration-300 flex flex-col justify-between
-        h-full w-full gap-3 xl:gap-6"
+                  class="bg-[#D5E6EB] hover:bg-white border border-[--primary-color-1] rounded-[20px] py-[50px] px-[30px] text-center ease-in-out duration-300 flex flex-col justify-between h-full w-full gap-3 xl:gap-6"
                 >
                   <div class="flex justify-center items-center gap-2">
-                    <span class="text-yellow-400 text-xl"><i class="fa-solid fa-star"></i></span>
+                    <span class="text-yellow-400 text-xl"
+                      ><i class="fa-solid fa-star"></i
+                    ></span>
                     <span class="text-[--primary-color-1] text-[24px] font-bold"
                       >4.3</span
                     >
@@ -1642,7 +1643,11 @@
                   <p
                     class="text-[--primary-color-1] text-xs sm:text-sm lg:text-base 2xl:text-[18px] leading-6 lg:leading-8 font-medium font-[family-name:--font-poppins]"
                   >
-                    "Adopting Kiwi was one of the best decisions I've ever made. The shelter shared everything I needed to know and made me feel completely prepared. Every morning now begins with cheerful chirps, and my home feels brighter, happier, and full of life."
+                    "Adopting Kiwi was one of the best decisions I've ever made.
+                    The shelter shared everything I needed to know and made me
+                    feel completely prepared. Every morning now begins with
+                    cheerful chirps, and my home feels brighter, happier, and
+                    full of life."
                   </p>
                   <h4
                     class="font-bold text-base text-[--primary-color-1] font-[family-name:--font-poppins] flex flex-wrap justify-center lg:justify-end items-center"
@@ -1664,11 +1669,12 @@
                 </div>
                 <!-- Card -->
                 <div
-                  class="bg-[#D5E6EB] hover:bg-white border border-[--primary-color-1] rounded-[20px] py-[50px] px-[30px] text-center ease-in-out duration-300 flex flex-col justify-between
-        h-full w-full gap-3 xl:gap-6"
+                  class="bg-[#D5E6EB] hover:bg-white border border-[--primary-color-1] rounded-[20px] py-[50px] px-[30px] text-center ease-in-out duration-300 flex flex-col justify-between h-full w-full gap-3 xl:gap-6"
                 >
                   <div class="flex justify-center items-center gap-2">
-                    <span class="text-yellow-400 text-xl"><i class="fa-solid fa-star"></i></span>
+                    <span class="text-yellow-400 text-xl"
+                      ><i class="fa-solid fa-star"></i
+                    ></span>
                     <span class="text-[--primary-color-1] text-[24px] font-bold"
                       >4.5</span
                     >
@@ -1676,7 +1682,11 @@
                   <p
                     class="text-[--primary-color-1] text-xs sm:text-sm lg:text-base 2xl:text-[18px] leading-6 lg:leading-8 font-medium font-[family-name:--font-poppins]"
                   >
-                    "The entire adoption process was so smooth and reassuring. The team answered every question, shared updates, and genuinely cared about finding the right match. Bruno settled in from day one, and now I honestly can't imagine life without him."
+                    "The entire adoption process was so smooth and reassuring.
+                    The team answered every question, shared updates, and
+                    genuinely cared about finding the right match. Bruno settled
+                    in from day one, and now I honestly can't imagine life
+                    without him."
                   </p>
                   <h4
                     class="font-bold text-base text-[--primary-color-1] font-[family-name:--font-poppins] flex flex-wrap justify-center lg:justify-end items-center"
@@ -1698,11 +1708,12 @@
                 </div>
                 <!-- Card -->
                 <div
-                  class="bg-[#D5E6EB] hover:bg-white border border-[--primary-color-1] rounded-[20px] py-[50px] px-[30px] text-center ease-in-out duration-300 flex flex-col justify-between
-        h-full w-full gap-3 xl:gap-6"
+                  class="bg-[#D5E6EB] hover:bg-white border border-[--primary-color-1] rounded-[20px] py-[50px] px-[30px] text-center ease-in-out duration-300 flex flex-col justify-between h-full w-full gap-3 xl:gap-6"
                 >
                   <div class="flex justify-center items-center gap-2">
-                    <span class="text-yellow-400 text-xl"><i class="fa-solid fa-star"></i></span>
+                    <span class="text-yellow-400 text-xl"
+                      ><i class="fa-solid fa-star"></i
+                    ></span>
                     <span class="text-[--primary-color-1] text-[24px] font-bold"
                       >4.9</span
                     >
@@ -1710,7 +1721,11 @@
                   <p
                     class="text-[--primary-color-1] text-xs sm:text-sm lg:text-base 2xl:text-[18px] leading-6 lg:leading-8 font-medium font-[family-name:--font-poppins]"
                   >
-                    "We visited 'just to look' and walked out with Mochi, our little rabbit. He's curious, playful, and somehow runs the house now. Adopting him was one of the happiest decisions we've ever made.Our little rabbit has brought so much happiness into our everyday lives. "
+                    "We visited 'just to look' and walked out with Mochi, our
+                    little rabbit. He's curious, playful, and somehow runs the
+                    house now. Adopting him was one of the happiest decisions
+                    we've ever made.Our little rabbit has brought so much
+                    happiness into our everyday lives. "
                   </p>
                   <h4
                     class="font-bold text-base text-[--primary-color-1] font-[family-name:--font-poppins] flex flex-wrap justify-center lg:justify-end items-center"
@@ -1722,26 +1737,283 @@
             </div>
           </div>
           <!-- view more & Share experience button -->
-          <div class="flex flex-wrap items-center justify-center mt-[51px] gap-4">
-                <!-- View More Button -->
-                <a
-                  href="#"
-                  class="friend-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border-[2px] border-[--primary-color-1] shadow-xl hover:border-[--btn-color] bg-[--heading-text] px-5 py-3 font-[family-name:--font-poppins] text-[15px] font-extrabold text-[--primary-color-1] shadow-xl transition-all duration-300 ease-in hover:border-[--btn-color] hover:text-[--btn-color] min-[375px]:text-base min-[480px]:text-[17px] min-[576px]:w-auto md:px-7 md:text-lg min-[992px]:py-4 xl:px-5 xl:py-3 xl:text-xl"
-                >
-                  View More
-                  <i class="fa-solid fa-paw"></i>
-                </a>
-                <!-- Share Experience Button -->
-                <a
-                  href="#"
-                  class="contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] bg-[--btn-color] px-5 py-3 font-[family-name:--font-poppins] text-[15px] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[375px]:text-base min-[480px]:text-[17px] min-[576px]:w-auto md:px-7 md:text-lg min-[992px]:py-4 xl:px-5 xl:py-3 xl:text-xl"
-                >
-                  Share Experience
-                  <i class="fa-solid fa-paw"></i>
-                </a>
-              </div>
+          <div
+            class="flex flex-wrap items-center justify-center mt-[51px] gap-4"
+          >
+            <!-- View More Button -->
+            <a
+              href="#"
+              class="friend-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border-[2px] border-[--primary-color-1] shadow-xl hover:border-[--btn-color] bg-[--heading-text] px-5 py-3 font-[family-name:--font-poppins] text-[15px] font-extrabold text-[--primary-color-1] shadow-xl transition-all duration-300 ease-in hover:border-[--btn-color] hover:text-[--btn-color] min-[375px]:text-base min-[480px]:text-[17px] min-[576px]:w-auto md:px-7 md:text-lg min-[992px]:py-4 xl:px-5 xl:py-3 xl:text-xl"
+            >
+              View More
+              <i class="fa-solid fa-paw"></i>
+            </a>
+            <!-- Share Experience Button -->
+            <a
+              href="#"
+              class="contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] bg-[--btn-color] px-5 py-3 font-[family-name:--font-poppins] text-[15px] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[375px]:text-base min-[480px]:text-[17px] min-[576px]:w-auto md:px-7 md:text-lg min-[992px]:py-4 xl:px-5 xl:py-3 xl:text-xl"
+            >
+              Share Experience
+              <i class="fa-solid fa-paw"></i>
+            </a>
+          </div>
         </div>
       </section>
+      <!-- Questions -->
+      <section class=" relative py-16 md:py-20 lg:py-[117px]">
+        <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
+          <span
+            class="mb-4 flex items-center justify-center gap-2 text-center font-[family-name:--font-poppins] text-xs font-semibold tracking-[2px] text-[--primary-color-1] sm:mb-9 sm:gap-3 sm:text-xl sm:tracking-[4px]"
+          >
+            <i class="fa-solid fa-paw"></i>
+            Ask Away
+          </span>
+          <h2
+            class="mx-auto max-w-[358px] text-center font-[family-name:--font-Fredoka] text-3xl font-semibold leading-[1.2] text-[--primary-color-1] sm:max-w-[650px] sm:text-4xl lg:text-5xl lg:max-w-[780px]"
+          >
+            Got <span class="text-[--btn-color]">Questions</span> ? We've Got
+            <span class="text-[--btn-color]">Answers</span>.
+          </h2>
+          <p
+            class="mx-auto mt-4 mb-8 max-w-[600px] text-center font-[family-name:--font-poppins] text-sm font-semibold leading-6 text-[--primary-color-1] opacity-60 sm:mt-6 sm:mb-14 sm:max-w-[850px] sm:text-xl sm:leading-normal"
+          >
+            From adoption to pet care, we've answered the questions every future
+            pet parent asks—so you can focus on what truly matters: welcoming
+            your new best friend home.
+          </p>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-4 items-center">
+            <div>
+              <img
+                src="Images/FAQ.png"
+                alt="FAQ"
+                loading="lazy"
+                class="w-full max-w-[600px] mx-auto object-contain"
+              />
+            </div>
+            <div class="w-full space-y-3">
+              <!-- Item 1-->
+              <div
+                class="faq-item border border-[#3E5667] rounded-xl overflow-hidden bg-white"
+              >
+                <button
+                  class="faq-btn w-full flex justify-between items-center px-5 py-4 text-left font-semibold text-[#163042] duration-500 ease-in-out"
+                >
+                  <span
+                    class="font-[family-name:--font-poppins] text-[15px] sm:text-base md:text-lg lg:text-xl font-semibold leading-[1.4] pr-4"
+                    >How does the adoption process work?</span
+                  >
+                  <i
+                    class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-all duration-300"
+                  ></i>
+                </button>
+                <div
+                  class="faq-content hidden px-4 sm:px-5 pb-5 duration-500 ease-in-out"
+                >
+                  <p class="text-sm sm:text-base text-gray-500 leading-7">
+                    Browse pets, submit a request, meet your chosen companion,
+                    and complete the adoption once approved
+                  </p>
+                </div>
+              </div>
+              <!-- Item 2 -->
+              <div
+                class="faq-item border border-[#3E5667] rounded-xl overflow-hidden bg-white"
+              >
+                <button
+                  class="faq-btn w-full flex justify-between items-center px-5 py-4 text-left font-semibold text-[#163042] duration-500 ease-in-out"
+                >
+                  <span
+                    class="font-[family-name:--font-poppins] text-[15px] sm:text-base md:text-lg lg:text-xl font-semibold leading-[1.4] pr-4"
+                    >Can I meet the pet before adopting?</span
+                  >
+                  <i
+                    class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-all duration-300"
+                  ></i>
+                </button>
+                <div
+                  class="faq-content hidden px-4 sm:px-5 pb-5 duration-500 ease-in-out"
+                >
+                  <p class="text-sm sm:text-base text-gray-500 leading-7">
+                    Yes. We encourage every adopter to meet the pet first to
+                    ensure it's the right match.
+                  </p>
+                </div>
+              </div>
+              <!-- Item 3 -->
+              <div
+                class="faq-item border border-[#3E5667] rounded-xl overflow-hidden bg-white"
+              >
+                <button
+                  class="faq-btn w-full flex justify-between items-center px-5 py-4 text-left font-semibold text-[#163042] duration-500 ease-in-out"
+                >
+                  <span
+                    class="font-[family-name:--font-poppins] text-[15px] sm:text-base md:text-lg lg:text-xl font-semibold leading-[1.4] pr-4"
+                    >Are the pets vaccinated and healthy?</span
+                  >
+                  <i
+                    class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-all duration-300"
+                  ></i>
+                </button>
+                <div
+                  class="faq-content hidden px-4 sm:px-5 pb-5 duration-500 ease-in-out"
+                >
+                  <p class="text-sm sm:text-base text-gray-500 leading-7">
+                    Each pet profile includes available health records,
+                    vaccination status, and medical information.
+                  </p>
+                </div>
+              </div>
+              <!-- Item 4 -->
+              <div
+                class="faq-item border border-[#3E5667] rounded-xl overflow-hidden bg-white"
+              >
+                <button
+                  class="faq-btn w-full flex justify-between items-center px-5 py-4 text-left font-semibold text-[#163042] duration-500 ease-in-out"
+                >
+                  <span
+                    class="font-[family-name:--font-poppins] text-[15px] sm:text-base md:text-lg lg:text-xl font-semibold leading-[1.4] pr-4"
+                    >What if the adoption doesn't work out?</span
+                  >
+                  <i
+                    class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-all duration-300"
+                  ></i>
+                </button>
+                <div
+                  class="faq-content hidden px-4 sm:px-5 pb-5 duration-500 ease-in-out"
+                >
+                  <p class="text-sm sm:text-base text-gray-500 leading-7">
+                    Many rescue partners have return policies to ensure the
+                    pet's wellbeing. Check the pet's profile for details.
+                  </p>
+                </div>
+              </div>
+              <!-- Item 5 -->
+              <div
+                class="faq-item border border-[#3E5667] rounded-xl overflow-hidden bg-white"
+              >
+                <button
+                  class="faq-btn w-full flex justify-between items-center px-5 py-4 text-left font-semibold text-[#163042] duration-500 ease-in-out"
+                >
+                  <span
+                    class="font-[family-name:--font-poppins] text-[15px] sm:text-base md:text-lg lg:text-xl font-semibold leading-[1.4] pr-4"
+                    >How long does the adoption process take?</span
+                  >
+                  <i
+                    class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-all duration-300"
+                  ></i>
+                </button>
+                <div
+                  class="faq-content hidden px-4 sm:px-5 pb-5 duration-500 ease-in-out"
+                >
+                  <p class="text-sm sm:text-base text-gray-500 leading-7">
+                    It depends on the rescue partner, but most requests are
+                    reviewed within a few days.
+                  </p>
+                </div>
+              </div>
+              <!-- Item 6 -->
+              <div
+                class="faq-item border border-[#3E5667] rounded-xl overflow-hidden bg-white"
+              >
+                <button
+                  class="faq-btn w-full flex justify-between items-center px-5 py-4 text-left font-semibold text-[#163042] duration-500 ease-in-out"
+                >
+                  <span
+                    class="font-[family-name:--font-poppins] text-[15px] sm:text-base md:text-lg lg:text-xl font-semibold leading-[1.4] pr-4"
+                    >Are the pet profiles verified?</span
+                  >
+                  <i
+                    class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-all duration-300"
+                  ></i>
+                </button>
+                <div
+                  class="faq-content hidden px-4 sm:px-5 pb-5 duration-500 ease-in-out"
+                >
+                  <p class="text-sm sm:text-base text-gray-500 leading-7">
+                    We work with trusted shelters and partners to provide
+                    accurate information.
+                  </p>
+                </div>
+              </div>
+              <!-- Item 7 -->
+              <div
+                class="faq-item border border-[#3E5667] rounded-xl overflow-hidden bg-white"
+              >
+                <button
+                  class="faq-btn w-full flex justify-between items-center px-5 py-4 text-left font-semibold text-[#163042] duration-500 ease-in-out"
+                >
+                  <span
+                    class="font-[family-name:--font-poppins] text-[15px] sm:text-base md:text-lg lg:text-xl font-semibold leading-[1.4] pr-4"
+                    >Do you provide post-adoption support?</span
+                  >
+                  <i
+                    class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-all duration-300"
+                  ></i>
+                </button>
+                <div
+                  class="faq-content hidden px-4 sm:px-5 pb-5 duration-500 ease-in-out"
+                >
+                  <p class="text-sm sm:text-base text-gray-500 leading-7">
+                    Yes. We offer care guides and access to trusted pet care
+                    resources.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- view more & Share experience button -->
+          <div
+            class="flex flex-wrap items-center justify-center mt-[51px] gap-4"
+          >
+            <!-- View More Button -->
+            <a
+              href="#"
+              class="friend-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border-[2px] border-[--primary-color-1] shadow-xl hover:border-[--btn-color] bg-[--heading-text] px-5 py-3 font-[family-name:--font-poppins] text-[15px] font-extrabold text-[--primary-color-1] shadow-xl transition-all duration-300 ease-in hover:border-[--btn-color] hover:text-[--btn-color] min-[375px]:text-base min-[480px]:text-[17px] min-[576px]:w-auto md:px-7 md:text-lg min-[992px]:py-4 xl:px-5 xl:py-3 xl:text-xl"
+            >
+              Find Your Forever Friend
+              <i class="fa-solid fa-paw"></i>
+            </a>
+            <!-- Share Experience Button -->
+            <a
+              href="#"
+              class="contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] bg-[--btn-color] px-5 py-3 font-[family-name:--font-poppins] text-[15px] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[375px]:text-base min-[480px]:text-[17px] min-[576px]:w-auto md:px-7 md:text-lg min-[992px]:py-4 xl:px-5 xl:py-3 xl:text-xl"
+            >
+              Let's Chat
+              <i class="fa-solid fa-paw"></i>
+            </a>
+          </div>
+          <!-- cat Image -->
+          <div>
+            <img
+              src="Images/peacock.png"
+              alt="peacock"
+              loading="lazy"
+              class="hidden min-[1920px]:bottom-0 min-[1920px]:right-0 min-[1920px]:absolute min-[1920px]:z-[999] min-[1920px]:block min-[1920px]:w-[303px] object-contain"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- Forever on -->
+      <section class="forever-banner pt-14 md:pt-24 lg:pt-[140px] xl:pt-[105px] 2xl:pt-[97px] min-[1920px]:pt-[48px]">
+       <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
+        <div class="flex flex-wrap mx-[-15px]">
+          <div class="max-w-full text-center mx-auto md:max-w-[60%] md:basis-[60%] md:px-[15px] md:text-left">
+            <h2 class="mb-4 lg:mb-[30px] xl:mb-[50px] text-[33px] sm:text-[48px] lg:text-[61px] xl:text-[80px] 2xl:text-[82px] font-[family-name:--font-Fredoka] leading-[1.04]">Until They Find Their <span class="text-[--btn-color]">Forever One.</span></h2>
+            <a
+              href="#"
+              class="mb-4 md:mb-0 contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] bg-[--btn-color] px-5 py-3 font-[family-name:--font-poppins] text-[15px] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[375px]:text-base min-[480px]:text-[17px] min-[576px]:w-auto md:px-7 md:text-lg min-[992px]:py-4 xl:px-5 xl:py-3 xl:text-xl"
+            >
+              Discover Shelter Companions
+              <i class="fa-solid fa-paw"></i>
+            </a>
+          </div>
+          <div class="max-w-full text-center mx-auto  md:max-w-[40%] md:basis-[40%] md:px-[15px] md:text-left">
+            <p>Every pet in our partner shelters is cared for with patience, dignity, and hope—waiting for the moment someone chooses them, not for what they are, but for who they are.</p>
+          </div>
+        </div>
+       </div> 
+      </section>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea illum, repellat maxime suscipit, atque rem, quo neque labore in quia quasi unde modi ab voluptate dolor doloribus fugiat sequi libero.
     </main>
     <!-- AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
