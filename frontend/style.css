@@ -209,7 +209,7 @@ img {
 }
 /* footer section */
 .footer-banner{
-  background: url("Images/Footer.png") no-repeat;
+  background: url("Images/footer-background.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   min-height: 750px;

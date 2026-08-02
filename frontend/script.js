@@ -81,18 +81,32 @@ $(document).ready(function () {
     } else {
       localStorage.removeItem(REMEMBER_KEY);
     }
-
-    // Loading state (replace the timeout with a real auth request, e.g. $.ajax)
     $loginBtn.prop("disabled", true);
     $loginBtnLabel.html('<span class="spinner"></span>');
+    let users = JSON.parse(localStorage.getItem("users")) || [];
 
-    setTimeout(function () {
-      $loginBtn.prop("disabled", false);
-      $loginBtnLabel.html(loginBtnHtml);
-      alert("Logged in! (Wire this up to your real authentication endpoint.)");
-    }, 1200);
-  });
+const email = $.trim($email.val());
+const password = $password.val();
 
+const user = users.find(
+    u => u.email === email && u.password === password
+);
+
+if (user) {
+
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("currentUser", JSON.stringify(user));
+
+    alert("Login Successful!");
+    window.location.href = "index.html";
+
+} else {
+
+    alert("Invalid Email or Password");
+
+}
+
+});
   /* ---------- Social buttons (demo) ---------- */
   $(".social-btn").on("click", function () {
     alert(
@@ -102,6 +116,29 @@ $(document).ready(function () {
     );
   });
 });
+// Login and signup button create
+document.addEventListener("DOMContentLoaded", function () {
+
+    const guestMenu = document.getElementById("guestMenu");
+    const userMenu = document.getElementById("userMenu");
+
+    if (localStorage.getItem("isLoggedIn") === "true") {
+        guestMenu.style.display = "none";
+        userMenu.style.display = "block";
+    } else {
+        guestMenu.style.display = "flex";
+        userMenu.style.display = "none";
+    }
+
+});
+// Logout button
+const logoutBtn = document.getElementById("logoutBtn");
+if (logoutBtn) {
+    logoutBtn.addEventListener("click", function () {
+        localStorage.removeItem("isLoggedIn");
+        window.location.href = "index.html";
+    });
+}
 // Create Form
 $(document).ready(function () {
   const $form = $("#create-form");
@@ -262,17 +299,37 @@ $(document).ready(function () {
     $("#loginBtn").prop("disabled", true);
     $("#loginBtnLabel").html('<span class="spinner"></span> Creating...');
 
-    setTimeout(function () {
-      $("#loginBtn").prop("disabled", false);
-      $("#loginBtnLabel").html(
-        'Create Account <i class="fa-solid fa-paw"></i>',
-      );
+  // Get existing users
+let users = JSON.parse(localStorage.getItem("users")) || [];
 
-      alert("Account created successfully!");
+// Create new user
+const newUser = {
+    firstName: $.trim($fname.val()),
+    lastName: $.trim($lname.val()),
+    email: $.trim($email.val()),
+    password: $password.val()
+};
 
-      $form[0].reset();
-    }, 1500);
-  });
+// Check duplicate email
+const exists = users.some(user => user.email === newUser.email);
+
+if (exists) {
+    alert("Email already exists!");
+    return;
+}
+
+// Add new user
+users.push(newUser);
+
+// Save array
+localStorage.setItem("users", JSON.stringify(users));
+
+alert("Account created successfully!");
+
+window.location.href = "login.html";
+
+});
+
 });
 
 // Humbarger Menu

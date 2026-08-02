@@ -53,7 +53,7 @@
       >
         <!-- Sub-header -->
         <div
-          class="flex flex-col justify-between min-[992px]:flex-row min-[992px]:items-center"
+          class="flex flex-wrap justify-between gap-4"
         >
           <div class="flex flex-wrap items-center gap-2">
             <div>
@@ -61,7 +61,7 @@
                 width="24"
                 height="30"
                 viewBox="0 0 24 30"
-                class="w-[20px] h-[20px] min-[992px]:w-[50px] min-[992px]:h-[50px]"
+                class="w-[20px] h-[20px] min-[992px]:w-[22px] min-[992px]:h-[28px]"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -74,13 +74,13 @@
               </svg>
             </div>
             <div
-              class="font-[family-name:--font-poppins] text-[10px] sm:text-lg font-medium text-[--primary-color-1] min-[992px]:text-lg xl:text-lg"
+              class="max-w-[287px] lg:max-w-full font-[family-name:--font-poppins] text-[10px] sm:text-lg font-medium text-[--primary-color-1] min-[992px]:text-lg xl:text-lg"
             >
               4517 Washington Ave. Manchter, Kentucky , 495
             </div>
           </div>
           <div
-            class="flex flex-wrap flex-col gap-4 lg:flex-row lg:gap-3 xl:gap-8"
+            class="flex flex-wrap gap-4 xl:gap-8 items-center"
           >
             <div class="flex flex-wrap gap-2 items-center">
               <div>
@@ -88,7 +88,7 @@
                   width="26"
                   height="22"
                   viewBox="0 0 26 22"
-                  class="w-[16px] h-[16px] min-[992px]:w-[50px] min-[992px]:h-[50px]"
+                  class="w-[16px] h-[16px] min-[992px]:w-[24px] min-[992px]:h-[20px]"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -109,7 +109,8 @@
                 >
               </div>
             </div>
-            <ul class="flex flex-wrap gap-4 min-[992px]:justify-end">
+            <!-- Social media button -->
+            <ul class="flex flex-wrap gap-4">
               <li
                 class="bg-[--primary-color-1] min-[992px]:w-[50px] min-[992px]:h-[50px] w-[30px] h-[30px] rounded-full flex flex-wrap justify-center items-center transition ease-in-out duration-300 cursor-pointer hover:bg-[--btn-color] hover:scale-[1.1]"
               >
@@ -119,6 +120,7 @@
                     height="20"
                     viewBox="0 0 14 20"
                     fill="none"
+                    class="w-[16px] h-[16px] min-[992px]:w-[12px] min-[992px]:h-[18px]"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -141,6 +143,7 @@
                     height="18"
                     viewBox="0 0 18 18"
                     fill="none"
+                    class="w-[16px] h-[16px] min-[992px]:w-[16px] min-[992px]:h-[16px]"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -162,6 +165,7 @@
                     height="17"
                     viewBox="0 0 20 17"
                     fill="none"
+                    class="w-[16px] h-[16px] min-[992px]:w-[18px] min-[992px]:h-[15px]"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -180,6 +184,7 @@
                     height="18"
                     viewBox="0 0 18 18"
                     fill="none"
+                    class="w-[16px] h-[16px] min-[992px]:w-[16px] min-[992px]:h-[16px]"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -269,6 +274,7 @@
                   </a>
                 </li>
               </ul>
+              <div id="guestMenu">
               <!-- Login Button -->
               <a
                 href="login.html"
@@ -285,9 +291,10 @@
                 SignUp
                 <i class="fa-solid fa-paw"></i>
               </a>
+              </div>
               <!-- User Icon -->
               <div
-                class="w-[30px] h-[30px] cursor-pointer sm:ml-[12px] md:ml-[14px] min-[992px]:w-[50px] min-[992px]:h-[50px] lg:ms-0"
+                class="w-[30px] h-[30px] cursor-pointer sm:ml-[12px] md:ml-[14px] min-[992px]:w-[50px] min-[992px]:h-[50px] lg:ms-0" style="display: none;" id="userMenu"
               >
                 <a href="#"
                   ><img
@@ -297,6 +304,7 @@
                     loading="lazy"
                 /></a>
               </div>
+              <button id="logoutBtn">Logout</button>
             </div>
 
             <!-- Humbarger menu -->
@@ -400,7 +408,7 @@
               </a>
               <!-- SignUp Button -->
               <a
-                href="#"
+                href="create-account.html"
                 class="lg:hidden friend-btn lg:inline-flex items-center justify-center gap-2 bg-[--heading-text] hover:border-[2px] hover:border-[--btn-color] px-5 py-3 lg:px-3 xl:px-5 lg:py-2 xl:py-3 rounded-full font-[family-name:--font-poppins] font-bold text-[--primary-color-1] lg:text-lg xl:text-xl border-[2px] border-[--primary-color-1] shadow-xl hover:border-[--btn-color] rounded-full hover:text-[var(--btn-color)] overflow-hidden transition-all ease-in duration-300"
               >
                 SignUp
@@ -424,12 +432,12 @@
             <!-- Banner content -->
             <div class="max-w-[650px] max-[768px]:text-center">
               <h1
-                class="font-[family-name:--font-Fredoka] text-[30px] min-[375px]:text-[38px] min-[480px]:text-[42px] min-[576px]:text-[30px] sm:text-[34px] md:text-[38px] min-[992px]:text-[42px] lg:text-[46px] xl:text-[48px] leading-[1.2] text-white"
+                class="font-[family-name:--font-Fredoka] text-[30px] min-[375px]:text-[32px] min-[480px]:text-[42px] min-[576px]:text-[30px] sm:text-[34px] md:text-[38px] min-[992px]:text-[42px] lg:text-[46px] xl:text-[48px] leading-[1.2] text-white"
               >
                 Some Are Fluffy. Some Have Feathers. All Need Love.
               </h1>
               <p
-                class="mt-5 min-[480px]:mt-6 md:mt-8 xl:mt-10 mb-6 md:mb-8 xl:mb-11 max-w-[443px] max-[768px]:mx-auto font-[family-name:--font-poppins] text-[13px] min-[375px]:text-[14px] min-[480px]:text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] xl:text-[20px] font-semibold leading-[1.6] text-white/80"
+                class="mt-5 min-[480px]:mt-6 md:mt-8 xl:mt-10 mb-6 md:mb-8 xl:mb-11 max-w-[443px] max-[768px]:mx-auto font-[family-name:--font-poppins] text-[13px] min-[375px]:text-base min-[480px]:text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] xl:text-[20px] font-semibold leading-[1.6] text-white/80"
               >
                 Behind every tiny paw, gentle hop, playful chirp, and happy tail
                 is a friend waiting to be chosen. Give them the happy ending
@@ -639,7 +647,7 @@
               <!-- Content -->
               <div class="mt-4">
                 <h3
-                  class="text-[20px] min-[480px]:text-[14px] sm:text-[11px] md:text-[15px] min-[992px]:text-[22px] lg:text-[23px] xl:text-[24px] font-bold text-[#0A303A]"
+                  class="text-[20px] min-[480px]:text-[14px] sm:text-[11px] md:text-[15px] min-[992px]:text-[22px] lg:text-[15px] xl:text-[21px] font-bold text-[#0A303A]"
                 >
                   Luna (Persian Cat)
                 </h3>
@@ -693,7 +701,7 @@
               <!-- Content -->
               <div class="mt-4">
                 <h3
-                  class="text-[20px] min-[480px]:text-[14px] sm:text-[11px] md:text-[15px] min-[992px]:text-[22px] lg:text-[23px] xl:text-[24px] font-bold text-[#0A303A]"
+                  class="text-[20px] min-[480px]:text-[14px] sm:text-[11px] md:text-[15px] min-[992px]:text-[22px] lg:text-[15px] xl:text-[21px] font-bold text-[#0A303A]"
                 >
                   Max (Labrador)
                 </h3>
@@ -747,7 +755,7 @@
               <!-- Content -->
               <div class="mt-4">
                 <h3
-                  class="text-[20px] min-[480px]:text-[14px] sm:text-[11px] md:text-[15px] min-[992px]:text-[22px] lg:text-[23px] xl:text-[24px] font-bold text-[#0A303A]"
+                  class="text-[20px] min-[480px]:text-[14px] sm:text-[11px] md:text-[15px] min-[992px]:text-[22px] lg:text-[15px] xl:text-[21px] font-bold text-[#0A303A]"
                 >
                   Rio (Lovebird)
                 </h3>
@@ -801,7 +809,7 @@
               <!-- Content -->
               <div class="mt-4">
                 <h3
-                  class="text-[20px] min-[480px]:text-[14px] sm:text-[11px] md:text-[15px] min-[992px]:text-[22px] lg:text-[23px] xl:text-[24px] font-bold text-[#0A303A]"
+                  class="text-[20px] min-[480px]:text-[14px] sm:text-[11px] md:text-[15px] min-[992px]:text-[22px] lg:text-[15px] xl:text-[21px] font-bold text-[#0A303A]"
                 >
                   Bil (Syrian Hamster)
                 </h3>
@@ -855,7 +863,7 @@
               <!-- Content -->
               <div class="mt-4">
                 <h3
-                  class="text-[20px] min-[480px]:text-[14px] sm:text-[11px] md:text-[15px] min-[992px]:text-[22px] lg:text-[23px] xl:text-[24px] font-bold text-[#0A303A]"
+                  class="text-[20px] min-[480px]:text-[14px] sm:text-[11px] md:text-[15px] min-[992px]:text-[22px] lg:text-[15px] xl:text-[21px] font-bold text-[#0A303A]"
                 >
                   Snowy (White Rabbit)
                 </h3>
@@ -1053,7 +1061,7 @@
                   </div>
                   <div class="mx-auto text-center mt-[33px]">
                     <h6
-                      class="mb-[21px] font-[family-name:--font-poppins] text-[24px] sm:text-[15px] md:text-lg lg:text-base xl:text-xl font-semibold"
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[23px] sm:text-[15px] md:text-lg lg:text-base xl:text-xl font-semibold"
                     >
                       Maple Tails Rescue
                     </h6>
@@ -1083,7 +1091,7 @@
                   </div>
                   <div class="mx-auto text-center mt-[33px]">
                     <h6
-                      class="mb-[21px] font-[family-name:--font-poppins] text-[24px] sm:text-[15px] md:text-lg lg:text-base xl:text-xl font-semibold"
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[23px] sm:text-[15px] md:text-lg lg:text-base xl:text-xl font-semibold"
                     >
                       The Nest & Nook Sanctuary
                     </h6>
@@ -1113,7 +1121,7 @@
                   </div>
                   <div class="mx-auto text-center mt-[33px]">
                     <h6
-                      class="mb-[21px] font-[family-name:--font-poppins] text-[24px] sm:text-[15px] md:text-lg lg:text-base xl:text-xl font-semibold"
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[23px] sm:text-[15px] md:text-lg lg:text-base xl:text-xl font-semibold"
                     >
                       Happy Tails Rescue Home
                     </h6>
@@ -1143,7 +1151,7 @@
                   </div>
                   <div class="mx-auto text-center mt-[33px]">
                     <h6
-                      class="mb-[21px] font-[family-name:--font-poppins] text-[24px] sm:text-[15px] md:text-lg lg:text-base xl:text-xl font-semibold"
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[23px] sm:text-[15px] md:text-lg lg:text-base xl:text-xl font-semibold"
                     >
                       Golden Paws Rescue Home
                     </h6>
@@ -1173,7 +1181,7 @@
                   </div>
                   <div class="mx-auto text-center mt-[33px]">
                     <h6
-                      class="mb-[21px] font-[family-name:--font-poppins] text-[24px] sm:text-[15px] md:text-lg lg:text-base xl:text-xl font-semibold"
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[23px] sm:text-[15px] md:text-lg lg:text-base xl:text-xl font-semibold"
                     >
                       Bloom & Bark Shelter
                     </h6>
@@ -1203,7 +1211,7 @@
                   </div>
                   <div class="mx-auto text-center mt-[33px]">
                     <h6
-                      class="mb-[21px] font-[family-name:--font-poppins] text-[24px] sm:text-[15px] md:text-lg lg:text-base xl:text-xl font-semibold"
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[23px] sm:text-[15px] md:text-lg lg:text-base xl:text-xl font-semibold"
                     >
                       The Gentle Nest
                     </h6>
@@ -2071,9 +2079,9 @@
             <!-- Left Image -->
         <img src="Images/left-dog.png"
             alt="left-dog"
-            class="absolute hidden min-[992px]:block -left-[80px] xl:-left-[95px] top-[3px] w-20 xl:w-24 object-contain" loading="lazy"/>
+            class="absolute hidden min-[992px]:block -left-[80px] xl:-left-[127px] top-[3px] w-20 xl:w-32 object-contain" loading="lazy"/>
             <!-- Newsletter Box -->
-        <div class="border border-[#1F506D] rounded-xl bg-[#F5F1E8] p-3">
+        <div class="border border-[#1F506D] rounded-[21px] bg-[#F5F1E8] p-8">
             <div class="flex flex-col md:flex-row items-center gap-4">
                 <h2 class="text-[--btn-color] text-3xl font-semibold whitespace-nowrap font-[family-name:--font-Fredoka]">
                     Newsletter
@@ -2095,14 +2103,24 @@
         <!-- Right Image -->
         <img src="Images/right-dog.png"
             alt="right-dog"
-            class="absolute hidden min-[992px]:block -right-[80px] xl:-right-[96px] top-0 w-20 xl:w-24 object-contain" loading="lazy"/>
+            class="absolute hidden min-[992px]:block -right-[80px] xl:-right-[127px] top-0 w-20 xl:w-32 object-contain" loading="lazy"/>
           </div>
         </div>
       </section>
     </main>
     <!-- Footer -->
-     <footer class="footer-banner">
-
+     <footer class="footer-banner relative">
+      <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
+        
+      </div>
+      <!-- left -->
+      <div class="absolute z-[999] bottom-0 left-0">
+        <img src="Images/left-footer.png" alt="left-footer" class="xl:w-[400px] 2xl:w-96 min-[1920px]:max-w-full object-contain" loading="lazy"/>
+      </div>
+      <!-- right -->
+      <div class="absolute z-[999] top-0 right-0">
+        <img src="Images/right-footer.png" alt="right-footer" class="xl:w-44 2xl:w-48 min-[1920px]:max-w-full object-contain" loading="lazy"/>
+      </div>
      </footer>
     <!-- AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
