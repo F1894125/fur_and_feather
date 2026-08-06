@@ -50,10 +50,34 @@ document.addEventListener("click", (e) => {
         userDropdown.classList.add("hidden");
     }
 });
+// Destop clickable menu
+const desktopPagesBtn = document.getElementById("destoppagesBtn");
+const desktopPagesMenu = document.getElementById("destoppagesMenu");
+const desktopPagesArrow = document.getElementById("destoppagesArrow");
+
+
+desktopPagesBtn.addEventListener("click", function (e) {
+  e.stopPropagation();
+
+  desktopPagesMenu.classList.toggle("opacity-0");
+  desktopPagesMenu.classList.toggle("invisible");
+  desktopPagesMenu.classList.toggle("scale-95");
+
+  desktopPagesArrow.classList.toggle("rotate-180");
+});
+
+// Close dropdown when clicking outside
+document.addEventListener("click", function (e) {
+  if (!desktopPagesBtn.contains(e.target) && !desktopPagesMenu.contains(e.target)) {
+    desktopPagesMenu.classList.add("opacity-0", "invisible", "scale-95");
+    desktopPagesArrow.classList.remove("rotate-180");
+  }
+});
 
 // Humberger clickable menu
 const pagesBtn = document.getElementById("pagesBtn");
 const pagesMenu = document.getElementById("pagesMenu");
+
 
 pagesBtn.addEventListener("click", () => {
     if (pagesMenu.classList.contains("hidden")) {
