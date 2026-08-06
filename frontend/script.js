@@ -51,6 +51,29 @@ document.addEventListener("click", (e) => {
     }
 });
 
+// Humberger clickable menu
+const pagesBtn = document.getElementById("pagesBtn");
+const pagesMenu = document.getElementById("pagesMenu");
+
+pagesBtn.addEventListener("click", () => {
+    if (pagesMenu.classList.contains("hidden")) {
+        pagesMenu.classList.remove("hidden");
+
+        // Allow browser to render before animating
+        requestAnimationFrame(() => {
+            pagesMenu.classList.remove("max-h-0");
+            pagesMenu.classList.add("max-h-[400px]");
+        });
+    } else {
+        pagesMenu.classList.remove("max-h-[400px]");
+        pagesMenu.classList.add("max-h-0");
+
+        setTimeout(() => {
+            pagesMenu.classList.add("hidden");
+        }, 500); // Match transition duration
+    }
+});
+
 // Companion Slider
 $(document).ready(function () {
   $(".responsive").slick({
@@ -72,7 +95,7 @@ $(document).ready(function () {
         },
       },
       {
-        breakpoint: 640,
+        breakpoint: 768,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -90,29 +113,42 @@ $(document).ready(function () {
 });
 
 // Number Count
-const counters = document.querySelectorAll("[data-target]");
-
-counters.forEach((counter) => {
-  const target = Number(counter.dataset.target);
-  const suffix = counter.dataset.suffix || "";
-  const duration = 1200;
-  const startTime = performance.now();
-
-  function updateCounter(currentTime) {
-    const progress = Math.min((currentTime - startTime) / duration, 1);
-    const value = Math.floor(progress * target);
-
-    counter.textContent = value + suffix;
-
-    if (progress < 1) {
-      requestAnimationFrame(updateCounter);
-    } else {
-      counter.textContent = target + suffix;
-    }
+const counters = document.querySelectorAll(".counter-number");
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      const counter = entry.target;
+      if (entry.isIntersecting) {
+        const target = Number(counter.dataset.target);
+        const suffix = counter.dataset.suffix || "";
+        const duration = 1200;
+        const startTime = performance.now();
+        function updateCounter(currentTime) {
+          const progress = Math.min((currentTime - startTime) / duration, 1);
+          const value = Math.floor(progress * target);
+          counter.textContent = value + suffix;
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.textContent = target + suffix;
+          }
+        }
+        // Reset to 0 before starting
+        counter.textContent = "0" + suffix;
+        requestAnimationFrame(updateCounter);
+      } else {
+        // Reset when the section leaves the viewport
+        const suffix = counter.dataset.suffix || "";
+        counter.textContent = "0" + suffix;
+      }
+    });
+  },
+  {
+    threshold: 0.5,
   }
+);
+counters.forEach((counter) => observer.observe(counter));
 
-  requestAnimationFrame(updateCounter);
-});
 // Shelter slider
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,

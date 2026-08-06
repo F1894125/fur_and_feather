@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
 @font-face {
   font-family: "Fredoka";
   src: url(fonts/Fredoka/static/Fredoka-Regular.ttf) format(truetype);
@@ -24,8 +26,7 @@
 }
 @font-face {
   font-family: "Fredericka";
-  src: url(fonts/Fredericka_the_Great/FrederickatheGreat-Regular.ttf)
-    format(truetype);
+  src: url(fonts/Fredericka_the_Great/FrederickatheGreat-Regular.ttf) format(truetype);
   font-weight: 400;
 }
 
@@ -195,6 +196,10 @@ img {
   to {
     transform: rotate(360deg);
   }
+}
+/* Blog */
+.blog-quote{
+  font-family: "Fredericka the Great", serif;
 }
 /* Forever banner */
 .forever-banner {
