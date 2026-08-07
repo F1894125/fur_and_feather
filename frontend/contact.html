@@ -38,28 +38,31 @@
     />
     <!-- Favicon -->
     <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon" />
-    <title>Home-Fur & Feather</title>
+    <title>Contact-Fur & Feather</title>
   </head>
 
   <body
     class="font-[family-name:--font-poppins] text-xl font-semibold text-[#0A303A]"
   >
     <!-- Header Section -->
-    <header class="header fixed top-0 left-0 w-full z-[999] pb-[60px] pt-8"
+    <header
+      class="header absolute top-0 left-0 w-full z-[999] pt-4 pb-[30px] sm:pb-8 md:pb-10 lg:pb-12 2xl:pb-[66px]"
       id="header"
     >
-      <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
+      <!-- Header Content -->
+      <div
+        class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px] min-[1920px]:max-w-[1950px] 2xl:max-w-[1566px]"
+      >
         <!-- Sub-header -->
-        <div
-          class="flex flex-col justify-between min-[992px]:flex-row min-[992px]:items-center"
-        >
+        <div class="flex flex-wrap justify-between items-center gap-4">
+          <!-- Location -->
           <div class="flex flex-wrap items-center gap-2">
             <div>
               <svg
                 width="24"
                 height="30"
                 viewBox="0 0 24 30"
-                class="w-[20px] h-[20px] min-[992px]:w-[50px] min-[992px]:h-[50px]"
+                class="w-[10px] h-[12px] sm:w-[20px] sm:h-[20px] min-[992px]:w-[22px] min-[992px]:h-[28px]"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -72,21 +75,23 @@
               </svg>
             </div>
             <div
-              class="font-[family-name:--font-poppins] text-[10px] sm:text-lg font-medium text-[--primary-color-1] min-[992px]:text-lg xl:text-lg"
+              class="max-w-[70px] min-[375px]:max-w-[100px] min-[480px]:max-w-[125px] sm:max-w-[190px] md:max-w-[270px] lg:max-w-full font-[family-name:--font-poppins] text-[6px] min-[480px]:text-[10px] sm:text-xs md:text-sm font-medium text-[--primary-color-1] min-[992px]:text-base xl:text-lg leading-tight"
             >
               4517 Washington Ave. Manchter, Kentucky , 495
             </div>
           </div>
+          <!-- Right subheader -->
           <div
-            class="flex flex-wrap flex-col gap-4 lg:flex-row lg:gap-3 xl:gap-8"
+            class="flex flex-wrap gap-4 lg:gap-4 xl:gap-8 items-center justify-between"
           >
+            <!-- Email -->
             <div class="flex flex-wrap gap-2 items-center">
               <div>
                 <svg
                   width="26"
                   height="22"
                   viewBox="0 0 26 22"
-                  class="w-[16px] h-[16px] min-[992px]:w-[50px] min-[992px]:h-[50px]"
+                  class="w-[10px] h-[8px] sm:w-[16px] sm:h-[16px] min-[992px]:w-[24px] min-[992px]:h-[20px]"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -102,14 +107,15 @@
               <div>
                 <a
                   href="#"
-                  class="font-[family-name:--font-poppins] text-[10px] font-medium text-[--primary-color-1] min-[992px]:text-lg sm:text-lg"
+                  class="font-[family-name:--font-poppins] text-[6px] min-[480px]:text-[10px] font-medium text-[--primary-color-1] min-[992px]:text-base sm:text-xs md:text-sm xl:text-lg"
                   >info@petzorg.com</a
                 >
               </div>
             </div>
-            <ul class="flex flex-wrap gap-4 min-[992px]:justify-end">
+            <!-- Social media button -->
+            <ul class="flex flex-wrap gap-2 lg:gap-4 items-center">
               <li
-                class="bg-[--primary-color-1] min-[992px]:w-[50px] min-[992px]:h-[50px] w-[30px] h-[30px] rounded-full flex flex-wrap justify-center items-center transition ease-in-out duration-300 cursor-pointer hover:bg-[--btn-color] hover:scale-[1.1]"
+                class="bg-[--primary-color-1] min-[992px]:w-[50px] min-[992px]:h-[50px] w-[15px] h-[15px] min-[480px]:w-[20px] min-[480px]:h-[20px] sm:w-[30px] sm:h-[30px] rounded-full flex flex-wrap justify-center items-center transition ease-in-out duration-300 cursor-pointer hover:bg-[--btn-color] hover:scale-[1.1]"
               >
                 <a href="#" target="_blank"
                   ><svg
@@ -117,6 +123,7 @@
                     height="20"
                     viewBox="0 0 14 20"
                     fill="none"
+                    class="w-[5px] h-[7px] min-[480px]:w-[10px] min-[480px]:h-[10px] sm:w-[16px] sm:h-[16px] min-[992px]:w-[12px] min-[992px]:h-[18px]"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -131,7 +138,7 @@
                 </a>
               </li>
               <li
-                class="bg-[--primary-color-1] min-[992px]:w-[50px] min-[992px]:h-[50px] w-[30px] h-[30px] rounded-full flex flex-wrap justify-center items-center transition ease-in-out duration-300 cursor-pointer hover:bg-[--btn-color] hover:scale-[1.1]"
+                class="bg-[--primary-color-1] min-[992px]:w-[50px] min-[992px]:h-[50px] w-[15px] h-[15px] min-[480px]:w-[20px] min-[480px]:h-[20px] sm:w-[30px] sm:h-[30px] rounded-full flex flex-wrap justify-center items-center transition ease-in-out duration-300 cursor-pointer hover:bg-[--btn-color] hover:scale-[1.1]"
               >
                 <a href="#" target="_blank"
                   ><svg
@@ -139,6 +146,7 @@
                     height="18"
                     viewBox="0 0 18 18"
                     fill="none"
+                    class="w-[6px] h-[6px] sm:w-[16px] min-[480px]:w-[10px] min-[480px]:h-[10px] sm:h-[16px] min-[992px]:w-[16px] min-[992px]:h-[16px]"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -152,7 +160,7 @@
                 </a>
               </li>
               <li
-                class="bg-[--primary-color-1] min-[992px]:w-[50px] min-[992px]:h-[50px] w-[30px] h-[30px] rounded-full flex flex-wrap justify-center items-center transition ease-in-out duration-300 cursor-pointer hover:bg-[--btn-color] hover:scale-[1.1]"
+                class="bg-[--primary-color-1] min-[992px]:w-[50px] min-[992px]:h-[50px] w-[15px] h-[15px] min-[480px]:w-[20px] min-[480px]:h-[20px] sm:w-[30px] sm:h-[30px] rounded-full flex flex-wrap justify-center items-center transition ease-in-out duration-300 cursor-pointer hover:bg-[--btn-color] hover:scale-[1.1]"
               >
                 <a href="#" target="_blank"
                   ><svg
@@ -160,6 +168,7 @@
                     height="17"
                     viewBox="0 0 20 17"
                     fill="none"
+                    class="w-[8px] h-[6px] sm:w-[16px] min-[480px]:w-[10px] min-[480px]:h-[10px] sm:h-[16px] min-[992px]:w-[18px] min-[992px]:h-[15px]"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -170,7 +179,7 @@
                 </a>
               </li>
               <li
-                class="bg-[--primary-color-1] min-[992px]:w-[50px] min-[992px]:h-[50px] w-[30px] h-[30px] rounded-full flex flex-wrap justify-center items-center transition ease-in-out duration-300 cursor-pointer hover:bg-[--btn-color] hover:scale-[1.1]"
+                class="bg-[--primary-color-1] min-[992px]:w-[50px] min-[992px]:h-[50px] w-[15px] h-[15px] min-[480px]:w-[20px] min-[480px]:h-[20px] sm:w-[30px] sm:h-[30px] rounded-full flex flex-wrap justify-center items-center transition ease-in-out duration-300 cursor-pointer hover:bg-[--btn-color] hover:scale-[1.1]"
               >
                 <a href="#" target="_blank"
                   ><svg
@@ -178,6 +187,7 @@
                     height="18"
                     viewBox="0 0 18 18"
                     fill="none"
+                    class="w-[4px] h-[4px] sm:w-[16px] min-[480px]:w-[10px] min-[480px]:h-[10px] sm:h-[16px] min-[992px]:w-[16px] min-[992px]:h-[16px]"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -194,149 +204,172 @@
           </div>
         </div>
         <!-- Line -->
-        <div class="w-full h-[1px] bg-[--primary-color-1] mt-[17px]"></div>
+        <div
+          class="w-full h-[1px] bg-[--primary-color-1] mt-[10px] lg:my-[17px]"
+        ></div>
         <!--Destop Nav-Bar -->
         <nav class="flex flex-wrap justify-between items-center">
           <!-- Logo -->
-          <a
-            href="index.html"
-            class="block max-w-[180px] min-[576px]:max-w-[185px] sm:max-w-[194px] md:max-w-[198px] min-[992px]:max-w-[200px] lg:max-w-[200px] xl:max-w-[280px]"
-          >
-            <img src="Images/Logo  for bright bg.png" alt="logo" loading="lazy"
-          /></a>
-          <!-- Destop menu-->
-          <ul class="hidden lg:flex lg:items-center lg:gap-6 xl:gap-12">
-            <li
-              class="nav-items relative font-[family-name:--font-Manrope] text-lg font-semibold text-[--primary-color-1] transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
-            >
-              <a href="index.html">Home</a>
-            </li>
-            <li
-              class="nav-items relative font-[family-name:--font-Manrope] text-lg font-semibold text-[--primary-color-1] transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
-            >
-              <a href="page.html">Pages</a>
-            </li>
-            <li
-              class="nav-items relative font-[family-name:--font-Manrope] text-lg font-semibold text-[--primary-color-1] transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
-            >
-              <a href="service.html">Services</a>
-            </li>
-            <li
-              class="nav-items relative font-[family-name:--font-Manrope] text-lg font-semibold text-[--primary-color-1] transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
-            >
-              <a href="blog.html">Blog</a>
-            </li>
-            <li
-              class="nav-items relative font-[family-name:--font-Manrope] text-lg font-semibold text-[--primary-color-1] transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
-            >
-              <a href="shop.html">Shop</a>
-            </li>
-          </ul>
-          <!-- Right Nav -->
-          <div
-            class="flex flex-wrap items-center gap-3 md:ms-[292px] min-[992px]:ms-[400px] lg:ms-0 lg:gap-2 xl:gap-4"
-          >
-            <ul
-              class="hidden flex flex-wrap items-center gap-4 md:flex md:justify-items-end xl:gap-6"
-            >
-              <li>
-                <a href="#"
-                  ><svg
-                    width="28"
-                    height="24"
-                    viewBox="0 0 28 24"
-                    fill="none"
-                    class="transition ease-in duration-300 hover:fill-[--btn-color] hover:scale-[1.1]"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M11.7634 21.5923C8.23677 18.9862 1.25 13.0282 1.25 7.66661C1.25 4.12282 3.88157 1.25 7.5 1.25C9.375 1.25 11.25 1.86764 13.75 4.33821C16.25 1.86764 18.125 1.25 20 1.25C23.6184 1.25 26.25 4.12282 26.25 7.66661C26.25 13.0282 19.2633 18.9862 15.7366 21.5923C14.5499 22.4692 12.9501 22.4692 11.7634 21.5923Z"
-                      stroke="#F04336"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#"
-                  ><svg
-                    width="28"
-                    height="25"
-                    viewBox="0 0 28 25"
-                    fill="none"
-                    class="transition ease-in duration-300 hover:scale-[1.1]"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M1.25 1.25002H1.5083C3.16405 1.25002 3.99193 1.25002 4.53188 1.74161C5.07181 2.23317 5.1308 3.04057 5.24877 4.65532L5.56294 8.95608C5.74049 11.3866 5.82928 12.6019 6.20595 13.5897C7.03164 15.755 8.85286 17.4132 11.1206 18.0641C12.1551 18.3611 13.4084 18.3611 15.9146 18.3611C18.5466 18.3611 19.8625 18.3611 20.9271 18.0453C23.3241 17.3343 25.1999 15.5003 25.927 13.1565C26.1783 12.3469 26.234 11.3932 26.2465 9.80557M13.75 4.91668H5.625M11.875 22.3333C11.875 22.8396 11.4553 23.25 10.9375 23.25C10.4197 23.25 10 22.8396 10 22.3333C10 21.8271 10.4197 21.4167 10.9375 21.4167C11.4553 21.4167 11.875 21.8271 11.875 22.3333ZM22.5 22.3333C22.5 22.8396 22.0803 23.25 21.5625 23.25C21.0447 23.25 20.625 22.8396 20.625 22.3333C20.625 21.8271 21.0447 21.4167 21.5625 21.4167C22.0803 21.4167 22.5 21.8271 22.5 22.3333ZM21.875 8.58335C21.875 8.58335 17.5 5.99511 17.5 3.49075C17.5 2.25323 18.421 1.25002 19.6875 1.25002C20.3437 1.25002 21 1.4657 21.875 2.32844C22.75 1.4657 23.4063 1.25002 24.0625 1.25002C25.329 1.25002 26.25 2.25323 26.25 3.49075C26.25 5.99511 21.875 8.58335 21.875 8.58335Z"
-                      stroke="#F04336"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#"
-                  ><svg
-                    width="28"
-                    height="28"
-                    viewBox="0 0 28 28"
-                    fill="none"
-                    class="transition ease-in duration-300 hover:scale-[1.1]"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M17.6974 17.6974L19.6711 19.6711M20.2412 22.9937C19.4811 22.2336 19.4811 21.0012 20.2412 20.2412C21.0012 19.4811 22.2336 19.4811 22.9937 20.2412L25.6799 22.9274C26.44 23.6875 26.44 24.9199 25.6799 25.6799C24.9199 26.44 23.6875 26.44 22.9274 25.6799L20.2412 22.9937ZM19.6711 10.4605C19.6711 5.3737 15.5474 1.25 10.4605 1.25C5.3737 1.25 1.25 5.3737 1.25 10.4605C1.25 15.5474 5.3737 19.6711 10.4605 19.6711C15.5474 19.6711 19.6711 15.5474 19.6711 10.4605Z"
-                      stroke="#F04336"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </a>
-              </li>
-            </ul>
-            <!-- Contact US Button -->
+          <div>
             <a
-              href="contact.html"
-              class="hidden contact-btn lg:inline-flex items-center justify-center gap-2 bg-[var(--btn-color)] border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] px-5 lg:py-2 xl:py-3 rounded-full font-[family-name:--font-poppins] font-bold text-xl text-white hover:text-[var(--btn-color)] overflow-hidden relative z-[999] transition-all ease-in duration-300"
-            >
-              Contact Us
-              <i class="fa-solid fa-paw"></i>
-            </a>
-            <!-- User Icon -->
-            <div
-              class="w-[30px] h-[30px] cursor-pointer min-[480px]:ml-40 sm:ml-[295px] md:ml-[14px] min-[992px]:w-[50px] min-[992px]:h-[50px] lg:ms-0"
+              href="index.html"
+              class="block max-w-[160px] min-[375px]:max-w-[190px] min-[480px]:max-w-[210px] min-[576px]:max-w-[215px] sm:max-w-[200px] md:max-w-[250px] min-[992px]:max-w-[300px] lg:max-w-[250px] xl:max-w-[300px] 2xl:max-w-[300px] min-[1920px]:max-w-[400px]"
             >
               <img
-                src="Images/user.png"
-                class="object-fit-contain"
-                alt="user"
+                src="Images/Logo  for bright bg.png"
+                alt="logo"
                 loading="lazy"
-              />
-            </div>
+            /></a>
           </div>
-          <!-- Humbarger menu -->
-          <a
-            href="#"
-            class="inline-block lg:hidden text-3xl text-[--primary-color-1]"
-            id="menu-btn"
-            ><i class="fa-solid fa-bars"></i
-          ></a>
+          <!-- Destop menu-->
+          <div>
+            <ul class="hidden lg:flex lg:items-center lg:gap-6 xl:gap-12">
+              <li
+                class="nav-items active relative font-[family-name:--font-Manrope] text-sm xl:text-base font-semibold text-[--primary-color-1] transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
+              >
+                <a href="index.html">Home</a>
+              </li>
+              <!-- Pages Dropdown -->
+              <li
+                class="relative font-[family-name:--font-Manrope] text-sm xl:text-base font-semibold text-[--primary-color-1]"
+              >
+                <button
+        id="destoppagesBtn"
+        class="flex items-center gap-2 transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
+      > Pages<i class="fa-solid fa-chevron-down" id="destoppagesArrow"></i></button>
+      <!-- Dropdown -->
+       <ul
+        id="destoppagesMenu"
+        class="absolute left-0 top-full mt-4 w-56 rounded-xl bg-white shadow-xl border border-gray-200 opacity-0 invisible scale-95 transition-all duration-300 origin-top z-50"
+      >
+      <li>
+          <a href="aboutus.html" class="block px-5 py-3 font-[family-name:--font-Manrope] text-sm xl:text-base text-[--primary-color-1] hover:bg-gray-100 hover:text-[--btn-color]">
+            About Us
+          </a>
+        </li>
+        <li>
+          <a href="blog.html" class="block px-5 py-3 font-[family-name:--font-Manrope] text-sm xl:text-base text-[--primary-color-1] hover:bg-gray-100 hover:text-[--btn-color]">
+            Blogs
+          </a>
+        </li>
+        <li>
+          <a href="faq.html" class="block px-5 py-3 font-[family-name:--font-Manrope] text-sm xl:text-base text-[--primary-color-1] hover:bg-gray-100 hover:text-[--btn-color]">
+            FAQ
+          </a>
+        </li>
+        <li>
+          <a href="testimonial.html" class="block px-5 py-3 font-[family-name:--font-Manrope] text-sm xl:text-base text-[--primary-color-1] hover:bg-gray-100 hover:text-[--btn-color]">
+            Testimonials
+          </a>
+        </li>
+        </ul>
+              </li>
+              <li
+                class="nav-items relative font-[family-name:--font-Manrope] text-sm xl:text-base font-semibold text-[--primary-color-1] transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
+              >
+                <a href="pets.html">Pets</a>
+              </li>
+              <li
+                class="nav-items relative font-[family-name:--font-Manrope] text-sm xl:text-base font-semibold text-[--primary-color-1] transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
+              >
+                <a href="shelters.html">Shelters</a>
+              </li>
+              <li
+                class="nav-items relative font-[family-name:--font-Manrope] text-sm xl:text-base font-semibold text-[--primary-color-1] transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
+              >
+                <a href="contact.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Right Nav -->
+          <div class="flex flex-wrap items-center gap-4">
+            <div
+              class="flex flex-wrap items-center gap-3 lg:ms-0 lg:gap-4 xl:gap-4"
+            >
+              <div id="guestMenu" class="flex flex-wrap items-center gap-4">
+                <!-- Login Button -->
+                <a
+                  href="login.html"
+                  class="hidden contact-btn lg:inline-flex items-center justify-center gap-2 bg-[var(--btn-color)] border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] px-5 lg:py-2 xl:py-3 rounded-full font-[family-name:--font-poppins] font-bold lg:text-base xl:text-xl text-white hover:text-[var(--btn-color)] overflow-hidden relative z-[999] transition-all ease-in duration-300"
+                >
+                  LogIn
+                  <i class="fa-solid fa-paw"></i>
+                </a>
+                <!-- SignUp Button -->
+                <a
+                  href="create-account.html"
+                  class="hidden friend-btn lg:inline-flex items-center justify-center gap-2 bg-[--heading-text] hover:border-[2px] hover:border-[--btn-color] lg:px-3 xl:px-5 lg:py-2 xl:py-3 rounded-full font-[family-name:--font-poppins] font-bold text-[--primary-color-1] lg:text-base xl:text-xl border-[2px] border-[--primary-color-1] shadow-xl hover:border-[--btn-color] rounded-full hover:text-[var(--btn-color)] overflow-hidden transition-all ease-in duration-300"
+                >
+                  SignUp
+                  <i class="fa-solid fa-paw"></i>
+                </a>
+              </div>
+              <!-- User Icon -->
+              <button
+                class="relative cursor-pointer sm:ml-[12px] md:ml-[14px] w-[40px] h-[40px] md:w-[50px] md:h-[50px] lg:ms-0 lg:w-[70px] lg:h-[70px]"
+                id="userMenu"
+              >
+                <a href="#"
+                  ><img
+                    src="Images/user.png"
+                    class="object-fit-contain"
+                    alt="user"
+                    loading="lazy"
+                /></a>
+              </button>
+              <!-- Dropdown -->
+              <div
+                id="userDropdown"
+                class="absolute right-[29px] sm:right-[14px] lg:right-0 top-[112px] min-[375px]:top-[117px] min-[480px]:top-[121px] sm:top-[118px] md:top-[141px] min-[992px]:top-[162px] lg:top-[184px] xl:top-[195px] 2xl:top-[196px] min-[1920px]:top-[216px] bg-white rounded-xl shadow-xl border border-gray-200 hidden z-50"
+              >
+                <a
+                  href="profile.html"
+                  class="block px-2 py-1 sm:py-3 text-[10px] sm:text-xs md:text-sm lg:text-lg xl:text-base 2xl:text-2xl hover:bg-gray-100 transition font-[family-name:--font-poppins] font-normal rounded-t-xl"
+                >
+                  My Profile
+                </a>
+                <a
+                  href="#"
+                  class="block px-2 py-1 sm:py-3 text-[10px] sm:text-xs md:text-sm lg:text-lg xl:text-base 2xl:text-2xl hover:bg-gray-100 transition font-[family-name:--font-poppins] font-normal"
+                >
+                  Dashboard
+                </a>
+                <a
+                  href="change-password.html"
+                  class="block px-2 py-1 sm:py-3 text-[10px] sm:text-xs md:text-sm lg:text-lg xl:text-base 2xl:text-2xl hover:bg-gray-100 transition font-[family-name:--font-poppins] font-normal"
+                >
+                  Change Password
+                </a>
+                <button
+                  id="logoutBtn"
+                  class="w-full text-left px-2 py-1 sm:py-3 text-red-600 hover:bg-red-50 text-[10px] sm:text-xs md:text-sm lg:text-lg xl:text-base 2xl:text-2xl font-[family-name:--font-poppins] font-normal rounded-b-xl"
+                >
+                  Logout
+                </button>
+              </div>
+            </div>
+
+            <!-- Humbarger menu -->
+            <a
+              href="#"
+              class="inline-block lg:hidden text-xl md:text-3xl text-[--primary-color-1]"
+              id="menu-btn"
+              ><i class="fa-solid fa-bars"></i
+            ></a>
+          </div>
         </nav>
+        <!-- Mobile/Tablet View -->
         <!-- overlay -->
         <div id="overlay" class="fixed inset-0 bg-black/40 z-40 hidden"></div>
         <!-- Mobile Menu -->
         <div
           id="mobile-menu"
-          class="overflow-y-scroll fixed top-[0] left-[-100%] w-[75%] h-screen bg-white shadow-xl transition-all duration-300 z-[999] lg:hidden"
+          class="overflow-y-scroll fixed top-[0] left-[-100%] w-[75%] h-screen bg-white shadow-xl ease-in-out duration-500 z-[999] lg:hidden p-4"
         >
           <div class="flex justify-between items-center pe-4">
-            <a href="index.html" class="block max-w-[300px]"
+            <a
+              href="index.html"
+              class="block max-w-[150px] min-[480px]:max-w-[200px] sm:max-w-[250px] min-[992px]:max-w-[300px]"
               ><img
                 src="Images/Logo  for bright bg.png"
                 alt="logo"
@@ -345,112 +378,114 @@
             <a
               href="#"
               id="close-btn"
-              class="inline-block text-3xl text-[--primary-color-1]"
+              class="inline-block text-3xl text-[--primary-color-1] bg-white border-[1px] rounded-full border-[--primary-color-1] p-2 cursor-pointer hover:bg-[--btn-color] duration-300 ease-in-out"
             >
-              <i class="fa-solid fa-x text-[25px] ml-4"></i>
+              <svg
+                width="11"
+                height="10"
+                class="min-[992px]:w-[15px] min-[992px]:h-[12px]"
+                viewBox="0 0 11 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.5 2.75H7.16667C9.00761 2.75 10.5 4.26104 10.5 6.125C10.5 7.98896 9.00761 9.5 7.16667 9.5H4.94444M0.5 2.75C0.5 2.2093 1.02708 1.80388 2.08122 0.993043L2.72222 0.5M0.5 2.75C0.5 3.2907 1.02706 3.69611 2.08118 4.50694L2.72222 5"
+                  stroke="#0A303A"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </a>
           </div>
-          <div class="w-full h-[1px] bg-[--primary-color-1] mb-[17px]"></div>
+          <div
+            class="w-full h-[3px] bg-gradient-to-r from-[#0A303A] to-white mb-[17px]"
+          ></div>
           <div class="flex flex-wrap flex-col py-4">
             <!-- Mobile Nav -->
-            <ul class="flex flex-wrap flex-col items-center gap-8">
+            <ul class="flex flex-wrap flex-col items-center gap-4">
               <li
-                class="nav-items relative font-[family-name:--font-Manrope] text-lg font-semibold text-[--primary-color-1] min-[992px]:text-2xl"
+                class="nav-items active relative font-[family-name:--font-Manrope] text-xs sm:text-sm md:text-base font-semibold text-[--primary-color-1]"
               >
                 <a href="index.html">Home</a>
               </li>
+              <div
+                class="w-1/2 h-[3px] mb-[17px] bg-[radial-gradient(circle_at_center,_#0A303A_0%,_#0A303A_20%,_white_100%)]"
+              ></div>
               <li
-                class="nav-items relative font-[family-name:--font-Manrope] text-lg font-semibold text-[--primary-color-1] min-[992px]:text-2xl"
+                class="relative font-[family-name:--font-Manrope] text-xs sm:text-sm md:text-base font-semibold text-[--primary-color-1]"
               >
-                <a href="page.html">Pages</a>
+                <button id="pagesBtn">Pages</button>
               </li>
+              <div
+                class="w-1/2 h-[3px] mb-[17px] bg-[radial-gradient(circle_at_center,_#0A303A_0%,_#0A303A_20%,_white_100%)]"
+              ></div>
+              <ul
+                id="pagesMenu"
+                class="hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out flex flex-col gap-4 items-center"
+              >
+                <li
+                  class="nav-items relative font-[family-name:--font-Manrope] text-xs sm:text-sm md:text-base font-normal text-[--primary-color-1]"
+                >
+                  <a href="aboutus.html">About Us</a>
+                </li>
+                <li
+                  class="nav-items relative font-[family-name:--font-Manrope] text-xs sm:text-sm md:text-base font-normal text-[--primary-color-1]"
+                >
+                  <a href="blog.html">Blogs</a>
+                </li>
+                <li
+                  class="nav-items relative font-[family-name:--font-Manrope] text-xs sm:text-sm md:text-base font-normal text-[--primary-color-1]"
+                >
+                  <a href="faq.html">FAQS</a>
+                </li>
+                <li
+                  class="nav-items relative font-[family-name:--font-Manrope] text-xs sm:text-sm md:text-base font-normal text-[--primary-color-1]"
+                >
+                  <a href="testimonial.html">Testimonials</a>
+                </li>
+              </ul>
               <li
-                class="nav-items relative font-[family-name:--font-Manrope] text-lg font-semibold text-[--primary-color-1] min-[992px]:text-2xl"
+                class="nav-items relative font-[family-name:--font-Manrope] text-xs sm:text-sm md:text-base font-semibold text-[--primary-color-1]"
               >
-                <a href="service.html">Services</a>
+                <a href="pets.html">Pets</a>
               </li>
+              <div
+                class="w-1/2 h-[3px] mb-[17px] bg-[radial-gradient(circle_at_center,_#0A303A_0%,_#0A303A_20%,_white_100%)]"
+              ></div>
               <li
-                class="nav-items relative font-[family-name:--font-Manrope] text-lg font-semibold text-[--primary-color-1] min-[992px]:text-2xl"
+                class="nav-items relative font-[family-name:--font-Manrope] text-xs sm:text-sm md:text-base font-semibold text-[--primary-color-1]"
               >
-                <a href="blog.html">Blog</a>
+                <a href="shelters.html">Shelter</a>
               </li>
+              <div
+                class="w-1/2 h-[3px] mb-[17px] bg-[radial-gradient(circle_at_center,_#0A303A_0%,_#0A303A_20%,_white_100%)]"
+              ></div>
               <li
-                class="nav-items relative font-[family-name:--font-Manrope] text-lg font-semibold text-[--primary-color-1] min-[992px]:text-2xl"
+                class="nav-items relative font-[family-name:--font-Manrope] text-xs sm:text-sm md:text-base font-semibold text-[--primary-color-1]"
               >
-                <a href="shop.html">Shop</a>
+                <a href="contact.html">Contact Us</a>
               </li>
-            </ul>
-            <!-- Mobile shop -->
-            <ul
-              class="flex flex-wrap items-center justify-center gap-4 my-6 md:hidden"
-            >
-              <li>
-                <a href="#"
-                  ><svg
-                    width="28"
-                    height="24"
-                    viewBox="0 0 28 24"
-                    fill="none"
-                    class="transition ease-in duration-300 hover:fill-[--btn-color] hover:scale-[1.1]"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M11.7634 21.5923C8.23677 18.9862 1.25 13.0282 1.25 7.66661C1.25 4.12282 3.88157 1.25 7.5 1.25C9.375 1.25 11.25 1.86764 13.75 4.33821C16.25 1.86764 18.125 1.25 20 1.25C23.6184 1.25 26.25 4.12282 26.25 7.66661C26.25 13.0282 19.2633 18.9862 15.7366 21.5923C14.5499 22.4692 12.9501 22.4692 11.7634 21.5923Z"
-                      stroke="#F04336"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#"
-                  ><svg
-                    width="28"
-                    height="25"
-                    viewBox="0 0 28 25"
-                    fill="none"
-                    class="transition ease-in duration-300 hover:scale-[1.1]"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M1.25 1.25002H1.5083C3.16405 1.25002 3.99193 1.25002 4.53188 1.74161C5.07181 2.23317 5.1308 3.04057 5.24877 4.65532L5.56294 8.95608C5.74049 11.3866 5.82928 12.6019 6.20595 13.5897C7.03164 15.755 8.85286 17.4132 11.1206 18.0641C12.1551 18.3611 13.4084 18.3611 15.9146 18.3611C18.5466 18.3611 19.8625 18.3611 20.9271 18.0453C23.3241 17.3343 25.1999 15.5003 25.927 13.1565C26.1783 12.3469 26.234 11.3932 26.2465 9.80557M13.75 4.91668H5.625M11.875 22.3333C11.875 22.8396 11.4553 23.25 10.9375 23.25C10.4197 23.25 10 22.8396 10 22.3333C10 21.8271 10.4197 21.4167 10.9375 21.4167C11.4553 21.4167 11.875 21.8271 11.875 22.3333ZM22.5 22.3333C22.5 22.8396 22.0803 23.25 21.5625 23.25C21.0447 23.25 20.625 22.8396 20.625 22.3333C20.625 21.8271 21.0447 21.4167 21.5625 21.4167C22.0803 21.4167 22.5 21.8271 22.5 22.3333ZM21.875 8.58335C21.875 8.58335 17.5 5.99511 17.5 3.49075C17.5 2.25323 18.421 1.25002 19.6875 1.25002C20.3437 1.25002 21 1.4657 21.875 2.32844C22.75 1.4657 23.4063 1.25002 24.0625 1.25002C25.329 1.25002 26.25 2.25323 26.25 3.49075C26.25 5.99511 21.875 8.58335 21.875 8.58335Z"
-                      stroke="#F04336"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#"
-                  ><svg
-                    width="28"
-                    height="28"
-                    viewBox="0 0 28 28"
-                    fill="none"
-                    class="transition ease-in duration-300 hover:scale-[1.1]"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M17.6974 17.6974L19.6711 19.6711M20.2412 22.9937C19.4811 22.2336 19.4811 21.0012 20.2412 20.2412C21.0012 19.4811 22.2336 19.4811 22.9937 20.2412L25.6799 22.9274C26.44 23.6875 26.44 24.9199 25.6799 25.6799C24.9199 26.44 23.6875 26.44 22.9274 25.6799L20.2412 22.9937ZM19.6711 10.4605C19.6711 5.3737 15.5474 1.25 10.4605 1.25C5.3737 1.25 1.25 5.3737 1.25 10.4605C1.25 15.5474 5.3737 19.6711 10.4605 19.6711C15.5474 19.6711 19.6711 15.5474 19.6711 10.4605Z"
-                      stroke="#F04336"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </a>
-              </li>
+              <div
+                class="w-1/2 h-[3px] mb-[17px] bg-[radial-gradient(circle_at_center,_#0A303A_0%,_#0A303A_20%,_white_100%)]"
+              ></div>
             </ul>
             <!-- Button -->
-            <div class="flex flex-wrap justify-center items-center">
+            <div class="flex flex-col justify-center items-center gap-4">
+              <!-- Login Button -->
               <a
-                href="contact.html"
-                class="lg:hidden contact-btn inline-flex items-center justify-center gap-2 bg-[var(--btn-color)] border-4 border-[#F4F1EA] border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] px-5 py-2 lg:py-2 xl:py-3 rounded-full font-[family-name:--font-poppins] font-bold text-xl text-white hover:text-[var(--btn-color)] overflow-hidden transition-all duration-300"
-                >Contact Us<i class="fa-solid fa-paw"></i>
+                href="login.html"
+                class="lg:hidden contact-btn lg:inline-flex items-center justify-center gap-2 bg-[var(--btn-color)] border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] px-6 py-3 sm:py-2 md:px-8 md:py-3 lg:py-2 xl:py-3 mt-5 rounded-full font-[family-name:--font-poppins] font-bold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white hover:text-[var(--btn-color)] overflow-hidden relative z-[999] transition-all ease-in duration-300"
+              >
+                LogIn
+                <i class="fa-solid fa-paw"></i>
+              </a>
+              <!-- SignUp Button -->
+              <a
+                href="create-account.html"
+                class="lg:hidden friend-btn lg:inline-flex items-center justify-center gap-2 bg-[--heading-text] hover:border-[2px] hover:border-[--btn-color] px-6 py-3 sm:py-2 md:px-8 md:py-3 lg:px-3 xl:px-5 lg:py-2 xl:py-3 rounded-full font-[family-name:--font-poppins] font-bold text-[--primary-color-1] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl border-[2px] border-[--primary-color-1] shadow-xl hover:border-[--btn-color] rounded-full hover:text-[var(--btn-color)] overflow-hidden transition-all ease-in duration-300"
+              >
+                SignUp
+                <i class="fa-solid fa-paw"></i>
               </a>
             </div>
           </div>
@@ -460,10 +495,268 @@
     <!-- Main -->
     <main>
       <!-- Banner -->
-      <section>
+      <section class="contact-banner">
+      </section>
+      <!-- Contact Section -->
+      <section class="pt-[61px] pb-[130px]">
+        <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
+          <div class="grid grid-cols-2 items-center gap-4">
+            <!-- Left side -->
+            <div class="bg-[--primary-color-1] py-24 rounded-[21px] px-8">
+              <div class="flex flex-col gap-4">
+              <!-- Contact -->
+              <h4 class="font-[family-name:--font-Fredoka] text-white font-bold text-4xl leading-[1.4] mb-8">Contact Us</h4>
+              <div class="flex flex-col gap-4">
+                <!-- Email -->
+              <div class="text-white flex flex-wrap gap-2 items-center">
+                <div><svg width="29" height="19" viewBox="0 0 29 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.42704 2.10222L12.8338 7.33308C13.2313 7.58041 13.7048 7.71307 14.19 7.71307C14.6752 7.71307 15.1487 7.58041 15.5462 7.33308L23.953 2.10222H4.42704ZM26.015 3.38531L16.9024 9.05532C16.1074 9.54999 15.1604 9.81532 14.19 9.81532C13.2196 9.81532 12.2726 9.54999 11.4776 9.05532L2.365 3.38531V15.7667C2.365 16.3472 2.89441 16.8178 3.5475 16.8178H24.8325C25.4856 16.8178 26.015 16.3472 26.015 15.7667V3.38531ZM3.5475 0H24.8325C26.7918 0 28.38 1.41175 28.38 3.15333V15.7667C28.38 17.5083 26.7918 18.92 24.8325 18.92H3.5475C1.58822 18.92 0 17.5083 0 15.7667V3.15333C0 1.41175 1.58822 0 3.5475 0Z" fill="#F4F1EA"/>
+</svg>
+</div>
+<div class="font-[family-name:--font-poppins] text-xl font-semibold leading-[1.4]">info@example.com</div>
+              </div>
+              <!-- phone number-->
+              <div class="text-white flex flex-wrap gap-2 items-center">
+                <div><svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.5627 14.3557C15.9794 14.2117 15.1158 16.3708 13.9643 16.9465C12.0932 17.954 8.63875 14.3557 8.63875 14.3557C8.63875 14.3557 5.04038 10.9012 5.90399 9.03008C6.62366 7.8786 8.78268 7.01499 8.63875 5.4317C8.49481 3.99235 5.32825 -1.1893 3.74496 0.250046C0.290524 3.41661 0.00265449 4.71203 0.00265449 7.30286C-0.14128 11.7648 5.61612 17.3783 5.61612 17.3783C6.19186 17.954 11.2296 23.1357 15.6916 22.9918C18.2824 22.9918 19.5778 22.7039 22.7444 19.2495C24.1837 17.6662 19.146 14.4996 17.5627 14.3557Z" fill="#F4F1EA"/>
+</svg>
+</div>
+<div class="font-[family-name:--font-poppins] text-xl font-semibold leading-[1.4]">001985512-854</div>
+              </div>
+              <!-- Address -->
+              <div class="text-white flex flex-wrap gap-2 items-center">
+                <div><svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.25 15C6.25 10.125 10.125 6.25 15 6.25C19.875 6.25 23.75 10.125 23.75 15C23.75 19.875 19.875 23.75 15 23.75C10.125 23.75 6.25 19.875 6.25 15ZM5 15C5 20.5 9.5 25 15 25C20.5 25 25 20.5 25 15C25 9.5 20.5 5 15 5C9.5 5 5 9.5 5 15Z" fill="#F4F1EA"/>
+<path d="M7.5 16.25L20 10L13.75 22.5V16.25H7.5Z" fill="#F4F1EA"/>
+</svg>
+</div>
+<div class="max-w-[353px] font-[family-name:--font-poppins] text-xl font-semibold leading-[1.4]">John Smith 123 Main Street Amsterdam, NH 1000 Netherlands</div>
+              </div>
+            </div>
+            <!-- Social Media -->
+            <h4 class="font-[family-name:--font-Fredoka] text-white font-bold text-4xl leading-[1.4] mb-8">Social Media</h4>
 
+          </div>
+          </div>
+          <!-- Right-side -->
+          <div></div>
+        </div>
+      </section>
+      <!-- Newsletter -->
+      <section class="pt-14 pb-0 sm:pt-16 lg:py-14">
+        <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
+          <div class="max-w-[760px] mx-auto relative">
+            <!-- Left Image -->
+            <img
+              src="Images/left-dog.png"
+              alt="left-dog"
+              class="absolute hidden min-[992px]:block -left-[80px] xl:-left-[127px] top-[3px] w-20 xl:w-32 object-contain"
+              loading="lazy"
+            />
+            <!-- Newsletter Box -->
+            <div
+              class="border border-[#1F506D] rounded-[21px] bg-[#F5F1E8] p-8"
+            >
+              <div class="flex flex-col md:flex-row items-center gap-4">
+                <h2
+                  class="text-[--btn-color] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold whitespace-nowrap font-[family-name:--font-Fredoka]"
+                >
+                  Newsletter
+                </h2>
+                <form
+                  id="newsletterForm"
+                  class="flex flex-col min-[480px]:flex-row w-full gap-4"
+                >
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="Enter your E-mail ID"
+                    class="flex-1 border border-[--btn-color] px-4 py-3 text-[8px] sm:text-[10px] md:text-xs lg:text-sm xl:text-base outline-none placeholder:text-[#FF8A76] bg-transparent rounded-xl"
+                  />
+
+                  <input
+                    type="submit"
+                    value="Subscribe"
+                    class="px-4 py-2 border border-[--btn-color] font-[family-name:--font-poppins] text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-[#FF553C] font-semibold hover:bg-[--btn-color] hover:text-white transition rounded-xl"
+                  />
+                </form>
+              </div>
+            </div>
+            <!-- Right Image -->
+            <img
+              src="Images/right-dog.png"
+              alt="right-dog"
+              class="absolute hidden min-[992px]:block -right-[80px] xl:-right-[127px] top-0 w-20 xl:w-32 object-contain"
+              loading="lazy"
+            />
+          </div>
+        </div>
       </section>
     </main>
+    <!-- Footer -->
+    <footer
+      class="footer-banner relative pt-24 pb-16 sm:pt-24 lg:pt-28"
+    >
+    <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
+      <div class="flex flex-wrap mx-[-15px]">
+        <div class="max-w-full lg:max-w-[40%] lg:basis-[40%] lg:px-[15px]">
+          <!-- Footer Logo -->
+          <div
+            class="flex flex-col items-center text-center lg:items-start lg:text-left gap-6 pt-28 lg:pt-0"
+          >
+            <a
+              href="index.html"
+              class="block max-w-[260px] lg:max-w-[320px] xl:max-w-[420px]"
+            >
+              <img
+                src="Images/footer-logo.png"
+                alt="footer"
+                class="w-full object-contain"
+              />
+            </a>
+            <p
+              class="max-w-full lg:max-w-[430px] text-[#F4F1EA] font-medium leading-7 text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg"
+            >
+              Some companions don't just enter your life.They become a part of
+              who you are—through every ordinary moment and every unforgettable
+              memory.
+            </p>
+            <div class="flex flex-wrap flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start items-center mt-4 lg:mt-8">
+              <!-- Contact Button -->
+              <a
+                href="contact.html"
+                class="friend-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-[2px] border-[--primary-color-1] shadow-xl hover:border-[--btn-color] bg-[--heading-text] px-4 py-3 font-[family-name:--font-poppins] font-bold text-[--primary-color-1] shadow-xl transition-all duration-300 ease-in hover:border-[--btn-color] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl">
+                Contact Us
+                <i class="fa-solid fa-paw"></i>
+              </a>
+              <!-- Adopt now -->
+              <a
+                href="#"
+                class="contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl">
+                Adopt Now
+                <i class="fa-solid fa-paw"></i>
+              </a>
+            </div>
+        </div>
+        </div>
+        <div class="max-w-full w-full lg:max-w-[20%] lg:basis-[20%] lg:px-[15px]">
+          <div class="pt-4 sm:pt-8 text-center lg:text-left">
+            <span
+              class="text-[--btn-color] font-[family-name:--font-poppins] font-semibold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
+              >Utility pages</span
+            >
+            <ul class="space-y-4 mt-4 lg:mt-6">
+              <li
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] hover:scale-110 ease-in-out duration-300"
+              >
+                <a href="index.html">Home</a>
+              </li>
+              <li
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] hover:scale-110 ease-in-out duration-300"
+              >
+                <a href="aboutus.html">About Us</a>
+              </li>
+              <li
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] hover:scale-110 ease-in-out duration-300"
+              >
+                <a href="blog.html">Blog</a>
+              </li>
+              <li
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] hover:scale-110 ease-in-out duration-300"
+              >
+                <a href="faq.html">FAQ</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="max-w-full w-full lg:max-w-[20%] lg:basis-[20%] lg:px-[15px]">
+          <div class="pt-4 sm:pt-8 text-center lg:text-left">
+            <span
+              class="text-[--btn-color] font-[family-name:--font-poppins] font-semibold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
+              >Our Services</span
+            >
+            <ul class="space-y-4 mt-4 lg:mt-6">
+              <li
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] hover:scale-110 ease-in-out duration-300"
+              >
+                <a href="#">Adoption</a>
+              </li>
+              <li
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] hover:scale-110 ease-in-out duration-300"
+              >
+                <a href="#">Shelter Networking</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="max-w-full w-full lg:max-w-[20%] lg:basis-[20%] lg:px-[15px]">
+          <div class="pt-4 sm:pt-8 text-center lg:text-left">
+            <span
+              class="text-[--btn-color] font-[family-name:--font-poppins] font-semibold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
+              >Our Partner</span
+            >
+            <ul class="space-y-4 mt-4 lg:mt-6">
+              <li
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA]"
+              >
+                People for the Ethical Treatment of Animals
+              </li>
+              <li
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA]"
+              >
+                Blue Cross of India
+              </li>
+              <li
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA]"
+              >
+                People For Animals
+              </li>
+              <li
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA]"
+              >
+                World Animal Protection
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="bg-[#F4F1EA] w-full h-[1px] my-6"></div>
+      <div class="flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-4">
+        <div class="text-[#F4F1EA] font-[family-name:--font-poppins] text-xs md:text-sm xl:text-base font-semibold text-center lg:text-left m-0 lg:ml-24">Copyright
+          &copy 2026 <a href="index.html" class="hover:text-[--btn-color]">Fur & Feather.</a> All Rights Reserved.
+        </div>
+        <ul class="text-white flex flex-wrap gap-4">
+          <li><a href="" target="_blank"><i class="fa-brands fa-facebook text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"></i></a></li>
+          <li><a href="" target="_blank"><i class="fa-brands fa-instagram text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"></i></a></li>
+          <li><a href="" target="_blank"><i class="fa-brands fa-linkedin-in text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"></i></a></li>
+          <li><a href="" target="_blank"><i class="fa-brands fa-x-twitter text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- left -->
+      <div
+        class="absolute left-0 bottom-0 z-10 w-[140px] sm:w-[120px] md:w-[200px] lg:w-[260px] min-[1920px]:w-[400px] pointer-events-none"
+      >
+        <img
+          src="Images/left-footer.png"
+          alt="left-footer"
+          class="w-full object-contain"
+          loading="lazy"
+        />
+      </div>
+      <!-- right -->
+      <div
+        class="absolute top-[75px] right-0 hidden 2xl:block z-10 w-[130px] lg:w-[100px] xl:w-[120px] 2xl:w-[160px] min-[1920px]:w-[200px] pointer-events-none"
+      >
+        <img
+          src="Images/right-footer.png"
+          alt="right-footer"
+          class="w-full object-contain"
+          loading="lazy"
+        />
+      </div>
+    </footer>
+    
     <!-- AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Swiper JS CDN  -->

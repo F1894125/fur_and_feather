@@ -34,10 +34,10 @@ heartBtns.forEach((heartBtn) => {
     icon.classList.toggle("text-red-500");
   });
 });
+
 // clickable dropdown
 const userBtn = document.getElementById("userMenu");
 const userDropdown = document.getElementById("userDropdown");
-
 userBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     userDropdown.classList.toggle("hidden");
@@ -50,19 +50,16 @@ document.addEventListener("click", (e) => {
         userDropdown.classList.add("hidden");
     }
 });
+
 // Destop clickable menu
 const desktopPagesBtn = document.getElementById("destoppagesBtn");
 const desktopPagesMenu = document.getElementById("destoppagesMenu");
 const desktopPagesArrow = document.getElementById("destoppagesArrow");
-
-
 desktopPagesBtn.addEventListener("click", function (e) {
   e.stopPropagation();
-
   desktopPagesMenu.classList.toggle("opacity-0");
   desktopPagesMenu.classList.toggle("invisible");
   desktopPagesMenu.classList.toggle("scale-95");
-
   desktopPagesArrow.classList.toggle("rotate-180");
 });
 
@@ -77,8 +74,6 @@ document.addEventListener("click", function (e) {
 // Humberger clickable menu
 const pagesBtn = document.getElementById("pagesBtn");
 const pagesMenu = document.getElementById("pagesMenu");
-
-
 pagesBtn.addEventListener("click", () => {
     if (pagesMenu.classList.contains("hidden")) {
         pagesMenu.classList.remove("hidden");
@@ -340,4 +335,55 @@ form.addEventListener("submit", function (e) {
   }
   alert("Subscribed Successfully!");
   form.reset();
+});
+
+// Scroll to Top button
+const backToTop = document.getElementById("backToTop");
+const backToTopIcon = document.getElementById("backToTopIcon");
+// Show / hide button
+window.addEventListener("scroll", () => {
+// Show button after scrolling 300px
+  if (window.scrollY > 300) {
+    backToTop.classList.remove(
+      "invisible",
+      "opacity-0",
+      "translate-y-5"
+    );
+    backToTop.classList.add(
+      "visible",
+      "opacity-100",
+      "translate-y-0"
+    );
+  } else {
+    backToTop.classList.remove(
+      "visible",
+      "opacity-100",
+      "translate-y-0"
+    );
+    backToTop.classList.add(
+      "invisible",
+      "opacity-0",
+      "translate-y-5"
+    );
+  }
+// Check if user reached the bottom
+  const atBottom =
+    window.innerHeight + window.scrollY >=
+    document.documentElement.scrollHeight - 5;
+if (atBottom) {
+// Change arrow to UP
+    backToTopIcon.classList.add("rotate-180");
+    backToTop.setAttribute("aria-label", "Back to top");
+  } else {
+// Change arrow to DOWN
+    backToTopIcon.classList.remove("rotate-180");
+    backToTop.setAttribute("aria-label", "Scroll down");
+  }
+});
+// Button click
+backToTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 });

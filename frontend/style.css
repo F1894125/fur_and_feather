@@ -197,10 +197,7 @@ img {
     transform: rotate(360deg);
   }
 }
-/* Blog */
-.blog-quote{
-  font-family: "Fredericka the Great", serif;
-}
+
 /* Forever banner */
 .forever-banner {
   background: url("Images/forever banner.png") no-repeat;
@@ -218,4 +215,11 @@ img {
   background-size: cover;
   background-position: center;
   min-height: 750px;
+}
+/* Contact Page */
+.contact-banner{
+  background: url("Images/contact-banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 1200px;
 }
