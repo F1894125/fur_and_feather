@@ -104,6 +104,11 @@ $(document).ready(function () {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
+    pauseOnHover: true,
+    pauseOnFocus: true,
+    draggable: true,
+    swipe: true,
+    touchMove: true,
     responsive: [
       {
         breakpoint: 1024,
@@ -246,37 +251,54 @@ var swiper = new Swiper(".storySwiper", {
 });
 
 // Accordian
-const buttons = document.querySelectorAll(".faq-btn");
+const faqButtons = document.querySelectorAll(".faq-btn");
 
-buttons.forEach((button) => {
+faqButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const currentContent = button.nextElementSibling;
-    const currentIcon = button.querySelector("i");
+    const content = button.nextElementSibling;
+    const icon = button.querySelector("i");
 
-    // Close all items
-    document.querySelectorAll(".faq-content").forEach((content) => {
-      if (content !== currentContent) {
-        content.classList.add("hidden");
+    // Close other FAQ items
+    document.querySelectorAll(".faq-content").forEach((item) => {
+      if (item !== content) {
+        item.style.maxHeight = null;
+        item.classList.remove("opacity-100");
+        item.classList.add("opacity-0");
+
+        const otherIcon = item.previousElementSibling.querySelector("i");
+
+        otherIcon.classList.remove("fa-minus");
+        otherIcon.classList.add("fa-plus");
       }
     });
 
-    document.querySelectorAll(".faq-btn i").forEach((icon) => {
-      icon.classList.remove("fa-minus");
-      icon.classList.add("fa-plus");
+    // Close all icons first
+    document.querySelectorAll(".faq-btn i").forEach((itemIcon) => {
+      itemIcon.classList.remove("fa-minus");
+      itemIcon.classList.add("fa-plus");
     });
 
-    // Toggle current item
-    currentContent.classList.toggle("hidden");
+    // Toggle current FAQ
+    if (content.style.maxHeight) {
+      // CLOSE
+      content.style.maxHeight = null;
+      content.classList.remove("opacity-100");
+      content.classList.add("opacity-0");
 
-    if (currentContent.classList.contains("hidden")) {
-      currentIcon.classList.remove("fa-minus");
-      currentIcon.classList.add("fa-plus");
+      icon.classList.remove("fa-minus");
+      icon.classList.add("fa-plus");
     } else {
-      currentIcon.classList.remove("fa-plus");
-      currentIcon.classList.add("fa-minus");
+      // OPEN
+      content.style.maxHeight = content.scrollHeight + "px";
+      content.classList.remove("opacity-0");
+      content.classList.add("opacity-100");
+
+      icon.classList.remove("fa-plus");
+      icon.classList.add("fa-minus");
     }
   });
 });
+
 // Marquee
 $(document).ready(function () {
   $(".marquee-slider").slick({

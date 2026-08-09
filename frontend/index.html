@@ -24,6 +24,9 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.css"
     />
+    <!-- Owl carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- External CSS -->
@@ -239,7 +242,7 @@
       <!-- Dropdown -->
        <ul
         id="destoppagesMenu"
-        class="absolute left-0 top-full mt-4 w-56 rounded-xl bg-white shadow-xl border border-gray-200 opacity-0 invisible scale-95 transition-all duration-300 origin-top z-50"
+        class="absolute left-0 top-full mt-4 w-40 rounded-xl bg-white shadow-xl border border-gray-200 opacity-0 invisible scale-95 transition-all duration-300 origin-top z-50"
       >
       <li>
           <a href="aboutus.html" class="block px-5 py-3 font-[family-name:--font-Manrope] text-sm xl:text-base text-[--primary-color-1] hover:bg-gray-100 hover:text-[--btn-color]">
@@ -289,7 +292,7 @@
                 <!-- Login Button -->
                 <a
                   href="login.html"
-                  class="hidden contact-btn lg:inline-flex items-center justify-center gap-2 bg-[var(--btn-color)] border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] px-5 lg:py-2 xl:py-3 rounded-full font-[family-name:--font-poppins] font-bold lg:text-base xl:text-xl text-white hover:text-[var(--btn-color)] overflow-hidden relative z-[999] transition-all ease-in duration-300"
+                  class="hidden contact-btn lg:inline-flex items-center justify-center gap-2 bg-[var(--btn-color)] border-2 border-[#F4F1EA] shadow-xl hover:border-2 hover:border-[--btn-color] px-5 lg:py-2 xl:py-3 rounded-full font-[family-name:--font-poppins] font-bold lg:text-base xl:text-xl text-white hover:text-[var(--btn-color)] overflow-hidden relative z-[999] transition-all ease-in duration-300"
                 >
                   LogIn
                   <i class="fa-solid fa-paw"></i>
@@ -473,7 +476,7 @@
               <!-- Login Button -->
               <a
                 href="login.html"
-                class="lg:hidden contact-btn lg:inline-flex items-center justify-center gap-2 bg-[var(--btn-color)] border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] px-6 py-3 sm:py-2 md:px-8 md:py-3 lg:py-2 xl:py-3 mt-5 rounded-full font-[family-name:--font-poppins] font-bold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white hover:text-[var(--btn-color)] overflow-hidden relative z-[999] transition-all ease-in duration-300"
+                class="lg:hidden contact-btn lg:inline-flex items-center justify-center gap-2 bg-[var(--btn-color)] border-2 border-[#F4F1EA] shadow-xl hover:border-2 hover:border-[--btn-color] px-6 py-3 sm:py-2 md:px-8 md:py-3 lg:py-2 xl:py-3 mt-5 rounded-full font-[family-name:--font-poppins] font-bold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white hover:text-[var(--btn-color)] overflow-hidden relative z-[999] transition-all ease-in duration-300"
               >
                 LogIn
                 <i class="fa-solid fa-paw"></i>
@@ -501,7 +504,7 @@
             <!-- Banner content -->
             <div class="max-w-[670px] xl:max-w-[940px] max-[768px]:text-center">
               <h1
-                class="font-[family-name:--font-Fredoka] text-xl md:text-2xl min-[992px]:text-3xl lg:text-4xl xl:text-5xl min-[1920px]:text-6xl leading-[1.4] tracking-[4px] text-white"
+                class="font-[family-name:--font-Fredoka] text-xl md:text-2xl min-[992px]:text-3xl lg:text-4xl xl:text-5xl min-[1920px]:text-6xl leading-[1.4] tracking-[2px] text-white"
               >
                 Some Are Fluffy. Some Have Feathers. All Need Love.
               </h1>
@@ -524,10 +527,12 @@
                 </a>
                 <!-- Adopt Now Button -->
                 <a
-                  href="#"
-                  class="contact-btn inline-flex items-center justify-center gap-2 w-full sm:w-auto px-4 md:px-7 py-3 min-[992px]:py-4 xl:px-5 lg:py-2 xl:py-3 bg-[var(--btn-color)] border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] rounded-full font-[family-name:--font-poppins] font-bold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white hover:text-[var(--btn-color)] overflow-hidden transition-all ease-in duration-300"
-                  >Adopt Now<i class="fa-solid fa-paw"></i>
-                </a>
+  href="#"
+  class="contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-2 border-[#F4F1EA] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:border-[--btn-color] hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
+>
+  Adopt Now
+  <i class="fa-solid fa-paw"></i>
+</a>
               </div>
               <!-- Adopter's card -->
               <div
@@ -631,7 +636,7 @@
                 <!-- Adopt now -->
                 <a
                   href="#"
-                  class="contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
+                  class="contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-2 border-[#F4F1EA] shadow-xl hover:border-2 hover:border-[--btn-color] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
                 >
                   Adopt Now
                   <i class="fa-solid fa-paw"></i>
@@ -678,7 +683,7 @@
           <div class="responsive">
             <!-- Card 1 -->
             <div
-              class="w-full rounded-[21px] border-[3px] border-[--primary-color-1] p-3 sm:p-4 mx-4"
+              class="w-full rounded-[21px] border-[2px] border-[--primary-color-1] p-3 sm:p-4 mx-4"
             >
               <div class="relative">
                 <div class="overflow-hidden rounded-[21px]">
@@ -732,7 +737,7 @@
             </div>
             <!-- Card 2 -->
             <div
-              class="w-full rounded-[21px] border-[3px] border-[--primary-color-1] p-3 sm:p-4 mx-4"
+              class="w-full rounded-[21px] border-[2px] border-[--primary-color-1] p-3 sm:p-4 mx-4"
             >
               <div class="relative">
                 <div class="overflow-hidden rounded-[21px]">
@@ -786,7 +791,7 @@
             </div>
             <!-- Card 3 -->
             <div
-              class="w-full rounded-[21px] border-[3px] border-[--primary-color-1] p-3 sm:p-4 mx-4"
+              class="w-full rounded-[21px] border-[2px] border-[--primary-color-1] p-3 sm:p-4 mx-4"
             >
               <div class="relative">
                 <div class="overflow-hidden rounded-[21px]">
@@ -840,7 +845,7 @@
             </div>
             <!-- Card 4 -->
             <div
-              class="w-full rounded-[21px] border-[3px] border-[--primary-color-1] p-3 sm:p-4 mx-4"
+              class="w-full rounded-[21px] border-[2px] border-[--primary-color-1] p-3 sm:p-4 mx-4"
             >
               <div class="relative">
                 <div class="overflow-hidden rounded-[21px]">
@@ -894,7 +899,7 @@
             </div>
             <!-- Card 5 -->
             <div
-              class="w-full rounded-[21px] border-[3px] border-[--primary-color-1] p-3 sm:p-4 mx-4"
+              class="w-full rounded-[21px] border-[2px] border-[--primary-color-1] p-3 sm:p-4 mx-4"
             >
               <div class="relative">
                 <div class="overflow-hidden rounded-[21px]">
@@ -984,7 +989,7 @@
             <!-- Dog -->
             <img
               src="Images/finds-dog.png"
-              class="absolute bottom-[-311px] lg:bottom-[-333px] xl:bottom-[-430px] 2xl:bottom-[-438px] right-0 z-10 hidden min-[992px]:block min-[992px]:max-w-[290px] lg:max-w-[338px] xl:max-w-[430px] 2xl:max-w-[480px] object-contain"
+              class="absolute bottom-[-311px] lg:bottom-[-333px] xl:bottom-[-425px] 2xl:bottom-[-438px] right-0 z-10 hidden min-[992px]:block min-[992px]:max-w-[290px] lg:max-w-[338px] xl:max-w-[430px] 2xl:max-w-[480px] object-contain"
               alt="Dog"
             />
           </div>
@@ -1002,13 +1007,12 @@
           >
             <!-- Adopt now button -->
             <a
-              href="#"
-              class="contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
-"
-            >
-              Adopt Now
-              <i class="fa-solid fa-paw"></i>
-            </a>
+  href="#"
+  class="contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-2 border-[#F4F1EA] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:border-[--btn-color] hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
+>
+  View More
+  <i class="fa-solid fa-paw"></i>
+</a>
             <!-- Meet Your Friend button -->
             <a
               href="#"
@@ -1291,13 +1295,12 @@
           <!-- View More Button -->
           <div class="flex flex-wrap justify-center items-center mt-[51px]">
             <a
-              href="#"
-              class="contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
-
-            >
-              View More
-              <i class="fa-solid fa-paw"></i>
-            </a>
+  href="#"
+  class="contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-2 border-[#F4F1EA] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:border-[--btn-color] hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
+>
+  View More
+  <i class="fa-solid fa-paw"></i>
+</a>
           </div>
         </div>
       </section>
@@ -1383,7 +1386,7 @@
                           </div>
                           <a
                             href="#"
-                            class="read-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border-[2px] border-[--primary-color-1] shadow-xl hover:border-[--btn-color] bg-[--heading-text] px-4 py-3 font-[family-name:--font-poppins] font-extrabold text-[--primary-color-1] shadow-xl transition-all duration-300 ease-in hover:border-[--btn-color] hover:text-white min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
+                            class="friend-btn inline-flex w-auto items-center justify-center gap-2 overflow-hidden rounded-[30px] border-[2px] border-[--primary-color-1] shadow-xl hover:border-[--btn-color] bg-[--heading-text] px-4 py-3 font-[family-name:--font-poppins] font-bold text-[--primary-color-1] shadow-xl transition-all duration-300 ease-in hover:border-[--btn-color] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
                           >
                             Read More
                             <i class="fa-solid fa-paw"></i>
@@ -1467,7 +1470,7 @@
                           </div>
                           <a
                             href="#"
-                            class="read-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border-[2px] border-[--primary-color-1] shadow-xl hover:border-[--btn-color] bg-[--heading-text] px-4 py-3 font-[family-name:--font-poppins] font-extrabold text-[--primary-color-1] shadow-xl transition-all duration-300 ease-in hover:border-[--btn-color] hover:text-white min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
+                            class="friend-btn inline-flex w-auto items-center justify-center gap-2 overflow-hidden rounded-[30px] border-[2px] border-[--primary-color-1] shadow-xl hover:border-[--btn-color] bg-[--heading-text] px-4 py-3 font-[family-name:--font-poppins] font-bold text-[--primary-color-1] shadow-xl transition-all duration-300 ease-in hover:border-[--btn-color] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
                           >
                             Read More
                             <i class="fa-solid fa-paw"></i>
@@ -1551,7 +1554,7 @@
                           </div>
                           <a
                             href="#"
-                            class="read-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border-[2px] border-[--primary-color-1] shadow-xl hover:border-[--btn-color] bg-[--heading-text] px-4 py-3 font-[family-name:--font-poppins] font-extrabold text-[--primary-color-1] shadow-xl transition-all duration-300 ease-in hover:border-[--btn-color] hover:text-white min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
+                            class="friend-btn inline-flex w-auto items-center justify-center gap-2 overflow-hidden rounded-[30px] border-[2px] border-[--primary-color-1] shadow-xl hover:border-[--btn-color] bg-[--heading-text] px-4 py-3 font-[family-name:--font-poppins] font-bold text-[--primary-color-1] shadow-xl transition-all duration-300 ease-in hover:border-[--btn-color] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
                           >
                             Read More
                             <i class="fa-solid fa-paw"></i>
@@ -1583,12 +1586,12 @@
           <!-- Browse Article -->
           <div class="flex flex-wrap justify-center items-center mt-0 xl:mt-[51px]">
             <a
-              href="#"
-              class="contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
-                >
-              Browse article
-              <i class="fa-solid fa-paw"></i>
-            </a>
+  href="#"
+  class="contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-2 border-[#F4F1EA] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:border-[--btn-color] hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
+>
+  View More
+  <i class="fa-solid fa-paw"></i>
+</a>
           </div>
           <!-- cat Image -->
           <div>
@@ -1602,7 +1605,7 @@
         </div>
       </section>
       <!-- Stories -->
-      <section class="bg-[#D5E6EB] mt-0 xl:mt-[-73px] py-12 sm:py-16 lg:py-[70px]">
+      <section class="bg-[#D5E6EB] mt-0 xl:mt-[-65px] py-12 sm:py-16 lg:py-[70px]">
         <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
           <span
             class="mb-4 flex items-center justify-center gap-2 text-center font-[family-name:--font-poppins] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold tracking-[2px] text-[--primary-color-1] sm:mb-9 sm:gap-3 sm:tracking-[4px]"
@@ -1835,7 +1838,7 @@
             <!-- Share Experience Button -->
             <a
               href="#"
-              class="contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
+              class="contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-2 border-[#F4F1EA] shadow-xl hover:border-2 hover:border-[--btn-color] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
                 >
               Share Experience
               <i class="fa-solid fa-paw"></i>
@@ -1887,12 +1890,12 @@
                     >How does the adoption process work?</span
                   >
                   <i
-                    class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-all duration-300"
-                  ></i>
+  class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-transform duration-300 ease-in-out"
+></i>
                 </button>
                 <div
-                  class="faq-content hidden px-4 sm:px-5 pb-5 duration-500 ease-in-out"
-                >
+  class="faq-content max-h-0 overflow-hidden px-4 sm:px-5 opacity-0 transition-all duration-500 ease-in-out"
+>
                   <p class="text-xs sm:text-sm md:text-base text-gray-500 leading-7">
                     Browse pets, submit a request, meet your chosen companion,
                     and complete the adoption once approved
@@ -1911,12 +1914,12 @@
                     >Can I meet the pet before adopting?</span
                   >
                   <i
-                    class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-all duration-300"
-                  ></i>
+  class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-transform duration-300 ease-in-out"
+></i>
                 </button>
                 <div
-                  class="faq-content hidden px-4 sm:px-5 pb-5 duration-500 ease-in-out"
-                >
+  class="faq-content max-h-0 overflow-hidden px-4 sm:px-5 opacity-0 transition-all duration-500 ease-in-out"
+>
                   <p class="text-xs sm:text-sm md:text-base text-gray-500 leading-7">
                     Yes. We encourage every adopter to meet the pet first to
                     ensure it's the right match.
@@ -1935,12 +1938,12 @@
                     >Are the pets vaccinated and healthy?</span
                   >
                   <i
-                    class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-all duration-300"
-                  ></i>
+  class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-transform duration-300 ease-in-out"
+></i>
                 </button>
                 <div
-                  class="faq-content hidden px-4 sm:px-5 pb-5 duration-500 ease-in-out"
-                >
+  class="faq-content max-h-0 overflow-hidden px-4 sm:px-5 opacity-0 transition-all duration-500 ease-in-out"
+>
                   <p class="text-xs sm:text-sm md:text-base text-gray-500 leading-7">
                     Each pet profile includes available health records,
                     vaccination status, and medical information.
@@ -1959,12 +1962,12 @@
                     >What if the adoption doesn't work out?</span
                   >
                   <i
-                    class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-all duration-300"
-                  ></i>
+  class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-transform duration-300 ease-in-out"
+></i>
                 </button>
                 <div
-                  class="faq-content hidden px-4 sm:px-5 pb-5 duration-500 ease-in-out"
-                >
+  class="faq-content max-h-0 overflow-hidden px-4 sm:px-5 opacity-0 transition-all duration-500 ease-in-out"
+>
                   <p class="text-xs sm:text-sm md:text-base text-gray-500 leading-7">
                     Many rescue partners have return policies to ensure the
                     pet's wellbeing. Check the pet's profile for details.
@@ -1983,12 +1986,12 @@
                     >How long does the adoption process take?</span
                   >
                   <i
-                    class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-all duration-300"
-                  ></i>
+  class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-transform duration-300 ease-in-out"
+></i>
                 </button>
                 <div
-                  class="faq-content hidden px-4 sm:px-5 pb-5 duration-500 ease-in-out"
-                >
+  class="faq-content max-h-0 overflow-hidden px-4 sm:px-5 opacity-0 transition-all duration-500 ease-in-out"
+>
                   <p class="text-xs sm:text-sm md:text-base text-gray-500 leading-7">
                     It depends on the rescue partner, but most requests are
                     reviewed within a few days.
@@ -2007,12 +2010,12 @@
                     >Are the pet profiles verified?</span
                   >
                   <i
-                    class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-all duration-300"
-                  ></i>
+  class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-transform duration-300 ease-in-out"
+></i>
                 </button>
                 <div
-                  class="faq-content hidden px-4 sm:px-5 pb-5 duration-500 ease-in-out"
-                >
+  class="faq-content max-h-0 overflow-hidden px-4 sm:px-5 opacity-0 transition-all duration-500 ease-in-out"
+>
                   <p class="text-sm sm:text-base text-gray-500 leading-7">
                     We work with trusted shelters and partners to provide
                     accurate information.
@@ -2031,12 +2034,12 @@
                     >Do you provide post-adoption support?</span
                   >
                   <i
-                    class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-all duration-300"
-                  ></i>
+  class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-transform duration-300 ease-in-out"
+></i>
                 </button>
                 <div
-                  class="faq-content hidden px-4 sm:px-5 pb-5 duration-500 ease-in-out"
-                >
+  class="faq-content max-h-0 overflow-hidden px-4 sm:px-5 opacity-0 transition-all duration-500 ease-in-out"
+>
                   <p class="text-xs sm:text-sm md:text-base text-gray-500 leading-7">
                     Yes. We offer care guides and access to trusted pet care
                     resources.
@@ -2059,7 +2062,7 @@
             <!-- Share Experience Button -->
             <a
               href="#"
-              class="contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl">
+              class="contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-2 border-[#F4F1EA] shadow-xl hover:border-2 hover:border-[--btn-color] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl">
               Let's Chat
               <i class="fa-solid fa-paw"></i>
             </a>
@@ -2088,11 +2091,11 @@
                 class="mb-4 lg:mb-[30px] xl:mb-[50px] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:max-w-[766px] xl:text-[80px] font-[family-name:--font-Fredoka] font-semibold leading-[1.04]"
               >
                 Until They Find Their
-                <span class="text-[--btn-color]">Forever On</span>
+                <span class="text-[--btn-color]">Forever One.</span>
               </h2>
               <a
                 href="#"
-                class="mb-4 md:mb-0 contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl">
+                class="mb-4 md:mb-0 contact-btn inline-flex w-auto items-center justify-center gap-2 overflow-hidden rounded-[30px] border-2 border-[#F4F1EA] shadow-xl hover:border-2 hover:border-[--btn-color] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl">
                 Discover Shelter Companions
                 <i class="fa-solid fa-paw"></i>
               </a>
@@ -2114,21 +2117,13 @@
       <!-- Awards -->
       <section class="-mt-[124px] min-[1920px]:-mt-[48px]">            
         <div class="relative overflow-hidden">
-          <!-- Left Fade -->
-          <div
-            class="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 2xl:w-[450px] min-[1920px]:w-[800px] bg-gradient-to-r from-[--heading-text] via-[--heading-text]/70 to-transparent"
-          ></div>
-          <!-- Right Fade -->
-          <div
-            class="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 2xl:w-[450px] min-[1920px]:w-[800px] bg-gradient-to-l from-[--heading-text] via-[--heading-text]/70 to-transparent"
-          ></div>
           <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
             <span
               class="mb-4 flex items-center justify-center gap-2 text-center font-[family-name:--font-poppins] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold tracking-[2px] text-[--primary-color-1] sm:mb-9 sm:gap-3 sm:tracking-[4px]">
               <i class="fa-solid fa-paw"></i>
               Awards
             </span>
-            <div class="marquee-slider">
+            <div class="marquee-slider feather-shadow">
               <!-- items 1 -->
               <div class="item">
                 <img
@@ -2206,14 +2201,14 @@
         </div>
       </section>
       <!-- Newsletter -->
-      <section class="pt-14 pb-0 sm:pt-16 lg:py-14">
+      <section class="pt-14 pb-0 sm:pt-16 lg:py-14 overflow-hidden">
         <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
           <div class="max-w-[760px] mx-auto relative">
             <!-- Left Image -->
             <img
               src="Images/left-dog.png"
               alt="left-dog"
-              class="absolute hidden min-[992px]:block -left-[80px] xl:-left-[127px] top-[3px] w-20 xl:w-32 object-contain"
+              class="absolute hidden min-[992px]:block -left-[160px] xl:-left-[127px] -top-[14px] xl:top-0 w-40 xl:w-32 object-contain"
               loading="lazy"
             />
             <!-- Newsletter Box -->
@@ -2249,7 +2244,7 @@
             <img
               src="Images/right-dog.png"
               alt="right-dog"
-              class="absolute hidden min-[992px]:block -right-[80px] xl:-right-[127px] top-0 w-20 xl:w-32 object-contain"
+              class="absolute hidden min-[992px]:block -right-[159px] xl:-right-[127px] -top-[12px] xl:top-0 w-40 xl:w-32 object-contain"
               loading="lazy"
             />
           </div>
@@ -2258,7 +2253,7 @@
 </main>
 <!-- Footer -->
     <footer
-      class="footer-banner relative pt-24 pb-16 sm:pt-24 lg:pt-28"
+      class="footer-banner relative pt-24 pb-16 sm:pt-24 lg:pt-28 lg:pb-8"
     >
     <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
       <div class="flex flex-wrap mx-[-15px]">
@@ -2288,14 +2283,14 @@
               <!-- Contact Button -->
               <a
                 href="contact.html"
-                class="friend-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-[2px] border-[--primary-color-1] shadow-xl hover:border-[--btn-color] bg-[--heading-text] px-4 py-3 font-[family-name:--font-poppins] font-bold text-[--primary-color-1] shadow-xl transition-all duration-300 ease-in hover:border-[--btn-color] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl">
+                class="friend-btn inline-flex w-auto items-center justify-center gap-2 overflow-hidden rounded-[30px] border-[2px] border-[--primary-color-1] shadow-xl hover:border-[--btn-color] bg-[--heading-text] px-4 py-3 font-[family-name:--font-poppins] font-bold text-[--primary-color-1] shadow-xl transition-all duration-300 ease-in hover:border-[--btn-color] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl">
                 Contact Us
                 <i class="fa-solid fa-paw"></i>
               </a>
               <!-- Adopt now -->
               <a
                 href="#"
-                class="contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-4 border-[#F4F1EA] shadow-xl hover:border-[2px] hover:border-[--btn-color] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl">
+                class="contact-btn inline-flex w-auto items-center justify-center gap-2 overflow-hidden rounded-[30px] border-2 border-[#F4F1EA] shadow-xl hover:border-2 hover:border-[--btn-color] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl">
                 Adopt Now
                 <i class="fa-solid fa-paw"></i>
               </a>
@@ -2310,22 +2305,22 @@
             >
             <ul class="space-y-4 mt-4 lg:mt-6">
               <li
-                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] hover:scale-110 ease-in-out duration-300"
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
               >
                 <a href="index.html">Home</a>
               </li>
               <li
-                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] hover:scale-110 ease-in-out duration-300"
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
               >
                 <a href="aboutus.html">About Us</a>
               </li>
               <li
-                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] hover:scale-110 ease-in-out duration-300"
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
               >
                 <a href="blog.html">Blog</a>
               </li>
               <li
-                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] hover:scale-110 ease-in-out duration-300"
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
               >
                 <a href="faq.html">FAQ</a>
               </li>
@@ -2340,12 +2335,12 @@
             >
             <ul class="space-y-4 mt-4 lg:mt-6">
               <li
-                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] hover:scale-110 ease-in-out duration-300"
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
               >
                 <a href="#">Adoption</a>
               </li>
               <li
-                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] hover:scale-110 ease-in-out duration-300"
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
               >
                 <a href="#">Shelter Networking</a>
               </li>
@@ -2385,7 +2380,7 @@
       </div>
       <div class="bg-[#F4F1EA] w-full h-[1px] my-6"></div>
       <div class="flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-4">
-        <div class="text-[#F4F1EA] font-[family-name:--font-poppins] text-xs md:text-sm xl:text-base font-semibold text-center lg:text-left m-0 lg:ml-24">Copyright
+        <div class="text-[#F4F1EA] font-[family-name:--font-poppins] text-xs md:text-sm xl:text-base font-semibold text-center lg:text-left">Copyright
           &copy 2026 <a href="index.html" class="hover:text-[--btn-color]">Fur & Feather.</a> All Rights Reserved.
         </div>
         <ul class="text-white flex flex-wrap gap-4">
@@ -2398,7 +2393,7 @@
     </div>
     <!-- left -->
       <div
-        class="absolute left-0 bottom-0 z-10 w-[140px] sm:w-[120px] md:w-[200px] lg:w-[260px] min-[1920px]:w-[400px] pointer-events-none"
+        class="absolute left-0 bottom-0 z-10 w-[140px] sm:w-[120px] md:w-[200px] lg:hidden min-[1920px]:block lg:w-[260px] min-[1920px]:w-[400px] pointer-events-none"
       >
         <img
           src="Images/left-footer.png"
@@ -2434,6 +2429,9 @@
     </div>
     <!-- AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Owl carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <!-- Swiper JS CDN  -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <!-- JQuery CDN -->
