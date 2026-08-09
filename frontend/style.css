@@ -106,6 +106,9 @@ img {
 .nav-items.active::after {
   width: 100%;
 }
+.dropdown.active{
+  color: var(--btn-color);
+}
 .contact-btn,
 .friend-btn,
 .read-btn {
@@ -229,8 +232,16 @@ img {
   background-size: cover;
   background-position: center;
 }
+/* blogs */
+.blog-banner{
+  background: url("Images/blog-banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
 
+}
+/* Awards */
 .feather-shadow {
     mask-image: linear-gradient(to right,transparent 0,#000 20%,#000 80%,transparent 100%);
     -webkit-mask-image: linear-gradient(to right,transparent 0,#000 20%,#000 80%,transparent 100%);
 }
+
