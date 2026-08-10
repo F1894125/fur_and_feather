@@ -74,23 +74,27 @@ document.addEventListener("click", function (e) {
 // Humberger clickable menu
 const pagesBtn = document.getElementById("pagesBtn");
 const pagesMenu = document.getElementById("pagesMenu");
+
 pagesBtn.addEventListener("click", () => {
-    if (pagesMenu.classList.contains("hidden")) {
-        pagesMenu.classList.remove("hidden");
+  const isOpen = pagesMenu.classList.toggle("active");
 
-        // Allow browser to render before animating
-        requestAnimationFrame(() => {
-            pagesMenu.classList.remove("max-h-0");
-            pagesMenu.classList.add("max-h-[400px]");
-        });
-    } else {
-        pagesMenu.classList.remove("max-h-[400px]");
-        pagesMenu.classList.add("max-h-0");
+  if (isOpen) {
+    // Open menu
+    pagesMenu.classList.remove("hidden");
 
-        setTimeout(() => {
-            pagesMenu.classList.add("hidden");
-        }, 500); // Match transition duration
-    }
+    requestAnimationFrame(() => {
+      pagesMenu.classList.remove("max-h-0");
+      pagesMenu.classList.add("max-h-[400px]");
+    });
+  } else {
+    // Close menu
+    pagesMenu.classList.remove("max-h-[400px]");
+    pagesMenu.classList.add("max-h-0");
+
+    setTimeout(() => {
+      pagesMenu.classList.add("hidden");
+    }, 500);
+  }
 });
 
 // Companion Slider

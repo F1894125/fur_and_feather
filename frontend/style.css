@@ -109,6 +109,18 @@ img {
 .dropdown.active{
   color: var(--btn-color);
 }
+#pagesMenu {
+  transition: max-height 0.5s ease-in-out;
+}
+
+#pagesMenu.active {
+  max-height: 400px;
+}
+
+.mobile-dropdown.active {
+  color: var(--btn-color);
+}
+
 .contact-btn,
 .friend-btn,
 .read-btn {
@@ -223,7 +235,7 @@ img {
 
 /* Contact Page */
 .contact-banner{
-  background: url("Images/contact-banner.png") no-repeat;
+  background: url("Images/contact-frame.png") no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -234,7 +246,7 @@ img {
 }
 /* blogs */
 .blog-banner{
-  background: url("Images/blog-banner.png") no-repeat;
+  background: url("Images/blog-frame.png") no-repeat;
   background-size: cover;
   background-position: center;
 
