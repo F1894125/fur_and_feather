@@ -962,7 +962,9 @@
             </div>
               <div class="flex flex-col gap-8 sm:gap-10 lg:gap-12">
                 <!-- Blog 1 -->
-                <div class="relative mb-[50px] sm:mb-[60px] md:mb-[40px] min-[992px]:mb-[60px] lg:mb-[100px]">
+                <div class="blog-card  relative mb-[50px] sm:mb-[60px] md:mb-[40px] min-[992px]:mb-[60px] lg:mb-[100px]" data-category="adoption"
+  data-tags="dog, pet"
+  data-title="The Day We Found Each Other">
                   <div class="flex flex-wrap mx-[-15px]">
                     <div
                       class="hidden min-[576px]:block min-[576px]:max-w-[40%] min-[576px]:basis-[40%] min-[576px]:px-[15px]"
@@ -1045,7 +1047,9 @@
                   </div>
                 </div>
                 <!-- Blog 2 -->
-                <div class="relative mb-[50px] sm:mb-[60px] md:mb-[40px] min-[992px]:mb-[60px] lg:mb-[100px]">
+                <div class="blog-card relative mb-[50px] sm:mb-[60px] md:mb-[40px] min-[992px]:mb-[60px] lg:mb-[100px]" data-category="adoption"
+  data-tags="dog, pet"
+  data-title="The Day We Found Each Other">
                   <div class="flex flex-wrap mx-[-15px]">
                     <div
                       class="hidden min-[576px]:block min-[576px]:max-w-[40%] min-[576px]:basis-[40%] min-[576px]:px-[15px]"
@@ -1126,7 +1130,9 @@
                   </div>
                 </div>
                 <!-- Blog 3 -->
-                <div class="relative">
+                <div class="blog-card relative" data-category="adoption"
+  data-tags="dog, pet"
+  data-title="The Day We Found Each Other">
                   <div class="flex flex-wrap mx-[-15px]">
                     <div
                       class="hidden min-[576px]:block min-[576px]:max-w-[40%] min-[576px]:basis-[40%] min-[576px]:px-[15px]"
@@ -1224,12 +1230,12 @@
             <div class="relative">
 
               <input
-                type="text"
+                type="text" id="searchInput"
                 class="md:h-[30] lg:h-[40px] xl:h-[50px] w-full rounded-[5px] border border-[--primary-color-1] bg-transparent px-2 text-sm font-[family-name:--font-poppins] outline-none focus:border-[#07333d]"
               />
 
               <button
-                class="absolute right-2 top-1/2 -translate-y-1/2 text-[--primary-color-1]"
+                class="absolute right-2 top-1/2 -translate-y-1/2 text-[--primary-color-1]" id="searchBtn"
               >
                 <i class="fa-solid fa-magnifying-glass text-sm"></i>
               </button>
@@ -1252,8 +1258,8 @@
               <li>
                 <a
                   href="#"
-                  class="font-[family-name:--font-poppins] text-xs md:text-sm xl:text-base text-[--primary-color-1] transition hover:text-[--btn-color] duration-300"
-                >
+                  class="category-btn font-[family-name:--font-poppins] text-xs md:text-sm xl:text-base text-[--primary-color-1] transition hover:text-[--btn-color] duration-300"
+                data-filter="adoption">
                   Adoption
                 </a>
               </li>
@@ -1261,8 +1267,8 @@
               <li>
                 <a
                   href="#"
-                  class="font-[family-name:--font-poppins] text-xs md:text-sm xl:text-base text-[--primary-color-1] transition hover:text-[--btn-color] duration-300"
-                >
+                  class="category-btn font-[family-name:--font-poppins] text-xs md:text-sm xl:text-base text-[--primary-color-1] transition hover:text-[--btn-color] duration-300"
+                data-filter="petcare">
                   Pet Care
                 </a>
               </li>
@@ -1270,8 +1276,8 @@
               <li>
                 <a
                   href="#"
-                  class="font-[family-name:--font-poppins] text-xs md:text-sm xl:text-base text-[--primary-color-1] transition hover:text-[--btn-color] duration-300"
-                >
+                  class="category-btn font-[family-name:--font-poppins] text-xs md:text-sm xl:text-base text-[--primary-color-1] transition hover:text-[--btn-color] duration-300"
+                data-filter="newpetparents">
                   New Pet Parents
                 </a>
               </li>
@@ -1279,8 +1285,8 @@
               <li>
                 <a
                   href="#"
-                  class="font-[family-name:--font-poppins] text-xs md:text-sm xl:text-base text-[--primary-color-1] transition hover:text-[--btn-color] duration-300"
-                >
+                  class="category-btn font-[family-name:--font-poppins] text-xs md:text-sm xl:text-base text-[--primary-color-1] transition hover:text-[--btn-color] duration-300"
+                data-filter="training&behaviour">
                   Training & Behaviour
                 </a>
               </li>
@@ -1301,25 +1307,25 @@
               <div class="flex flex-wrap gap-6 justify-center">
               <a
                 href="#"
-                class="rounded-[5px] border border-[--primary-color-1] px-4 py-2 text-xs md:text-sm xl:text-base text-[--primary-color-1] transition hover:bg-[--primary-color-1] hover:text-white text-center"
+                class="tag-btn rounded-[5px] border border-[--primary-color-1] px-4 py-2 text-xs md:text-sm xl:text-base text-[--primary-color-1] transition hover:bg-[--primary-color-1] hover:text-white text-center" data-tag="dog"
               >
                 Dog
               </a>
               <a
                 href="#"
-                class="rounded-[5px] border border-[--primary-color-1] px-4 py-2 text-xs md:text-sm xl:text-base text-[--primary-color-1] transition hover:bg-[--primary-color-1] hover:text-white text-center"
+                class="tag-btn rounded-[5px] border border-[--primary-color-1] px-4 py-2 text-xs md:text-sm xl:text-base text-[--primary-color-1] transition hover:bg-[--primary-color-1] hover:text-white text-center" data-tag="cat"
               >
                 Cat
               </a>
               <a
                 href="#"
-                class="rounded-[5px] border border-[--primary-color-1] px-4 py-2 text-xs md:text-sm xl:text-base text-[--primary-color-1] transition hover:bg-[--primary-color-1] hover:text-white text-center"
+                class="tag-btn rounded-[5px] border border-[--primary-color-1] px-4 py-2 text-xs md:text-sm xl:text-base text-[--primary-color-1] transition hover:bg-[--primary-color-1] hover:text-white text-center" data-tag="rabbit"
               >
                 Rabbit
               </a>
               <a
                 href="#"
-                class="rounded-[5px] border border-[--primary-color-1] px-4 py-2 text-xs md:text-sm xl:text-base text-[--primary-color-1] transition hover:bg-[--primary-color-1] hover:text-white text-center"
+                class="tag-btn rounded-[5px] border border-[--primary-color-1] px-4 py-2 text-xs md:text-sm xl:text-base text-[--primary-color-1] transition hover:bg-[--primary-color-1] hover:text-white text-center" data-tag="bird"
               >
                 Bird
               </a>

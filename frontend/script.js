@@ -446,3 +446,215 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+    // =====================================
+    // SELECT ELEMENTS
+    // =====================================
+
+    const blogCards = document.querySelectorAll(".blog-card");
+
+    const searchInput = document.getElementById("searchInput");
+
+    const searchBtn = document.getElementById("searchBtn");
+
+    const categoryButtons =
+      document.querySelectorAll(".category-btn");
+
+    const tagButtons =
+      document.querySelectorAll(".tag-btn");
+
+
+    // =====================================
+    // FILTER BLOGS
+    // =====================================
+
+    function filterBlogs(type, value) {
+
+      blogCards.forEach((card) => {
+
+        let showCard = false;
+
+        // -----------------------------
+        // CATEGORY FILTER
+        // -----------------------------
+
+        if (type === "category") {
+
+          const category =
+            card.dataset.category;
+
+          if (value === "all") {
+
+            showCard = true;
+
+          } else if (category === value) {
+
+            showCard = true;
+
+          }
+
+        }
+
+
+        // -----------------------------
+        // TAG FILTER
+        // -----------------------------
+
+        if (type === "tag") {
+
+          const tags =
+            card.dataset.tags.toLowerCase();
+
+          if (tags.includes(value.toLowerCase())) {
+
+            showCard = true;
+
+          }
+
+        }
+
+
+        // -----------------------------
+        // SEARCH FILTER
+        // -----------------------------
+
+        if (type === "search") {
+
+          const title =
+            card.dataset.title.toLowerCase();
+
+          const description =
+            card
+              .querySelector(".blog-description")
+              .textContent
+              .toLowerCase();
+
+          const searchValue =
+            value.toLowerCase().trim();
+
+          if (
+            title.includes(searchValue) ||
+            description.includes(searchValue)
+          ) {
+
+            showCard = true;
+
+          }
+
+        }
+
+
+        // -----------------------------
+        // SHOW / HIDE
+        // -----------------------------
+
+        if (showCard) {
+
+          card.classList.remove("hide");
+
+        } else {
+
+          card.classList.add("hide");
+
+        }
+
+      });
+
+    }
+
+
+    // =====================================
+    // CATEGORY CLICK
+    // =====================================
+
+    categoryButtons.forEach((button) => {
+
+      button.addEventListener("click", () => {
+
+        const category =
+          button.dataset.filter;
+
+        filterBlogs("category", category);
+
+        // Clear search
+        searchInput.value = "";
+
+      });
+
+    });
+
+
+    // =====================================
+    // TAG CLICK
+    // =====================================
+
+    tagButtons.forEach((button) => {
+
+      button.addEventListener("click", () => {
+
+        const tag =
+          button.dataset.tag;
+
+        filterBlogs("tag", tag);
+
+        // Clear search
+        searchInput.value = "";
+
+      });
+
+    });
+
+
+    // =====================================
+    // SEARCH
+    // =====================================
+
+    function performSearch() {
+
+      const value =
+        searchInput.value;
+
+      if (value === "") {
+
+        blogCards.forEach((card) => {
+          card.classList.remove("hide");
+        });
+
+        return;
+      }
+
+      filterBlogs("search", value);
+
+    }
+
+
+    // Search button
+    searchBtn.addEventListener(
+      "click",
+      performSearch
+    );
+
+
+    // Search while typing
+    searchInput.addEventListener(
+      "input",
+      performSearch
+    );
+
+
+    // =====================================
+    // ENTER KEY SEARCH
+    // =====================================
+
+    searchInput.addEventListener(
+      "keydown",
+      (event) => {
+
+        if (event.key === "Enter") {
+
+          performSearch();
+
+        }
+
+      }
+    );
