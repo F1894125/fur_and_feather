@@ -413,3 +413,36 @@ backToTop.addEventListener("click", () => {
     behavior: "smooth"
   });
 });
+
+// blog section 
+document.addEventListener("DOMContentLoaded", function () {
+  const sidebarButtons = document.querySelectorAll(".sidebar-toggle");
+
+  sidebarButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const targetId = this.dataset.target;
+      const target = document.getElementById(targetId);
+      const icon = this.querySelector(".sidebar-icon");
+
+      const isOpen = target.classList.contains("max-h-[200px]");
+
+      // Close all other sections
+      document.querySelectorAll(".sidebar-content").forEach((content) => {
+        content.classList.remove("max-h-[200px]");
+        content.classList.add("max-h-0");
+      });
+
+      document.querySelectorAll(".sidebar-icon").forEach((arrow) => {
+        arrow.classList.remove("rotate-180");
+      });
+
+      // Open clicked section
+      if (!isOpen) {
+        target.classList.remove("max-h-0");
+        target.classList.add("max-h-[200px]");
+
+        icon.classList.add("rotate-180");
+      }
+    });
+  });
+});

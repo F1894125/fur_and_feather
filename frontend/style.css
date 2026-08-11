@@ -249,7 +249,11 @@ img {
   background: url("Images/blog-frame.png") no-repeat;
   background-size: cover;
   background-position: center;
-
+}
+.mobile-blog-banner{
+  background: url("Images/mobile-blog-banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 /* Awards */
 .feather-shadow {
