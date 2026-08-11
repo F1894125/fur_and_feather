@@ -255,6 +255,17 @@ img {
   background-size: cover;
   background-position: center;
 }
+/* About us */
+.about-banner{
+  background: url("Images/about-banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.mobile-about-banner{
+  background: url("Images/mobile-about-banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 /* Awards */
 .feather-shadow {
     mask-image: linear-gradient(to right,transparent 0,#000 20%,#000 80%,transparent 100%);
