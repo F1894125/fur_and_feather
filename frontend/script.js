@@ -355,6 +355,73 @@ $(document).ready(function () {
     ],
   });
 });
+
+// Scroll to Top button
+document.addEventListener("DOMContentLoaded", () => {
+  const backToTop = document.getElementById("backToTop");
+const backToTopIcon = document.getElementById("backToTopIcon");
+
+  // Stop if button doesn't exist
+  if (!backToTop || !backToTopIcon) {
+    console.log("Back to top button not found");
+    return;
+  }
+
+  // Show / hide button
+  window.addEventListener("scroll", () => {
+
+    // Show after scrolling 300px
+    if (window.scrollY > 300) {
+      backToTop.classList.remove(
+        "invisible",
+        "opacity-0",
+        "translate-y-5"
+      );
+
+      backToTop.classList.add(
+        "visible",
+        "opacity-100",
+        "translate-y-0"
+      );
+    } else {
+      backToTop.classList.remove(
+        "visible",
+        "opacity-100",
+        "translate-y-0"
+      );
+
+      backToTop.classList.add(
+        "invisible",
+        "opacity-0",
+        "translate-y-5"
+      );
+    }
+
+    // Check bottom of page
+    const atBottom =
+      window.innerHeight + window.scrollY >=
+      document.documentElement.scrollHeight - 5;
+
+    if (atBottom) {
+      // Arrow UP
+      backToTopIcon.classList.add("rotate-180");
+      backToTop.setAttribute("aria-label", "Back to top");
+    } else {
+      // Arrow DOWN
+      backToTopIcon.classList.remove("rotate-180");
+      backToTop.setAttribute("aria-label", "Scroll down");
+    }
+  });
+
+  // Button click
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+});
+
 // newsletter
 const form = document.getElementById("newsletterForm");
 form.addEventListener("submit", function (e) {
@@ -367,57 +434,6 @@ form.addEventListener("submit", function (e) {
   }
   alert("Subscribed Successfully!");
   form.reset();
-});
-
-// Scroll to Top button
-const backToTop = document.getElementById("backToTop");
-const backToTopIcon = document.getElementById("backToTopIcon");
-// Show / hide button
-window.addEventListener("scroll", () => {
-// Show button after scrolling 300px
-  if (window.scrollY > 300) {
-    backToTop.classList.remove(
-      "invisible",
-      "opacity-0",
-      "translate-y-5"
-    );
-    backToTop.classList.add(
-      "visible",
-      "opacity-100",
-      "translate-y-0"
-    );
-  } else {
-    backToTop.classList.remove(
-      "visible",
-      "opacity-100",
-      "translate-y-0"
-    );
-    backToTop.classList.add(
-      "invisible",
-      "opacity-0",
-      "translate-y-5"
-    );
-  }
-// Check if user reached the bottom
-  const atBottom =
-    window.innerHeight + window.scrollY >=
-    document.documentElement.scrollHeight - 5;
-if (atBottom) {
-// Change arrow to UP
-    backToTopIcon.classList.add("rotate-180");
-    backToTop.setAttribute("aria-label", "Back to top");
-  } else {
-// Change arrow to DOWN
-    backToTopIcon.classList.remove("rotate-180");
-    backToTop.setAttribute("aria-label", "Scroll down");
-  }
-});
-// Button click
-backToTop.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
 });
 
 // blog section 
