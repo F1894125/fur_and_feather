@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
 // Heart Button
 
 const heartBtns = document.querySelectorAll(".heartBtn");
-
 heartBtns.forEach((heartBtn) => {
   heartBtn.addEventListener("click", () => {
     const icon = heartBtn.querySelector("i");
@@ -38,10 +37,8 @@ heartBtns.forEach((heartBtn) => {
 // clickable dropdown
 const userBtn = document.getElementById("userMenu");
 const userDropdown = document.getElementById("userDropdown");
-
 userBtn.addEventListener("click", (e) => {
   e.stopPropagation();
-
   userDropdown.classList.toggle("hidden");
   userDropdown.classList.toggle("flex");
 });
@@ -262,46 +259,88 @@ var swiper = new Swiper(".storySwiper", {
 
 // Accordian
 const faqButtons = document.querySelectorAll(".faq-btn");
+const faqContents = document.querySelectorAll(".faq-content");
+
+// =====================================
+// INITIAL STATE
+// FIRST FAQ OPEN BY DEFAULT
+// =====================================
+
+faqContents.forEach((content, index) => {
+  const icon = content.previousElementSibling.querySelector("i");
+
+  if (index === 0) {
+    content.classList.remove("opacity-0");
+    content.classList.add("opacity-100");
+
+    content.style.maxHeight = content.scrollHeight + "px";
+
+    icon.classList.remove("fa-plus");
+    icon.classList.add("fa-minus");
+  } else {
+    content.style.maxHeight = "0px";
+
+    content.classList.remove("opacity-100");
+    content.classList.add("opacity-0");
+
+    icon.classList.remove("fa-minus");
+    icon.classList.add("fa-plus");
+  }
+});
+
+
+// =====================================
+// FAQ CLICK
+// =====================================
 
 faqButtons.forEach((button) => {
   button.addEventListener("click", () => {
+
     const content = button.nextElementSibling;
     const icon = button.querySelector("i");
 
-    // Close other FAQ items
-    document.querySelectorAll(".faq-content").forEach((item) => {
-      if (item !== content) {
-        item.style.maxHeight = null;
-        item.classList.remove("opacity-100");
-        item.classList.add("opacity-0");
+    // Check whether current FAQ is open
+    const isOpen =
+      content.style.maxHeight !== "0px" &&
+      content.style.maxHeight !== "";
 
-        const otherIcon = item.previousElementSibling.querySelector("i");
 
-        otherIcon.classList.remove("fa-minus");
-        otherIcon.classList.add("fa-plus");
-      }
+    // =================================
+    // CLOSE ALL FAQ ITEMS
+    // =================================
+
+    faqContents.forEach((item) => {
+
+      item.style.maxHeight = "0px";
+
+      item.classList.remove("opacity-100");
+      item.classList.add("opacity-0");
+
+      const otherIcon =
+        item.previousElementSibling.querySelector("i");
+
+      otherIcon.classList.remove("fa-minus");
+      otherIcon.classList.add("fa-plus");
     });
 
-    // Close all icons first
-    document.querySelectorAll(".faq-btn i").forEach((itemIcon) => {
-      itemIcon.classList.remove("fa-minus");
-      itemIcon.classList.add("fa-plus");
-    });
 
-    // Toggle current FAQ
-    if (content.style.maxHeight) {
-      // CLOSE
-      content.style.maxHeight = null;
-      content.classList.remove("opacity-100");
-      content.classList.add("opacity-0");
+    // =================================
+    // OPEN CURRENT FAQ
+    // =================================
 
-      icon.classList.remove("fa-minus");
-      icon.classList.add("fa-plus");
-    } else {
-      // OPEN
-      content.style.maxHeight = content.scrollHeight + "px";
-      content.classList.remove("opacity-0");
-      content.classList.add("opacity-100");
+    if (!isOpen) {
+
+      // Important:
+      // Let the browser render the closed state first
+      requestAnimationFrame(() => {
+
+        content.style.maxHeight =
+          content.scrollHeight + "px";
+
+        content.classList.remove("opacity-0");
+        content.classList.add("opacity-100");
+
+      });
 
       icon.classList.remove("fa-plus");
       icon.classList.add("fa-minus");
