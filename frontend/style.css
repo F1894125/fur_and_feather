@@ -288,4 +288,15 @@ img {
   background-position: center;
   min-height: 500px;
 }
+/* testimonial */
+.testimonial-banner{
+  background: url("Images/testimonial-banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.mobile-testimonial-banner{
+  background: url("Images/mobile-testimonial.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 
