@@ -38,17 +38,23 @@ heartBtns.forEach((heartBtn) => {
 // clickable dropdown
 const userBtn = document.getElementById("userMenu");
 const userDropdown = document.getElementById("userDropdown");
+
 userBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    userDropdown.classList.toggle("hidden");
+  e.stopPropagation();
+
+  userDropdown.classList.toggle("hidden");
+  userDropdown.classList.toggle("flex");
 });
+
+// Close when clicking outside
 document.addEventListener("click", (e) => {
-    if (
-        !userDropdown.contains(e.target) &&
-        !userBtn.contains(e.target)
-    ) {
-        userDropdown.classList.add("hidden");
-    }
+  if (
+    !userDropdown.contains(e.target) &&
+    !userBtn.contains(e.target)
+  ) {
+    userDropdown.classList.add("hidden");
+    userDropdown.classList.remove("flex");
+  }
 });
 
 // Destop clickable menu
