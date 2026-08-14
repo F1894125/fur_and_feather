@@ -34,35 +34,38 @@ heartBtns.forEach((heartBtn) => {
     icon.classList.toggle("text-red-500");
   });
 });
+
 // clickable dropdown
 const userBtn = document.getElementById("userMenu");
 const userDropdown = document.getElementById("userDropdown");
 
 userBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    userDropdown.classList.toggle("hidden");
+  e.stopPropagation();
+
+  userDropdown.classList.toggle("hidden");
+  userDropdown.classList.toggle("flex");
 });
+
+// Close when clicking outside
 document.addEventListener("click", (e) => {
-    if (
-        !userDropdown.contains(e.target) &&
-        !userBtn.contains(e.target)
-    ) {
-        userDropdown.classList.add("hidden");
-    }
+  if (
+    !userDropdown.contains(e.target) &&
+    !userBtn.contains(e.target)
+  ) {
+    userDropdown.classList.add("hidden");
+    userDropdown.classList.remove("flex");
+  }
 });
+
 // Destop clickable menu
 const desktopPagesBtn = document.getElementById("destoppagesBtn");
 const desktopPagesMenu = document.getElementById("destoppagesMenu");
 const desktopPagesArrow = document.getElementById("destoppagesArrow");
-
-
 desktopPagesBtn.addEventListener("click", function (e) {
   e.stopPropagation();
-
   desktopPagesMenu.classList.toggle("opacity-0");
   desktopPagesMenu.classList.toggle("invisible");
   desktopPagesMenu.classList.toggle("scale-95");
-
   desktopPagesArrow.classList.toggle("rotate-180");
 });
 
@@ -78,24 +81,26 @@ document.addEventListener("click", function (e) {
 const pagesBtn = document.getElementById("pagesBtn");
 const pagesMenu = document.getElementById("pagesMenu");
 
-
 pagesBtn.addEventListener("click", () => {
-    if (pagesMenu.classList.contains("hidden")) {
-        pagesMenu.classList.remove("hidden");
+  const isOpen = pagesMenu.classList.toggle("active");
 
-        // Allow browser to render before animating
-        requestAnimationFrame(() => {
-            pagesMenu.classList.remove("max-h-0");
-            pagesMenu.classList.add("max-h-[400px]");
-        });
-    } else {
-        pagesMenu.classList.remove("max-h-[400px]");
-        pagesMenu.classList.add("max-h-0");
+  if (isOpen) {
+    // Open menu
+    pagesMenu.classList.remove("hidden");
 
-        setTimeout(() => {
-            pagesMenu.classList.add("hidden");
-        }, 500); // Match transition duration
-    }
+    requestAnimationFrame(() => {
+      pagesMenu.classList.remove("max-h-0");
+      pagesMenu.classList.add("max-h-[400px]");
+    });
+  } else {
+    // Close menu
+    pagesMenu.classList.remove("max-h-[400px]");
+    pagesMenu.classList.add("max-h-0");
+
+    setTimeout(() => {
+      pagesMenu.classList.add("hidden");
+    }, 500);
+  }
 });
 
 // Companion Slider
@@ -109,6 +114,11 @@ $(document).ready(function () {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
+    pauseOnHover: true,
+    pauseOnFocus: true,
+    draggable: true,
+    swipe: true,
+    touchMove: true,
     responsive: [
       {
         breakpoint: 1024,
@@ -251,37 +261,54 @@ var swiper = new Swiper(".storySwiper", {
 });
 
 // Accordian
-const buttons = document.querySelectorAll(".faq-btn");
+const faqButtons = document.querySelectorAll(".faq-btn");
 
-buttons.forEach((button) => {
+faqButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const currentContent = button.nextElementSibling;
-    const currentIcon = button.querySelector("i");
+    const content = button.nextElementSibling;
+    const icon = button.querySelector("i");
 
-    // Close all items
-    document.querySelectorAll(".faq-content").forEach((content) => {
-      if (content !== currentContent) {
-        content.classList.add("hidden");
+    // Close other FAQ items
+    document.querySelectorAll(".faq-content").forEach((item) => {
+      if (item !== content) {
+        item.style.maxHeight = null;
+        item.classList.remove("opacity-100");
+        item.classList.add("opacity-0");
+
+        const otherIcon = item.previousElementSibling.querySelector("i");
+
+        otherIcon.classList.remove("fa-minus");
+        otherIcon.classList.add("fa-plus");
       }
     });
 
-    document.querySelectorAll(".faq-btn i").forEach((icon) => {
-      icon.classList.remove("fa-minus");
-      icon.classList.add("fa-plus");
+    // Close all icons first
+    document.querySelectorAll(".faq-btn i").forEach((itemIcon) => {
+      itemIcon.classList.remove("fa-minus");
+      itemIcon.classList.add("fa-plus");
     });
 
-    // Toggle current item
-    currentContent.classList.toggle("hidden");
+    // Toggle current FAQ
+    if (content.style.maxHeight) {
+      // CLOSE
+      content.style.maxHeight = null;
+      content.classList.remove("opacity-100");
+      content.classList.add("opacity-0");
 
-    if (currentContent.classList.contains("hidden")) {
-      currentIcon.classList.remove("fa-minus");
-      currentIcon.classList.add("fa-plus");
+      icon.classList.remove("fa-minus");
+      icon.classList.add("fa-plus");
     } else {
-      currentIcon.classList.remove("fa-plus");
-      currentIcon.classList.add("fa-minus");
+      // OPEN
+      content.style.maxHeight = content.scrollHeight + "px";
+      content.classList.remove("opacity-0");
+      content.classList.add("opacity-100");
+
+      icon.classList.remove("fa-plus");
+      icon.classList.add("fa-minus");
     }
   });
 });
+
 // Marquee
 $(document).ready(function () {
   $(".marquee-slider").slick({
@@ -341,3 +368,299 @@ form.addEventListener("submit", function (e) {
   alert("Subscribed Successfully!");
   form.reset();
 });
+
+// Scroll to Top button
+const backToTop = document.getElementById("backToTop");
+const backToTopIcon = document.getElementById("backToTopIcon");
+// Show / hide button
+window.addEventListener("scroll", () => {
+// Show button after scrolling 300px
+  if (window.scrollY > 300) {
+    backToTop.classList.remove(
+      "invisible",
+      "opacity-0",
+      "translate-y-5"
+    );
+    backToTop.classList.add(
+      "visible",
+      "opacity-100",
+      "translate-y-0"
+    );
+  } else {
+    backToTop.classList.remove(
+      "visible",
+      "opacity-100",
+      "translate-y-0"
+    );
+    backToTop.classList.add(
+      "invisible",
+      "opacity-0",
+      "translate-y-5"
+    );
+  }
+// Check if user reached the bottom
+  const atBottom =
+    window.innerHeight + window.scrollY >=
+    document.documentElement.scrollHeight - 5;
+if (atBottom) {
+// Change arrow to UP
+    backToTopIcon.classList.add("rotate-180");
+    backToTop.setAttribute("aria-label", "Back to top");
+  } else {
+// Change arrow to DOWN
+    backToTopIcon.classList.remove("rotate-180");
+    backToTop.setAttribute("aria-label", "Scroll down");
+  }
+});
+// Button click
+backToTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+// blog section 
+document.addEventListener("DOMContentLoaded", function () {
+  const sidebarButtons = document.querySelectorAll(".sidebar-toggle");
+
+  sidebarButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const targetId = this.dataset.target;
+      const target = document.getElementById(targetId);
+      const icon = this.querySelector(".sidebar-icon");
+
+      const isOpen = target.classList.contains("max-h-[200px]");
+
+      // Close all other sections
+      document.querySelectorAll(".sidebar-content").forEach((content) => {
+        content.classList.remove("max-h-[200px]");
+        content.classList.add("max-h-0");
+      });
+
+      document.querySelectorAll(".sidebar-icon").forEach((arrow) => {
+        arrow.classList.remove("rotate-180");
+      });
+
+      // Open clicked section
+      if (!isOpen) {
+        target.classList.remove("max-h-0");
+        target.classList.add("max-h-[200px]");
+
+        icon.classList.add("rotate-180");
+      }
+    });
+  });
+});
+
+    // =====================================
+    // SELECT ELEMENTS
+    // =====================================
+
+    const blogCards = document.querySelectorAll(".blog-card");
+
+    const searchInput = document.getElementById("searchInput");
+
+    const searchBtn = document.getElementById("searchBtn");
+
+    const categoryButtons =
+      document.querySelectorAll(".category-btn");
+
+    const tagButtons =
+      document.querySelectorAll(".tag-btn");
+
+
+    // =====================================
+    // FILTER BLOGS
+    // =====================================
+
+    function filterBlogs(type, value) {
+
+      blogCards.forEach((card) => {
+
+        let showCard = false;
+
+        // -----------------------------
+        // CATEGORY FILTER
+        // -----------------------------
+
+        if (type === "category") {
+
+          const category =
+            card.dataset.category;
+
+          if (value === "all") {
+
+            showCard = true;
+
+          } else if (category === value) {
+
+            showCard = true;
+
+          }
+
+        }
+
+
+        // -----------------------------
+        // TAG FILTER
+        // -----------------------------
+
+        if (type === "tag") {
+
+          const tags =
+            card.dataset.tags.toLowerCase();
+
+          if (tags.includes(value.toLowerCase())) {
+
+            showCard = true;
+
+          }
+
+        }
+
+
+        // -----------------------------
+        // SEARCH FILTER
+        // -----------------------------
+
+        if (type === "search") {
+
+          const title =
+            card.dataset.title.toLowerCase();
+
+          const description =
+            card
+              .querySelector(".blog-description")
+              .textContent
+              .toLowerCase();
+
+          const searchValue =
+            value.toLowerCase().trim();
+
+          if (
+            title.includes(searchValue) ||
+            description.includes(searchValue)
+          ) {
+
+            showCard = true;
+
+          }
+
+        }
+
+
+        // -----------------------------
+        // SHOW / HIDE
+        // -----------------------------
+
+        if (showCard) {
+
+          card.classList.remove("hide");
+
+        } else {
+
+          card.classList.add("hide");
+
+        }
+
+      });
+
+    }
+
+
+    // =====================================
+    // CATEGORY CLICK
+    // =====================================
+
+    categoryButtons.forEach((button) => {
+
+      button.addEventListener("click", () => {
+
+        const category =
+          button.dataset.filter;
+
+        filterBlogs("category", category);
+
+        // Clear search
+        searchInput.value = "";
+
+      });
+
+    });
+
+
+    // =====================================
+    // TAG CLICK
+    // =====================================
+
+    tagButtons.forEach((button) => {
+
+      button.addEventListener("click", () => {
+
+        const tag =
+          button.dataset.tag;
+
+        filterBlogs("tag", tag);
+
+        // Clear search
+        searchInput.value = "";
+
+      });
+
+    });
+
+
+    // =====================================
+    // SEARCH
+    // =====================================
+
+    function performSearch() {
+
+      const value =
+        searchInput.value;
+
+      if (value === "") {
+
+        blogCards.forEach((card) => {
+          card.classList.remove("hide");
+        });
+
+        return;
+      }
+
+      filterBlogs("search", value);
+
+    }
+
+
+    // Search button
+    searchBtn.addEventListener(
+      "click",
+      performSearch
+    );
+
+
+    // Search while typing
+    searchInput.addEventListener(
+      "input",
+      performSearch
+    );
+
+
+    // =====================================
+    // ENTER KEY SEARCH
+    // =====================================
+
+    searchInput.addEventListener(
+      "keydown",
+      (event) => {
+
+        if (event.key === "Enter") {
+
+          performSearch();
+
+        }
+
+      }
+    );

@@ -106,6 +106,21 @@ img {
 .nav-items.active::after {
   width: 100%;
 }
+.dropdown.active{
+  color: var(--btn-color);
+}
+#pagesMenu {
+  transition: max-height 0.5s ease-in-out;
+}
+
+#pagesMenu.active {
+  max-height: 400px;
+}
+
+.mobile-dropdown.active {
+  color: var(--btn-color);
+}
+
 .contact-btn,
 .friend-btn,
 .read-btn {
@@ -122,8 +137,8 @@ img {
   width: 0;
   height: 100%;
   background: #fff;
-  border-top-right-radius: 15%;
-  border-bottom-right-radius: 15%;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
   top: 0;
   left: 0;
   transition: width 0.5s ease-in-out;
@@ -197,10 +212,7 @@ img {
     transform: rotate(360deg);
   }
 }
-/* Blog */
-.blog-quote{
-  font-family: "Fredericka the Great", serif;
-}
+
 /* Forever banner */
 .forever-banner {
   background: url("Images/forever banner.png") no-repeat;
@@ -208,6 +220,7 @@ img {
   background-position: center;
   min-height: 888px;
 }
+
 /* Awards */
 .marquee-slider .item {
   margin: 0 15px;
@@ -217,5 +230,45 @@ img {
   background: url("Images/footer-background.jpg") no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: 750px;
+  /* min-height: 750px; */
 }
+
+/* Contact Page */
+.contact-banner{
+  background: url("Images/contact-frame.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.mobile-contact-banner{
+  background: url("Images/mobile banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* blogs */
+.blog-banner{
+  background: url("Images/blog-frame.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.mobile-blog-banner{
+  background: url("Images/mobile-blog-banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* About us */
+.about-banner{
+  background: url("Images/about-banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.mobile-about-banner{
+  background: url("Images/mobile-about-banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* Awards */
+.feather-shadow {
+    mask-image: linear-gradient(to right,transparent 0,#000 20%,#000 80%,transparent 100%);
+    -webkit-mask-image: linear-gradient(to right,transparent 0,#000 20%,#000 80%,transparent 100%);
+}
+
