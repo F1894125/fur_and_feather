@@ -7,9 +7,6 @@ from accounts.views import GoogleLoginAPIView, FacebookLoginAPIView
 urlpatterns = [
     path("admin/", admin.site.urls),
 
-    # Pets API
-    path("api/", include("pets.urls")),
-
     # Authentication
     path("api/auth/", include("dj_rest_auth.urls")),
     path(
@@ -30,7 +27,14 @@ urlpatterns = [
         "accounts/",
         include("accounts.urls", namespace="accounts"),
     ),
+
+    # Pet operations
+    path("api/", include("pets.urls")),
+
+    # Shelter operations
+    path("api/", include("shelters.urls")),
 ]
+
 if settings.DEBUG:
     urlpatterns += static(
         settings.MEDIA_URL,

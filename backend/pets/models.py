@@ -35,7 +35,7 @@ class Pet(models.Model):
         related_name="pets",
     )
     name = models.CharField(
-        max_length=100, blank=False, null=False,
+        max_length=20, blank=False, null=False,
     )
     slug = models.SlugField(max_length=100, unique=True)
     species = models.CharField(
@@ -62,8 +62,17 @@ class Pet(models.Model):
         max_length=10,
         choices=Gender.choices,
     )
+    weight = models.PositiveIntegerField(
+        null=True, blank=True,
+        validators=[MaxValueValidator(200)],
+        help_text="Weight in kilograms.",
+    )
     description = models.TextField(
         max_length=500, blank=False, null=False,
+    )
+    favorite_things = models.TextField(
+        max_length=500, blank=True, null=True,
+        help_text='Favorite food, toys, activities, etc.'
     )
     vaccinated = models.BooleanField(default=False)
     health_status = models.CharField(
@@ -77,6 +86,11 @@ class Pet(models.Model):
         default=AdoptionStatus.AVAILABLE,
     )
     is_neutered = models.BooleanField(default=False)
+    care_recovery = models.PositiveIntegerField(
+        null=True, blank=True,
+        help_text='Estimated cost of care and recovery.',
+    )
+    intake_date = models.DateField(null=False, blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -97,9 +111,19 @@ class Pet(models.Model):
     def clean(self):
         super().clean()
 
+        if self.shelter.status != Shelter.Status.ACTIVE:
+            raise ValidationError({
+                "shelter": "Only active shelters can have pets."
+            })
+
         if self.species == Species.OTHER and not self.custom_species:
             raise ValidationError({
                 "custom_species": "Please specify the species when 'Other' is selected."
+            })
+
+        if self.species != Species.OTHER and self.custom_species:
+            raise ValidationError({
+                "custom_species": "Please leave this field blank when a species is selected."
             })
 
         if self.species != Species.OTHER:
@@ -153,3 +177,12 @@ class PetImage(models.Model):
     def get_absolute_url(self):
         """Returns the canonical API URL for a specific pet image instance."""
         return reverse('pets:pet_images', kwargs={'pk': self.pk})
+
+    def save(self, *args, **kwargs):
+        if self.is_primary:
+            PetImage.objects.filter(
+                pet=self.pet,
+                is_primary=True
+            ).exclude(pk=self.pk).update(is_primary=False)
+
+        super().save(*args, **kwargs)

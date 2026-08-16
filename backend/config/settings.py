@@ -1,6 +1,7 @@
 from datetime import timedelta
 from decouple import config
 from pathlib import Path
+import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -87,14 +88,15 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': config('DB_NAME'),
-    #     'USER': config('DB_USER'),
-    #     'PASSWORD': config('DB_PASSWORD'),
-    #     'HOST': config('DB_HOST'),
-    # },
     'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
+    },
+    'test': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
@@ -135,7 +137,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
 # Default primary key field type
@@ -144,8 +146,12 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Media files (uploads)
-MEDIA_URL = "media/"
+MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
+
+SECURE_DATA_ROOT = BASE_DIR / "secure_vault"
+
+FILE_ENCRYPTION_KEY = config('FILE_ENCRYPTION_KEY')
 
 # CORS configuration
 CORS_ALLOWED_ORIGINS = [
@@ -167,6 +173,12 @@ REST_FRAMEWORK = {
             "rest_framework.filters.SearchFilter",
             "rest_framework.filters.OrderingFilter",
     ],
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 3,
+    "PAGE_SIZE_QUERY_PARAM": "page_size",
+    "MAX_PAGE_SIZE": 20,
+    # Pagination settings can be overridden at view-level using
+    # `pagination_class` attribute of CBV
 }
 
 AUTHENTICATION_BACKENDS = [
@@ -274,25 +286,32 @@ FRONTEND_PASSWORD_RESET_URL = config('FRONTEND_PASSWORD_RESET_URL')
 #     },
 # }
 
-# PROJECT_APPS = ["accounts", "pets", "applications"]
+# PROJECT_APPS = [
+#     "accounts", "pets",
+#     "applications",
+#     "shelters",
+# ]
 
 # for app_name in PROJECT_APPS:
-#     log_dir = BASE_DIR / app_name / "logs"
-#     os.makedirs(log_dir, exist_ok=True)
+#     app_dir = BASE_DIR / app_name
+#     log_dir = app_dir / "logs"
 
-#     handler_name = f"{app_name}_file"
+#     if app_dir.exists() and not log_dir.exists():
+#         os.makedirs(log_dir, exist_ok=True)
 
-#     LOGGING["handlers"][handler_name] = {
-#         "level": "INFO",
-#         "class": "logging.handlers.RotatingFileHandler",
-#         "filename": log_dir / f"{app_name}.log",
-#         "maxBytes": 1024 * 1024 * 5,  # 15 MB
-#         "backupCount": 3,
-#         "formatter": "verbose",
-#     }
+#         handler_name = f"{app_name}_file"
 
-#     LOGGING["loggers"][app_name] = {
-#         "handlers": ["console", handler_name],
-#         "level": "INFO",
-#         "propagate": False,
-#     }
+#         LOGGING["handlers"][handler_name] = {
+#             "level": "INFO",
+#             "class": "logging.handlers.RotatingFileHandler",
+#             "filename": log_dir / f"{app_name}.log",
+#             "maxBytes": 1024 * 1024 * 5,  # 15 MB
+#             "backupCount": 3,
+#             "formatter": "verbose",
+#         }
+
+#         LOGGING["loggers"][app_name] = {
+#             "handlers": ["console", handler_name],
+#             "level": "INFO",
+#             "propagate": False,
+#         }
