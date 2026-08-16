@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
 @font-face {
-    font-family: "Fredoka";
-    src: url(fonts/Fredoka/static/Fredoka-Regular.ttf) format(truetype);
-    font-weight: 400;
+  font-family: "Fredoka";
+  src: url(fonts/Fredoka/static/Fredoka-Regular.ttf) format(truetype);
+  font-weight: 400;
 }
 @font-face {
   font-family: "Fredoka";
@@ -9,33 +11,39 @@
   font-weight: 700;
 }
 @font-face {
-    font-family: "Poppins";
-    src: url(fonts/Poppins/Poppins-Regular.ttf) format(truetype);
-    font-weight: 400;
+  font-family: "Poppins";
+  src: url(fonts/Poppins/Poppins-Regular.ttf) format(truetype);
+  font-weight: 400;
 }
 @font-face {
-    font-family: "Poppins";
-    src: url(fonts/Poppins/Poppins-Bold.ttf) format(truetype);
-    font-weight: 700;
+  font-family: "Poppins";
+  src: url(fonts/Poppins/Poppins-Bold.ttf) format(truetype);
+  font-weight: 700;
 }
 @font-face {
   font-family: "Manrope";
   src: url(fonts/Manrope/static/Manrope-Regular.ttf) format(truetype);
 }
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@font-face {
+  font-family: "Fredericka";
+  src: url(fonts/Fredericka_the_Great/FrederickatheGreat-Regular.ttf) format(truetype);
+  font-weight: 400;
 }
-:root{
-    --font-Fredoka: "Fredoka";
-    --font-poppins: "Poppins";
-    --font-Manrope: "Manrope";
-    --primary-color-1: #0A3044;
-    --btn-color:#F04336;
-    --heading-text:#F4F1EA;
-    --primary-color-2: #D5E6EB;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --font-Fredoka: "Fredoka";
+  --font-poppins: "Poppins";
+  --font-Manrope: "Manrope";
+  --font-fredricka: "Fredericka";
+  --primary-color-1: #0a303a;
+  --btn-color: #f04336;
+  --heading-text: #f4f1ea;
+  --primary-color-2: #d5e6eb;
 }
 ul li {
   list-style: none;
@@ -57,87 +65,103 @@ img {
   max-width: 100%;
   height: auto;
 }
-/* Login */
-.login-banner{
-  background: url("Images/login-banner.png") no-repeat center;
-  background-size: cover;
-  background-position: center;
-  background-attachment:scroll;
+.fredericka-the-great-regular {
+  font-family: "Fredericka the Great", serif;
+  font-weight: 400;
+  font-style: normal;
 }
-/* @media (min-width: 1920px) {
-  .login-banner {
-    min-height: 1260px;
-    background-size: cover;
-    background-position: center;
-  }
-} */
+
 /* Header */
-.header{
+.header {
   background: url(Images/header.png) no-repeat;
   background-size: cover;
   background-position: center;
-  /* min-height: calc(100%)+335px; */
 }
-.nav-items{
-    position: relative;
-    transition: .5s ease;
-}
-
-.nav-items.active{
-    transform: scale(1.1);
-    color: var(--btn-color)!important;
+.nav-items {
+  position: relative;
+  transition: 0.5s ease;
 }
 
-.nav-items::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0;
-    height: 3px;
-    background: var(--btn-color);
-    transition: 0.5s ease-in-out;
+.nav-items.active {
+  transform: scale(1.1);
+  color: var(--btn-color) !important;
 }
 
-.nav-items:hover{
-    color: var(--btn-color);
+.nav-items::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 3px;
+  background: var(--btn-color);
+  transition: 0.5s ease-in-out;
+}
+
+.nav-items:hover {
+  color: var(--btn-color);
 }
 
 .nav-items:hover::after,
-.nav-items.active::after{
-    width: 100%;
+.nav-items.active::after {
+  width: 100%;
 }
-.contact-btn, .friend-btn{
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
+.dropdown.active{
+  color: var(--btn-color);
 }
-.contact-btn::before, .friend-btn::before{
+#pagesMenu {
+  transition: max-height 0.5s ease-in-out;
+}
+
+#pagesMenu.active {
+  max-height: 400px;
+}
+
+.mobile-dropdown.active {
+  color: var(--btn-color);
+}
+
+.contact-btn,
+.friend-btn,
+.read-btn {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.contact-btn::before,
+.friend-btn::before,
+.read-btn::before {
   content: "";
   position: absolute;
   z-index: -1;
   width: 0;
   height: 100%;
   background: #fff;
-  border-top-right-radius: 15%;
-  border-bottom-right-radius: 15%;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
   top: 0;
   left: 0;
   transition: width 0.5s ease-in-out;
 }
-.contact-btn:hover::before, .friend-btn:hover::before{
+.contact-btn:hover::before,
+.friend-btn:hover::before,
+.read-btn:hover::before {
   width: 100%;
 }
-.friend-btn::before{
+.friend-btn::before {
   background: var(--primary-color-2);
+}
+.read-btn::before {
+  background: var(--btn-color);
 }
 
 /* Banner */
-.banner{
+.banner {
   background: url(Images/Hero\ Banner.png) no-repeat;
   background-size: cover;
   background-position: center;
 }
+/* Heart */
 .heart {
   display: inline-block;
   animation: heartbeat 1.2s ease-in-out infinite;
@@ -145,7 +169,8 @@ img {
 }
 
 @keyframes heartbeat {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   15% {
@@ -162,28 +187,88 @@ img {
   }
 }
 .has-error input {
-    border-color: #dc2626;
+  border-color: #dc2626;
 }
 
 .error-msg {
-    display: none;
+  display: none;
 }
 
 .has-error .error-msg {
-    display: block;
+  display: block;
 }
 .spinner {
-    width:20px;
-    height:20px;
-    border:3px solid #fff;
-    border-top-color:transparent;
-    border-radius:50%;
-    display:inline-block;
-    animation:spin .7s linear infinite;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 0.7s linear infinite;
 }
 
-@keyframes spin{
-    to{
-        transform:rotate(360deg);
-    }
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
+
+/* Forever banner */
+.forever-banner {
+  background: url("Images/forever banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 888px;
+}
+
+/* Awards */
+.marquee-slider .item {
+  margin: 0 15px;
+}
+/* footer section */
+.footer-banner{
+  background: url("Images/footer-background.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* min-height: 750px; */
+}
+
+/* Contact Page */
+.contact-banner{
+  background: url("Images/contact-frame.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.mobile-contact-banner{
+  background: url("Images/mobile banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* blogs */
+.blog-banner{
+  background: url("Images/blog-frame.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.mobile-blog-banner{
+  background: url("Images/mobile-blog-banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* About us */
+.about-banner{
+  background: url("Images/about-banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.mobile-about-banner{
+  background: url("Images/mobile-about-banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* Awards */
+.feather-shadow {
+    mask-image: linear-gradient(to right,transparent 0,#000 20%,#000 80%,transparent 100%);
+    -webkit-mask-image: linear-gradient(to right,transparent 0,#000 20%,#000 80%,transparent 100%);
+}
+
