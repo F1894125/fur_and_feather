@@ -1,38 +1,76 @@
 // tab switch
 document.addEventListener("DOMContentLoaded", () => {
+
   const adopterTab = document.getElementById("adopterTab");
   const shelterTab = document.getElementById("shelterTab");
 
   const adopterForm = document.getElementById("adopterForm");
   const shelterForm = document.getElementById("shelterForm");
 
+  // Check if the tab section exists
+  if (!adopterTab || !shelterTab) {
+    console.warn("Adopter/Shelter tabs not found on this page.");
+    return;
+  }
+
+  // Check if the forms exist
+  if (!adopterForm || !shelterForm) {
+    console.warn("Adopter/Shelter forms not found.");
+    return;
+  }
+
+
+  // =====================================
+  // ADOPTER
+  // =====================================
+
   function showAdopterForm() {
+
     adopterForm.classList.remove("hidden");
     shelterForm.classList.add("hidden");
 
-    adopterTab.classList.remove("tab-inactive");
     adopterTab.classList.add("tab-active");
+    adopterTab.classList.remove("tab-inactive");
 
-    shelterTab.classList.remove("tab-active");
     shelterTab.classList.add("tab-inactive");
+    shelterTab.classList.remove("tab-active");
+
   }
 
+
+  // =====================================
+  // SHELTER
+  // =====================================
+
   function showShelterForm() {
+
     adopterForm.classList.add("hidden");
     shelterForm.classList.remove("hidden");
 
-    shelterTab.classList.remove("tab-inactive");
     shelterTab.classList.add("tab-active");
+    shelterTab.classList.remove("tab-inactive");
 
-    adopterTab.classList.remove("tab-active");
     adopterTab.classList.add("tab-inactive");
+    adopterTab.classList.remove("tab-active");
+
   }
+
+
+  // =====================================
+  // CLICK EVENTS
+  // =====================================
 
   adopterTab.addEventListener("click", showAdopterForm);
 
   shelterTab.addEventListener("click", showShelterForm);
 
+
+  // =====================================
+  // DEFAULT TAB
+  // =====================================
+
   showAdopterForm();
+
 });
 
 // Humbarger Menu
@@ -471,17 +509,37 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // newsletter
-const form = document.getElementById("newsletterForm");
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  const email = document.getElementById("email").value.trim();
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!regex.test(email)) {
-    alert("Please enter a valid email address.");
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("newsletterForm");
+
+  if (!form) {
+    console.error("newsletterForm was not found in the HTML.");
     return;
   }
-  alert("Subscribed Successfully!");
-  form.reset();
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const emailInput = document.getElementById("email");
+
+    if (!emailInput) {
+      console.error("Email input was not found in the HTML.");
+      return;
+    }
+
+    const email = emailInput.value.trim();
+
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!regex.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    alert("Subscribed Successfully!");
+
+    form.reset();
+  });
 });
 
 // blog section
@@ -517,144 +575,344 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// =====================================
-// SELECT ELEMENTS
-// =====================================
+document.addEventListener("DOMContentLoaded", () => {
 
-const blogCards = document.querySelectorAll(".blog-card");
+  // =====================================
+  // ELEMENTS
+  // =====================================
 
-const searchInput = document.getElementById("searchInput");
+  const blogCards = document.querySelectorAll(".blog-card");
 
-const searchBtn = document.getElementById("searchBtn");
+  const searchInput = document.getElementById("searchInput");
+  const searchBtn = document.getElementById("searchBtn");
 
-const categoryButtons = document.querySelectorAll(".category-btn");
+  const categoryButtons =
+    document.querySelectorAll(".category-btn");
 
-const tagButtons = document.querySelectorAll(".tag-btn");
+  const tagButtons =
+    document.querySelectorAll(".tag-btn");
 
-// =====================================
-// FILTER BLOGS
-// =====================================
 
-function filterBlogs(type, value) {
-  blogCards.forEach((card) => {
-    let showCard = false;
+  // =====================================
+  // CHECK ELEMENTS
+  // =====================================
 
-    // -----------------------------
-    // CATEGORY FILTER
-    // -----------------------------
+  console.log("Blog Cards:", blogCards.length);
+  console.log("Search Input:", searchInput);
+  console.log("Search Button:", searchBtn);
+  console.log("Category Buttons:", categoryButtons.length);
+  console.log("Tag Buttons:", tagButtons.length);
 
-    if (type === "category") {
-      const category = card.dataset.category;
 
-      if (value === "all") {
-        showCard = true;
-      } else if (category === value) {
-        showCard = true;
-      }
-    }
+  // =====================================
+  // FILTER BLOGS
+  // =====================================
 
-    // -----------------------------
-    // TAG FILTER
-    // -----------------------------
+  function filterBlogs(type, value) {
 
-    if (type === "tag") {
-      const tags = card.dataset.tags.toLowerCase();
-
-      if (tags.includes(value.toLowerCase())) {
-        showCard = true;
-      }
-    }
-
-    // -----------------------------
-    // SEARCH FILTER
-    // -----------------------------
-
-    if (type === "search") {
-      const title = card.dataset.title.toLowerCase();
-
-      const description = card
-        .querySelector(".blog-description")
-        .textContent.toLowerCase();
-
-      const searchValue = value.toLowerCase().trim();
-
-      if (title.includes(searchValue) || description.includes(searchValue)) {
-        showCard = true;
-      }
-    }
-
-    // -----------------------------
-    // SHOW / HIDE
-    // -----------------------------
-
-    if (showCard) {
-      card.classList.remove("hide");
-    } else {
-      card.classList.add("hide");
-    }
-  });
-}
-
-// =====================================
-// CATEGORY CLICK
-// =====================================
-
-categoryButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const category = button.dataset.filter;
-
-    filterBlogs("category", category);
-
-    // Clear search
-    searchInput.value = "";
-  });
-});
-
-// =====================================
-// TAG CLICK
-// =====================================
-
-tagButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const tag = button.dataset.tag;
-
-    filterBlogs("tag", tag);
-
-    // Clear search
-    searchInput.value = "";
-  });
-});
-
-// =====================================
-// SEARCH
-// =====================================
-
-function performSearch() {
-  const value = searchInput.value;
-
-  if (value === "") {
     blogCards.forEach((card) => {
-      card.classList.remove("hide");
+
+      let showCard = false;
+
+
+      // =====================================
+      // CATEGORY FILTER
+      // =====================================
+
+      if (type === "category") {
+
+        const category = card.dataset.category || "";
+
+        if (value === "all") {
+          showCard = true;
+        }
+        else if (category === value) {
+          showCard = true;
+        }
+
+      }
+
+
+      // =====================================
+      // TAG FILTER
+      // =====================================
+
+      if (type === "tag") {
+
+        const tags = card.dataset.tags || "";
+
+        if (
+          tags
+            .toLowerCase()
+            .includes(value.toLowerCase())
+        ) {
+          showCard = true;
+        }
+
+      }
+
+
+      // =====================================
+      // SEARCH FILTER
+      // =====================================
+
+      if (type === "search") {
+
+        const title =
+          card.dataset.title || "";
+
+        const descriptionElement =
+          card.querySelector(".blog-description");
+
+        const description =
+          descriptionElement
+            ? descriptionElement.textContent
+            : "";
+
+        const searchValue =
+          value.toLowerCase().trim();
+
+        if (
+          title
+            .toLowerCase()
+            .includes(searchValue) ||
+
+          description
+            .toLowerCase()
+            .includes(searchValue)
+        ) {
+          showCard = true;
+        }
+
+      }
+
+
+      // =====================================
+      // SHOW / HIDE CARD
+      // =====================================
+
+      if (showCard) {
+        card.classList.remove("hide");
+      }
+      else {
+        card.classList.add("hide");
+      }
+
     });
 
+  }
+
+
+  // =====================================
+  // CATEGORY CLICK
+  // =====================================
+
+  categoryButtons.forEach((button) => {
+
+    button.addEventListener("click", (event) => {
+
+      event.preventDefault();
+
+      const category =
+        button.dataset.filter || "all";
+
+      filterBlogs("category", category);
+
+      if (searchInput) {
+        searchInput.value = "";
+      }
+
+    });
+
+  });
+
+
+  // =====================================
+  // TAG CLICK
+  // =====================================
+
+  tagButtons.forEach((button) => {
+
+    button.addEventListener("click", (event) => {
+
+      event.preventDefault();
+
+      const tag =
+        button.dataset.tag || "";
+
+      filterBlogs("tag", tag);
+
+      if (searchInput) {
+        searchInput.value = "";
+      }
+
+    });
+
+  });
+
+
+  // =====================================
+  // SEARCH
+  // =====================================
+
+  function performSearch() {
+
+    if (!searchInput) {
+      return;
+    }
+
+    const value =
+      searchInput.value.trim();
+
+
+    // Empty search = show all
+    if (value === "") {
+
+      blogCards.forEach((card) => {
+        card.classList.remove("hide");
+      });
+
+      return;
+    }
+
+
+    filterBlogs("search", value);
+
+  }
+
+
+  // =====================================
+  // SEARCH BUTTON
+  // =====================================
+
+  if (searchBtn) {
+
+    searchBtn.addEventListener(
+      "click",
+      performSearch
+    );
+
+  }
+
+
+  // =====================================
+  // SEARCH WHILE TYPING
+  // =====================================
+
+  if (searchInput) {
+
+    searchInput.addEventListener(
+      "input",
+      performSearch
+    );
+
+
+    // =====================================
+    // ENTER KEY
+    // =====================================
+
+    searchInput.addEventListener(
+      "keydown",
+      (event) => {
+
+        if (event.key === "Enter") {
+
+          event.preventDefault();
+
+          performSearch();
+
+        }
+
+      }
+    );
+
+  }
+
+});
+
+// Rating 
+document.addEventListener("DOMContentLoaded", () => {
+
+  const stars = document.querySelectorAll(".select-star");
+  const rating = document.getElementById("rating");
+  const submitBtn = document.getElementById("submitBtn");
+
+  let selectedRating = 0;
+
+  // Check elements
+  console.log("Rating container:", rating);
+  console.log("Submit button:", submitBtn);
+  console.log("Stars:", stars.length);
+
+  // If rating elements don't exist, stop
+  if (!rating || !submitBtn || stars.length === 0) {
+    console.warn("Rating elements were not found.");
     return;
   }
 
-  filterBlogs("search", value);
-}
+  // =====================================
+  // STAR HOVER + CLICK
+  // =====================================
 
-// Search button
-searchBtn.addEventListener("click", performSearch);
+  stars.forEach((star, index) => {
 
-// Search while typing
-searchInput.addEventListener("input", performSearch);
+    // Hover
+    star.addEventListener("mouseenter", () => {
 
-// =====================================
-// ENTER KEY SEARCH
-// =====================================
+      stars.forEach((s, i) => {
+        s.textContent = i <= index ? "★" : "☆";
+      });
 
-searchInput.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
-    performSearch();
-  }
-});
+    });
+
+    // Click
+    star.addEventListener("click", () => {
+
+      selectedRating = index + 1;
+
+      stars.forEach((s, i) => {
+        s.textContent =
+          i < selectedRating ? "★" : "☆";
+      });
+
+    });
+
+  });
+
+
+  // =====================================
+  // MOUSE LEAVE
+  // =====================================
+
+  rating.addEventListener("mouseleave", () => {
+
+    stars.forEach((s, i) => {
+      s.textContent =
+        i < selectedRating ? "★" : "☆";
+    });
+
+  });
+
+
+  // =====================================
+  // SUBMIT
+  // =====================================
+
+  submitBtn.addEventListener("click", () => {
+
+    if (selectedRating === 0) {
+
+      alert("Please select a rating.");
+
+      return;
+    }
+
+    alert(
+      `You selected ${selectedRating} star${
+        selectedRating > 1 ? "s" : ""
+      }!`
+    );
+
+  });
+
+}); 
