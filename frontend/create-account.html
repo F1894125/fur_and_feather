@@ -212,9 +212,297 @@
                   <span class="text-[--btn-color]">better</span> life
                   for pets
                 </p>
-                <!-- Form -->
-                 <form action="#" method="post" id="create-form" class="mt-3 xl:mt-2 min-[1920px]:mt-3">
-                  <div class="grid grid-cols-1 gap-4 xl:gap-3 2xl:gap-4">
+                <!-- ADOPTER / SHELTER OWNER TAB -->
+      <!-- ================================= -->
+       <div class="w-full border border-[--primary-color-1] rounded-[61px] flex items-center gap-6 p-2 xl:p-2 2xl:p-3">
+        <button
+        type="button"
+        id="adopterTab"
+        class="w-1/2 h-full rounded-full text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl font-semibold transition-all duration-200 tab-active p-2 xl:p-2 2xl:p-3"
+      >
+        Adopter
+      </button>
+      <button
+        type="button"
+        id="shelterTab"
+        class="w-1/2 h-full rounded-full text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl font-semibold transition-all duration-200 tab-inactive p-2 xl:p-2 2xl:p-3"
+      >
+        Shelter Owner
+      </button>
+       </div>
+                <!-- Adapter Form -->
+                <form action="#" method="post" id="adopterForm" class="form-section mt-3 xl:mt-2 min-[1920px]:mt-3">
+                  <div class="grid grid-cols-1 gap-4 lg:gap-2 xl:gap-3 2xl:gap-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 xl:gap-4">
+                      <!-- First Name -->
+                      <div id="fnameField">
+                        <div class="relative">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            class="pointer-events-none absolute left-[24px] top-1/2 w-[20px] h-[17px] -translate-y-1/2 text-[#0A303A]"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
+                              stroke="#0A303A"
+                              stroke-width="1.5"
+                            />
+                            <path
+                              d="M14 14H10C7.23858 14 5 16.2386 5 19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19C19 16.2386 16.7614 14 14 14Z"
+                              stroke="#0A303A"
+                              stroke-width="1.5"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                          <input
+                            type="text"
+                            name="fname"
+                            id="fname"
+                            placeholder="First name"
+                            class="w-full border-[1.5px] border-[#0A303A]/80 bg-white pl-[48px] pr-[24px] font-normal font-[family-name:--font-poppins] placeholder:text-[#0A303A]/40 placeholder:font-normal outline-none transition focus:border-[#0A303A] focus:ring-2 focus:ring-[#0A303A]/20 w-full h-[48px] min-[375px]:h-[50px] min-[480px]:h-[52px] min-[576px]:h-[54px] md:h-[56px] lg:h-[36px] xl:h-[50px] 2xl:h-[60px] min-[480px]:pl-12 lg:py-5 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl rounded-[18px] lg:rounded-[15px]"
+                          />
+                        </div>
+                        <p class="error-msg text-red-600 text-xs mt-1">First Name Required</p>
+                      </div>
+                      <!-- Last Name -->
+                      <div id="lnameField">
+                        <div class="relative">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            class="pointer-events-none absolute left-[24px] top-1/2 w-[20px] h-[17px] -translate-y-1/2 text-[#0A303A]"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
+                              stroke="#0A303A"
+                              stroke-width="1.5"
+                            />
+                            <path
+                              d="M14 14H10C7.23858 14 5 16.2386 5 19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19C19 16.2386 16.7614 14 14 14Z"
+                              stroke="#0A303A"
+                              stroke-width="1.5"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                          <input
+                            type="text"
+                            name="lname"
+                            id="lname"
+                            placeholder="Last name"
+                            class="w-full border-[1.5px] border-[#0A303A]/80 bg-white pl-[48px] pr-[24px] font-normal font-[family-name:--font-poppins] placeholder:text-[#0A303A]/40 placeholder:font-normal outline-none transition focus:border-[#0A303A] focus:ring-2 focus:ring-[#0A303A]/20 w-full h-[48px] min-[375px]:h-[50px] min-[480px]:h-[52px] min-[576px]:h-[54px] md:h-[56px] lg:h-[36px] xl:h-[50px] 2xl:h-[60px] min-[480px]:pl-12 lg:py-5 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl rounded-[18px] lg:rounded-[15px]"
+                          />
+                        </div>
+                        <p class="error-msg text-red-600 text-xs mt-1">Last name Required</p>
+                      </div>
+                    </div>
+                    <!-- Email -->
+                    <div id="emailField">
+                      <div class="relative">
+                        <svg
+                          width="22"
+                          height="19"
+                          viewBox="0 0 22 19"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="pointer-events-none absolute left-[24px] top-1/2 w-[20px] h-[17px] -translate-y-1/2 text-[#0A303A]"
+                        >
+                          <path
+                            d="M5.75 5.75L8.69202 7.4894C10.4072 8.5035 11.0928 8.5035 12.808 7.4894L15.75 5.75M0.76577 10.7256C0.83114 13.7912 0.86383 15.3239 1.99496 16.4594C3.12608 17.5948 4.70033 17.6343 7.84883 17.7134C9.7893 17.7622 11.7107 17.7622 13.6512 17.7134C16.7997 17.6343 18.3739 17.5948 19.5051 16.4594C20.6362 15.3239 20.6689 13.7912 20.7342 10.7256C20.7553 9.7399 20.7553 8.7601 20.7342 7.7744C20.6689 4.70886 20.6362 3.17609 19.5051 2.04066C18.3739 0.905231 16.7997 0.865681 13.6512 0.786571C11.7107 0.737811 9.7893 0.737811 7.84882 0.786561C4.70033 0.865661 3.12608 0.905211 1.99495 2.04065C0.86382 3.17608 0.83114 4.70885 0.76576 7.7744C0.74474 8.7601 0.74475 9.7399 0.76577 10.7256Z"
+                            stroke="#0A303A"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                        <input
+                          type="email"
+                          name="email"
+                          id="createEmail"
+                          placeholder="Enter your email"
+                          class="w-full border-[1.5px] border-[#0A303A]/80 bg-white pl-[48px] pr-[24px] font-normal font-[family-name:--font-poppins] placeholder:text-[#0A303A]/40 placeholder:font-normal outline-none transition focus:border-[#0A303A] focus:ring-2 focus:ring-[#0A303A]/20 w-full h-[48px] min-[375px]:h-[50px] min-[480px]:h-[52px] min-[576px]:h-[54px] md:h-[56px] lg:h-[36px] xl:h-[50px] 2xl:h-[60px] min-[480px]:pl-12 lg:py-5 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl rounded-[18px] lg:rounded-[15px]"
+                          />
+                      </div>
+                      <p
+                        class="error-msg mt-1 text-xs font-normal text-red-600"
+                        role="alert"
+                      >
+                        Please enter a valid email address.
+                      </p>
+                    </div>
+                    <!-- Phone Number -->
+                    <div id="numberField">
+                      <div class="relative">
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          class="pointer-events-none absolute left-[24px] top-1/2 w-[20px] h-[17px] -translate-y-1/2 text-[#0A303A]"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M6.90813 3.46223L6.50548 2.55625C6.2422 1.96388 6.11056 1.66768 5.91369 1.44101C5.66696 1.15694 5.34535 0.94794 4.98556 0.83785C4.69847 0.75 4.37434 0.75 3.72609 0.75C2.77779 0.75 2.30364 0.75 1.90561 0.93229C1.43675 1.14702 1.01332 1.61328 0.844605 2.1006C0.701385 2.51429 0.742415 2.93943 0.824455 3.7897C1.69779 12.8402 6.6597 17.8021 15.7101 18.6755C16.5604 18.7575 16.9856 18.7985 17.3992 18.6553C17.8866 18.4866 18.3528 18.0632 18.5676 17.5943C18.7498 17.1963 18.7498 16.7221 18.7498 15.7738C18.7498 15.1256 18.7498 14.8015 18.662 14.5144C18.5519 14.1546 18.3429 13.833 18.0588 13.5862C17.8322 13.3894 17.536 13.2577 16.9436 12.9944L16.0376 12.5918C15.3961 12.3067 15.0753 12.1641 14.7494 12.1331C14.4374 12.1034 14.1229 12.1472 13.8309 12.2609C13.5258 12.3797 13.2562 12.6044 12.7168 13.0539C12.18 13.5012 11.9116 13.7249 11.5836 13.8447C11.2928 13.951 10.9084 13.9903 10.6022 13.9452C10.2567 13.8943 9.99223 13.7529 9.46313 13.4702C7.81713 12.5905 6.90941 11.6828 6.02975 10.0368C5.74702 9.50766 5.60566 9.24316 5.55475 8.89766C5.50962 8.59146 5.54896 8.20706 5.65518 7.91626C5.775 7.58828 5.99869 7.31986 6.44607 6.783C6.8955 6.24368 7.12022 5.97402 7.23903 5.66891C7.35273 5.37694 7.3965 5.0624 7.36683 4.75048C7.33582 4.42452 7.19325 4.10376 6.90813 3.46223Z"
+                            stroke="#0A303A"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                          />
+                        </svg>
+                        <input
+                          type="number"
+                          name="number"
+                          id="number"
+                          placeholder="Phone number(Optional)"
+                          class="w-full border-[1.5px] border-[#0A303A]/80 bg-white pl-[48px] pr-[24px] font-normal font-[family-name:--font-poppins] placeholder:text-[#0A303A]/40 placeholder:font-normal outline-none transition focus:border-[#0A303A] focus:ring-2 focus:ring-[#0A303A]/20 w-full h-[48px] min-[375px]:h-[50px] min-[480px]:h-[52px] min-[576px]:h-[54px] md:h-[56px] lg:h-[36px] xl:h-[50px] 2xl:h-[60px] min-[480px]:pl-12 lg:py-5 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl rounded-[18px] lg:rounded-[15px]"
+                          />
+                      </div>
+                      <p
+                        class="error-msg mt-1 text-xs font-normal text-red-600"
+                        role="alert"
+                      >
+                        Please enter a valid Phone Number.
+                      </p>
+                    </div>
+                    <!-- Password -->
+                     <div id="passwordField">
+                  <div class="relative">
+                    <svg
+                      width="24"
+                      height="26"
+                      viewBox="0 0 24 26"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="pointer-events-none absolute left-[24px] top-1/2 w-[20px] h-[17px] -translate-y-1/2 text-[#0A303A]"
+                    >
+                      <path
+                        opacity="0.8"
+                        d="M17.8611 9.85751C17.2807 9.512 16.6121 9.3012 15.8994 9.26891C14.1744 9.19076 12.422 9.15 10.4922 9.15C8.56237 9.15 6.80996 9.19076 5.08486 9.26891C3.0347 9.36179 1.34999 10.932 1.07614 12.9364C0.8974 14.2444 0.75 15.5849 0.75 16.95C0.75 18.3151 0.897412 19.6556 1.07614 20.9636C1.34999 22.968 3.0347 24.5382 5.08486 24.6311C6.80996 24.7092 8.56237 24.75 10.4922 24.75C12.2422 24.75 13.8465 24.7165 15.4167 24.652M5.02778 9.15V6.15C5.02778 3.16766 7.49021 0.75 10.5278 0.75C13.5654 0.75 16.0278 3.16766 16.0278 6.15V9.15M11.9028 16.95H11.75M20.4583 24.45H20.3056M7.01389 16.95H6.86111M17.8611 16.35C17.8611 15.0245 18.9555 13.95 20.3056 13.95C21.6556 13.95 22.75 15.0245 22.75 16.35C22.75 17.0434 22.4506 17.668 21.9717 18.1061C21.231 18.7838 20.3056 19.5559 20.3056 20.55M12.0556 16.95C12.0556 17.1157 11.9188 17.25 11.75 17.25C11.5812 17.25 11.4444 17.1157 11.4444 16.95C11.4444 16.7843 11.5812 16.65 11.75 16.65C11.9188 16.65 12.0556 16.7843 12.0556 16.95ZM20.6111 24.45C20.6111 24.6157 20.4743 24.75 20.3056 24.75C20.1368 24.75 20 24.6157 20 24.45C20 24.2843 20.1368 24.15 20.3056 24.15C20.4743 24.15 20.6111 24.2843 20.6111 24.45ZM7.16667 16.95C7.16667 17.1157 7.02986 17.25 6.86111 17.25C6.69236 17.25 6.55556 17.1157 6.55556 16.95C6.55556 16.7843 6.69236 16.65 6.86111 16.65C7.02986 16.65 7.16667 16.7843 7.16667 16.95Z"
+                        stroke="#0A303A"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <input
+                      type="password"
+                      name="password"
+                      id="createPassword"
+                      placeholder="Create password"
+                      class="w-full border-[1.5px] border-[#0A303A]/80 bg-white pl-[48px] pr-[24px] font-normal font-[family-name:--font-poppins] placeholder:text-[#0A303A]/40 placeholder:font-normal outline-none transition focus:border-[#0A303A] focus:ring-2 focus:ring-[#0A303A]/20 w-full h-[48px] min-[375px]:h-[50px] min-[480px]:h-[52px] min-[576px]:h-[54px] md:h-[56px] lg:h-[36px] xl:h-[50px] 2xl:h-[60px] min-[480px]:pl-12 lg:py-5 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl rounded-[18px] lg:rounded-[15px]"
+                      />
+                    <button type="button" id="toggleCreatePassword"
+                      aria-label="Show password"
+                      aria-pressed="false"
+                      class="absolute right-[22px] top-1/2 -translate-y-1/2 rounded p-1 text-[#0A303A]/60 transition hover:text-[#0A303A] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A303A]/30"
+                    >
+                    <!-- eye off -->
+                    <svg id="createEyeOffIcon" class="h-[22px] w-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                    <path d="M3 3l18 18"></path>
+                <path d="M10.6 5.1A10.8 10.8 0 0 1 12 5c5 0 9 4.5 10 7a13.2 13.2 0 0 1-2.2 3.2M6.2 6.2C4 7.7 2.6 10 2 12c1 2.5 5 7 10 7 1.8 0 3.4-.5 4.8-1.3"></path>
+                <path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"></path>
+              </svg>
+                  <!-- eye on -->
+                   <svg id="createEyeIcon" class="hidden h-[22px] w-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M2 12c1-2.5 5-7 10-7s9 4.5 10 7c-1 2.5-5 7-10 7S3 14.5 2 12Z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                    </button>
+                  </div>
+                  <p
+                    class="error-msg mt-1 text-xs font-normal text-red-600"
+                    role="alert"
+                  >
+                    Password must be at least 8 characters.
+                  </p>
+                </div>
+                <!-- Confirm Password -->
+                  <div id="confirmpasswordField">
+                  <div class="relative">
+                    <svg
+                      width="24"
+                      height="26"
+                      viewBox="0 0 24 26"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="pointer-events-none absolute left-[24px] top-1/2 w-[20px] h-[17px] -translate-y-1/2 text-[#0A303A]"
+                    >
+                      <path
+                        opacity="0.8"
+                        d="M17.8611 9.85751C17.2807 9.512 16.6121 9.3012 15.8994 9.26891C14.1744 9.19076 12.422 9.15 10.4922 9.15C8.56237 9.15 6.80996 9.19076 5.08486 9.26891C3.0347 9.36179 1.34999 10.932 1.07614 12.9364C0.8974 14.2444 0.75 15.5849 0.75 16.95C0.75 18.3151 0.897412 19.6556 1.07614 20.9636C1.34999 22.968 3.0347 24.5382 5.08486 24.6311C6.80996 24.7092 8.56237 24.75 10.4922 24.75C12.2422 24.75 13.8465 24.7165 15.4167 24.652M5.02778 9.15V6.15C5.02778 3.16766 7.49021 0.75 10.5278 0.75C13.5654 0.75 16.0278 3.16766 16.0278 6.15V9.15M11.9028 16.95H11.75M20.4583 24.45H20.3056M7.01389 16.95H6.86111M17.8611 16.35C17.8611 15.0245 18.9555 13.95 20.3056 13.95C21.6556 13.95 22.75 15.0245 22.75 16.35C22.75 17.0434 22.4506 17.668 21.9717 18.1061C21.231 18.7838 20.3056 19.5559 20.3056 20.55M12.0556 16.95C12.0556 17.1157 11.9188 17.25 11.75 17.25C11.5812 17.25 11.4444 17.1157 11.4444 16.95C11.4444 16.7843 11.5812 16.65 11.75 16.65C11.9188 16.65 12.0556 16.7843 12.0556 16.95ZM20.6111 24.45C20.6111 24.6157 20.4743 24.75 20.3056 24.75C20.1368 24.75 20 24.6157 20 24.45C20 24.2843 20.1368 24.15 20.3056 24.15C20.4743 24.15 20.6111 24.2843 20.6111 24.45ZM7.16667 16.95C7.16667 17.1157 7.02986 17.25 6.86111 17.25C6.69236 17.25 6.55556 17.1157 6.55556 16.95C6.55556 16.7843 6.69236 16.65 6.86111 16.65C7.02986 16.65 7.16667 16.7843 7.16667 16.95Z"
+                        stroke="#0A303A"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <input
+                      type="password"
+                      name="password"
+                      id="confirmPassword"
+                      placeholder="Confirm password"
+                      class="w-full border-[1.5px] border-[#0A303A]/80 bg-white pl-[48px] pr-[24px] font-normal font-[family-name:--font-poppins] placeholder:text-[#0A303A]/40 placeholder:font-normal outline-none transition focus:border-[#0A303A] focus:ring-2 focus:ring-[#0A303A]/20 w-full h-[48px] min-[375px]:h-[50px] min-[480px]:h-[52px] min-[576px]:h-[54px] md:h-[56px] lg:h-[36px] xl:h-[50px] 2xl:h-[60px] min-[480px]:pl-12 lg:py-5 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl rounded-[18px] lg:rounded-[15px]"
+                      />
+                    <button type="button" id="toggleConfirmPassword"
+                      aria-label="Show password"
+                      aria-pressed="false"
+                      class="absolute right-[22px] top-1/2 -translate-y-1/2 rounded p-1 text-[#0A303A]/60 transition hover:text-[#0A303A] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A303A]/30"
+                    >
+                    <!-- eye off -->
+                    <svg id="confirmEyeOffIcon" class="h-[22px] w-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                    <path d="M3 3l18 18"></path>
+                <path d="M10.6 5.1A10.8 10.8 0 0 1 12 5c5 0 9 4.5 10 7a13.2 13.2 0 0 1-2.2 3.2M6.2 6.2C4 7.7 2.6 10 2 12c1 2.5 5 7 10 7 1.8 0 3.4-.5 4.8-1.3"></path>
+                <path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"></path>
+              </svg>
+                  <!-- eye on -->
+                   <svg id="confirmEyeIcon" class="hidden h-[22px] w-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M2 12c1-2.5 5-7 10-7s9 4.5 10 7c-1 2.5-5 7-10 7S3 14.5 2 12Z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                    </button>
+                  </div>
+                  <p
+                    class="error-msg mt-1 text-xs font-normal text-red-600"
+                    role="alert"
+                  >
+                    Password must be at least 8 characters.
+                  </p>
+                </div>
+                <!-- <select name="shelter" id="shelter" class="w-full border-[1.5px] border-[#0A303A]/80 bg-white pl-[10px] pr-[24px] lg:py-2 lg:h-auto 2xl:h-[60px] font-normal font-[family-name:--font-poppins] placeholder:text-[#0A303A]/40 placeholder:font-normal outline-none transition focus:border-[#0A303A] focus:ring-2 focus:ring-[#0A303A]/20 w-full h-[48px] sm:h-[54px] md:h-[56px] xl:h-[50px]  text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl rounded-[18px] lg:rounded-[15px]">
+                  <option value="defalut">Select</option>
+                  <option value="shelter1">Shelter-1</option>
+                  <option value="shelter2">Shelter-2</option>
+                </select> -->
+                <!-- Terms And Condition -->
+                <!-- <div
+                  class="flex cursor-pointer items-center gap-3 font-normal text-[#0A303A] text-xs sm:text-sm md:text-base lg:text-sm xl:text-base 2xl:text-2xl"
+                >
+                  <input
+                    type="checkbox"
+                    id="terms"
+                    class="xl:h-[22px] xl:w-[22px] lg:h-[15px] lg:w-[15px] border-[#0A303A]"
+                  />
+                  <span>I agreed to the <a href="#" class="text-[--btn-color]">Terms of service</a> and <a href="#" class="text-[--btn-color]">Privacy Policy</a></span>  
+              </div> -->
+              <!-- Create Button -->
+                <button
+                  type="submit"
+                  id="createBtn"
+                  class="contact-btn mb-4 lg:my-0 xl:my-0 2xl:my-2 min-[1920px]:my-3 w-full flex flex-wrap items-center justify-center bg-[--btn-color] border-2 border-[#F4F1EA] shadow-xl hover:border-[--btn-color] py-3 lg:py-[8px] lg:px-5 xl:py-4 xl:px-6 rounded-[30px] outline-none shadow-xl transition-all ease-in text-white hover:text-[--primary-color-1] font-regular font-[family-name:--font-poppins] text-xs sm:text-sm lg:text-base xl:text-xl 2xl:text-2xl rounded-[20px] lg:rounded-[30px]"
+                >
+                  <span id="createBtnLabel" class="flex items-center gap-3"
+                    >Create account<i class="fa-solid fa-paw ml-2"></i
+                  ></span>
+                </button>
+                    </div>
+                </form>
+                <!-- Shelter form -->
+                <form action="#" method="post" id="shelterForm" class="hidden form-section mt-3 xl:mt-2 min-[1920px]:mt-3">
+                  <div class="grid grid-cols-1 gap-4 lg:gap-2 xl:gap-3 2xl:gap-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-2 xl:gap-4">
                       <!-- First Name -->
                       <div id="fnameField">
@@ -460,7 +748,7 @@
                   <option value="shelter2">Shelter-2</option>
                 </select>
                 <!-- Terms And Condition -->
-                <div
+                <!-- <div
                   class="flex cursor-pointer items-center gap-3 font-normal text-[#0A303A] text-xs sm:text-sm md:text-base lg:text-sm xl:text-base 2xl:text-2xl"
                 >
                   <input
@@ -469,22 +757,22 @@
                     class="xl:h-[22px] xl:w-[22px] lg:h-[15px] lg:w-[15px] border-[#0A303A]"
                   />
                   <span>I agreed to the <a href="#" class="text-[--btn-color]">Terms of service</a> and <a href="#" class="text-[--btn-color]">Privacy Policy</a></span>  
-              </div>
-              <!-- logIn Button -->
+              </div> -->
+              <!-- Create Button -->
                 <button
                   type="submit"
                   id="createBtn"
                   class="contact-btn mb-4 lg:my-0 xl:my-0 2xl:my-2 min-[1920px]:my-3 w-full flex flex-wrap items-center justify-center bg-[--btn-color] border-2 border-[#F4F1EA] shadow-xl hover:border-[--btn-color] py-3 lg:py-[8px] lg:px-5 xl:py-4 xl:px-6 rounded-[30px] outline-none shadow-xl transition-all ease-in text-white hover:text-[--primary-color-1] font-regular font-[family-name:--font-poppins] text-xs sm:text-sm lg:text-base xl:text-xl 2xl:text-2xl rounded-[20px] lg:rounded-[30px]"
                 >
                   <span id="createBtnLabel" class="flex items-center gap-3"
-                    >Create account<i class="fa-solid fa-paw ml-2"></i
+                    >Create Shelter Account<i class="fa-solid fa-paw ml-2"></i
                   ></span>
                 </button>
                     </div>
                 </form>
                 </div>
                 <!-- Divider -->
-              <div class="mt-0 lg:mt-3 xl:mt-4 2xl:mt-8 min-[1920px]:mt-[30px] flex items-center gap-4 max-w-[300px] md:max-w-[500px] mx-auto">
+              <div class="mt-0 lg:mt-3 xl:mt-[10px] 2xl:mt-8 min-[1920px]:mt-[10px] flex items-center gap-4 max-w-[300px] md:max-w-[500px] mx-auto">
                 <span class="h-[1px] flex-1 bg-[--primary-color-1]"></span>
                 <span
                   class="text-xs sm:text-sm md:text-base lg:text-sm xl:text-base 2xl:text-2xl font-normal text-red-600 font-[family-name:--font-poppins]"
@@ -493,7 +781,7 @@
                 <span class="h-[1px] flex-1 bg-[--primary-color-1]"></span>
               </div>
               <!-- social links -->
-              <div class="socials mt-3 lg:mt-3 xl:mt-4 2xl:mt-8 min-[1920px]:mt-10 grid grid-cols-2 gap-4 w-auto max-w-[300px] md:max-w-[500px] mx-auto">
+              <div class="socials mt-3 lg:mt-3 xl:mt-[10px] 2xl:mt-[28px] min-[1920px]:mt-[18px] grid grid-cols-2 gap-4 w-auto max-w-[300px] md:max-w-[500px] mx-auto">
                 <button
                   type="button"
                   data-provider="Google"

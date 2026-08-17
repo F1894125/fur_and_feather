@@ -1,3 +1,40 @@
+// tab switch
+document.addEventListener("DOMContentLoaded", () => {
+  const adopterTab = document.getElementById("adopterTab");
+  const shelterTab = document.getElementById("shelterTab");
+
+  const adopterForm = document.getElementById("adopterForm");
+  const shelterForm = document.getElementById("shelterForm");
+
+  function showAdopterForm() {
+    adopterForm.classList.remove("hidden");
+    shelterForm.classList.add("hidden");
+
+    adopterTab.classList.remove("tab-inactive");
+    adopterTab.classList.add("tab-active");
+
+    shelterTab.classList.remove("tab-active");
+    shelterTab.classList.add("tab-inactive");
+  }
+
+  function showShelterForm() {
+    adopterForm.classList.add("hidden");
+    shelterForm.classList.remove("hidden");
+
+    shelterTab.classList.remove("tab-inactive");
+    shelterTab.classList.add("tab-active");
+
+    adopterTab.classList.remove("tab-active");
+    adopterTab.classList.add("tab-inactive");
+  }
+
+  adopterTab.addEventListener("click", showAdopterForm);
+
+  shelterTab.addEventListener("click", showShelterForm);
+
+  showAdopterForm();
+});
+
 // Humbarger Menu
 document.addEventListener("DOMContentLoaded", function () {
   const menuBtn = document.getElementById("menu-btn");
@@ -45,10 +82,7 @@ userBtn.addEventListener("click", (e) => {
 
 // Close when clicking outside
 document.addEventListener("click", (e) => {
-  if (
-    !userDropdown.contains(e.target) &&
-    !userBtn.contains(e.target)
-  ) {
+  if (!userDropdown.contains(e.target) && !userBtn.contains(e.target)) {
     userDropdown.classList.add("hidden");
     userDropdown.classList.remove("flex");
   }
@@ -68,7 +102,10 @@ desktopPagesBtn.addEventListener("click", function (e) {
 
 // Close dropdown when clicking outside
 document.addEventListener("click", function (e) {
-  if (!desktopPagesBtn.contains(e.target) && !desktopPagesMenu.contains(e.target)) {
+  if (
+    !desktopPagesBtn.contains(e.target) &&
+    !desktopPagesMenu.contains(e.target)
+  ) {
     desktopPagesMenu.classList.add("opacity-0", "invisible", "scale-95");
     desktopPagesArrow.classList.remove("rotate-180");
   }
@@ -176,7 +213,7 @@ const observer = new IntersectionObserver(
   },
   {
     threshold: 0.5,
-  }
+  },
 );
 counters.forEach((counter) => observer.observe(counter));
 
@@ -288,58 +325,47 @@ faqContents.forEach((content, index) => {
   }
 });
 
-
 // =====================================
 // FAQ CLICK
 // =====================================
 
 faqButtons.forEach((button) => {
   button.addEventListener("click", () => {
-
     const content = button.nextElementSibling;
     const icon = button.querySelector("i");
 
     // Check whether current FAQ is open
     const isOpen =
-      content.style.maxHeight !== "0px" &&
-      content.style.maxHeight !== "";
-
+      content.style.maxHeight !== "0px" && content.style.maxHeight !== "";
 
     // =================================
     // CLOSE ALL FAQ ITEMS
     // =================================
 
     faqContents.forEach((item) => {
-
       item.style.maxHeight = "0px";
 
       item.classList.remove("opacity-100");
       item.classList.add("opacity-0");
 
-      const otherIcon =
-        item.previousElementSibling.querySelector("i");
+      const otherIcon = item.previousElementSibling.querySelector("i");
 
       otherIcon.classList.remove("fa-minus");
       otherIcon.classList.add("fa-plus");
     });
-
 
     // =================================
     // OPEN CURRENT FAQ
     // =================================
 
     if (!isOpen) {
-
       // Important:
       // Let the browser render the closed state first
       requestAnimationFrame(() => {
-
-        content.style.maxHeight =
-          content.scrollHeight + "px";
+        content.style.maxHeight = content.scrollHeight + "px";
 
         content.classList.remove("opacity-0");
         content.classList.add("opacity-100");
-
       });
 
       icon.classList.remove("fa-plus");
@@ -398,7 +424,7 @@ $(document).ready(function () {
 // Scroll to Top button
 document.addEventListener("DOMContentLoaded", () => {
   const backToTop = document.getElementById("backToTop");
-const backToTopIcon = document.getElementById("backToTopIcon");
+  const backToTopIcon = document.getElementById("backToTopIcon");
 
   // Stop if button doesn't exist
   if (!backToTop || !backToTopIcon) {
@@ -408,32 +434,15 @@ const backToTopIcon = document.getElementById("backToTopIcon");
 
   // Show / hide button
   window.addEventListener("scroll", () => {
-
     // Show after scrolling 300px
     if (window.scrollY > 300) {
-      backToTop.classList.remove(
-        "invisible",
-        "opacity-0",
-        "translate-y-5"
-      );
+      backToTop.classList.remove("invisible", "opacity-0", "translate-y-5");
 
-      backToTop.classList.add(
-        "visible",
-        "opacity-100",
-        "translate-y-0"
-      );
+      backToTop.classList.add("visible", "opacity-100", "translate-y-0");
     } else {
-      backToTop.classList.remove(
-        "visible",
-        "opacity-100",
-        "translate-y-0"
-      );
+      backToTop.classList.remove("visible", "opacity-100", "translate-y-0");
 
-      backToTop.classList.add(
-        "invisible",
-        "opacity-0",
-        "translate-y-5"
-      );
+      backToTop.classList.add("invisible", "opacity-0", "translate-y-5");
     }
 
     // Check bottom of page
@@ -456,7 +465,7 @@ const backToTopIcon = document.getElementById("backToTopIcon");
   backToTop.addEventListener("click", () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   });
 });
@@ -475,7 +484,7 @@ form.addEventListener("submit", function (e) {
   form.reset();
 });
 
-// blog section 
+// blog section
 document.addEventListener("DOMContentLoaded", function () {
   const sidebarButtons = document.querySelectorAll(".sidebar-toggle");
 
@@ -508,214 +517,144 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-    // =====================================
-    // SELECT ELEMENTS
-    // =====================================
+// =====================================
+// SELECT ELEMENTS
+// =====================================
 
-    const blogCards = document.querySelectorAll(".blog-card");
+const blogCards = document.querySelectorAll(".blog-card");
 
-    const searchInput = document.getElementById("searchInput");
+const searchInput = document.getElementById("searchInput");
 
-    const searchBtn = document.getElementById("searchBtn");
+const searchBtn = document.getElementById("searchBtn");
 
-    const categoryButtons =
-      document.querySelectorAll(".category-btn");
+const categoryButtons = document.querySelectorAll(".category-btn");
 
-    const tagButtons =
-      document.querySelectorAll(".tag-btn");
+const tagButtons = document.querySelectorAll(".tag-btn");
 
+// =====================================
+// FILTER BLOGS
+// =====================================
 
-    // =====================================
-    // FILTER BLOGS
-    // =====================================
+function filterBlogs(type, value) {
+  blogCards.forEach((card) => {
+    let showCard = false;
 
-    function filterBlogs(type, value) {
+    // -----------------------------
+    // CATEGORY FILTER
+    // -----------------------------
 
-      blogCards.forEach((card) => {
+    if (type === "category") {
+      const category = card.dataset.category;
 
-        let showCard = false;
-
-        // -----------------------------
-        // CATEGORY FILTER
-        // -----------------------------
-
-        if (type === "category") {
-
-          const category =
-            card.dataset.category;
-
-          if (value === "all") {
-
-            showCard = true;
-
-          } else if (category === value) {
-
-            showCard = true;
-
-          }
-
-        }
-
-
-        // -----------------------------
-        // TAG FILTER
-        // -----------------------------
-
-        if (type === "tag") {
-
-          const tags =
-            card.dataset.tags.toLowerCase();
-
-          if (tags.includes(value.toLowerCase())) {
-
-            showCard = true;
-
-          }
-
-        }
-
-
-        // -----------------------------
-        // SEARCH FILTER
-        // -----------------------------
-
-        if (type === "search") {
-
-          const title =
-            card.dataset.title.toLowerCase();
-
-          const description =
-            card
-              .querySelector(".blog-description")
-              .textContent
-              .toLowerCase();
-
-          const searchValue =
-            value.toLowerCase().trim();
-
-          if (
-            title.includes(searchValue) ||
-            description.includes(searchValue)
-          ) {
-
-            showCard = true;
-
-          }
-
-        }
-
-
-        // -----------------------------
-        // SHOW / HIDE
-        // -----------------------------
-
-        if (showCard) {
-
-          card.classList.remove("hide");
-
-        } else {
-
-          card.classList.add("hide");
-
-        }
-
-      });
-
+      if (value === "all") {
+        showCard = true;
+      } else if (category === value) {
+        showCard = true;
+      }
     }
 
+    // -----------------------------
+    // TAG FILTER
+    // -----------------------------
 
-    // =====================================
-    // CATEGORY CLICK
-    // =====================================
+    if (type === "tag") {
+      const tags = card.dataset.tags.toLowerCase();
 
-    categoryButtons.forEach((button) => {
-
-      button.addEventListener("click", () => {
-
-        const category =
-          button.dataset.filter;
-
-        filterBlogs("category", category);
-
-        // Clear search
-        searchInput.value = "";
-
-      });
-
-    });
-
-
-    // =====================================
-    // TAG CLICK
-    // =====================================
-
-    tagButtons.forEach((button) => {
-
-      button.addEventListener("click", () => {
-
-        const tag =
-          button.dataset.tag;
-
-        filterBlogs("tag", tag);
-
-        // Clear search
-        searchInput.value = "";
-
-      });
-
-    });
-
-
-    // =====================================
-    // SEARCH
-    // =====================================
-
-    function performSearch() {
-
-      const value =
-        searchInput.value;
-
-      if (value === "") {
-
-        blogCards.forEach((card) => {
-          card.classList.remove("hide");
-        });
-
-        return;
+      if (tags.includes(value.toLowerCase())) {
+        showCard = true;
       }
-
-      filterBlogs("search", value);
-
     }
 
+    // -----------------------------
+    // SEARCH FILTER
+    // -----------------------------
 
-    // Search button
-    searchBtn.addEventListener(
-      "click",
-      performSearch
-    );
+    if (type === "search") {
+      const title = card.dataset.title.toLowerCase();
 
+      const description = card
+        .querySelector(".blog-description")
+        .textContent.toLowerCase();
 
-    // Search while typing
-    searchInput.addEventListener(
-      "input",
-      performSearch
-    );
+      const searchValue = value.toLowerCase().trim();
 
-
-    // =====================================
-    // ENTER KEY SEARCH
-    // =====================================
-
-    searchInput.addEventListener(
-      "keydown",
-      (event) => {
-
-        if (event.key === "Enter") {
-
-          performSearch();
-
-        }
-
+      if (title.includes(searchValue) || description.includes(searchValue)) {
+        showCard = true;
       }
-    );
+    }
+
+    // -----------------------------
+    // SHOW / HIDE
+    // -----------------------------
+
+    if (showCard) {
+      card.classList.remove("hide");
+    } else {
+      card.classList.add("hide");
+    }
+  });
+}
+
+// =====================================
+// CATEGORY CLICK
+// =====================================
+
+categoryButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const category = button.dataset.filter;
+
+    filterBlogs("category", category);
+
+    // Clear search
+    searchInput.value = "";
+  });
+});
+
+// =====================================
+// TAG CLICK
+// =====================================
+
+tagButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const tag = button.dataset.tag;
+
+    filterBlogs("tag", tag);
+
+    // Clear search
+    searchInput.value = "";
+  });
+});
+
+// =====================================
+// SEARCH
+// =====================================
+
+function performSearch() {
+  const value = searchInput.value;
+
+  if (value === "") {
+    blogCards.forEach((card) => {
+      card.classList.remove("hide");
+    });
+
+    return;
+  }
+
+  filterBlogs("search", value);
+}
+
+// Search button
+searchBtn.addEventListener("click", performSearch);
+
+// Search while typing
+searchInput.addEventListener("input", performSearch);
+
+// =====================================
+// ENTER KEY SEARCH
+// =====================================
+
+searchInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    performSearch();
+  }
+});
