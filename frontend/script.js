@@ -918,15 +918,58 @@ document.addEventListener("DOMContentLoaded", () => {
 }); 
 
 // Filter
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* ==========================================
+     ELEMENTS
+  ========================================== */
+
   const filterButton = document.getElementById("filterButton");
   const sortButton = document.getElementById("sortButton");
 
   const filterPanel = document.getElementById("filterPanel");
   const sortPanel = document.getElementById("sortPanel");
 
+  const filterToggles =
+    document.querySelectorAll(".filter-toggle");
 
-  // FILTER BUTTON
-  filterButton.addEventListener("click", function (e) {
+  const filterOptions =
+    document.querySelectorAll(".filter-option");
+
+  const sortOptions =
+    document.querySelectorAll(".sort-option");
+
+  /*
+   * All testimonial cards
+   */
+  const testimonialContainer =
+    document.querySelector(".grid.grid-cols-12.gap-x-5");
+
+  const testimonialCards =
+    testimonialContainer
+      ? Array.from(
+          testimonialContainer.children
+        )
+      : [];
+
+
+  /* ==========================================
+     CURRENT FILTER STATE
+  ========================================== */
+
+  let selectedFilters = {
+    pet: "All",
+    rating: "All",
+    shelter: "All",
+    experience: "All"
+  };
+
+
+  /* ==========================================
+     OPEN FILTER PANEL
+  ========================================== */
+
+  filterButton.addEventListener("click", (e) => {
 
     e.stopPropagation();
 
@@ -937,8 +980,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  // SORT BUTTON
-  sortButton.addEventListener("click", function (e) {
+  /* ==========================================
+     OPEN SORT PANEL
+  ========================================== */
+
+  sortButton.addEventListener("click", (e) => {
 
     e.stopPropagation();
 
@@ -949,45 +995,60 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  // PREVENT PANEL CLICK FROM CLOSING
-  filterPanel.addEventListener("click", function (e) {
+  /* ==========================================
+     STOP PANEL FROM CLOSING
+  ========================================== */
+
+  filterPanel.addEventListener("click", (e) => {
     e.stopPropagation();
   });
 
-  sortPanel.addEventListener("click", function (e) {
+  sortPanel.addEventListener("click", (e) => {
     e.stopPropagation();
   });
 
 
-  // CLOSE WHEN CLICK OUTSIDE
-  document.addEventListener("click", function () {
+  /* ==========================================
+     CLICK OUTSIDE
+  ========================================== */
+
+  document.addEventListener("click", () => {
 
     filterPanel.classList.add("hidden");
     sortPanel.classList.add("hidden");
 
   });
-  
-document.addEventListener("DOMContentLoaded", () => {
 
-  const filterToggles = document.querySelectorAll(".filter-toggle");
+
+  /* ==========================================
+     FILTER ACCORDION
+  ========================================== */
 
   filterToggles.forEach((toggle) => {
 
     toggle.addEventListener("click", () => {
 
-      const content = toggle.nextElementSibling;
-      const arrow = toggle.querySelector(".filter-arrow");
+      const content =
+        toggle.nextElementSibling;
 
-      const isOpen = content.classList.contains("max-h-[500px]");
+      const arrow =
+        toggle.querySelector(".filter-arrow");
+
+      const isOpen =
+        content.classList.contains("max-h-[500px]");
 
 
       /*
-       * Close all other dropdowns
+       * Close all other accordions
        */
+
       filterToggles.forEach((otherToggle) => {
 
-        const otherContent = otherToggle.nextElementSibling;
-        const otherArrow = otherToggle.querySelector(".filter-arrow");
+        const otherContent =
+          otherToggle.nextElementSibling;
+
+        const otherArrow =
+          otherToggle.querySelector(".filter-arrow");
 
         if (otherToggle !== toggle) {
 
@@ -1001,23 +1062,26 @@ document.addEventListener("DOMContentLoaded", () => {
             "opacity-0"
           );
 
-          otherArrow.classList.remove("rotate-180");
+          otherArrow.classList.remove(
+            "rotate-180"
+          );
 
           otherToggle.setAttribute(
             "aria-expanded",
             "false"
           );
+
         }
 
       });
 
 
       /*
-       * Toggle clicked dropdown
+       * Toggle current accordion
        */
+
       if (isOpen) {
 
-        // Close
         content.classList.remove(
           "max-h-[500px]",
           "opacity-100"
@@ -1028,7 +1092,9 @@ document.addEventListener("DOMContentLoaded", () => {
           "opacity-0"
         );
 
-        arrow.classList.remove("rotate-180");
+        arrow.classList.remove(
+          "rotate-180"
+        );
 
         toggle.setAttribute(
           "aria-expanded",
@@ -1037,7 +1103,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       } else {
 
-        // Open
         content.classList.remove(
           "max-h-0",
           "opacity-0"
@@ -1048,7 +1113,9 @@ document.addEventListener("DOMContentLoaded", () => {
           "opacity-100"
         );
 
-        arrow.classList.add("rotate-180");
+        arrow.classList.add(
+          "rotate-180"
+        );
 
         toggle.setAttribute(
           "aria-expanded",
@@ -1062,23 +1129,32 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  /*
-   * Filter option selection
-   */
-  const filterOptions =
-    document.querySelectorAll(".filter-option");
+  /* ==========================================
+     FILTER OPTIONS
+  ========================================== */
 
   filterOptions.forEach((option) => {
 
     option.addEventListener("click", () => {
 
-      /*
-       * Remove active state
-       * from same dropdown
-       */
-      const parent = option.parentElement;
+      const value =
+        option.textContent.trim();
 
-      parent
+      const filterGroup =
+        option.closest(".filter-group");
+
+      const title =
+        filterGroup
+          .querySelector(".filter-toggle span")
+          .textContent
+          .trim();
+
+
+      /*
+       * Active state
+       */
+
+      filterGroup
         .querySelectorAll(".filter-option")
         .forEach((item) => {
 
@@ -1089,21 +1165,339 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
+      option.classList.add(
+        "font-semibold",
+        "underline"
+      );
+
 
       /*
-       * Add active state
+       * Save selected filter
        */
-      option.classList.add(
-        "font-semibold"
-      );
 
-      console.log(
-        "Selected:",
-        option.textContent.trim()
-      );
+      if (title === "Pet Type") {
+
+        selectedFilters.pet = value;
+
+      }
+
+      else if (title === "Rating") {
+
+        selectedFilters.rating = value;
+
+      }
+
+      else if (title === "Shelter") {
+
+        selectedFilters.shelter = value;
+
+      }
+
+      else if (title === "Experience") {
+
+        selectedFilters.experience = value;
+
+      }
+
+
+      /*
+       * Apply filters
+       */
+
+      applyFilters();
 
     });
 
   });
+
+
+  /* ==========================================
+     APPLY FILTERS
+  ========================================== */
+
+  function applyFilters() {
+
+    testimonialCards.forEach((card) => {
+
+      const pet =
+        card.dataset.pet;
+
+      const rating =
+        parseFloat(card.dataset.rating);
+
+      const shelter =
+        card.dataset.shelter;
+
+      const experience =
+        card.dataset.experience;
+
+
+      /*
+       * PET FILTER
+       */
+
+      let petMatch =
+        selectedFilters.pet === "All" ||
+        pet === selectedFilters.pet;
+
+
+      /*
+       * RATING FILTER
+       */
+
+      let ratingMatch = true;
+
+      if (selectedFilters.rating === "5-4") {
+
+        ratingMatch =
+          rating >= 4 &&
+          rating <= 5;
+
+      }
+
+      else if (selectedFilters.rating === "3-2") {
+
+        ratingMatch =
+          rating >= 2 &&
+          rating < 4;
+
+      }
+
+      else if (selectedFilters.rating === "1") {
+
+        ratingMatch =
+          rating >= 0 &&
+          rating < 2;
+
+      }
+
+
+      /*
+       * SHELTER FILTER
+       */
+
+      let shelterMatch =
+        selectedFilters.shelter === "All" ||
+        shelter === selectedFilters.shelter;
+
+
+      /*
+       * EXPERIENCE FILTER
+       */
+
+      let experienceMatch =
+        selectedFilters.experience === "All" ||
+        experience === selectedFilters.experience;
+
+
+      /*
+       * SHOW / HIDE CARD
+       */
+
+      if (
+        petMatch &&
+        ratingMatch &&
+        shelterMatch &&
+        experienceMatch
+      ) {
+
+        card.classList.remove("hidden");
+
+      } else {
+
+        card.classList.add("hidden");
+
+      }
+
+    });
+
+  }
+
+
+  /* ==========================================
+     SORT OPTIONS
+  ========================================== */
+
+  sortOptions.forEach((option) => {
+
+    option.addEventListener("click", () => {
+
+      const sortType =
+        option.dataset.sort;
+
+
+      /*
+       * Active state
+       */
+
+      sortOptions.forEach((item) => {
+
+        item.classList.remove(
+          "font-bold",
+          "underline"
+        );
+
+      });
+
+      option.classList.add(
+        "font-bold",
+        "underline"
+      );
+
+
+      /*
+       * Sort cards
+       */
+
+      sortCards(sortType);
+
+
+      /*
+       * Close sort panel
+       */
+
+      sortPanel.classList.add("hidden");
+
+    });
+
+  });
+
+
+  /* ==========================================
+     SORT FUNCTION
+  ========================================== */
+
+  function sortCards(type) {
+
+    if (!testimonialContainer) return;
+
+
+    const cards =
+      Array.from(
+        testimonialContainer.children
+      );
+
+
+    switch (type) {
+
+      /*
+       * RECOMMENDED
+       */
+
+      case "recommended":
+
+        cards.sort((a, b) => {
+
+          const ratingA =
+            parseFloat(a.dataset.rating) || 0;
+
+          const ratingB =
+            parseFloat(b.dataset.rating) || 0;
+
+          return ratingB - ratingA;
+
+        });
+
+        break;
+
+
+      /*
+       * MOST POPULAR
+       */
+
+      case "popular":
+
+        cards.sort((a, b) => {
+
+          const ratingA =
+            parseFloat(a.dataset.rating) || 0;
+
+          const ratingB =
+            parseFloat(b.dataset.rating) || 0;
+
+          return ratingB - ratingA;
+
+        });
+
+        break;
+
+
+      /*
+       * NEWEST
+       */
+
+      case "newest":
+
+        cards.sort((a, b) => {
+
+          const dateA =
+            new Date(a.dataset.date);
+
+          const dateB =
+            new Date(b.dataset.date);
+
+          return dateB - dateA;
+
+        });
+
+        break;
+
+
+      /*
+       * OLDEST
+       */
+
+      case "oldest":
+
+        cards.sort((a, b) => {
+
+          const dateA =
+            new Date(a.dataset.date);
+
+          const dateB =
+            new Date(b.dataset.date);
+
+          return dateA - dateB;
+
+        });
+
+        break;
+
+
+      /*
+       * MOST HELPFUL
+       */
+
+      case "helpful":
+
+        cards.sort((a, b) => {
+
+          const helpfulA =
+            parseInt(a.dataset.helpful) || 0;
+
+          const helpfulB =
+            parseInt(b.dataset.helpful) || 0;
+
+          return helpfulB - helpfulA;
+
+        });
+
+        break;
+
+    }
+
+
+    /*
+     * Put sorted cards back
+     */
+
+    cards.forEach((card) => {
+
+      testimonialContainer.appendChild(card);
+
+    });
+
+  }
+
 
 });
