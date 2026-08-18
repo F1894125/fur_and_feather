@@ -335,4 +335,12 @@ img {
     .rating-star {
       font-size: 22px;
     }
+/* Sort */
+.sort-filter-panel {
+      background: var(--bg-color);
+      border: 1.5px solid var(--primary-color-1);
+    }
 
+    .option-active {
+      font-weight: 700;
+    }

@@ -916,3 +916,194 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 }); 
+
+// Filter
+  const filterButton = document.getElementById("filterButton");
+  const sortButton = document.getElementById("sortButton");
+
+  const filterPanel = document.getElementById("filterPanel");
+  const sortPanel = document.getElementById("sortPanel");
+
+
+  // FILTER BUTTON
+  filterButton.addEventListener("click", function (e) {
+
+    e.stopPropagation();
+
+    sortPanel.classList.add("hidden");
+
+    filterPanel.classList.toggle("hidden");
+
+  });
+
+
+  // SORT BUTTON
+  sortButton.addEventListener("click", function (e) {
+
+    e.stopPropagation();
+
+    filterPanel.classList.add("hidden");
+
+    sortPanel.classList.toggle("hidden");
+
+  });
+
+
+  // PREVENT PANEL CLICK FROM CLOSING
+  filterPanel.addEventListener("click", function (e) {
+    e.stopPropagation();
+  });
+
+  sortPanel.addEventListener("click", function (e) {
+    e.stopPropagation();
+  });
+
+
+  // CLOSE WHEN CLICK OUTSIDE
+  document.addEventListener("click", function () {
+
+    filterPanel.classList.add("hidden");
+    sortPanel.classList.add("hidden");
+
+  });
+  
+document.addEventListener("DOMContentLoaded", () => {
+
+  const filterToggles = document.querySelectorAll(".filter-toggle");
+
+  filterToggles.forEach((toggle) => {
+
+    toggle.addEventListener("click", () => {
+
+      const content = toggle.nextElementSibling;
+      const arrow = toggle.querySelector(".filter-arrow");
+
+      const isOpen = content.classList.contains("max-h-[500px]");
+
+
+      /*
+       * Close all other dropdowns
+       */
+      filterToggles.forEach((otherToggle) => {
+
+        const otherContent = otherToggle.nextElementSibling;
+        const otherArrow = otherToggle.querySelector(".filter-arrow");
+
+        if (otherToggle !== toggle) {
+
+          otherContent.classList.remove(
+            "max-h-[500px]",
+            "opacity-100"
+          );
+
+          otherContent.classList.add(
+            "max-h-0",
+            "opacity-0"
+          );
+
+          otherArrow.classList.remove("rotate-180");
+
+          otherToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+        }
+
+      });
+
+
+      /*
+       * Toggle clicked dropdown
+       */
+      if (isOpen) {
+
+        // Close
+        content.classList.remove(
+          "max-h-[500px]",
+          "opacity-100"
+        );
+
+        content.classList.add(
+          "max-h-0",
+          "opacity-0"
+        );
+
+        arrow.classList.remove("rotate-180");
+
+        toggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      } else {
+
+        // Open
+        content.classList.remove(
+          "max-h-0",
+          "opacity-0"
+        );
+
+        content.classList.add(
+          "max-h-[500px]",
+          "opacity-100"
+        );
+
+        arrow.classList.add("rotate-180");
+
+        toggle.setAttribute(
+          "aria-expanded",
+          "true"
+        );
+
+      }
+
+    });
+
+  });
+
+
+  /*
+   * Filter option selection
+   */
+  const filterOptions =
+    document.querySelectorAll(".filter-option");
+
+  filterOptions.forEach((option) => {
+
+    option.addEventListener("click", () => {
+
+      /*
+       * Remove active state
+       * from same dropdown
+       */
+      const parent = option.parentElement;
+
+      parent
+        .querySelectorAll(".filter-option")
+        .forEach((item) => {
+
+          item.classList.remove(
+            "font-semibold",
+            "underline"
+          );
+
+        });
+
+
+      /*
+       * Add active state
+       */
+      option.classList.add(
+        "font-semibold"
+      );
+
+      console.log(
+        "Selected:",
+        option.textContent.trim()
+      );
+
+    });
+
+  });
+
+});
