@@ -1,0 +1,997 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Aos Animation CDN -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Swiper CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <!-- Slick CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+    <!-- Fancybox CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.css"
+    />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Fontawesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon" />
+    <title>FAQ-Fur & Feather</title>
+  </head>
+
+  <body
+    class="font-[family-name:--font-poppins] text-xl font-semibold text-[#0A303A] bg-[--heading-text]"
+  >
+    <!-- Header Section -->
+    <header
+      class="header absolute top-0 left-0 w-full z-[999] pt-4 pb-[30px] sm:pb-8 md:pb-10 lg:pb-12 2xl:pb-[66px]"
+      id="header"
+    >
+      <!-- Header Content -->
+      <div
+        class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px] min-[1920px]:max-w-[1950px] 2xl:max-w-[1566px]"
+      >
+        <!-- Sub-header -->
+        <div class="flex flex-wrap justify-between items-center gap-4">
+          <!-- Location -->
+          <div class="flex flex-wrap items-center gap-2">
+            <div>
+              <svg
+                width="24"
+                height="30"
+                viewBox="0 0 24 30"
+                class="w-[10px] h-[12px] sm:w-[20px] sm:h-[20px] min-[992px]:w-[22px] min-[992px]:h-[28px]"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.125 23.4C2.61022 23.9764 1 24.862 1 25.8552C1 27.592 5.92486 29 12 29C18.0752 29 23 27.592 23 25.8552C23 24.862 21.3897 23.9764 18.875 23.4M15.4375 10.8C15.4375 12.733 13.8985 14.3 12 14.3C10.1015 14.3 8.5625 12.733 8.5625 10.8C8.5625 8.86701 10.1015 7.3 12 7.3C13.8985 7.3 15.4375 8.86701 15.4375 10.8ZM13.7289 22.691C13.2651 23.1458 12.6453 23.4 12.0003 23.4C11.3551 23.4 10.7353 23.1458 10.2715 22.691C6.02466 18.5011 0.333386 13.8205 3.10885 7.02522C4.60951 3.35105 8.21179 1 12.0003 1C15.7887 1 19.3909 3.35106 20.8916 7.02522C23.6636 13.812 17.9862 18.5155 13.7289 22.691Z"
+                  stroke="#0A303A"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <div
+              class="max-w-[70px] min-[375px]:max-w-[100px] min-[480px]:max-w-[125px] sm:max-w-[190px] md:max-w-[270px] lg:max-w-full font-[family-name:--font-poppins] text-[6px] min-[480px]:text-[10px] sm:text-xs md:text-sm font-medium text-[--primary-color-1] min-[992px]:text-base xl:text-lg leading-tight"
+            >
+              4517 Washington Ave. Manchter, Kentucky , 495
+            </div>
+          </div>
+          <!-- Right subheader -->
+          <div
+            class="flex flex-wrap gap-4 lg:gap-4 xl:gap-8 items-center justify-between"
+          >
+            <!-- Email -->
+            <div class="flex flex-wrap gap-2 items-center">
+              <div>
+                <svg
+                  width="26"
+                  height="22"
+                  viewBox="0 0 26 22"
+                  class="w-[10px] h-[8px] sm:w-[16px] sm:h-[16px] min-[992px]:w-[24px] min-[992px]:h-[20px]"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.99999 6.88235L10.5304 8.92871C12.5886 10.1218 13.4113 10.1218 15.4696 8.92871L19 6.88235M1.01892 12.736C1.09737 16.3426 1.1366 18.1458 2.49395 19.4816C3.85129 20.8174 5.74039 20.8639 9.51859 20.9569C11.8471 21.0144 14.1528 21.0144 16.4814 20.9569C20.2596 20.8639 22.1487 20.8174 23.5061 19.4816C24.8634 18.1458 24.9026 16.3426 24.981 12.736C25.0063 11.5764 25.0063 10.4236 24.981 9.264C24.9026 5.65748 24.8634 3.85422 23.5061 2.51842C22.1487 1.18262 20.2596 1.1361 16.4814 1.04303C14.1528 0.98566 11.8471 0.98566 9.51857 1.04301C5.74039 1.13607 3.85129 1.1826 2.49394 2.51841C1.13658 3.85421 1.09737 5.65747 1.01891 9.264C0.993688 10.4236 0.9937 11.5764 1.01892 12.736Z"
+                    stroke="#0A303A"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <a
+                  href="#"
+                  class="font-[family-name:--font-poppins] text-[6px] min-[480px]:text-[10px] font-medium text-[--primary-color-1] min-[992px]:text-base sm:text-xs md:text-sm xl:text-lg"
+                  >info@petzorg.com</a
+                >
+              </div>
+            </div>
+            <!-- Social media button -->
+            <ul class="flex flex-wrap gap-2 lg:gap-4 items-center">
+              <li
+                class="bg-[--primary-color-1] min-[992px]:w-[50px] min-[992px]:h-[50px] w-[15px] h-[15px] min-[480px]:w-[20px] min-[480px]:h-[20px] sm:w-[30px] sm:h-[30px] rounded-full flex flex-wrap justify-center items-center transition ease-in-out duration-300 cursor-pointer hover:bg-[--btn-color] hover:scale-[1.1]"
+              >
+                <a href="#" target="_blank"
+                  ><svg
+                    width="14"
+                    height="20"
+                    viewBox="0 0 14 20"
+                    fill="none"
+                    class="w-[5px] h-[7px] min-[480px]:w-[10px] min-[480px]:h-[10px] sm:w-[16px] sm:h-[16px] min-[992px]:w-[12px] min-[992px]:h-[18px]"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M1.76299 8.24997C0.924908 8.24997 0.75 8.42268 0.75 9.24996V10.75C0.75 11.5774 0.924908 11.75 1.76299 11.75H3.78896V17.75C3.78896 18.5773 3.96387 18.75 4.80195 18.75H6.82791C7.66603 18.75 7.84089 18.5773 7.84089 17.75V11.75H10.1157C10.7514 11.75 10.9152 11.628 11.0898 11.0248L11.5239 9.52473C11.823 8.49126 11.6387 8.24997 10.5499 8.24997H7.84089V5.75C7.84089 5.19772 8.2944 4.75 8.85386 4.75H11.737C12.5751 4.75 12.75 4.57733 12.75 3.75V1.75C12.75 0.922665 12.5751 0.75 11.737 0.75H8.85386C6.05657 0.75 3.78896 2.98858 3.78896 5.75V8.24997H1.76299Z"
+                      stroke="#F4F1EA"
+                      stroke-width="1.5"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li
+                class="bg-[--primary-color-1] min-[992px]:w-[50px] min-[992px]:h-[50px] w-[15px] h-[15px] min-[480px]:w-[20px] min-[480px]:h-[20px] sm:w-[30px] sm:h-[30px] rounded-full flex flex-wrap justify-center items-center transition ease-in-out duration-300 cursor-pointer hover:bg-[--btn-color] hover:scale-[1.1]"
+              >
+                <a href="#" target="_blank"
+                  ><svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    class="w-[6px] h-[6px] sm:w-[16px] min-[480px]:w-[10px] min-[480px]:h-[10px] sm:h-[16px] min-[992px]:w-[16px] min-[992px]:h-[16px]"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13.5276 4.08355H13.4165M0.75 8.75C0.75 4.97876 0.75 3.09315 1.92157 1.92157C3.09315 0.75 4.97876 0.75 8.75 0.75C12.5212 0.75 14.4069 0.75 15.5784 1.92157C16.75 3.09315 16.75 4.97876 16.75 8.75C16.75 12.5212 16.75 14.4069 15.5784 15.5784C14.4069 16.75 12.5212 16.75 8.75 16.75C4.97876 16.75 3.09315 16.75 1.92157 15.5784C0.75 14.4069 0.75 12.5212 0.75 8.75ZM12.3056 8.75C12.3056 10.7136 10.7136 12.3056 8.75 12.3056C6.78632 12.3056 5.19444 10.7136 5.19444 8.75C5.19444 6.78632 6.78632 5.19444 8.75 5.19444C10.7136 5.19444 12.3056 6.78632 12.3056 8.75ZM13.6387 4.08355C13.6387 4.20628 13.5392 4.30577 13.4165 4.30577C13.2937 4.30577 13.1943 4.20628 13.1943 4.08355C13.1943 3.96082 13.2937 3.86132 13.4165 3.86132C13.5392 3.86132 13.6387 3.96082 13.6387 4.08355Z"
+                      stroke="#F4F1EA"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li
+                class="bg-[--primary-color-1] min-[992px]:w-[50px] min-[992px]:h-[50px] w-[15px] h-[15px] min-[480px]:w-[20px] min-[480px]:h-[20px] sm:w-[30px] sm:h-[30px] rounded-full flex flex-wrap justify-center items-center transition ease-in-out duration-300 cursor-pointer hover:bg-[--btn-color] hover:scale-[1.1]"
+              >
+                <a href="#" target="_blank"
+                  ><svg
+                    width="20"
+                    height="17"
+                    viewBox="0 0 20 17"
+                    fill="none"
+                    class="w-[8px] h-[6px] sm:w-[16px] min-[480px]:w-[10px] min-[480px]:h-[10px] sm:h-[16px] min-[992px]:w-[18px] min-[992px]:h-[15px]"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.3883 15.303L14.5353 16.0385L14.5353 16.0385L14.3883 15.303ZM17.9253 2.77886L18.5129 2.31273L18.5129 2.31273L17.9253 2.77886ZM14.3883 1.19702L14.2413 1.93247L14.2413 1.93247L14.3883 1.19702ZM5.11215 1.19702L4.96517 0.461561L4.96517 0.461561L5.11215 1.19702ZM1.57518 2.77886L0.987628 2.31272L0.987624 2.31273L1.57518 2.77886ZM1.57518 13.7211L0.987624 14.1872L0.987626 14.1872L1.57518 13.7211ZM5.11215 15.303L4.96517 16.0385L4.96519 16.0385L5.11215 15.303ZM13.3161 8.52609L14.0438 8.7079L14.0438 8.70786L13.3161 8.52609ZM11.0507 10.2124L11.4071 10.8723L11.4072 10.8723L11.0507 10.2124ZM8.10576 11.3043L7.91897 12.0306L7.91912 12.0307L8.10576 11.3043ZM7.53443 11.0239L8.00028 10.4362L8.00027 10.4362L7.53443 11.0239ZM7.53443 5.47604L8.0003 6.06381L8.00032 6.06379L7.53443 5.47604ZM8.10576 5.19577L8.29242 5.92217L8.29243 5.92217L8.10576 5.19577ZM11.0507 6.28759L11.4072 5.62773L11.4071 5.62772L11.0507 6.28759ZM13.3161 7.97391L14.0438 7.79214L14.0438 7.7921L13.3161 7.97391ZM9.75024 15.75V16.5C11.4269 16.5 13.0381 16.3376 14.5353 16.0385L14.3883 15.303L14.2413 14.5675C12.8436 14.8468 11.331 15 9.75024 15V15.75ZM14.3883 15.303L14.5353 16.0385C16.2983 15.6861 17.4913 15.4749 18.5129 14.1872L17.9253 13.7211L17.3377 13.255C16.7094 14.047 16.0943 14.1972 14.2413 14.5675L14.3883 15.303ZM17.9253 13.7211L18.5129 14.1872C19.5346 12.8994 19.5002 11.3951 19.5002 9.10015H18.7502H18.0002C18.0002 11.5802 17.9659 12.4632 17.3377 13.255L17.9253 13.7211ZM18.7502 9.10015H19.5002V7.39985H18.7502H18.0002V9.10015H18.7502ZM18.7502 7.39985H19.5002C19.5002 5.10496 19.5346 3.6006 18.5129 2.31273L17.9253 2.77886L17.3377 3.24498C17.9659 4.03682 18.0002 4.91985 18.0002 7.39985H18.7502ZM17.9253 2.77886L18.5129 2.31273C17.4913 1.02503 16.2983 0.813899 14.5353 0.461561L14.3883 1.19702L14.2413 1.93247C16.0943 2.3028 16.7094 2.45299 17.3377 3.24498L17.9253 2.77886ZM14.3883 1.19702L14.5353 0.461561C13.0381 0.162337 11.4269 0 9.75024 0V0.75V1.5C11.331 1.5 12.8436 1.65314 14.2413 1.93247L14.3883 1.19702ZM9.75024 0.75V0C8.07357 0 6.46242 0.162338 4.96517 0.461561L5.11215 1.19702L5.25913 1.93247C6.65687 1.65314 8.16946 1.5 9.75024 1.5V0.75ZM5.11215 1.19702L4.96517 0.461561C3.20215 0.813901 2.0092 1.02504 0.987628 2.31272L1.57518 2.77886L2.16274 3.24499C2.79107 2.45299 3.40613 2.3028 5.25913 1.93247L5.11215 1.19702ZM1.57518 2.77886L0.987624 2.31273C-0.0340737 3.6006 0.000244141 5.10496 0.000244141 7.39985H0.750244H1.50024C1.50024 4.91986 1.53456 4.03682 2.16274 3.24498L1.57518 2.77886ZM0.750244 7.39985H0.000244141V9.10015H0.750244H1.50024V7.39985H0.750244ZM0.750244 9.10015H0.000244141C0.000244141 11.3951 -0.0340732 12.8994 0.987624 14.1872L1.57518 13.7211L2.16274 13.255C1.53456 12.4632 1.50024 11.5802 1.50024 9.10015H0.750244ZM1.57518 13.7211L0.987626 14.1872C2.00919 15.4749 3.20212 15.6861 4.96517 16.0385L5.11215 15.303L5.25913 14.5675C3.40615 14.1972 2.79107 14.047 2.16274 13.255L1.57518 13.7211ZM5.11215 15.303L4.96519 16.0385C6.46242 16.3376 8.07356 16.5 9.75024 16.5V15.75V15C8.16947 15 6.65687 14.8468 5.25911 14.5675L5.11215 15.303ZM13.3161 8.52609L12.5885 8.34428C12.5884 8.3447 12.5882 8.34556 12.5875 8.34718C12.5869 8.34883 12.5855 8.35207 12.5827 8.35705C12.5772 8.36706 12.5652 8.38581 12.5409 8.41361C12.4892 8.47276 12.3978 8.55488 12.238 8.66606C11.9091 8.89487 11.4214 9.15967 10.6941 9.55259L11.0507 10.2124L11.4072 10.8723C12.1012 10.4973 12.6795 10.1862 13.0946 9.89743C13.5004 9.6151 13.908 9.25134 14.0438 8.7079L13.3161 8.52609ZM11.0507 10.2124L10.6942 9.55256C9.90546 9.97861 9.36852 10.2674 8.95111 10.4369C8.53341 10.6065 8.36939 10.5976 8.2924 10.5779L8.10576 11.3043L7.91912 12.0307C8.46818 12.1717 9.00364 12.0345 9.51539 11.8267C10.0274 11.6188 10.6499 11.2813 11.4071 10.8723L11.0507 10.2124ZM8.10576 11.3043L8.29256 10.5779C8.1774 10.5483 8.07817 10.4979 8.00028 10.4362L7.53443 11.0239L7.06859 11.6117C7.31867 11.8099 7.61005 11.9512 7.91897 12.0306L8.10576 11.3043ZM7.53443 11.0239L8.00027 10.4362C7.98418 10.4234 7.90476 10.3644 7.85397 9.98983C7.8019 9.60583 7.80024 9.06912 7.80024 8.25H7.05024H6.30024C6.30024 9.02432 6.29859 9.68271 6.36757 10.1914C6.43782 10.7095 6.6005 11.2408 7.0686 11.6117L7.53443 11.0239ZM7.05024 8.25H7.80024C7.80024 7.43088 7.8019 6.89417 7.85397 6.51017C7.90476 6.13557 7.98417 6.07659 8.0003 6.06381L7.53443 5.47604L7.06857 4.88827C6.6005 5.25926 6.43782 5.79054 6.36757 6.30862C6.29859 6.81729 6.30024 7.47568 6.30024 8.25H7.05024ZM7.53443 5.47604L8.00032 6.06379C8.07815 6.0021 8.17731 5.95175 8.29242 5.92217L8.10576 5.19577L7.91911 4.46937C7.61014 4.54876 7.3187 4.69001 7.06855 4.88829L7.53443 5.47604ZM8.10576 5.19577L8.29243 5.92217C8.36942 5.90238 8.53344 5.89351 8.95112 6.06309C9.36852 6.23254 9.90545 6.52137 10.6942 6.94746L11.0507 6.28759L11.4071 5.62772C10.6499 5.21867 10.0274 4.88115 9.51538 4.67326C9.00361 4.46549 8.46815 4.32828 7.91909 4.46937L8.10576 5.19577ZM11.0507 6.28759L10.6941 6.94744C11.4214 7.34035 11.9091 7.60515 12.238 7.83395C12.3978 7.94512 12.4892 8.02724 12.5409 8.08639C12.5652 8.1142 12.5772 8.13295 12.5827 8.14295C12.5855 8.14793 12.5869 8.15117 12.5875 8.15282C12.5882 8.15444 12.5884 8.1553 12.5885 8.15572L13.3161 7.97391L14.0438 7.7921C13.908 7.24866 13.5004 6.8849 13.0946 6.60257C12.6795 6.31381 12.1012 6.00271 11.4072 5.62773L11.0507 6.28759ZM13.3161 7.97391L12.5885 8.15568C12.6041 8.21828 12.6041 8.28172 12.5885 8.34432L13.3161 8.52609L14.0438 8.70786C14.119 8.40657 14.119 8.09343 14.0438 7.79214L13.3161 7.97391Z"
+                      fill="#F4F1EA"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li
+                class="bg-[--primary-color-1] min-[992px]:w-[50px] min-[992px]:h-[50px] w-[15px] h-[15px] min-[480px]:w-[20px] min-[480px]:h-[20px] sm:w-[30px] sm:h-[30px] rounded-full flex flex-wrap justify-center items-center transition ease-in-out duration-300 cursor-pointer hover:bg-[--btn-color] hover:scale-[1.1]"
+              >
+                <a href="#" target="_blank"
+                  ><svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    class="w-[4px] h-[4px] sm:w-[16px] min-[480px]:w-[10px] min-[480px]:h-[10px] sm:h-[16px] min-[992px]:w-[16px] min-[992px]:h-[16px]"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0.75 16.75L7.45969 10.0403M10.0403 7.45969L16.75 16.75H12.3056L7.45969 10.0403L0.75 0.75H5.19444L10.0403 7.45969ZM16.75 0.75L10.0403 7.45969"
+                      stroke="#F4F1EA"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Line -->
+        <div
+          class="w-full h-[1px] bg-[--primary-color-1] mt-[10px] lg:my-[17px]"
+        ></div>
+        <!--Destop Nav-Bar -->
+        <nav class="flex flex-wrap justify-between items-center">
+          <!-- Logo -->
+          <div>
+            <a
+              href="index.html"
+              class="block max-w-[160px] min-[375px]:max-w-[190px] min-[480px]:max-w-[210px] min-[576px]:max-w-[215px] sm:max-w-[200px] md:max-w-[250px] min-[992px]:max-w-[300px] lg:max-w-[250px] xl:max-w-[300px] 2xl:max-w-[300px] min-[1920px]:max-w-[400px]"
+            >
+              <img
+                src="Images/Logo  for bright bg.png"
+                alt="logo"
+                loading="lazy"
+            /></a>
+          </div>
+          <!-- Destop menu-->
+          <div>
+            <ul class="hidden lg:flex lg:items-center lg:gap-6 xl:gap-12">
+              <li
+                class="nav-items relative font-[family-name:--font-Manrope] text-sm xl:text-base font-semibold text-[--primary-color-1] transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
+              >
+                <a href="index.html">Home</a>
+              </li>
+              <!-- Pages Dropdown -->
+              <li
+                class="relative font-[family-name:--font-Manrope] text-sm xl:text-base font-semibold text-[--primary-color-1]"
+              >
+                <button
+        id="destoppagesBtn"
+        class="flex items-center gap-2 transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"> Pages<i class="fa-solid fa-chevron-down" id="destoppagesArrow"></i></button>
+      <!-- Dropdown -->
+       <ul
+        id="destoppagesMenu"
+        class="absolute left-0 top-full mt-4 w-40 rounded-xl bg-[#F4F1EA] shadow-xl border border-[--primary-color-1] opacity-0 invisible scale-95 transition-all duration-300 origin-top z-50 flex flex-col items-stretch"
+      >
+      <li>
+          <a href="aboutus.html" class="dropdown block w-full px-5 py-3 font-[family-name:--font-Manrope] text-sm xl:text-base text-[--primary-color-1] hover:bg-gray-100 hover:text-[--btn-color] rounded-t-xl text-center">
+            About Us
+          </a>
+        </li>
+        <li>
+          <a href="blog.html" class="dropdown block w-full px-5 py-3 font-[family-name:--font-Manrope] text-sm xl:text-base text-[--primary-color-1] hover:bg-gray-100 hover:text-[--btn-color] text-center">
+            Blogs
+          </a>
+        </li>
+        <li>
+          <a href="faq.html" class="dropdown active block w-full px-5 py-3 font-[family-name:--font-Manrope] text-sm xl:text-base text-[--primary-color-1] hover:bg-gray-100 hover:text-[--btn-color] text-center">
+            FAQ
+          </a>
+        </li>
+        <li>
+          <a href="testimonial.html" class="dropdown block w-full px-5 py-3 font-[family-name:--font-Manrope] text-sm xl:text-base text-[--primary-color-1] hover:bg-gray-100 hover:text-[--btn-color] rounded-b-xl text-center">
+            Testimonials
+          </a>
+        </li>
+        </ul>
+              </li>
+              <li
+                class="nav-items relative font-[family-name:--font-Manrope] text-sm xl:text-base font-semibold text-[--primary-color-1] transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
+              >
+                <a href="pets.html">Pets</a>
+              </li>
+              <li
+                class="nav-items relative font-[family-name:--font-Manrope] text-sm xl:text-base font-semibold text-[--primary-color-1] transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
+              >
+                <a href="shelters.html">Shelters</a>
+              </li>
+              <li
+                class="nav-items relative font-[family-name:--font-Manrope] text-sm xl:text-base font-semibold text-[--primary-color-1] transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
+              >
+                <a href="contact.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Right Nav -->
+          <div class="flex flex-wrap items-center gap-4">
+            <div
+              class="flex flex-wrap items-center gap-3 lg:ms-0 lg:gap-4 xl:gap-4"
+            >
+              <div id="guestMenu" class="flex flex-wrap items-center gap-4">
+                <!-- Login Button -->
+                <a
+                  href="login.html"
+                  class="hidden contact-btn lg:inline-flex items-center justify-center gap-2 bg-[var(--btn-color)] border-2 border-[#F4F1EA] shadow-xl hover:border-2 hover:border-[--btn-color] px-5 lg:py-2 xl:py-3 rounded-full font-[family-name:--font-poppins] font-bold lg:text-base xl:text-xl text-white hover:text-[var(--btn-color)] overflow-hidden relative z-[999] transition-all ease-in duration-300"
+                >
+                  LogIn
+                  <i class="fa-solid fa-paw"></i>
+                </a>
+                <!-- SignUp Button -->
+                <!-- <a
+                  href="create-account.html"
+                  class="hidden friend-btn lg:inline-flex items-center justify-center gap-2 bg-[--heading-text] hover:border-[2px] hover:border-[--btn-color] lg:px-3 xl:px-5 lg:py-2 xl:py-3 rounded-full font-[family-name:--font-poppins] font-bold text-[--primary-color-1] lg:text-base xl:text-xl border-[2px] border-[--primary-color-1] shadow-xl hover:border-[--btn-color] rounded-full hover:text-[var(--btn-color)] overflow-hidden transition-all ease-in duration-300"
+                >
+                  SignUp
+                  <i class="fa-solid fa-paw"></i>
+                </a> -->
+              </div>
+              <!-- User Icon -->
+              <!-- User Icon -->
+              <button
+                class="relative cursor-pointer sm:ml-[12px] md:ml-[14px] w-[40px] h-[40px] md:w-[50px] md:h-[50px] lg:ms-0 lg:w-[70px] lg:h-[70px]"
+                id="userMenu"
+              >
+                <img
+                    src="Images/user.png"
+                    class="object-fit-contain"
+                    alt="user"
+                    loading="lazy"
+                />
+              </button>
+              <!-- Dropdown -->
+              <div
+                id="userDropdown"
+                class="absolute right-[29px] sm:right-[14px] lg:right-0 top-[112px] min-[375px]:top-[117px] min-[480px]:top-[121px] sm:top-[118px] md:top-[141px] min-[992px]:top-[162px] lg:top-[184px] xl:top-[195px] 2xl:top-[196px] min-[1920px]:top-[216px] bg-[#F4F1EA] rounded-xl lg:rounded-[28px] shadow-xl border border-gray-200 hidden z-50 flex flex-col items-stretch"
+              >
+                <a
+                  href="profile.html"
+                  class="block w-full px-3
+    sm:px-4
+    md:px-5
+    lg:px-6
+
+    py-2
+    sm:py-4
+    lg:py-5 text-[10px] sm:text-xs md:text-sm lg:text-base 2xl:text-lg hover:bg-gray-100 transition font-[family-name:--font-poppins] font-medium rounded-t-xl lg:rounded-t-[28px] text-center"
+                >
+                  My Profile
+                </a>
+                <a
+                  href="#"
+                  class="block w-full px-3
+    sm:px-4
+    md:px-5
+    lg:px-6
+
+    py-2
+    sm:py-4
+    lg:py-5 text-[10px] sm:text-xs md:text-sm lg:text-base 2xl:text-lg hover:bg-gray-100 transition font-[family-name:--font-poppins] font-medium text-center"
+                >
+                  My Dashboard 
+                </a>
+                <button
+                  id="logoutBtn"
+                  class="w-full px-3
+    sm:px-4
+    md:px-5
+    lg:px-6
+
+    py-2
+    sm:py-4
+    lg:py-5 text-red-600 hover:bg-red-50 text-[10px] sm:text-xs md:text-sm lg:text-base 2xl:text-lg font-[family-name:--font-poppins] font-medium rounded-b-xl lg:rounded-b-[28px] text-center"
+                >
+                  Logout
+                </button>
+              </div>
+            </div>
+
+            <!-- Humbarger menu -->
+            <a
+              href="#"
+              class="inline-block lg:hidden text-xl md:text-3xl text-[--primary-color-1]"
+              id="menu-btn"
+              ><i class="fa-solid fa-bars"></i
+            ></a>
+          </div>
+        </nav>
+        <!-- Mobile/Tablet View -->
+        <!-- overlay -->
+        <div id="overlay" class="fixed inset-0 bg-black/40 z-40 hidden"></div>
+        <!-- Mobile Menu -->
+        <div
+          id="mobile-menu"
+          class="overflow-y-scroll fixed top-[0] left-[-100%] w-[75%] h-screen bg-white shadow-xl ease-in-out duration-500 z-[999] lg:hidden p-4"
+        >
+          <div class="flex justify-between items-center pe-4">
+            <a
+              href="index.html"
+              class="block max-w-[150px] min-[480px]:max-w-[200px] sm:max-w-[250px] min-[992px]:max-w-[300px]"
+              ><img
+                src="Images/Logo  for bright bg.png"
+                alt="logo"
+                loading="lazy"
+            /></a>
+            <a
+              href="#"
+              id="close-btn"
+              class="inline-block text-3xl text-[--primary-color-1] bg-white border-[1px] rounded-full border-[--primary-color-1] p-2 cursor-pointer hover:bg-[--btn-color] duration-300 ease-in-out"
+            >
+              <svg
+                width="11"
+                height="10"
+                class="min-[992px]:w-[15px] min-[992px]:h-[12px]"
+                viewBox="0 0 11 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.5 2.75H7.16667C9.00761 2.75 10.5 4.26104 10.5 6.125C10.5 7.98896 9.00761 9.5 7.16667 9.5H4.94444M0.5 2.75C0.5 2.2093 1.02708 1.80388 2.08122 0.993043L2.72222 0.5M0.5 2.75C0.5 3.2907 1.02706 3.69611 2.08118 4.50694L2.72222 5"
+                  stroke="#0A303A"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
+          <div
+            class="w-full h-[3px] bg-gradient-to-r from-[#0A303A] to-white mb-[17px]"
+          ></div>
+          <div class="flex flex-wrap flex-col py-4">
+            <!-- Mobile Nav -->
+            <ul class="flex flex-wrap flex-col items-center gap-4">
+              <li
+                class="nav-items relative font-[family-name:--font-Manrope] text-xs sm:text-sm md:text-base font-semibold text-[--primary-color-1]"
+              >
+                <a href="index.html">Home</a>
+              </li>
+              <div
+                class="w-1/2 h-[3px] mb-[17px] bg-[radial-gradient(circle_at_center,_#0A303A_0%,_#0A303A_20%,_white_100%)]"
+              ></div>
+              <li
+                class="relative font-[family-name:--font-Manrope] text-xs sm:text-sm md:text-base font-semibold text-[--primary-color-1]"
+              >
+                <button id="pagesBtn">Pages</button>
+              </li>
+              <div
+                class="w-1/2 h-[3px] mb-[17px] bg-[radial-gradient(circle_at_center,_#0A303A_0%,_#0A303A_20%,_white_100%)]"
+              ></div>
+              <ul
+                id="pagesMenu"
+                class="hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out flex flex-col gap-4 items-center"
+              >
+                <li
+                  class="mobile-dropdown relative font-[family-name:--font-Manrope] text-xs sm:text-sm md:text-base font-normal text-[--primary-color-1]"
+                >
+                  <a href="aboutus.html">About Us</a>
+                </li>
+                <li
+                  class="mobile-dropdown relative font-[family-name:--font-Manrope] text-xs sm:text-sm md:text-base font-normal text-[--primary-color-1]"
+                >
+                  <a href="blog.html">Blogs</a>
+                </li>
+                <li
+                  class="mobile-dropdown active relative font-[family-name:--font-Manrope] text-xs sm:text-sm md:text-base font-normal text-[--primary-color-1]"
+                >
+                  <a href="faq.html">FAQS</a>
+                </li>
+                <li
+                  class="mobile-dropdown relative font-[family-name:--font-Manrope] text-xs sm:text-sm md:text-base font-normal text-[--primary-color-1]"
+                >
+                  <a href="testimonial.html">Testimonials</a>
+                </li>
+              </ul>
+              <li
+                class="nav-items relative font-[family-name:--font-Manrope] text-xs sm:text-sm md:text-base font-semibold text-[--primary-color-1]"
+              >
+                <a href="pets.html">Pets</a>
+              </li>
+              <div
+                class="w-1/2 h-[3px] mb-[17px] bg-[radial-gradient(circle_at_center,_#0A303A_0%,_#0A303A_20%,_white_100%)]"
+              ></div>
+              <li
+                class="nav-items relative font-[family-name:--font-Manrope] text-xs sm:text-sm md:text-base font-semibold text-[--primary-color-1]"
+              >
+                <a href="shelters.html">Shelter</a>
+              </li>
+              <div
+                class="w-1/2 h-[3px] mb-[17px] bg-[radial-gradient(circle_at_center,_#0A303A_0%,_#0A303A_20%,_white_100%)]"
+              ></div>
+              <li
+                class="nav-items relative font-[family-name:--font-Manrope] text-xs sm:text-sm md:text-base font-semibold text-[--primary-color-1]"
+              >
+                <a href="contact.html">Contact Us</a>
+              </li>
+              <div
+                class="w-1/2 h-[3px] mb-[17px] bg-[radial-gradient(circle_at_center,_#0A303A_0%,_#0A303A_20%,_white_100%)]"
+              ></div>
+            </ul>
+            <!-- Button -->
+            <div class="flex flex-col justify-center items-center gap-4">
+              <!-- Login Button -->
+              <a
+                href="login.html"
+                class="lg:hidden contact-btn lg:inline-flex items-center justify-center gap-2 bg-[var(--btn-color)] border-2 border-[#F4F1EA] shadow-xl hover:border-2 hover:border-[--btn-color] px-6 py-3 sm:py-2 md:px-8 md:py-3 lg:py-2 xl:py-3 mt-5 rounded-full font-[family-name:--font-poppins] font-bold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white hover:text-[var(--btn-color)] overflow-hidden relative z-[999] transition-all ease-in duration-300"
+              >
+                LogIn
+                <i class="fa-solid fa-paw"></i>
+              </a>
+              <!-- SignUp Button -->
+              <a
+                href="create-account.html"
+                class="lg:hidden friend-btn lg:inline-flex items-center justify-center gap-2 bg-[--heading-text] hover:border-[2px] hover:border-[--btn-color] px-6 py-3 sm:py-2 md:px-8 md:py-3 lg:px-3 xl:px-5 lg:py-2 xl:py-3 rounded-full font-[family-name:--font-poppins] font-bold text-[--primary-color-1] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl border-[2px] border-[--primary-color-1] shadow-xl hover:border-[--btn-color] rounded-full hover:text-[var(--btn-color)] overflow-hidden transition-all ease-in duration-300"
+              >
+                SignUp
+                <i class="fa-solid fa-paw"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Main -->
+    <main>
+    <!-- Banner -->
+    <section class="faq-banner hidden sm:block sm:min-h-[600px] md:min-h-[700px] min-[992px]:min-h-[900px]"></section>
+    <section class="mobile-faq-banner min-h-[900px] sm:hidden"></section>
+    <!-- Questions -->
+    <section class="relative py-12 sm:py-16 lg:py-[117px]">
+        <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
+          <span
+            class="mb-4 flex items-center justify-center gap-2 text-center font-[family-name:--font-poppins] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold tracking-[2px] text-[--primary-color-1] sm:mb-9 sm:gap-3 sm:tracking-[4px]"
+          >
+            <i class="fa-solid fa-paw"></i>
+            Ask Away
+          </span>
+          <h2
+            class="mx-auto max-w-[358px] text-center font-[family-name:--font-Fredoka] text-xl sm:text-2xl lg:text-3xl xl:text-4xl min-[1920px]:text-5xl font-semibold leading-[1.2] text-[--primary-color-1] sm:max-w-[650px] lg:max-w-[756px]">
+            Got <span class="text-[--btn-color]">Questions</span> ? We've Got
+            <span class="text-[--btn-color]">Answers</span>.
+          </h2>
+          <p
+            class="mx-auto mt-4 mb-8 max-w-[310px] text-center font-[family-name:--font-poppins] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold leading-6 text-[--primary-color-1] opacity-60 sm:mt-6 sm:mb-14 sm:max-w-[850px] sm:leading-normal">
+            From adoption to pet care, we've answered the questions every future
+            pet parent asks—so you can focus on what truly matters: welcoming
+            your new best friend home.
+          </p>
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-4 items-center"
+          >
+            <div>
+              <img
+                src="Images/FAQ.png"
+                alt="FAQ"
+                loading="lazy"
+                class="w-full object-contain"
+              />
+            </div>
+            <div class="w-full space-y-4 xl:space-y-8 h-full">
+              <!-- Item 1-->
+              <div
+                class="faq-item border border-[#3E5667] rounded-xl overflow-hidden"
+              >
+                <button
+                  class="faq-btn w-full flex justify-between items-center px-5 py-4 text-left font-semibold text-[#163042] duration-500 ease-in-out"
+                >
+                  <span
+                    class="font-[family-name:--font-poppins] text-sm sm:text-base md:text-lg lg:text-xl font-semibold leading-[1.4] pr-4"
+                    >How does the adoption process work?</span
+                  >
+                  <i
+  class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-transform duration-300 ease-in-out"
+></i>
+                </button>
+                <div
+  class="faq-content max-h-0 overflow-hidden px-4 sm:px-5 opacity-0 transition-[max-height,opacity] duration-500 ease-in-out"
+>
+                  <p class="text-xs sm:text-sm md:text-base text-gray-500 leading-7 py-4">
+                    Browse pets, submit a request, meet your chosen companion,
+                    and complete the adoption once approved
+                  </p>
+                </div>
+              </div>
+              <!-- Item 2 -->
+              <div
+                class="faq-item border border-[#3E5667] rounded-xl overflow-hidden"
+              >
+                <button
+                  class="faq-btn w-full flex justify-between items-center px-5 py-4 text-left font-semibold text-[#163042] duration-500 ease-in-out"
+                >
+                  <span
+                    class="font-[family-name:--font-poppins] text-sm sm:text-base md:text-lg lg:text-xl font-semibold leading-[1.4] pr-4"
+                    >Can I meet the pet before adopting?</span
+                  >
+                  <i
+  class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-transform duration-300 ease-in-out"
+></i>
+                </button>
+                <div
+  class="faq-content max-h-0 overflow-hidden px-4 sm:px-5 opacity-0 transition-[max-height,opacity] duration-500 ease-in-out"
+>
+                  <p class="text-xs sm:text-sm md:text-base text-gray-500 leading-7 py-4">
+                    Yes. We encourage every adopter to meet the pet first to
+                    ensure it's the right match.
+                  </p>
+                </div>
+              </div>
+              <!-- Item 3 -->
+              <div
+                class="faq-item border border-[#3E5667] rounded-xl overflow-hidden"
+              >
+                <button
+                  class="faq-btn w-full flex justify-between items-center px-5 py-4 text-left font-semibold text-[#163042] duration-500 ease-in-out"
+                >
+                  <span
+                    class="font-[family-name:--font-poppins] text-sm sm:text-base md:text-lg lg:text-xl font-semibold leading-[1.4] pr-4"
+                    >Are the pets vaccinated and healthy?</span
+                  >
+                  <i
+  class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-transform duration-300 ease-in-out"
+></i>
+                </button>
+                <div
+  class="faq-content max-h-0 overflow-hidden px-4 sm:px-5 opacity-0 transition-[max-height,opacity] duration-500 ease-in-out"
+>
+                  <p class="text-xs sm:text-sm md:text-base text-gray-500 leading-7 py-4">
+                    Each pet profile includes available health records,
+                    vaccination status, and medical information.
+                  </p>
+                </div>
+              </div>
+              <!-- Item 4 -->
+              <div
+                class="faq-item border border-[#3E5667] rounded-xl overflow-hidden"
+              >
+                <button
+                  class="faq-btn w-full flex justify-between items-center px-5 py-4 text-left font-semibold text-[#163042] duration-500 ease-in-out"
+                >
+                  <span
+                    class="font-[family-name:--font-poppins] text-sm sm:text-base md:text-lg lg:text-xl font-semibold leading-[1.4] pr-4"
+                    >What if the adoption doesn't work out?</span
+                  >
+                  <i
+  class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-transform duration-300 ease-in-out"
+></i>
+                </button>
+                <div
+  class="faq-content max-h-0 overflow-hidden px-4 sm:px-5 opacity-0 transition-[max-height,opacity] duration-500 ease-in-out"
+>
+                  <p class="text-xs sm:text-sm md:text-base text-gray-500 leading-7 py-4">
+                    Many rescue partners have return policies to ensure the
+                    pet's wellbeing. Check the pet's profile for details.
+                  </p>
+                </div>
+              </div>
+              <!-- Item 5 -->
+              <div
+                class="faq-item border border-[#3E5667] rounded-xl overflow-hidden"
+              >
+                <button
+                  class="faq-btn w-full flex justify-between items-center px-5 py-4 text-left font-semibold text-[#163042] duration-500 ease-in-out"
+                >
+                  <span
+                    class="font-[family-name:--font-poppins] text-sm sm:text-base md:text-lg lg:text-xl font-semibold leading-[1.4] pr-4"
+                    >How long does the adoption process take?</span
+                  >
+                  <i
+  class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-transform duration-300 ease-in-out"
+></i>
+                </button>
+                <div
+  class="faq-content max-h-0 overflow-hidden px-4 sm:px-5 opacity-0 transition-[max-height,opacity] duration-500 ease-in-out"
+>
+                  <p class="text-xs sm:text-sm md:text-base text-gray-500 leading-7 py-4">
+                    It depends on the rescue partner, but most requests are
+                    reviewed within a few days.
+                  </p>
+                </div>
+              </div>
+              <!-- Item 6 -->
+              <div
+                class="faq-item border border-[#3E5667] rounded-xl overflow-hidden"
+              >
+                <button
+                  class="faq-btn w-full flex justify-between items-center px-5 py-4 text-left font-semibold text-[#163042] duration-500 ease-in-out"
+                >
+                  <span
+                    class="font-[family-name:--font-poppins] text-[15px] sm:text-base md:text-lg lg:text-xl font-semibold leading-[1.4] pr-4"
+                    >Are the pet profiles verified?</span
+                  >
+                  <i
+  class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-transform duration-300 ease-in-out"
+></i>
+                </button>
+                <div
+  class="faq-content max-h-0 overflow-hidden px-4 sm:px-5 opacity-0 transition-[max-height,opacity] duration-500 ease-in-out"
+>
+                  <p class="text-sm sm:text-base text-gray-500 leading-7 py-4">
+                    We work with trusted shelters and partners to provide
+                    accurate information.
+                  </p>
+                </div>
+              </div>
+              <!-- Item 7 -->
+              <div
+                class="faq-item border border-[#3E5667] rounded-xl overflow-hidden"
+              >
+                <button
+                  class="faq-btn w-full flex justify-between items-center px-5 py-4 text-left font-semibold text-[#163042] duration-500 ease-in-out"
+                >
+                  <span
+                    class="font-[family-name:--font-poppins] text-sm sm:text-base md:text-lg lg:text-xl font-semibold leading-[1.4] pr-4"
+                    >Do you provide post-adoption support?</span
+                  >
+                  <i
+  class="fa-solid fa-plus text-lg sm:text-xl shrink-0 transition-transform duration-300 ease-in-out"
+></i>
+                </button>
+                <div
+  class="faq-content max-h-0 overflow-hidden px-4 sm:px-5 opacity-0 transition-[max-height,opacity] duration-500 ease-in-out"
+>
+                  <p class="text-xs sm:text-sm md:text-base text-gray-500 leading-7 py-4">
+                    Yes. We offer care guides and access to trusted pet care
+                    resources.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- Send a note -->
+    <section class="relative py-12 sm:py-16 lg:py-[100px]">
+        <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
+            <div class="note-banner relative">
+                <div class="absolute inset-0 flex flex-col justify-center items-center">
+                    <h2
+            class="mx-auto font-[family-name:--font-Fredoka] text-xl sm:text-2xl lg:text-3xl xl:text-4xl min-[1920px]:text-5xl font-semibold leading-[1.2] text-white sm:max-w-[650px] lg:max-w-[756px]">
+            Still need help? Send us a note!
+          </h2>
+          <p
+            class="mx-auto mt-5 mb-8 max-w-[946px] text-center font-[family-name:--font-poppins] text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold leading-6 text-white">
+            For any other questions, please write us at <a href="#"class="text-white hover:text-blue-600">info@furandfeather.com</a> or call us on +91 1234567890
+          </p>
+          <ul class="text-white flex flex-wrap gap-4">
+            <li>
+              <a href="" target="_blank"
+                ><i
+                  class="fa-brands fa-facebook-f text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"
+                ></i
+              ></a>
+            </li>
+            <li>
+              <a href="" target="_blank"
+                ><i
+                  class="fa-brands fa-instagram text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"
+                ></i
+              ></a>
+            </li>
+            <li>
+              <a href="" target="_blank"
+                ><i
+                  class="fa-brands fa-linkedin-in text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"
+                ></i
+              ></a>
+            </li>
+            <li>
+              <a href="" target="_blank"
+                ><i
+                  class="fa-brands fa-x-twitter text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"
+                ></i
+              ></a>
+            </li>
+          </ul>
+                </div>
+            </div>
+        </div> 
+    </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer-banner relative pt-24 pb-6 sm:pt-24 lg:pt-28">
+      <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
+        <div class="flex flex-wrap mx-[-15px]">
+          <div class="max-w-full lg:max-w-[40%] lg:basis-[40%] lg:px-[15px]">
+            <!-- Footer Logo -->
+            <div
+              class="flex flex-col items-center text-center lg:items-start lg:text-left gap-6 pt-28 lg:pt-0"
+            >
+              <a
+                href="index.html"
+                class="block max-w-[260px] lg:max-w-[320px] xl:max-w-[420px]"
+              >
+                <img
+                  src="Images/footer-logo.png"
+                  alt="footer"
+                  class="w-full object-contain"
+                />
+              </a>
+              <p
+                class="max-w-full lg:max-w-[430px] text-[#F4F1EA] font-medium leading-7 text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg"
+              >
+                Some companions don't just enter your life.They become a part of
+                who you are—through every ordinary moment and every
+                unforgettable memory.
+              </p>
+              <div
+                class="flex flex-wrap flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start items-center mt-4 lg:mt-8"
+              >
+                <!-- Contact Button -->
+                <a
+                  href="contact.html"
+                  class="friend-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-2 border-[--primary-color-1] shadow-xl hover:border-[--btn-color] bg-[--heading-text] px-4 py-3 font-[family-name:--font-poppins] font-bold text-[--primary-color-1] shadow-xl transition-all duration-300 ease-in hover:border-[--btn-color] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
+                >
+                  Contact Us
+                  <i class="fa-solid fa-paw"></i>
+                </a>
+                <!-- Adopt now -->
+                <a
+                  href="#"
+                  class="contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-2 border-[#F4F1EA] shadow-xl hover:border-[--btn-color] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
+                >
+                  Adopt Now
+                  <i class="fa-solid fa-paw"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="max-w-full w-full lg:max-w-[20%] lg:basis-[20%] lg:px-[15px]"
+          >
+            <div class="pt-4 sm:pt-8 text-center lg:text-left">
+              <span
+                class="text-[--btn-color] font-[family-name:--font-poppins] font-semibold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
+                >Utility pages</span
+              >
+              <ul class="space-y-4 mt-4 lg:mt-6">
+                <li
+                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
+                >
+                  <a href="index.html">Home</a>
+                </li>
+                <li
+                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
+                >
+                  <a href="aboutus.html">About Us</a>
+                </li>
+                <li
+                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
+                >
+                  <a href="blog.html">Blog</a>
+                </li>
+                <li
+                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
+                >
+                  <a href="faq.html">FAQ</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="max-w-full w-full lg:max-w-[20%] lg:basis-[20%] lg:px-[15px]"
+          >
+            <div class="pt-4 sm:pt-8 text-center lg:text-left">
+              <span
+                class="text-[--btn-color] font-[family-name:--font-poppins] font-semibold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
+                >Our Services</span
+              >
+              <ul class="space-y-4 mt-4 lg:mt-6">
+                <li
+                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
+                >
+                  <a href="#">Adoption</a>
+                </li>
+                <li
+                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
+                >
+                  <a href="#">Shelter Networking</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="max-w-full w-full lg:max-w-[20%] lg:basis-[20%] lg:px-[15px]"
+          >
+            <div class="pt-4 sm:pt-8 text-center lg:text-left">
+              <span
+                class="text-[--btn-color] font-[family-name:--font-poppins] font-semibold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
+                >Our Partner</span
+              >
+              <ul class="space-y-4 mt-4 lg:mt-6">
+                <li
+                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA]"
+                >
+                  People for the Ethical Treatment of Animals
+                </li>
+                <li
+                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA]"
+                >
+                  Blue Cross of India
+                </li>
+                <li
+                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA]"
+                >
+                  People For Animals
+                </li>
+                <li
+                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA]"
+                >
+                  World Animal Protection
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="bg-[#F4F1EA] w-full h-[1px] my-6"></div>
+        <div
+          class="flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-4"
+        >
+          <div
+            class="text-[#F4F1EA] font-[family-name:--font-poppins] text-xs md:text-sm xl:text-base font-semibold text-center lg:text-left"
+          >
+            Copyright &copy 2026
+            <a href="index.html" class="hover:text-[--btn-color]"
+              >Fur & Feather.</a
+            >
+            All Rights Reserved.
+          </div>
+          <ul class="text-white flex flex-wrap gap-4">
+            <li>
+              <a href="" target="_blank"
+                ><i
+                  class="fa-brands fa-facebook text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"
+                ></i
+              ></a>
+            </li>
+            <li>
+              <a href="" target="_blank"
+                ><i
+                  class="fa-brands fa-instagram text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"
+                ></i
+              ></a>
+            </li>
+            <li>
+              <a href="" target="_blank"
+                ><i
+                  class="fa-brands fa-linkedin-in text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"
+                ></i
+              ></a>
+            </li>
+            <li>
+              <a href="" target="_blank"
+                ><i
+                  class="fa-brands fa-x-twitter text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"
+                ></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- left -->
+      <div
+        class="absolute left-0 bottom-0 hidden 2xl:block z-10 w-[140px] sm:w-[120px] md:w-[200px] lg:w-[260px] min-[1920px]:w-[400px] pointer-events-none"
+      >
+        <img
+          src="Images/left-footer.png"
+          alt="left-footer"
+          class="w-full object-contain"
+          loading="lazy"
+        />
+      </div>
+      <!-- right -->
+      <div
+        class="absolute top-[75px] right-0 hidden 2xl:block z-10 w-[130px] lg:w-[100px] xl:w-[120px] 2xl:w-[160px] min-[1920px]:w-[200px] pointer-events-none"
+      >
+        <img
+          src="Images/right-footer.png"
+          alt="right-footer"
+          class="w-full object-contain"
+          loading="lazy"
+        />
+      </div>
+    </footer>
+    <!-- Scroll to top button -->
+    <button
+    id="backToTop"
+    type="button"
+    aria-label="Back to top"
+    class="invisible fixed bottom-6 right-6 z-50 flex h-12 w-12 translate-y-5 items-center justify-center rounded-full bg-[--btn-color] text-xl text-white opacity-0 shadow-lg transition-all duration-300 ease-in-out hover:bg-[#A7893B] md:bottom-8 md:right-8"
+  >
+  <!-- Arrow -->
+    <i class="fa-solid fa-chevron-down text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl" id="backToTopIcon"></i>
+
+  </button>
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Swiper JS CDN  -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- Fancybox JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.umd.js"></script>
+    <!-- External Javascript CDN -->
+    <script src="script.js"></script>
+    <script>
+      Fancybox.bind("[data-fancybox]", {
+        // Your custom options
+      });
+    </script>
+  </body>
+</html>
