@@ -1501,3 +1501,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+// Pet
+document.addEventListener("DOMContentLoaded", () => {
+
+  const categories = document.querySelectorAll(".category-item");
+
+  categories.forEach((category) => {
+
+    category.addEventListener("click", () => {
+
+      const targetId = category.getAttribute("data-target");
+      const targetSection = document.getElementById(targetId);
+
+      if (targetSection) {
+
+        targetSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      }
+
+    });
+
+  });
+
+});
