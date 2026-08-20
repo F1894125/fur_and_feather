@@ -1,3 +1,19 @@
+// Preloader
+window.addEventListener("load", function () {
+
+    const preloader = document.getElementById("preloader");
+
+    setTimeout(() => {
+
+      preloader.classList.add("opacity-0");
+
+      setTimeout(() => {
+        preloader.classList.add("hidden");
+      }, 500);
+
+    }, 2000);
+
+  });
 // tab switch
 document.addEventListener("DOMContentLoaded", () => {
 
