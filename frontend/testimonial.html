@@ -510,7 +510,7 @@
     <main>
     <!-- Banner -->
     <section class="testimonial-banner hidden min-[480px]:block min-[480px]:min-h-[500px] sm:min-h-[600px] md:min-h-[700px] min-[992px]:min-h-[900px] min-[1920px]:min-h-[1000px]"></section>
-    <section class="mobile-testimonial-banner min-h-[800px] min-[375px]:min-h-[900px] min-[480px]:hidden"></section>
+    <section class="mobile-testimonial-banner min-h-[500px] min-[375px]:min-h-[600px] min-[480px]:hidden mt-[80px]"></section>
     <!-- Stars -->
     <section class="py-12 sm:py-16 lg:py-[100px]">
       <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
@@ -643,193 +643,1021 @@
     <!-- Real Stories. Forever Bonds. -->
     <section class="pb-12 sm:pb-16 lg:pb-[100px]">
       <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
-        
+        <span
+            class="mb-4 flex items-center gap-2 text-center font-[family-name:--font-poppins] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold tracking-[2px] text-[--primary-color-1] sm:mb-9 sm:gap-3 sm:tracking-[4px]"
+          >
+            <i class="fa-solid fa-paw"></i>
+            Happy Tails
+          </span>
+        <h2
+            class="max-w-[358px] font-[family-name:--font-Fredoka] text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold leading-[1.2] text-[--primary-color-1] sm:max-w-[650px] lg:max-w-[756px]"
+          >
+            <span class="text-[--btn-color]">Real</span> Stories. Forever<span class="text-[--btn-color]"> Bonds.</span>
+          </h2>
+        <div class="grid grid-cols-12 gap-4 min-[992px]:gap-6 items-center">
+          <div class="col-span-12 min-[992px]:col-span-10">
+            <p
+            class="my-4 font-[family-name:--font-poppins] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold leading-6 text-[--primary-color-1] opacity-60 sm:mt-6 sm:mb-6 sm:leading-normal"
+          >
+            Every adoption creates a story worth sharing. Hear from families who found unconditional love, endless joy, and lifelong companionship through Fur & Feather.
+          </p>
+          </div>
+<div class="col-span-12 min-[992px]:col-span-2 w-full">
+  <!-- =========================
+     SORT + FILTER WRAPPER
+========================= -->
+  <div class="relative flex w-full items-center gap-4">
+
+    <!-- FILTER BUTTON -->
+    <button
+      id="filterButton"
+      type="button"
+      aria-label="Filter"
+      class="
+        flex h-[35px] w-[35px] shrink-0 items-center justify-center
+        rounded-[15px]
+        border-[3px] border-[--primary-color-1]
+        p-[8px] lg:p-3
+        transition-all duration-300
+        hover:bg-[--btn-color]
+
+        sm:h-[40px]
+        sm:w-[40px]
+
+        min-[992px]:h-[46px]
+        min-[992px]:w-[46px]
+      "
+    >
+      <svg class="h-[20px] w-[20px] sm:h-[22px] sm:w-[22px]" width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.25 3.5625C0.559644 3.5625 0 4.12214 0 4.8125C0 5.50286 0.559644 6.0625 1.25 6.0625V4.8125V3.5625ZM1.25 15.4375C0.559644 15.4375 0 15.9971 0 16.6875C0 17.3779 0.559644 17.9375 1.25 17.9375V16.6875V15.4375ZM8.58333 17.9375C9.27369 17.9375 9.83333 17.3779 9.83333 16.6875C9.83333 15.9971 9.27369 15.4375 8.58333 15.4375V16.6875V17.9375ZM23.25 17.9375C23.9404 17.9375 24.5 17.3779 24.5 16.6875C24.5 15.9971 23.9404 15.4375 23.25 15.4375V16.6875V17.9375ZM15.9167 3.5625C15.2263 3.5625 14.6667 4.12214 14.6667 4.8125C14.6667 5.50286 15.2263 6.0625 15.9167 6.0625V4.8125V3.5625ZM23.25 6.0625C23.9404 6.0625 24.5 5.50286 24.5 4.8125C24.5 4.12214 23.9404 3.5625 23.25 3.5625V4.8125V6.0625ZM5.10274 2.71612L3.95288 2.2259L3.95287 2.22592L5.10274 2.71612ZM6.42566 1.43078L5.95899 0.271165L5.95897 0.271173L6.42566 1.43078ZM10.741 1.43078L11.2078 0.27119L11.2077 0.271143L10.741 1.43078ZM12.064 2.71612L13.2139 2.22603L13.2138 2.22588L12.064 2.71612ZM12.064 6.90888L13.2138 7.39912L13.2139 7.39897L12.064 6.90888ZM10.741 8.19422L11.2077 9.35386L11.2078 9.35381L10.741 8.19422ZM6.42566 8.19422L5.95897 9.35383L5.95899 9.35384L6.42566 8.19422ZM5.10274 6.90888L3.95287 7.39908L3.95288 7.3991L5.10274 6.90888ZM12.436 14.5911L11.2862 14.1008L11.2861 14.101L12.436 14.5911ZM13.759 13.3057L13.2924 12.1461L13.2922 12.1462L13.759 13.3057ZM18.0744 13.3057L18.5411 12.1462L18.5409 12.1461L18.0744 13.3057ZM19.3973 14.5911L20.5473 14.101L20.5471 14.1008L19.3973 14.5911ZM19.3973 18.7839L20.5471 19.2742L20.5473 19.274L19.3973 18.7839ZM18.0744 20.0693L18.5409 21.2289L18.5411 21.2288L18.0744 20.0693ZM13.759 20.0693L13.2922 21.2288L13.2924 21.2289L13.759 20.0693ZM12.436 18.7839L11.2861 19.274L11.2862 19.2742L12.436 18.7839ZM1.25 4.8125V6.0625H4.91667V4.8125V3.5625H1.25V4.8125ZM1.25 16.6875V17.9375H8.58333V16.6875V15.4375H1.25V16.6875ZM19.5833 16.6875V17.9375H23.25V16.6875V15.4375H19.5833V16.6875ZM15.9167 4.8125V6.0625H23.25V4.8125V3.5625H15.9167V4.8125ZM4.91667 4.8125H6.16667C6.16667 4.2416 6.16738 3.87785 6.18685 3.60057C6.20549 3.33525 6.23679 3.24343 6.25261 3.20633L5.10274 2.71612L3.95287 2.22592C3.78261 2.62528 3.72088 3.02834 3.693 3.42544C3.66595 3.81059 3.66667 4.2768 3.66667 4.8125H4.91667ZM5.10274 2.71612L6.2526 3.20635C6.36775 2.93625 6.59376 2.71056 6.89235 2.5904L6.42566 1.43078L5.95897 0.271173C5.05965 0.633107 4.33392 1.33213 3.95288 2.2259L5.10274 2.71612ZM6.42566 1.43078L6.89233 2.5904C6.94271 2.57013 7.04912 2.53838 7.32853 2.51986C7.61848 2.50064 7.99723 2.5 8.58333 2.5V1.25V0C8.03047 0 7.555 -0.0006392 7.16316 0.0253356C6.76078 0.0520098 6.35783 0.110655 5.95899 0.271165L6.42566 1.43078ZM8.58333 1.25V2.5C9.16944 2.5 9.54818 2.50064 9.83814 2.51986C10.1175 2.53838 10.224 2.57013 10.2744 2.59043L10.741 1.43078L11.2077 0.271143C10.8088 0.110657 10.4059 0.0520104 10.0035 0.0253354C9.61166 -0.0006392 9.1362 0 8.58333 0V1.25ZM10.741 1.43078L10.2743 2.59038C10.5729 2.71057 10.799 2.9363 10.9141 3.20637L12.064 2.71612L13.2138 2.22588C12.8328 1.33208 12.107 0.633105 11.2078 0.27119L10.741 1.43078ZM12.064 2.71612L10.9141 3.20622C10.9299 3.24335 10.9612 3.33521 10.9798 3.60055C10.9993 3.87784 11 4.2416 11 4.8125H12.25H13.5C13.5 4.27679 13.5007 3.8106 13.4737 3.42547C13.4458 3.02839 13.3841 2.62536 13.2139 2.22603L12.064 2.71612ZM12.25 4.8125H11C11 5.3834 10.9993 5.74716 10.9798 6.02445C10.9612 6.28979 10.9299 6.38165 10.9141 6.41878L12.064 6.90888L13.2139 7.39897C13.3841 6.99964 13.4458 6.59661 13.4737 6.19953C13.5007 5.8144 13.5 5.34821 13.5 4.8125H12.25ZM12.064 6.90888L10.9141 6.41863C10.799 6.6887 10.5729 6.91443 10.2743 7.03462L10.741 8.19422L11.2078 9.35381C12.107 8.9919 12.8328 8.29292 13.2138 7.39912L12.064 6.90888ZM10.741 8.19422L10.2744 7.03457C10.224 7.05487 10.1175 7.08662 9.83814 7.10514C9.54818 7.12436 9.16944 7.125 8.58333 7.125V8.375V9.625C9.1362 9.625 9.61166 9.62564 10.0035 9.59966C10.4059 9.57299 10.8088 9.51434 11.2077 9.35386L10.741 8.19422ZM8.58333 8.375V7.125C7.99723 7.125 7.61848 7.12436 7.32853 7.10514C7.04912 7.08662 6.94271 7.05487 6.89233 7.0346L6.42566 8.19422L5.95899 9.35384C6.35783 9.51434 6.76078 9.57299 7.16316 9.59966C7.555 9.62564 8.03047 9.625 8.58333 9.625V8.375ZM6.42566 8.19422L6.89235 7.0346C6.59376 6.91444 6.36775 6.68875 6.2526 6.41865L5.10274 6.90888L3.95288 7.3991C4.33392 8.29287 5.05965 8.99189 5.95897 9.35383L6.42566 8.19422ZM5.10274 6.90888L6.25261 6.41867C6.23679 6.38157 6.20549 6.28975 6.18685 6.02443C6.16738 5.74715 6.16667 5.3834 6.16667 4.8125H4.91667H3.66667C3.66667 5.3482 3.66595 5.81441 3.693 6.19956C3.72088 6.59666 3.78261 6.99972 3.95287 7.39908L5.10274 6.90888ZM12.25 16.6875H13.5C13.5 16.1166 13.5007 15.7528 13.5202 15.4755C13.5388 15.2102 13.5701 15.1183 13.586 15.0811L12.436 14.5911L11.2861 14.101C11.1159 14.5004 11.0542 14.9034 11.0263 15.3005C10.9993 15.6856 11 16.1518 11 16.6875H12.25ZM12.436 14.5911L13.5859 15.0814C13.701 14.8113 13.9271 14.5855 14.2257 14.4653L13.759 13.3057L13.2922 12.1462C12.393 12.5081 11.6672 13.2071 11.2862 14.1008L12.436 14.5911ZM13.759 13.3057L14.2255 14.4654C14.2759 14.4451 14.3824 14.4134 14.6618 14.3949C14.9518 14.3756 15.3306 14.375 15.9167 14.375V13.125V11.875C15.3638 11.875 14.8883 11.8744 14.4965 11.9003C14.0941 11.927 13.6913 11.9856 13.2924 12.1461L13.759 13.3057ZM15.9167 13.125V14.375C16.5028 14.375 16.8815 14.3756 17.1715 14.3949C17.4509 14.4134 17.5574 14.4451 17.6079 14.4654L18.0744 13.3057L18.5409 12.1461C18.1421 11.9856 17.7392 11.927 17.3368 11.9003C16.945 11.8744 16.4695 11.875 15.9167 11.875V13.125ZM18.0744 13.3057L17.6076 14.4653C17.9062 14.5855 18.1323 14.8113 18.2475 15.0814L19.3973 14.5911L20.5471 14.1008C20.1661 13.2071 19.4403 12.5081 18.5411 12.1462L18.0744 13.3057ZM19.3973 14.5911L18.2474 15.0811C18.2632 15.1183 18.2945 15.2102 18.3131 15.4755C18.3326 15.7528 18.3333 16.1166 18.3333 16.6875H19.5833H20.8333C20.8333 16.1518 20.834 15.6856 20.807 15.3005C20.7791 14.9034 20.7174 14.5004 20.5473 14.101L19.3973 14.5911ZM19.5833 16.6875H18.3333C18.3333 17.2584 18.3326 17.6222 18.3131 17.8995C18.2945 18.1648 18.2632 18.2567 18.2474 18.2939L19.3973 18.7839L20.5473 19.274C20.7174 18.8746 20.7791 18.4716 20.807 18.0745C20.834 17.6894 20.8333 17.2232 20.8333 16.6875H19.5833ZM19.3973 18.7839L18.2475 18.2936C18.1323 18.5637 17.9062 18.7895 17.6076 18.9097L18.0744 20.0693L18.5411 21.2288C19.4403 20.8669 20.1661 20.1679 20.5471 19.2742L19.3973 18.7839ZM18.0744 20.0693L17.6079 18.9096C17.5574 18.9299 17.4509 18.9616 17.1715 18.9801C16.8815 18.9994 16.5028 19 15.9167 19V20.25V21.5C16.4695 21.5 16.945 21.5006 17.3368 21.4747C17.7392 21.448 18.1421 21.3894 18.5409 21.2289L18.0744 20.0693ZM15.9167 20.25V19C15.3306 19 14.9518 18.9994 14.6618 18.9801C14.3824 18.9616 14.2759 18.9299 14.2255 18.9096L13.759 20.0693L13.2924 21.2289C13.6913 21.3894 14.0941 21.448 14.4965 21.4747C14.8883 21.5006 15.3638 21.5 15.9167 21.5V20.25ZM13.759 20.0693L14.2257 18.9097C13.9271 18.7895 13.701 18.5637 13.5859 18.2936L12.436 18.7839L11.2862 19.2742C11.6672 20.1679 12.393 20.8669 13.2922 21.2288L13.759 20.0693ZM12.436 18.7839L13.586 18.2939C13.5701 18.2567 13.5388 18.1648 13.5202 17.8995C13.5007 17.6222 13.5 17.2584 13.5 16.6875H12.25H11C11 17.2232 10.9993 17.6894 11.0263 18.0745C11.0542 18.4716 11.1159 18.8746 11.2861 19.274L12.436 18.7839Z" fill="#0A303A"/>
+</svg>
+    </button>
+
+
+    <!-- SORT BUTTON -->
+    <button
+      id="sortButton"
+      type="button"
+      aria-label="Sort"
+      class="
+        flex h-[35px] w-[35px] shrink-0 items-center justify-center
+        rounded-[15px]
+        border-[3px] border-[--primary-color-1]
+        p-[8px] lg:p-3
+        transition-all duration-300
+        hover:bg-[--btn-color]
+
+        sm:h-[40px]
+        sm:w-[40px]
+
+        min-[992px]:h-[46px]
+        min-[992px]:w-[46px]
+      "
+    >
+      <svg
+        class="h-[20px] w-[20px] sm:h-[22px] sm:w-[22px]"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5.1875 1.25V22.25M1.25 5.1875C1.25 5.1875 4.14989 1.24999 5.1875 1.25C6.2251 1.25001 9.125 5.18747 9.125 5.18747M18.3125 20.9375V1.25M22.25 18.3125C22.25 18.3125 19.35 22.25 18.3125 22.25C17.2748 22.25 14.375 18.3125 14.375 18.3125"
+          stroke="#0A303A"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+
+
+    <!-- =========================
+         SORT DROPDOWN
+    ========================== -->
+    <div
+      id="sortPanel"
+      class="
+        absolute left-[50px] min-[992px]:left-[-108px] xl:left-[-62px] 2xl:left-[37px] min-[1920px]:left-[50px] top-[50px] z-50 hidden
+
+        w-[calc(100vw-32px)]
+        max-w-[170px]
+
+        overflow-hidden
+        rounded-[27px]
+        border
+        border-[--primary-color-1]
+        bg-[#F5F1E9]
+        shadow-lg
+
+        sm:top-[65px]
+        sm:w-[270px]
+
+        min-[992px]:top-[58px]
+      "
+    >
+
+      <div class="px-7 py-2 sm:px-9">
+
+        <button
+          class="
+            w-full border-b-2 border-[--primary-color-1]
+            py-6
+            text-center
+            font-semibold
+            text-[--primary-color-1]
+            transition-all
+            hover:opacity-60
+
+            sm:py-7
+            text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl
+          " data-sort="recommended"
+        >
+          Recommended
+        </button>
+
+        <button
+          class="
+            w-full border-b-2 border-[--primary-color-1]
+            py-6
+            text-center 
+            font-semibold
+            text-[--primary-color-1]
+            transition-all
+            hover:opacity-60
+
+            sm:py-7
+            text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl
+          " data-sort="popular"
+        >
+          Most Popular
+        </button>
+
+        <button
+          class="
+            w-full border-b-2 border-[--primary-color-1]
+            py-6
+            text-center 
+            font-semibold
+            text-[--primary-color-1]
+            transition-all
+            hover:opacity-60
+
+            sm:py-7
+            text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl
+          " data-sort="newest"
+        >
+          Newest - Oldest
+        </button>
+
+        <button
+          class="
+            w-full border-b-2 border-[--primary-color-1]
+            py-6
+            text-center 
+            font-semibold
+            text-[--primary-color-1]
+            transition-all
+            hover:opacity-60
+
+            sm:py-7
+           text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl
+          " data-sort="oldest"
+        >
+          Oldest - Newest
+        </button>
+
+        <button
+          class="
+            w-full
+            py-6
+            text-center 
+            font-semibold
+            text-[--primary-color-1]
+            transition-all
+            hover:opacity-60
+
+            sm:py-7
+            text-xs sm:yexy-sm md:text-base lg:text-lg xl:text-xl
+          "  data-sort="helpful"
+        >
+          Most Helpful
+        </button>
+
+      </div>
+    </div>
+
+
+    <!-- =========================
+         FILTER DROPDOWN
+    ========================== -->
+    <div
+      id="filterPanel"
+      class="
+        absolute left-[-10px] min-[992px]:left-[-90px] xl:left-[-46px] 2xl:left-0 top-[50px] z-50 hidden
+
+        w-[calc(100vw-32px)]
+        max-w-[150px]
+
+        max-h-[calc(100vh-80px)]
+        overflow-y-auto
+
+        rounded-[27px]
+        border
+        border-[--primary-color-1]
+        bg-[#F5F1E9]
+        shadow-lg
+
+        sm:top-[65px]
+        sm:w-[270px]
+
+        min-[992px]:top-[58px]
+      "
+    >
+
+      <div class="px-7 py-7 sm:px-8 sm:py-8">
+
+  <!-- ================= PET TYPE ================= -->
+  <div class="filter-group">
+
+    <button
+      type="button"
+      class="filter-toggle flex w-full items-center justify-between
+             border-b border-[--primary-color-1]/30
+             pb-3 font-semibold font-[family-name:--font-poppins]
+             text-[--primary-color-1]
+             text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
+      aria-expanded="true"
+    >
+      <span>Pet Type</span>
+
+      <svg
+        class="filter-arrow h-5 w-5 transition-transform duration-300 rotate-180"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
+        <path
+          d="M6 9L12 15L18 9"
+          stroke="#0A303A"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+
+    <div
+      class="filter-content flex flex-col
+    overflow-hidden
+    max-h-0
+    opacity-0
+    transition-all
+    duration-300
+    ease-in-out font-normal
+             text-[--primary-color-1] font-[family-name:--font-poppins]
+             text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
+    >
+      <button class="filter-option w-full py-1.5 hover:text-[--btn-color] transition-all duration-300">
+        Dogs
+      </button>
+
+      <button class="filter-option w-full py-1.5 hover:text-[--btn-color] transition-all duration-300">
+        Cats
+      </button>
+
+      <button class="filter-option w-full py-1.5 hover:text-[--btn-color] transition-all duration-300">
+        Birds
+      </button>
+
+      <button class="filter-option w-full py-1.5 hover:text-[--btn-color] transition-all duration-300">
+        All
+      </button>
+    </div>
+
+  </div>
+
+
+  <!-- ================= RATING ================= -->
+  <div class="filter-group mt-10 sm:mt-14">
+
+    <button
+      type="button"
+      class="filter-toggle flex w-full items-center justify-between
+             border-b border-[--primary-color-1]/30
+             pb-3 font-semibold font-[family-name:--font-poppins]
+             text-[--primary-color-1]
+             text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
+      aria-expanded="false"
+    >
+      <span>Rating</span>
+
+      <svg
+        class="filter-arrow h-5 w-5 transition-transform duration-300"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
+        <path
+          d="M6 9L12 15L18 9"
+          stroke="#0A303A"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+
+    <div
+      class="filter-content flex flex-col
+    overflow-hidden
+    max-h-0
+    opacity-0
+    transition-all
+    duration-300
+    ease-in-out font-normal font-[family-name:--font-poppins]
+             text-[--primary-color-1]
+             text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
+    >
+      <button class="filter-option w-full py-1.5 hover:text-[--btn-color] transition-all duration-300">
+        5-4
+      </button>
+
+      <button class="filter-option w-full py-1.5 hover:text-[--btn-color] transition-all duration-300">
+        3-2
+      </button>
+
+      <button class="filter-option w-full py-1.5 hover:text-[--btn-color] transition-all duration-300">
+        1
+      </button>
+
+      <button class="filter-option w-full py-1.5 hover:text-[--btn-color] transition-all duration-300">
+        All
+      </button>
+    </div>
+
+  </div>
+
+
+  <!-- ================= SHELTER ================= -->
+  <div class="filter-group mt-10 sm:mt-14">
+
+    <button
+      type="button"
+      class="filter-toggle flex w-full items-center justify-between
+             border-b border-[--primary-color-1]/30
+             pb-3 font-semibold font-[family-name:--font-poppins]
+             text-[--primary-color-1]
+             text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
+      aria-expanded="false"
+    >
+      <span>Shelter</span>
+
+      <svg
+        class="filter-arrow h-5 w-5 transition-transform duration-300"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
+        <path
+          d="M6 9L12 15L18 9"
+          stroke="#0A303A"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+
+    <div
+      class="filter-content flex flex-col
+    overflow-hidden
+    max-h-0
+    opacity-0
+    transition-all
+    duration-300
+    ease-in-out font-normal
+             text-[--primary-color-1] font-[family-name:--font-poppins]
+             text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
+    >
+      <button class="filter-option w-full py-1.5 hover:text-[--btn-color] transition-all duration-300">
+        Kolkata
+      </button>
+
+      <button class="filter-option w-full py-1.5 hover:text-[--btn-color] transition-all duration-300">
+        Delhi
+      </button>
+
+      <button class="filter-option w-full py-1.5 hover:text-[--btn-color] transition-all duration-300">
+        Pune
+      </button>
+
+      <button class="filter-option w-full py-1.5 hover:text-[--btn-color] transition-all duration-300">
+        All
+      </button>
+    </div>
+
+  </div>
+
+
+  <!-- ================= EXPERIENCE ================= -->
+  <div class="filter-group mt-10 sm:mt-14">
+
+    <button
+      type="button"
+      class="filter-toggle flex w-full items-center justify-between
+             border-b border-[--primary-color-1]/30
+             pb-3 font-semibold font-[family-name:--font-poppins]
+             text-[--primary-color-1]
+             text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
+      aria-expanded="false"
+    >
+      <span>Experience</span>
+
+      <svg
+        class="filter-arrow h-5 w-5 transition-transform duration-300"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
+        <path
+          d="M6 9L12 15L18 9"
+          stroke="#0A303A"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+
+    <div
+      class="filter-content flex flex-col
+    overflow-hidden
+    max-h-0
+    opacity-0
+    transition-all
+    duration-300
+    ease-in-out font-normal
+             text-[--primary-color-1]
+             text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl space-y-2"
+    >
+      <button class="filter-option w-full py-1.5 text-center hover:text-[--btn-color] transition-all duration-300">
+        Adoption Journey
+      </button>
+
+      <button class="filter-option w-full py-1.5 hover:text-[--btn-color] transition-all duration-300">
+        Pet care
+      </button>
+
+      <button class="filter-option w-full py-1.5 text-center hover:text-[--btn-color] transition-all duration-300">
+        Shelter Care
+      </button>
+
+      <button class="filter-option w-full py-1.5 hover:text-[--btn-color] transition-all duration-300">
+        All
+      </button>
+    </div>
+
+  </div>
+
+</div>
+    </div>
+  </div>
+</div>
+      </div>
+      <div id="testimonialGrid" class="
+    grid grid-cols-12
+    gap-x-5 gap-y-16
+    sm:gap-x-8 sm:gap-y-20
+    lg:gap-x-12 lg:gap-y-20
+    xl:gap-x-16
+    pt-24 sm:pt-28
+    px-4 sm:px-8 md:px-12 lg:px-16 xl:px-[253px]
+  ">
+        <div class="col-span-12 md:col-span-6" data-pet="Cats"
+  data-rating="4.9"
+  data-shelter="Kolkata"
+  data-experience="Adoption Journey"
+  data-helpful="95"
+  data-date="2026-08-15">
+          <div class="relative">
+          <div
+                  class="absolute left-1/2 -translate-x-1/2 top-[-57px] z-20"
+                >
+                  <img
+                    src="Images/stories-1.png"
+                    alt="stories-1"
+                    class="w-24 h-24 rounded-full border-[3px] border-[--primary-color-1] bg-white object-contain"
+                  />
+                </div>
+                <!-- Card -->
+                <div
+                  class="w-full
+          min-h-[330px]
+          sm:min-h-[350px]
+          lg:min-h-[370px]
+          border border-[--primary-color-1]
+          rounded-[20px]
+          py-12 sm:py-[50px]
+          px-5 sm:px-7 lg:px-[30px]
+          text-center
+          flex flex-col
+          justify-between
+          gap-4 lg:gap-6"
+                >
+                  <div class="flex justify-center items-center gap-2">
+                    <span class="text-yellow-400 text-xl"
+                      ><i class="fa-solid fa-star"></i
+                    ></span>
+                    <span class="text-[--primary-color-1] text-[24px] font-bold"
+                      >4.9</span
+                    >
+                  </div>
+                  <p
+          class="
+            mx-auto
+            max-w-[292px]
+            mt-0 lg:mt-12 2xl:mt-10
+            text-center
+            text-[--primary-color-1]
+            text-xs sm:text-sm
+            lg:text-base
+            2xl:text-lg
+            leading-6
+            lg:leading-8
+            font-medium
+            font-[family-name:--font-poppins]
+          "
+        >
+                    "I thought I was adopting a kitten, but somehow she ended up
+                    rescuing me instead. Luna has turned my quiet apartment into
+                    a home filled with laughter, tiny paw prints, and endless
+                    cuddles."
+                  </p>
+                  <h4
+          class="
+            mt-4
+            font-bold
+            text-sm sm:text-base
+            text-[--primary-color-1]
+            font-[family-name:--font-poppins]
+            flex flex-wrap
+            justify-center lg:justify-end
+            items-center
+          "
+        >
+                    - Neha Verma
+                  </h4>
+                </div>
+                </div>
+        </div>
+        <div class="col-span-12 md:col-span-6 pt-8 md:pt-0" data-pet="Dogs"
+  data-rating="4.8"
+  data-shelter="Delhi"
+  data-experience="Pet care"
+  data-helpful="90"
+  data-date="2026-08-12">
+          <div class="relative">
+            <div
+                  class="absolute left-1/2 -translate-x-1/2 top-[-57px] z-20"
+                >
+                  <img
+                    src="Images/stories-2.png"
+                    alt="stories-2"
+                    class="w-24 h-24 rounded-full border-[3px] border-[--primary-color-1] bg-white object-contain"
+                  />
+                </div>
+                <!-- Card -->
+                <div
+                  class="w-full
+          min-h-[330px]
+          sm:min-h-[350px]
+          lg:min-h-[370px]
+          border border-[--primary-color-1]
+          rounded-[20px]
+          py-12 sm:py-[50px]
+          px-5 sm:px-7 lg:px-[30px]
+          text-center
+          flex flex-col
+          justify-between
+          gap-4 lg:gap-6"
+                >
+                  <div class="flex justify-center items-center gap-2">
+                    <span class="text-yellow-400 text-xl"
+                      ><i class="fa-solid fa-star"></i
+                    ></span>
+                    <span class="text-[--primary-color-1] text-[24px] font-bold"
+                      >4.8</span
+                    >
+                  </div>
+                  <p
+          class="
+            mx-auto
+            max-w-[292px]
+            text-center
+            text-[--primary-color-1]
+            text-xs sm:text-sm
+            lg:text-base
+            2xl:text-lg
+            leading-6
+            lg:leading-8
+            font-medium
+            font-[family-name:--font-poppins]
+          "
+        >
+                    "After losing my beloved dog, I wasn't sure I was ready to
+                    adopt again. The kindness and patience of the Fur & Feather
+                    team gave me confidence to take that step. Coco has filled
+                    my home with comfort, joy, and a brand-new beginning.Thank
+                    You Once again."
+                  </p>
+                  <h4
+          class="
+            font-bold
+            text-sm sm:text-base
+            text-[--primary-color-1]
+            font-[family-name:--font-poppins]
+            flex flex-wrap
+            justify-center lg:justify-end
+            items-center
+          "
+        >
+                    - Ishaani Roy
+                  </h4>
+                </div>
+          </div>
+        </div>
+        <div class="col-span-12 md:col-span-6 pt-8 md:pt-14" data-pet="Birds"
+  data-rating="4.3"
+  data-shelter="Pune"
+  data-experience="Shelter Care"
+  data-helpful="85"
+  data-date="2026-08-10">
+          <div class="relative">
+            <div
+                  class="absolute left-1/2 -translate-x-1/2 top-[-57px] z-20"
+                >
+                  <img
+                    src="Images/stories-3.png"
+                    alt="stories-3"
+                    class="w-24 h-24 rounded-full border-[3px] border-[--primary-color-1] bg-white object-contain"
+                  />
+                </div>
+                <!-- Card -->
+                <div
+                  class="w-full
+          min-h-[330px]
+          sm:min-h-[350px]
+          lg:min-h-[370px]
+          border border-[--primary-color-1]
+          rounded-[20px]
+          py-12 sm:py-[50px]
+          px-5 sm:px-7 lg:px-[30px]
+          text-center
+          flex flex-col
+          justify-between
+          gap-4 lg:gap-6"
+                >
+                  <div class="flex justify-center items-center gap-2">
+                    <span class="text-yellow-400 text-xl"
+                      ><i class="fa-solid fa-star"></i
+                    ></span>
+                    <span class="text-[--primary-color-1] text-[24px] font-bold"
+                      >4.3</span
+                    >
+                  </div>
+                  <p
+          class="
+            mx-auto
+            max-w-[292px]
+            text-center
+            text-[--primary-color-1]
+            text-xs sm:text-sm
+            lg:text-base
+            2xl:text-lg
+            leading-6
+            lg:leading-8
+            font-medium
+            font-[family-name:--font-poppins]
+          "
+        >
+                    "Adopting Kiwi was one of the best decisions I've ever made.
+                    The shelter shared everything I needed to know and made me
+                    feel completely prepared. Every morning now begins with
+                    cheerful chirps, and my home feels brighter, happier, and
+                    full of life."
+                  </p>
+                  <h4
+          class="
+            font-bold
+            text-sm sm:text-base
+            text-[--primary-color-1]
+            font-[family-name:--font-poppins]
+            flex flex-wrap
+            justify-center lg:justify-end
+            items-center
+          "
+        >
+                    - Suhana Rehman
+                  </h4>
+                </div>
+          </div>
+        </div>
+        <div class="col-span-12 md:col-span-6 pt-8 md:pt-14" data-pet="Dogs"
+  data-rating="4.5"
+  data-shelter="Kolkata"
+  data-experience="Adoption Journey"
+  data-helpful="88"
+  data-date="2026-08-08">
+          <div class="relative">
+            <div
+                  class="absolute left-1/2 -translate-x-1/2 top-[-57px] z-20"
+                >
+                  <img
+                    src="Images/stories-4.png"
+                    alt="stories-4"
+                    class="w-24 h-24 rounded-full border-[3px] border-[--primary-color-1] bg-white object-contain"
+                  />
+                </div>
+                <!-- Card -->
+                <div
+                  class="w-full
+          min-h-[330px]
+          sm:min-h-[350px]
+          lg:min-h-[370px]
+          border border-[--primary-color-1]
+          rounded-[20px]
+          py-12 sm:py-[50px]
+          px-5 sm:px-7 lg:px-[30px]
+          text-center
+          flex flex-col
+          justify-between
+          gap-4 lg:gap-6"
+                >
+                  <div class="flex justify-center items-center gap-2">
+                    <span class="text-yellow-400 text-xl"
+                      ><i class="fa-solid fa-star"></i
+                    ></span>
+                    <span class="text-[--primary-color-1] text-[24px] font-bold"
+                      >4.5</span
+                    >
+                  </div>
+                  <p
+          class="
+            mx-auto
+            max-w-[292px]
+            text-center
+            text-[--primary-color-1]
+            text-xs sm:text-sm
+            lg:text-base
+            2xl:text-lg
+            leading-6
+            lg:leading-8
+            font-medium
+            font-[family-name:--font-poppins]
+          "
+        >
+                    "The entire adoption process was so smooth and reassuring.
+                    The team answered every question, shared updates, and
+                    genuinely cared about finding the right match. Bruno settled
+                    in from day one, and now I honestly can't imagine life
+                    without him."
+                  </p>
+                 <h4
+          class="
+            font-bold
+            text-sm sm:text-base
+            text-[--primary-color-1]
+            font-[family-name:--font-poppins]
+            flex flex-wrap
+            justify-center lg:justify-end
+            items-center
+          "
+        >
+                    - Rohan Mukherjee
+                  </h4>
+                </div>
+          </div>
+        </div>
+        <div class="col-span-12 md:col-span-6 md:col-start-4 pt-8 md:pt-14" data-pet="Birds"
+  data-rating="4.9"
+  data-shelter="Delhi"
+  data-experience="Pet care"
+  data-helpful="98"
+  data-date="2026-08-05">
+          <div class="relative">
+            <div
+                  class="absolute left-1/2 -translate-x-1/2 top-[-57px] z-20"
+                >
+                  <img
+                    src="Images/stories-5.png"
+                    alt="stories-5"
+                    class="w-24 h-24 rounded-full border-[3px] border-[--primary-color-1] bg-white object-contain"
+                  />
+                </div>
+                <!-- Card -->
+                <div
+                  class="w-full
+          min-h-[330px]
+          sm:min-h-[350px]
+          lg:min-h-[370px]
+          border border-[--primary-color-1]
+          rounded-[20px]
+          py-12 sm:py-[50px]
+          px-5 sm:px-7 lg:px-[30px]
+          text-center
+          flex flex-col
+          justify-between
+          gap-4 lg:gap-6"
+                >
+                  <div class="flex justify-center items-center gap-2">
+                    <span class="text-yellow-400 text-xl"
+                      ><i class="fa-solid fa-star"></i
+                    ></span>
+                    <span class="text-[--primary-color-1] text-[24px] font-bold"
+                      >4.9</span
+                    >
+                  </div>
+                  <p
+          class="
+            mx-auto
+            max-w-[292px]
+            text-center
+            text-[--primary-color-1]
+            text-xs sm:text-sm
+            lg:text-base
+            2xl:text-lg
+            leading-6
+            lg:leading-8
+            font-medium
+            font-[family-name:--font-poppins]
+          "
+        >
+                    "We visited 'just to look' and walked out with Mochi, our
+                    little rabbit. He's curious, playful, and somehow runs the
+                    house now. Adopting him was one of the happiest decisions
+                    we've ever made.Our little rabbit has brought so much
+                    happiness into our everyday lives. "
+                  </p>
+                  <h4
+          class="
+            font-bold
+            text-sm sm:text-base
+            text-[--primary-color-1]
+            font-[family-name:--font-poppins]
+            flex flex-wrap
+            justify-center lg:justify-end
+            items-center
+          "
+        >
+                    - Maya & Arjun
+                  </h4>
+                </div>
+          </div>
+        </div>
+      </div>
       </div>
     </section>
     </main>
     <!-- Footer -->
-    <footer class="footer-banner relative pt-24 pb-6 sm:pt-24 lg:pt-28">
-      <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
-        <div class="flex flex-wrap mx-[-15px]">
-          <div class="max-w-full lg:max-w-[40%] lg:basis-[40%] lg:px-[15px]">
-            <!-- Footer Logo -->
-            <div
-              class="flex flex-col items-center text-center lg:items-start lg:text-left gap-6 pt-28 lg:pt-0"
+    <footer
+      class="footer-banner relative pt-24 pb-16 sm:pt-24 lg:pt-28 lg:pb-8"
+    >
+    <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
+      <div class="flex flex-wrap mx-[-15px]">
+        <div class="max-w-full lg:max-w-[40%] lg:basis-[40%] lg:px-[15px]">
+          <!-- Footer Logo -->
+          <div
+            class="flex flex-col items-center text-center lg:items-start lg:text-left gap-6 pt-28 lg:pt-0"
+          >
+            <a
+              href="index.html"
+              class="block max-w-[260px] lg:max-w-[320px] xl:max-w-[420px]"
             >
+              <img
+                src="Images/footer-logo.png"
+                alt="footer"
+                class="w-full object-contain"
+              />
+            </a>
+            <p
+              class="max-w-full lg:max-w-[430px] text-[#F4F1EA] font-medium leading-7 text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg"
+            >
+              Some companions don't just enter your life.They become a part of
+              who you are—through every ordinary moment and every unforgettable
+              memory.
+            </p>
+            <div class="flex flex-wrap flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start items-center mt-4 lg:mt-8">
+              <!-- Contact Button -->
               <a
-                href="index.html"
-                class="block max-w-[260px] lg:max-w-[320px] xl:max-w-[420px]"
-              >
-                <img
-                  src="Images/footer-logo.png"
-                  alt="footer"
-                  class="w-full object-contain"
-                />
+                href="contact.html"
+                class="friend-btn inline-flex w-full min-[480px]:w-auto items-center justify-center gap-2 overflow-hidden rounded-[30px] border-[2px] border-[--primary-color-1] shadow-xl bg-[--heading-text] px-4 py-3 font-[family-name:--font-poppins] font-bold text-[--primary-color-1] shadow-xl transition-all duration-300 ease-in min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
+                >
+                Contact Us
+                <i class="fa-solid fa-paw"></i>
               </a>
-              <p
-                class="max-w-full lg:max-w-[430px] text-[#F4F1EA] font-medium leading-7 text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg"
-              >
-                Some companions don't just enter your life.They become a part of
-                who you are—through every ordinary moment and every
-                unforgettable memory.
-              </p>
-              <div
-                class="flex flex-wrap flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start items-center mt-4 lg:mt-8"
-              >
-                <!-- Contact Button -->
-                <a
-                  href="contact.html"
-                  class="friend-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-2 border-[--primary-color-1] shadow-xl hover:border-[--btn-color] bg-[--heading-text] px-4 py-3 font-[family-name:--font-poppins] font-bold text-[--primary-color-1] shadow-xl transition-all duration-300 ease-in hover:border-[--btn-color] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
-                >
-                  Contact Us
-                  <i class="fa-solid fa-paw"></i>
-                </a>
-                <!-- Adopt now -->
-                <a
-                  href="#"
-                  class="contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-2 border-[#F4F1EA] shadow-xl hover:border-[--btn-color] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
-                >
-                  Adopt Now
-                  <i class="fa-solid fa-paw"></i>
-                </a>
-              </div>
+              <!-- Adopt now -->
+              <a
+                href="#"
+                class="contact-btn inline-flex w-full min-[480px]:w-auto items-center justify-center gap-2 overflow-hidden rounded-[30px] border-2 border-[#F4F1EA] shadow-xl hover:border-2 hover:border-[--btn-color] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl">
+                Adopt Now
+                <i class="fa-solid fa-paw"></i>
+              </a>
             </div>
-          </div>
-          <div
-            class="max-w-full w-full lg:max-w-[20%] lg:basis-[20%] lg:px-[15px]"
-          >
-            <div class="pt-4 sm:pt-8 text-center lg:text-left">
-              <span
-                class="text-[--btn-color] font-[family-name:--font-poppins] font-semibold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
-                >Utility pages</span
+        </div>
+        </div>
+        <div class="max-w-full w-full lg:max-w-[20%] lg:basis-[20%] lg:px-[15px]">
+          <div class="pt-4 sm:pt-8 text-center lg:text-left">
+            <span
+              class="text-[--btn-color] font-[family-name:--font-poppins] font-semibold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
+              >Utility pages</span
+            >
+            <ul class="space-y-4 mt-4 lg:mt-6">
+              <li
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-xs text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
               >
-              <ul class="space-y-4 mt-4 lg:mt-6">
-                <li
-                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
-                >
-                  <a href="index.html">Home</a>
-                </li>
-                <li
-                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
-                >
-                  <a href="aboutus.html">About Us</a>
-                </li>
-                <li
-                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
-                >
-                  <a href="blog.html">Blog</a>
-                </li>
-                <li
-                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
-                >
-                  <a href="faq.html">FAQ</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div
-            class="max-w-full w-full lg:max-w-[20%] lg:basis-[20%] lg:px-[15px]"
-          >
-            <div class="pt-4 sm:pt-8 text-center lg:text-left">
-              <span
-                class="text-[--btn-color] font-[family-name:--font-poppins] font-semibold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
-                >Our Services</span
+                <a href="index.html">Home</a>
+              </li>
+              <li
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-xs text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
               >
-              <ul class="space-y-4 mt-4 lg:mt-6">
-                <li
-                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
-                >
-                  <a href="#">Adoption</a>
-                </li>
-                <li
-                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
-                >
-                  <a href="#">Shelter Networking</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div
-            class="max-w-full w-full lg:max-w-[20%] lg:basis-[20%] lg:px-[15px]"
-          >
-            <div class="pt-4 sm:pt-8 text-center lg:text-left">
-              <span
-                class="text-[--btn-color] font-[family-name:--font-poppins] font-semibold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
-                >Our Partner</span
+                <a href="aboutus.html">About Us</a>
+              </li>
+              <li
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-xs text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
               >
-              <ul class="space-y-4 mt-4 lg:mt-6">
-                <li
-                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA]"
-                >
-                  People for the Ethical Treatment of Animals
-                </li>
-                <li
-                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA]"
-                >
-                  Blue Cross of India
-                </li>
-                <li
-                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA]"
-                >
-                  People For Animals
-                </li>
-                <li
-                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA]"
-                >
-                  World Animal Protection
-                </li>
-              </ul>
-            </div>
+                <a href="blog.html">Blog</a>
+              </li>
+              <li
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-xs text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
+              >
+                <a href="faq.html">FAQ</a>
+              </li>
+            </ul>
           </div>
         </div>
-        <div class="bg-[#F4F1EA] w-full h-[1px] my-6"></div>
-        <div
-          class="flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-4"
-        >
-          <div
-            class="text-[#F4F1EA] font-[family-name:--font-poppins] text-xs md:text-sm xl:text-base font-semibold text-center lg:text-left"
-          >
-            Copyright &copy 2026
-            <a href="index.html" class="hover:text-[--btn-color]"
-              >Fur & Feather.</a
+        <div class="max-w-full w-full lg:max-w-[20%] lg:basis-[20%] lg:px-[15px]">
+          <div class="pt-4 sm:pt-8 text-center lg:text-left">
+            <span
+              class="text-[--btn-color] font-[family-name:--font-poppins] font-semibold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
+              >Our Services</span
             >
-            All Rights Reserved.
+            <ul class="space-y-4 mt-4 lg:mt-6">
+              <li
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
+              >
+                <a href="#">Adoption</a>
+              </li>
+              <li
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
+              >
+                <a href="#">Shelter Networking</a>
+              </li>
+            </ul>
           </div>
-          <ul class="text-white flex flex-wrap gap-4">
-            <li>
-              <a href="" target="_blank"
-                ><i
-                  class="fa-brands fa-facebook text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"
-                ></i
-              ></a>
-            </li>
-            <li>
-              <a href="" target="_blank"
-                ><i
-                  class="fa-brands fa-instagram text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"
-                ></i
-              ></a>
-            </li>
-            <li>
-              <a href="" target="_blank"
-                ><i
-                  class="fa-brands fa-linkedin-in text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"
-                ></i
-              ></a>
-            </li>
-            <li>
-              <a href="" target="_blank"
-                ><i
-                  class="fa-brands fa-x-twitter text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"
-                ></i
-              ></a>
-            </li>
-          </ul>
+        </div>
+        <div class="max-w-full w-full lg:max-w-[20%] lg:basis-[20%] lg:px-[15px]">
+          <div class="pt-4 sm:pt-8 text-center lg:text-left">
+            <span
+              class="text-[--btn-color] font-[family-name:--font-poppins] font-semibold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
+              >Our Partner</span
+            >
+            <ul class="space-y-4 mt-4 lg:mt-6">
+              <li
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA]"
+              >
+                People for the Ethical Treatment of Animals
+              </li>
+              <li
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA]"
+              >
+                Blue Cross of India
+              </li>
+              <li
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA]"
+              >
+                People For Animals
+              </li>
+              <li
+                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA]"
+              >
+                World Animal Protection
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <!-- left -->
+      <div class="bg-[#F4F1EA] w-full h-[1px] my-6"></div>
+      <div class="flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-4">
+        <div class="text-[#F4F1EA] font-[family-name:--font-poppins] text-xs md:text-sm xl:text-base font-semibold text-center lg:text-left">Copyright
+          &copy 2026 <a href="index.html" class="hover:text-[--btn-color]">Fur & Feather.</a> All Rights Reserved.
+        </div>
+        <ul class="text-white flex flex-wrap gap-4">
+          <li><a href="" target="_blank"><i class="fa-brands fa-facebook text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"></i></a></li>
+          <li><a href="" target="_blank"><i class="fa-brands fa-instagram text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"></i></a></li>
+          <li><a href="" target="_blank"><i class="fa-brands fa-linkedin-in text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"></i></a></li>
+          <li><a href="" target="_blank"><i class="fa-brands fa-x-twitter text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- left -->
       <div
-        class="absolute left-0 bottom-0 hidden 2xl:block z-10 w-[140px] sm:w-[120px] md:w-[200px] lg:w-[260px] min-[1920px]:w-[400px] pointer-events-none"
+        class="absolute left-0 bottom-0 z-10 w-[140px] sm:w-[120px] md:w-[200px] lg:hidden 2xl:block min-[1920px]:w-[400px] pointer-events-none"
       >
         <img
           src="Images/left-footer.png"
@@ -860,7 +1688,7 @@
   <!-- Arrow -->
     <i class="fa-solid fa-chevron-down text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl" id="backToTopIcon"></i>
 
-  </button>
+    </button>
     <!-- AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Swiper JS CDN  -->

@@ -292,6 +292,23 @@ img {
   background-size: cover;
   background-position: center;
 }
+/* Pet */
+.pet-banner{
+  background: url("Images/pet-banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.mobile-pet-banner{
+  background: url("Images/phone-pet-banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* Category */
+.category-banner{
+  background: url("Images/category-banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 /* Awards */
 .feather-shadow {
     mask-image: linear-gradient(to right,transparent 0,#000 20%,#000 80%,transparent 100%);
@@ -335,4 +352,12 @@ img {
     .rating-star {
       font-size: 22px;
     }
+/* Sort */
+.sort-filter-panel {
+      background: var(--bg-color);
+      border: 1.5px solid var(--primary-color-1);
+    }
 
+    .option-active {
+      font-weight: 700;
+    }
