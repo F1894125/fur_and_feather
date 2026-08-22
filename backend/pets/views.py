@@ -1,6 +1,10 @@
+import json
+import logging
+from django.shortcuts import get_object_or_404
 from django.db.models import Count, Prefetch
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import filters, viewsets
+from rest_framework import filters, viewsets, status
+from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.exceptions import PermissionDenied
@@ -17,6 +21,9 @@ from .models import AdoptionStatus, Pet, PetImage
 from .serializers import PetSerializer, PetImageSerializer
 
 
+logger = logging.getLogger('pets')
+
+
 class PetViewSet(viewsets.ModelViewSet):
     queryset = (
         Pet.objects
@@ -31,6 +38,8 @@ class PetViewSet(viewsets.ModelViewSet):
         )
     )
     serializer_class = PetSerializer
+    parser_classes = (MultiPartParser, FormParser)
+    lookup_field = 'slug'
 
     filter_backends = (
         DjangoFilterBackend,
@@ -68,7 +77,7 @@ class PetViewSet(viewsets.ModelViewSet):
             self.permission_classes = [AllowAny]
         
         elif self.action == 'retrieve':
-            return [IsAdopterRole | IsShelterStaffRole | IsAdminRole]
+            self.permission_classes = [IsAdopterRole | IsShelterStaffRole | IsAdminRole]
             # Using the OR operator instantiates the role
             # classes and evaluates them immediately
 
@@ -76,12 +85,12 @@ class PetViewSet(viewsets.ModelViewSet):
             self.permission_classes = [IsShelterStaffRole]
 
         elif self.action in ['update', 'partial_update', 'destroy']:
-            return [IsShelterPetOwner | IsAdminRole]
+            self.permission_classes = [IsShelterPetOwner | IsAdminRole]
 
         else:
             self.permission_classes = [IsAdminRole]
         
-        return [permission() for permission in self.permission_classes]
+        return super().get_permissions()
 
     def get_queryset(self):
         """Sets the queryset based on the user's role."""
@@ -122,11 +131,92 @@ class PetViewSet(viewsets.ModelViewSet):
                 detail="Only shelter staff can create pets."
             )
 
+    def create(self, request, *args, **kwargs):
+        data_copy = {
+            key: value
+            for key, value in request.data.items()
+            if key not in ('image_metadata', 'primary_image')
+        }
+        logger.info(
+            f'In {self.__class__.__name__}.create, '
+            f'Request payload keys without primary image and metadata:\n{list(data_copy.keys())}'
+        )
+
+        # ==== Handling primary image for serializer ====
+        image_metadata = request.data.get('image_metadata', None)
+        raw_image = request.FILES.get('primary_image', None)
+
+        if image_metadata is None:
+            logger.error(
+                f'In {self.__class__.__name__}.create, no image metadata received.'
+            )
+            return Response({
+                'image_metadata':
+                    'Metadata for the primary image is required.'
+            }, status=status.HTTP_400_BAD_REQUEST,)
+        logger.info(
+            f'In {self.__class__.__name__}.create, image_metadata:\n{image_metadata}'
+        )
+
+        if raw_image is None:
+            logger.error(
+                f'In {self.__class__.__name__}.create, no primary image received.'
+            )
+            return Response({
+                'primary_image':
+                    'Primary image is required.'
+            }, status=status.HTTP_400_BAD_REQUEST,)
+        logger.info(
+            f'In {self.__class__.__name__}.create, primary image received:\n'
+            f'{raw_image.name}'
+        )
+
+        try:
+            metadata_json = json.loads(image_metadata)
+            logger.info(
+                f'In {self.__class__.__name__}.create, decoded image metadata:\n'
+                f'{json.dumps(metadata_json, indent=4)}'
+            )
+        except (TypeError, json.JSONDecodeError):
+            return Response({
+                'image_metadata':
+                    'Must contain valid JSON.'
+            }, status=status.HTTP_400_BAD_REQUEST,)
+
+        if not isinstance(metadata_json, dict):
+            return Response({
+                'image_metadata':
+                    'Must be a JSON object.'
+            }, status=status.HTTP_400_BAD_REQUEST,)
+
+        check_is_primary = metadata_json.get('is_primary', False)
+        if not check_is_primary:
+            return Response({
+                'image_metadata':
+                    "'is_logo' key missing, "
+                    "primary image is required during pet creation."
+            }, status=status.HTTP_400_BAD_REQUEST,)
+
+        metadata_json['image'] = raw_image
+        data_copy['primary_image_data'] = metadata_json
+
+        serializer = self.get_serializer(data=data_copy)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+
+        return Response(
+            serializer.data,
+            status=status.HTTP_201_CREATED,
+            headers=headers
+        )
+
 
 class PetCategoryCountsView(APIView):
     def get_permissions(self):
         """Sets permissions for retrieving pet category counts."""
-        return [IsShelterStaffRole | IsAdminRole]
+        self.permission_classes = [IsShelterStaffRole | IsAdminRole]
+        return super().get_permissions()
 
     def get_base_queryset(self):
         """Returns the base queryset for retrieving pet category counts."""
@@ -184,12 +274,12 @@ class PetImageViewSet(viewsets.ModelViewSet):
             self.permission_classes = [IsShelterStaffRole]
 
         elif self.action in ['update', 'partial_update', 'destroy']:
-            return [IsAnImageOfOwnedPet | IsAdminRole]
+            self.permission_classes = [IsAnImageOfOwnedPet | IsAdminRole]
 
         else:
             self.permission_classes = [IsAdminRole]
         
-        return [permission() for permission in self.permission_classes]
+        return super().get_permissions()
 
         # return super().get_permissions()
         # Don't do the above return statement. Here's why:
@@ -229,3 +319,28 @@ class PetImageViewSet(viewsets.ModelViewSet):
         # For non-staff and non-admin users, filters the queryset
         # to only include pet images of pets that are available
         # for adoption and belong to active shelters
+
+    def perform_create(self, serializer):
+        profile = getattr(self.request.user, 'profile', None)
+
+        if (
+            profile
+            and profile.role == Profile.Role.SHELTER_STAFF
+            and profile.shelter
+        ):
+            # The pet itself must be selected from the staff member's shelter.
+            pet_id = self.request.data.get('pet')
+
+            pet = get_object_or_404(
+                Pet.objects.filter(
+                    pk=pet_id,
+                    shelter=profile.shelter,
+                )
+            )
+
+            serializer.save(pet=pet)
+            return
+
+        raise PermissionDenied(
+            detail="Only shelter staff can create pet images."
+        )

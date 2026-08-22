@@ -1,5 +1,7 @@
 from copy import deepcopy
 import re
+from pathlib import Path
+from PIL import Image
 from datetime import date
 import uuid
 
@@ -11,7 +13,9 @@ from django.db import transaction
 from django.db.models.fields.files import ImageFieldFile
 from django.utils.text import slugify
 from dj_rest_auth.registration.serializers import RegisterSerializer
-from dj_rest_auth.serializers import PasswordResetSerializer
+from dj_rest_auth.serializers import (
+    PasswordResetSerializer, UserDetailsSerializer
+)
 from allauth.account.utils import user_pk_to_url_str
 
 from shelters.models import Shelter
@@ -214,27 +218,100 @@ class ProfileSerializer(serializers.ModelSerializer):
             )
         return cleaned_email
 
+    def _validate_image_format(self, image):
+        allowed_extensions = {
+            '.jpg', '.jpeg', '.png', '.webp'
+        }
+
+        extension = Path(image.name).suffix.lower()
+
+        if extension not in allowed_extensions:
+            raise serializers.ValidationError(
+                "Invalid image format. Allowed formats: "
+                "JPG, JPEG, PNG, WEBP."
+            )
+
     def validate_photo(self, photo: ImageFieldFile) -> ImageFieldFile:
         """Validates the image size and dimensions."""
         if not photo:
             return photo
-        
-        size_flag: bool = getattr(photo, 'size', 0) > MAX_IMG_SIZE
-        height_flag: bool = getattr(photo, 'height', 0) < MIN_IMG_HEIGHT
-        width_flag: bool = getattr(photo, 'width', 0) < MIN_IMG_WIDTH
 
-        if size_flag:
+        self._validate_image_format(photo)
+
+        file_size = getattr(photo, 'size', 0)
+        if file_size > MAX_IMG_SIZE:
             raise serializers.ValidationError(
-                f"Image size: '{photo.size}' - must be less than {MAX_IMG_SIZE} bytes."
+                f"Image size: '{file_size}' - must be less than "
+                f"{MAX_IMG_SIZE} bytes."
             )
 
-        if any((height_flag, width_flag)):
+        try:
+            img = Image.open(photo)
+            width, height = img.size
+            
+            if hasattr(photo, 'seek'):
+                photo.seek(0)
+        except Exception:
+            raise serializers.ValidationError("Corrupted or invalid image file.")
+
+        height_flag = height < MIN_IMG_HEIGHT
+        width_flag = width < MIN_IMG_WIDTH
+
+        if height_flag or width_flag:
             raise serializers.ValidationError(
-                f"Image dimensions: '{photo.height}x{photo.width}'"
-                f" - must be at least {MIN_IMG_HEIGHT}x{MIN_IMG_WIDTH}."
+                f"Image dimensions: '{height}x{width}'"
+                f" - must be at least "
+                f"{MIN_IMG_HEIGHT}x{MIN_IMG_WIDTH}."
             )
 
         return photo
+
+    def validate_id_image(self, id_image):
+        if not id_image:
+            return id_image
+
+        self._validate_image_format(id_image)
+
+        if id_image.size > MAX_IMG_SIZE:
+            raise serializers.ValidationError(
+                f"Image size: '{id_image.size}' - must be less than "
+                f"{MAX_IMG_SIZE} bytes."
+            )
+
+        try:
+            img = Image.open(id_image)
+            width, height = img.size
+            id_image.seek(0)
+        except Exception:
+            raise serializers.ValidationError(
+                "Corrupted or invalid ID image."
+            )
+
+        if width < MIN_IMG_WIDTH or height < MIN_IMG_HEIGHT:
+            raise serializers.ValidationError(
+                f"Image dimensions: '{height}x{width}' - must be at least "
+                f"{MIN_IMG_HEIGHT}x{MIN_IMG_WIDTH}."
+            )
+
+        return id_image
+
+    def validate_address_proof(self, address_proof):
+        if not address_proof:
+            return address_proof
+
+        allowed_extensions = {
+            '.pdf', '.jpg', '.jpeg', '.png'
+        }
+
+        extension = Path(address_proof.name).suffix.lower()
+
+        if extension not in allowed_extensions:
+            raise serializers.ValidationError(
+                "Invalid address-proof format. Allowed formats: "
+                "PDF, JPG, JPEG, PNG."
+            )
+
+        return address_proof
     
     def validate_phone_number(self, phone_number: str) -> str:
         """Validates phone number against a regex pattern."""
@@ -270,7 +347,33 @@ class ProfileSerializer(serializers.ModelSerializer):
         Validates all the fields and runs model validation
         without mutating the existing instances.
         """
-        user_attrs = ('first_name', 'last_name', 'username', 'email')
+        # As username, email, first name, and last name
+        # belong to the user model, they are being packed
+        # into the 'user' field in the JSON payload by
+        # DRF and that needs to be properly unpacked
+        user_data = attrs.get('user', {})
+
+        # PATCH requests might miss the user fields
+        # In that case, default to the existing values
+        # in the Profile instance
+        current_username = user_data.get(
+            'username',
+            self.instance.user.username if self.instance else None
+            # Defaulting to the current user's username
+            # if the Profile instance exists else to None
+        )
+        current_email = user_data.get(
+            'email',
+            self.instance.user.email if self.instance else None
+        )
+
+        if (
+            current_username and current_email
+            and current_username == current_email
+        ):
+            serializers.ValidationError(
+                'Username and email cannot be the same.'
+            )
 
         # Copying user and profile instances
         # to perform validation without
@@ -279,10 +382,14 @@ class ProfileSerializer(serializers.ModelSerializer):
         profile_copy = deepcopy(self.instance)
 
         try:
-            for field, value in attrs.items():
-                if field in user_attrs:
+            # Set values in nested 'user' to user_copy
+            if 'user' in attrs:
+                for field, value in attrs['user'].items():
                     setattr(user_copy, field, value)
-                else:
+
+            # Everything else goes to profile_copy
+            for field, value in attrs.items():
+                if field != 'user':
                     setattr(profile_copy, field, value)
 
             user_copy.full_clean()
@@ -296,12 +403,14 @@ class ProfileSerializer(serializers.ModelSerializer):
     @transaction.atomic
     def update(self, instance, validated_data):
         """Updates the profile and related user instance."""
-        user_attrs = ('first_name', 'last_name', 'username', 'email')
+        user_data = validated_data.pop('user', {})
+
+        for field, value in user_data.items():
+            setattr(instance.user, field, value)
+
         for field, value in validated_data.items():
-            if field in user_attrs:
-                setattr(instance.user, field, value)
-            else:
                 setattr(instance, field, value)
+        
         instance.user.save()
         instance.save()
 
@@ -329,3 +438,21 @@ class CustomPasswordResetSerializer(PasswordResetSerializer):
             return f"{settings.FRONTEND_PASSWORD_RESET_URL}/{uid}/{temp_key}/"
         
         return {"url_generator": custom_url_generator}
+
+
+class CustomUserDetailsSerializer(UserDetailsSerializer):
+    role = serializers.CharField(
+        source='profile.role',
+        read_only=True,
+    )
+    is_verified = serializers.BooleanField(
+        source='profile.is_verified',
+        read_only=True,
+    )
+
+    class Meta(UserDetailsSerializer.Meta):
+        fields = (
+            *UserDetailsSerializer.Meta.fields,
+            'role',
+            'is_verified',
+        )

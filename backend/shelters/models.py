@@ -8,6 +8,10 @@ from django.contrib.postgres.fields import ArrayField
 from django.utils import timezone
 
 from accounts.storage import EncryptedFileSystemStorage
+from .utils import (
+    shelter_image_upload_path,
+    secure_document_upload_path
+)
 
 
 shelter_ngo_registration_cert_storage = EncryptedFileSystemStorage(
@@ -71,7 +75,9 @@ class Shelter(models.Model):
     )
     pet_count = models.PositiveIntegerField(default=0)
     adoption_count = models.PositiveIntegerField(default=0)
-    slug = models.SlugField(max_length=100, unique=True)
+    slug = models.SlugField(
+        max_length=100, unique=True, blank=True,
+    )
     email = models.EmailField(unique=True)
     phone_number = models.CharField(
         max_length=15, unique=True,
@@ -88,17 +94,20 @@ class Shelter(models.Model):
     )
     description = models.TextField(blank=True, null=True)
     website = models.URLField(blank=True, unique=True)
-    ngo_registration_cert = models.ImageField(
+    ngo_registration_cert = models.FileField(
         storage=shelter_ngo_registration_cert_storage,
+        upload_to=secure_document_upload_path,
         blank=True, null=True,
     )
     permit = models.FileField(
         storage=shelter_permit_storage,
-        blank=False, null=False,
+        upload_to=secure_document_upload_path,
+        blank=False, null=True,
     )
     address_proof = models.FileField(
         storage=shelter_address_proof_storage,
-        blank=False, null=False,
+        upload_to=secure_document_upload_path,
+        blank=False, null=True,
     )
     status = models.CharField(
         max_length=20,
@@ -150,9 +159,12 @@ class Shelter(models.Model):
 
     def get_absolute_url(self):
         """Returns the canonical API URL for a specific shelter instance."""
-        return reverse('shelters:shelter_detail', kwargs={'slug': self.slug})
+        return reverse('shelters:shelter-detail', kwargs={'slug': self.slug})
 
     def clean(self):
+        if self.name and not self.slug:
+            self.slug = slugify(self.name)
+        
         super().clean()
 
         activated = (
@@ -203,7 +215,8 @@ class Shelter(models.Model):
         Automatically generates a slug if not provided
         before saving the shelter instance.
         """
-        if not self.slug:
+        # Fallback for slug created in clean()
+        if not self.slug and self.name:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
 
@@ -213,7 +226,7 @@ class ShelterImage(models.Model):
         Shelter, on_delete=models.CASCADE, related_name='images',
     )
     image = models.ImageField(
-        upload_to='shelters/',
+        upload_to=shelter_image_upload_path,
         null=False, blank=False,
         default='shelters/no_image.png',
     )
@@ -239,7 +252,7 @@ class ShelterImage(models.Model):
 
     def get_absolute_url(self):
         """Returns the canonical API URL for a specific shelter image instance."""
-        return reverse('pets:shelter_images', kwargs={'pk': self.pk})
+        return reverse('shelters:shelter_image-detail', kwargs={'pk': self.pk})
 
     def save(self, *args, **kwargs):
         if self.is_logo:

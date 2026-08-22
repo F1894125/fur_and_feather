@@ -1,15 +1,18 @@
 from django.core.exceptions import ValidationError as DjangoValidationError
 from django.shortcuts import get_object_or_404
+
 from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
 from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
 from allauth.socialaccount.providers.oauth2.client import OAuth2Client
 from dj_rest_auth.registration.views import SocialLoginView
-from rest_framework.exceptions import ValidationError
+
+from drf_spectacular.utils import extend_schema
 from rest_framework.generics import RetrieveUpdateAPIView
 from rest_framework.permissions import SAFE_METHODS
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
+
 from .models import Profile
 from .serializers import ProfileSerializer
 from .permissions import IsProfileOwner, IsAdminRole
@@ -51,15 +54,40 @@ class ProfileDetailAPIView(RetrieveUpdateAPIView):
         """
         if self.request.method in SAFE_METHODS:
             # Combined permissions via bitwise OR are already instances
-            return [IsProfileOwner | IsAdminRole]
+            self.permission_classes = [IsProfileOwner | IsAdminRole]
+        else:
+            self.permission_classes = [IsProfileOwner]
 
         # Single classes need explicit instantiation
-        return [IsProfileOwner()]
+        return super().get_permissions()
 
 
 class ProfileVerificationAPIView(APIView):
     """API endpoint that allows an admin to verify any profile."""
     permission_classes = [IsAdminRole]
+
+    @extend_schema(
+        request={
+            'application/json': {
+                'type': 'object',
+                'properties': {
+                    'is_verified': {'type': 'boolean'},
+                    'unverified_reason': {'type': 'string', 'maxLength': 200}
+                },
+                'required': ['is_verified']
+            }
+        },
+        responses={
+            200: {
+                'type': 'object',
+                'properties': {
+                    'username': {'type': 'string'},
+                    'is_verified': {'type': 'boolean'}
+                }
+            },
+            400: {'type': 'object'},
+        }
+    )
 
     def patch(self, request, *args, **kwargs):
         profile = get_object_or_404(

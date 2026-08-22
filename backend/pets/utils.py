@@ -2,6 +2,7 @@ from datetime import date
 from dateutil.relativedelta import relativedelta
 from django.utils.text import slugify
 from uuid import uuid4
+from pathlib import Path
 
 
 def calculate_estimated_age(dob: date) -> int:
@@ -46,3 +47,7 @@ def generate_unique_slug(name: str, breed: str) -> str:
     """
     slug = f"{slugify(name)}-{slugify(breed)}-{uuid4().hex[:6]}"
     return slug
+
+def pet_image_upload_path(instance, filename):
+    extension = Path(filename).suffix.lower()
+    return f'pets/{uuid4()}{extension}'

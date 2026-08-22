@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
 
     'corsheaders',
+    'drf_spectacular',
     'rest_framework',
     'dj_rest_auth',
     'dj_rest_auth.registration',
@@ -95,11 +96,10 @@ DATABASES = {
         'PASSWORD': config('DB_PASSWORD'),
         'HOST': config('DB_HOST'),
         'PORT': config('DB_PORT'),
+        'TEST': {
+            'NAME': config('TEST_DB_NAME'),
+        },
     },
-    'test': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
 }
 
 
@@ -138,7 +138,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'static'
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'static',
+# ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -165,6 +168,7 @@ CORS_ALLOWED_ORIGINS = [
 CORS_ALLOW_CREDENTIALS = True
 # DRF configuration
 REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
     ],
@@ -176,7 +180,7 @@ REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 3,
     "PAGE_SIZE_QUERY_PARAM": "page_size",
-    "MAX_PAGE_SIZE": 20,
+    "MAX_PAGE_SIZE": 8,
     # Pagination settings can be overridden at view-level using
     # `pagination_class` attribute of CBV
 }
@@ -202,8 +206,11 @@ REST_AUTH = {
     'JWT_AUTH_HTTPONLY': True,
     'JWT_AUTH_SECURE': True,
     'JWT_AUTH_SAMESITE': 'Lax',
+
+    'USER_DETAILS_SERIALIZER': 'accounts.serializers.CustomUserDetailsSerializer',
     'REGISTER_SERIALIZER': 'accounts.serializers.CustomRegisterSerializer',
     'PASSWORD_RESET_SERIALIZER': 'accounts.serializers.CustomPasswordResetSerializer',
+
     'TOKEN_MODEL': None,
 }
 
@@ -258,60 +265,59 @@ DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 FRONTEND_PASSWORD_RESET_URL = config('FRONTEND_PASSWORD_RESET_URL')
 
 # App-level logging configuration
-# LOGGING = {
-#     "version": 1,
-#     "disable_existing_loggers": False,  # Keeps Django's default loggers alive
-#     "formatters": {
-#         "verbose": {
-#             "format": "{asctime} [{levelname}] {name} (line {lineno}): {message}",
-#             "style": "{",
-#         },
-#         "simple": {
-#             "format": "{levelname} {message}",
-#             "style": "{",
-#         },
-#     },
-#     "handlers": {
-#         "console": {
-#             "class": "logging.StreamHandler",
-#             "formatter": "verbose",
-#         },
-#     },
-#     "loggers": {
-#         "django": {
-#             "handlers": ["console"],
-#             "level": "INFO",
-#             "propagate": False,
-#         },
-#     },
-# }
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,  # Keeps Django's default loggers alive
+    "formatters": {
+        "verbose": {
+            "format": "{asctime} [{levelname}] {name} (line {lineno}): {message}",
+            "style": "{",
+        },
+        "simple": {
+            "format": "{levelname} {message}",
+            "style": "{",
+        },
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "verbose",
+        },
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["console"],
+            "level": "INFO",
+            "propagate": False,
+        },
+    },
+}
 
-# PROJECT_APPS = [
-#     "accounts", "pets",
-#     "applications",
-#     "shelters",
-# ]
+PROJECT_APPS = [
+    "accounts", "pets",
+    "applications",
+    "shelters",
+]
 
-# for app_name in PROJECT_APPS:
-#     app_dir = BASE_DIR / app_name
-#     log_dir = app_dir / "logs"
+for app_name in PROJECT_APPS:
+    app_dir = BASE_DIR / app_name
+    log_dir = app_dir / "logs"
+    os.makedirs(log_dir, exist_ok=True)
 
-#     if app_dir.exists() and not log_dir.exists():
-#         os.makedirs(log_dir, exist_ok=True)
+    if app_dir.exists():
+        handler_name = f"{app_name}_file"
 
-#         handler_name = f"{app_name}_file"
+        LOGGING["handlers"][handler_name] = {
+            "level": "INFO",
+            "class": "logging.handlers.RotatingFileHandler",
+            "filename": log_dir / f"{app_name}.log",
+            "maxBytes": 1024 * 1024 * 5,  # 15 MB
+            "backupCount": 3,
+            "formatter": "verbose",
+        }
 
-#         LOGGING["handlers"][handler_name] = {
-#             "level": "INFO",
-#             "class": "logging.handlers.RotatingFileHandler",
-#             "filename": log_dir / f"{app_name}.log",
-#             "maxBytes": 1024 * 1024 * 5,  # 15 MB
-#             "backupCount": 3,
-#             "formatter": "verbose",
-#         }
-
-#         LOGGING["loggers"][app_name] = {
-#             "handlers": ["console", handler_name],
-#             "level": "INFO",
-#             "propagate": False,
-#         }
+        LOGGING["loggers"][app_name] = {
+            "handlers": ["console", handler_name],
+            "level": "INFO",
+            "propagate": False,
+        }

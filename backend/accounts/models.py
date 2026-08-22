@@ -6,6 +6,11 @@ from django.core.exceptions import ValidationError
 from shelters.models import Shelter
 
 from .storage import EncryptedFileSystemStorage
+from .utils import (
+    profile_image_upload_path,
+    profile_id_upload_path,
+    profile_address_proof_upload_path
+)
 
 
 profile_id_storage = EncryptedFileSystemStorage(
@@ -47,8 +52,8 @@ class Profile(models.Model):
         related_name='profile',
     )
     photo = models.ImageField(
-        upload_to='users/%Y/%m/%d/',
-        default='users/no_image.png',
+        upload_to=profile_image_upload_path,
+        default='profiles/no_image.png',
         blank=True,
     )
     role = models.CharField(
@@ -73,7 +78,7 @@ class Profile(models.Model):
         default=Gender.OTHER
     )
     marital_status = models.CharField(
-        max_length=10,
+        max_length=15,
         choices=MaritalStatus.choices,
         default=MaritalStatus.SINGLE
     )
@@ -88,11 +93,13 @@ class Profile(models.Model):
     )
     id_image = models.ImageField(
         storage=profile_id_storage,
-        null=False, blank=False,
+        upload_to=profile_id_upload_path,
+        null=True, blank=True,
     )
     address_proof = models.FileField(
         storage=profile_address_proof_storage,
-        null=False, blank=False
+        upload_to=profile_address_proof_upload_path,
+        null=True, blank=True
     )
     occupation = models.CharField(max_length=50, blank=True)
     owned_pets_before = models.BooleanField(default=False)
@@ -104,8 +111,8 @@ class Profile(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ('user__username',)
-        indexes = (models.Index(fields=['user__username']),)
+        ordering = ('user',)
+        indexes = (models.Index(fields=['user']),)
 
     def __str__(self):
         return f"{self.user.username}'s Profile"

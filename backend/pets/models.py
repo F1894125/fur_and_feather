@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.utils import timezone
 from django.core.validators import MaxValueValidator
 from shelters.models import Shelter
-from .utils import generate_unique_slug
+from .utils import generate_unique_slug, pet_image_upload_path
 
 class Species(models.TextChoices):
     DOG = "DOG", "Dog"
@@ -37,7 +37,9 @@ class Pet(models.Model):
     name = models.CharField(
         max_length=20, blank=False, null=False,
     )
-    slug = models.SlugField(max_length=100, unique=True)
+    slug = models.SlugField(
+        max_length=100, unique=True, blank=True,
+    )
     species = models.CharField(
         max_length=20,
         choices=Species.choices,
@@ -106,9 +108,12 @@ class Pet(models.Model):
 
     def get_absolute_url(self):
         """Returns the canonical API URL for a specific pet instance."""
-        return reverse('pets:pet_details', kwargs={'slug': self.slug})
+        return reverse('pets:pet-detail', kwargs={'slug': self.slug})
 
     def clean(self):
+        if self.name and not self.slug:
+            self.slug = generate_unique_slug(self.name, self.breed)
+        
         super().clean()
 
         if self.shelter.status != Shelter.Status.ACTIVE:
@@ -150,7 +155,7 @@ class PetImage(models.Model):
         Pet, on_delete=models.CASCADE, related_name='images',
     )
     image = models.ImageField(
-        upload_to='pets/',
+        upload_to=pet_image_upload_path,
         null=False, blank=False,
         default='pets/no_image.png',
     )
@@ -176,7 +181,7 @@ class PetImage(models.Model):
 
     def get_absolute_url(self):
         """Returns the canonical API URL for a specific pet image instance."""
-        return reverse('pets:pet_images', kwargs={'pk': self.pk})
+        return reverse('pets:pet_image-detail', kwargs={'pk': self.pk})
 
     def save(self, *args, **kwargs):
         if self.is_primary:

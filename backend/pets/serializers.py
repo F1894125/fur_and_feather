@@ -1,4 +1,6 @@
 import re
+from pathlib import Path
+from PIL import Image
 from copy import deepcopy
 from django.core.exceptions import ValidationError
 from django.db.models.fields.files import ImageFieldFile
@@ -14,35 +16,65 @@ from shelters.models import Shelter
 
 class PetImageSerializer(serializers.ModelSerializer):
     canonical_url = serializers.SerializerMethodField()
+    pet = serializers.PrimaryKeyRelatedField(
+        read_only=True
+    )
 
     class Meta:
         model = PetImage
         fields = (
             'id', 'image', 'caption',
             'is_primary', 'canonical_url',
+            'pet',
         )
 
-    def validate_image(self, photo: ImageFieldFile) -> ImageFieldFile:
+    def _validate_image_format(self, image):
+        allowed_extensions = {
+            '.jpg', '.jpeg', '.png', '.webp'
+        }
+
+        extension = Path(image.name).suffix.lower()
+
+        if extension not in allowed_extensions:
+            raise serializers.ValidationError(
+                "Invalid image format. Allowed formats: "
+                "JPG, JPEG, PNG, WEBP."
+            )
+
+    def validate_image(self, pet_image: ImageFieldFile) -> ImageFieldFile:
         """Validates the image size and dimensions."""
-        if not photo:
-            return photo
-        
-        size_flag: bool = getattr(photo, 'size', 0) > MAX_IMG_SIZE
-        height_flag: bool = getattr(photo, 'height', 0) < MIN_IMG_HEIGHT
-        width_flag: bool = getattr(photo, 'width', 0) < MIN_IMG_WIDTH
+        if not pet_image:
+            return pet_image
 
-        if size_flag:
+        self._validate_image_format(pet_image)
+
+        file_size = getattr(pet_image, 'size', 0)
+        if file_size > MAX_IMG_SIZE:
             raise serializers.ValidationError(
-                f"Image size: '{photo.size}' - must be less than {MAX_IMG_SIZE} bytes."
+                f"Image size: '{file_size}' - must be less than "
+                f"{MAX_IMG_SIZE} bytes."
             )
 
-        if any((height_flag, width_flag)):
+        try:
+            img = Image.open(pet_image)
+            width, height = img.size
+            
+            if hasattr(pet_image, 'seek'):
+                pet_image.seek(0)
+        except Exception:
+            raise serializers.ValidationError("Corrupted or invalid image file.")
+
+        height_flag = height < MIN_IMG_HEIGHT
+        width_flag = width < MIN_IMG_WIDTH
+
+        if height_flag or width_flag:
             raise serializers.ValidationError(
-                f"Image dimensions: '{photo.height}x{photo.width}'"
-                f" - must be at least {MIN_IMG_HEIGHT}x{MIN_IMG_WIDTH}."
+                f"Image dimensions: '{height}x{width}'"
+                f" - must be at least "
+                f"{MIN_IMG_HEIGHT}x{MIN_IMG_WIDTH}."
             )
-    
-        return photo
+
+        return pet_image
 
     def validate_caption(self, caption: str) -> str:
         """Validates the caption length."""
@@ -53,7 +85,7 @@ class PetImageSerializer(serializers.ModelSerializer):
             )
         return cleaned_caption
 
-    def get_canonical_url(self, pet_image: PetImage):
+    def get_canonical_url(self, pet_image: PetImage) -> str:
         """Returns the canonical API URL for a specific pet image instance."""
         return pet_image.get_absolute_url()
 
@@ -65,9 +97,7 @@ class PetSerializer(serializers.ModelSerializer):
         write_only=True, required=False
     )
     shelter = serializers.PrimaryKeyRelatedField(
-        queryset=Shelter.objects.filter(
-            status=Shelter.Status.ACTIVE
-        )
+        read_only=True,
     )
 
     class Meta:
@@ -93,11 +123,11 @@ class PetSerializer(serializers.ModelSerializer):
             self.fields['primary_image_data'].required = True
             self.fields['primary_image_data'].allow_null = False
 
-    def get_canonical_url(self, pet: Pet):
+    def get_canonical_url(self, pet: Pet) -> str:
         """Returns the canonical API URL for a specific pet instance."""
         return pet.get_absolute_url()
 
-    def get_primary_image(self, pet: Pet):
+    def get_primary_image(self, pet: Pet) -> str | None:
         """Returns the canonical API URL for a specific pet image instance."""
         primary_image = pet.images.filter(is_primary=True).first()
 
@@ -149,6 +179,12 @@ class PetSerializer(serializers.ModelSerializer):
                 pet_copy.full_clean()
 
             else:
+                request = self.context.get('request')
+                profile = getattr(request.user, 'profile', None)
+
+                if profile and profile.shelter:
+                    temp_attrs['shelter'] = profile.shelter
+                
                 Pet(**temp_attrs).full_clean()
                 if not primary_image_data:
                     raise serializers.ValidationError({
