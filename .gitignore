@@ -2,9 +2,22 @@
 venv/
 .env
 
+# Database JSON
+fur_and_feather_data.json
+
 # Python cache
 __pycache__/
 *.py[cod]
+
+# Media files
+# media/
+
+# Logs
+logs/
+*.log
+
+# Secure vault
+# secure_vault/
 
 # SQLite database
 *.sqlite3

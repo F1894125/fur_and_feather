@@ -5,8 +5,13 @@ app_name = 'accounts'
 
 urlpatterns = [
     path(
-        'api/profiles/<str:username>/',
+        'profiles/<str:username>/',
         views.ProfileDetailAPIView.as_view(),
         name='profile_detail'
-    )
+    ),
+    path(
+        'profiles/<str:username>/verify/',
+        views.ProfileVerificationAPIView.as_view(),
+        name='verify_profile'
+    ),
 ]

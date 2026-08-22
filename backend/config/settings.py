@@ -1,7 +1,8 @@
-from pathlib import Path
-from decouple import config
 from datetime import timedelta
+from decouple import config
+from pathlib import Path
 import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,10 +31,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django_extensions',
+    'django_filters',
 
     'accounts.apps.AccountsConfig',
 
     'corsheaders',
+    'drf_spectacular',
     'rest_framework',
     'dj_rest_auth',
     'dj_rest_auth.registration',
@@ -44,8 +47,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.facebook',
 
     'pets.apps.PetsConfig',
-    'rest_framework',
-    'django_filters'
+    'shelters.apps.SheltersConfig',
 ]
 
 SITE_ID = 1
@@ -87,17 +89,17 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': config('DB_NAME'),
-    #     'USER': config('DB_USER'),
-    #     'PASSWORD': config('DB_PASSWORD'),
-    #     'HOST': config('DB_HOST'),
-    # },
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
+        'TEST': {
+            'NAME': config('TEST_DB_NAME'),
+        },
+    },
 }
 
 
@@ -135,8 +137,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'static'
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'static',
+# ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -144,26 +149,13 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Media files (uploads)
-MEDIA_URL = "media/"
+MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
-# REST_FRAMEWORK = {
-#     "DEFAULT_FILTER_BACKENDS": [
-#         "django_filters.rest_framework.DjangoFilterBackend",
-#         "rest_framework.filters.SearchFilter",
-#         "rest_framework.filters.OrderingFilter",
-#     ]
-# }
-REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES": [
-        "dj_rest_auth.jwt_auth.JWTCookieAuthentication",
-    ],
-    "DEFAULT_FILTER_BACKENDS": [
-        "django_filters.rest_framework.DjangoFilterBackend",
-        "rest_framework.filters.SearchFilter",
-        "rest_framework.filters.OrderingFilter",
-    ],
-}
+SECURE_DATA_ROOT = BASE_DIR / "secure_vault"
+
+FILE_ENCRYPTION_KEY = config('FILE_ENCRYPTION_KEY')
+
 # CORS configuration
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000", # For standard React development port
@@ -175,11 +167,23 @@ CORS_ALLOWED_ORIGINS = [
 # Important for dj-rest-auth JWT cookies to pass from frontend to backend
 CORS_ALLOW_CREDENTIALS = True
 # DRF configuration
-# REST_FRAMEWORK = {
-#     'DEFAULT_AUTHENTICATION_CLASSES': [
-#         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
-#     ]
-# }
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
+    ],
+    "DEFAULT_FILTER_BACKENDS": [
+            "django_filters.rest_framework.DjangoFilterBackend",
+            "rest_framework.filters.SearchFilter",
+            "rest_framework.filters.OrderingFilter",
+    ],
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 3,
+    "PAGE_SIZE_QUERY_PARAM": "page_size",
+    "MAX_PAGE_SIZE": 8,
+    # Pagination settings can be overridden at view-level using
+    # `pagination_class` attribute of CBV
+}
 
 AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
@@ -202,8 +206,11 @@ REST_AUTH = {
     'JWT_AUTH_HTTPONLY': True,
     'JWT_AUTH_SECURE': True,
     'JWT_AUTH_SAMESITE': 'Lax',
+
+    'USER_DETAILS_SERIALIZER': 'accounts.serializers.CustomUserDetailsSerializer',
     'REGISTER_SERIALIZER': 'accounts.serializers.CustomRegisterSerializer',
     'PASSWORD_RESET_SERIALIZER': 'accounts.serializers.CustomPasswordResetSerializer',
+
     'TOKEN_MODEL': None,
 }
 
@@ -258,53 +265,59 @@ DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 FRONTEND_PASSWORD_RESET_URL = config('FRONTEND_PASSWORD_RESET_URL')
 
 # App-level logging configuration
-# LOGGING = {
-#     "version": 1,
-#     "disable_existing_loggers": False,  # Keeps Django's default loggers alive
-#     "formatters": {
-#         "verbose": {
-#             "format": "{asctime} [{levelname}] {name} (line {lineno}): {message}",
-#             "style": "{",
-#         },
-#         "simple": {
-#             "format": "{levelname} {message}",
-#             "style": "{",
-#         },
-#     },
-#     "handlers": {
-#         "console": {
-#             "class": "logging.StreamHandler",
-#             "formatter": "verbose",
-#         },
-#     },
-#     "loggers": {
-#         "django": {
-#             "handlers": ["console"],
-#             "level": "INFO",
-#             "propagate": False,
-#         },
-#     },
-# }
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,  # Keeps Django's default loggers alive
+    "formatters": {
+        "verbose": {
+            "format": "{asctime} [{levelname}] {name} (line {lineno}): {message}",
+            "style": "{",
+        },
+        "simple": {
+            "format": "{levelname} {message}",
+            "style": "{",
+        },
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "verbose",
+        },
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["console"],
+            "level": "INFO",
+            "propagate": False,
+        },
+    },
+}
 
-# PROJECT_APPS = ["accounts", "pets"]
+PROJECT_APPS = [
+    "accounts", "pets",
+    "applications",
+    "shelters",
+]
 
-# for app_name in PROJECT_APPS:
-#     log_dir = BASE_DIR / app_name / "logs"
-#     os.makedirs(log_dir, exist_ok=True)
+for app_name in PROJECT_APPS:
+    app_dir = BASE_DIR / app_name
+    log_dir = app_dir / "logs"
+    os.makedirs(log_dir, exist_ok=True)
 
-#     handler_name = f"{app_name}_file"
+    if app_dir.exists():
+        handler_name = f"{app_name}_file"
 
-#     LOGGING["handlers"][handler_name] = {
-#         "level": "INFO",
-#         "class": "logging.handlers.RotatingFileHandler",
-#         "filename": log_dir / f"{app_name}.log",
-#         "maxBytes": 1024 * 1024 * 5,  # 15 MB
-#         "backupCount": 3,
-#         "formatter": "verbose",
-#     }
+        LOGGING["handlers"][handler_name] = {
+            "level": "INFO",
+            "class": "logging.handlers.RotatingFileHandler",
+            "filename": log_dir / f"{app_name}.log",
+            "maxBytes": 1024 * 1024 * 5,  # 15 MB
+            "backupCount": 3,
+            "formatter": "verbose",
+        }
 
-#     LOGGING["loggers"][app_name] = {
-#         "handlers": ["console", handler_name],
-#         "level": "INFO",
-#         "propagate": False,
-#     }
+        LOGGING["loggers"][app_name] = {
+            "handlers": ["console", handler_name],
+            "level": "INFO",
+            "propagate": False,
+        }

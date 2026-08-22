@@ -6,7 +6,7 @@ class ApplicationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Application
-        fields = [
+        fields = (
             "id",
             "pet",
             "reason",
@@ -19,7 +19,7 @@ class ApplicationSerializer(serializers.ModelSerializer):
             "applied_at",
             "reviewed_at",
             "review_notes",
-        ]
+        )
 
         read_only_fields = [
             "status",

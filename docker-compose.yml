@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: fur_and_feather_pg
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: furandfeather123
+      POSTGRES_DB: fur_and_feather
+    ports:
+      - "5433:5432"
+    networks:
+      - fur_and_feather_network
+    volumes:
+      - fur_and_feather_pg_volume:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 10s
+      retries: 5
+      start_period: 5s
+  
+
+  fur_and_feather_app:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.backend
+    container_name: fur_and_feather_app
+    restart: always
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://postgres:furandfeather123@db:5432/fur_and_feather
+    ports:
+      - "8000:8000"
+    networks:
+      - fur_and_feather_network
+
+
+networks:
+  fur_and_feather_network:
+    driver: bridge
+
+volumes:
+  fur_and_feather_pg_volume:
