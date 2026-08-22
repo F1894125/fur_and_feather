@@ -361,3 +361,10 @@ img {
     .option-active {
       font-weight: 700;
     }
+/* Shelter */
+.shelter-banner{
+  background: url("Images/shelter-banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
