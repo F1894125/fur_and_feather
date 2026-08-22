@@ -16,32 +16,21 @@ window.addEventListener("load", function () {
   });
 // tab switch
 document.addEventListener("DOMContentLoaded", () => {
-
   const adopterTab = document.getElementById("adopterTab");
   const shelterTab = document.getElementById("shelterTab");
 
   const adopterForm = document.getElementById("adopterForm");
   const shelterForm = document.getElementById("shelterForm");
 
-  // Check if the tab section exists
-  if (!adopterTab || !shelterTab) {
-    console.warn("Adopter/Shelter tabs not found on this page.");
+  // Stop if this page doesn't contain the registration tabs
+  if (!adopterTab || !shelterTab || !adopterForm || !shelterForm) {
     return;
   }
 
-  // Check if the forms exist
-  if (!adopterForm || !shelterForm) {
-    console.warn("Adopter/Shelter forms not found.");
-    return;
-  }
-
-
-  // =====================================
-  // ADOPTER
-  // =====================================
-
+  // ================================
+  // SHOW ADOPTER FORM
+  // ================================
   function showAdopterForm() {
-
     adopterForm.classList.remove("hidden");
     shelterForm.classList.add("hidden");
 
@@ -50,16 +39,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     shelterTab.classList.add("tab-inactive");
     shelterTab.classList.remove("tab-active");
-
   }
 
-
-  // =====================================
-  // SHELTER
-  // =====================================
-
+  // ================================
+  // SHOW SHELTER FORM
+  // ================================
   function showShelterForm() {
-
     adopterForm.classList.add("hidden");
     shelterForm.classList.remove("hidden");
 
@@ -68,25 +53,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     adopterTab.classList.add("tab-inactive");
     adopterTab.classList.remove("tab-active");
-
   }
 
-
-  // =====================================
-  // CLICK EVENTS
-  // =====================================
-
+  // ================================
+  // TAB CLICK EVENTS
+  // ================================
   adopterTab.addEventListener("click", showAdopterForm);
-
   shelterTab.addEventListener("click", showShelterForm);
 
-
-  // =====================================
+  // ================================
   // DEFAULT TAB
-  // =====================================
-
+  // ================================
   showAdopterForm();
-
 });
 
 // Humbarger Menu
