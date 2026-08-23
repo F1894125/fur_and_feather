@@ -46,7 +46,7 @@
   >
     <!-- Header Section -->
     <header
-      class="header absolute top-0 left-0 w-full z-[999] pt-4 pb-[30px] sm:pb-8 md:pb-10 lg:pb-12 2xl:pb-[66px]"
+      class="header fixed top-0 left-0 w-full z-[999] pt-4 pb-[30px] sm:pb-8 md:pb-10 lg:pb-12 2xl:pb-[66px]"
       id="header"
     >
       <!-- Header Content -->
@@ -234,34 +234,52 @@
                 class="relative font-[family-name:--font-Manrope] text-sm xl:text-base font-semibold text-[--primary-color-1]"
               >
                 <button
-        id="destoppagesBtn"
-        class="flex items-center gap-2 transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"> Pages<i class="fa-solid fa-chevron-down" id="destoppagesArrow"></i></button>
-      <!-- Dropdown -->
-       <ul
-        id="destoppagesMenu"
-        class="absolute left-0 top-full mt-4 w-40 rounded-xl bg-[#F4F1EA] shadow-xl border border-[--primary-color-1] opacity-0 invisible scale-95 transition-all duration-300 origin-top z-50 flex flex-col items-stretch"
-      >
-      <li>
-          <a href="aboutus.html" class="dropdown active block w-full px-5 py-3 font-[family-name:--font-Manrope] text-sm xl:text-base text-[--primary-color-1] hover:bg-gray-100 hover:text-[--btn-color] rounded-t-xl text-center">
-            About Us
-          </a>
-        </li>
-        <li>
-          <a href="blog.html" class="dropdown block w-full px-5 py-3 font-[family-name:--font-Manrope] text-sm xl:text-base text-[--primary-color-1] hover:bg-gray-100 hover:text-[--btn-color] text-center">
-            Blogs
-          </a>
-        </li>
-        <li>
-          <a href="faq.html" class="dropdown block w-full px-5 py-3 font-[family-name:--font-Manrope] text-sm xl:text-base text-[--primary-color-1] hover:bg-gray-100 hover:text-[--btn-color] text-center">
-            FAQ
-          </a>
-        </li>
-        <li>
-          <a href="testimonial.html" class="dropdown block w-full px-5 py-3 font-[family-name:--font-Manrope] text-sm xl:text-base text-[--primary-color-1] hover:bg-gray-100 hover:text-[--btn-color] rounded-b-xl text-center">
-            Testimonials
-          </a>
-        </li>
-        </ul>
+                  id="destoppagesBtn"
+                  class="flex items-center gap-2 transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
+                >
+                  Pages<i
+                    class="fa-solid fa-chevron-down"
+                    id="destoppagesArrow"
+                  ></i>
+                </button>
+                <!-- Dropdown -->
+                <ul
+                  id="destoppagesMenu"
+                  class="absolute left-0 top-full mt-4 w-40 rounded-xl bg-[#F4F1EA] shadow-xl border border-[--primary-color-1] opacity-0 invisible scale-95 transition-all duration-300 origin-top z-50 flex flex-col items-stretch"
+                >
+                  <li>
+                    <a
+                      href="aboutus.html"
+                      class="dropdown active block w-full px-5 py-3 font-[family-name:--font-Manrope] text-sm xl:text-base text-[--primary-color-1] hover:bg-gray-100 hover:text-[--btn-color] rounded-t-xl text-center"
+                    >
+                      About Us
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="blog.html"
+                      class="dropdown block w-full px-5 py-3 font-[family-name:--font-Manrope] text-sm xl:text-base text-[--primary-color-1] hover:bg-gray-100 hover:text-[--btn-color] text-center"
+                    >
+                      Blogs
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="faq.html"
+                      class="dropdown block w-full px-5 py-3 font-[family-name:--font-Manrope] text-sm xl:text-base text-[--primary-color-1] hover:bg-gray-100 hover:text-[--btn-color] text-center"
+                    >
+                      FAQ
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="testimonial.html"
+                      class="dropdown block w-full px-5 py-3 font-[family-name:--font-Manrope] text-sm xl:text-base text-[--primary-color-1] hover:bg-gray-100 hover:text-[--btn-color] rounded-b-xl text-center"
+                    >
+                      Testimonials
+                    </a>
+                  </li>
+                </ul>
               </li>
               <li
                 class="nav-items relative font-[family-name:--font-Manrope] text-sm xl:text-base font-semibold text-[--primary-color-1] transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
@@ -271,7 +289,10 @@
               <li
                 class="nav-items relative font-[family-name:--font-Manrope] text-sm xl:text-base font-semibold text-[--primary-color-1] transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
               >
-                <a href="shelters.html">Shelters</a>
+                <a href="shelters.html" id="shelterMegaBtn" class="flex items-center gap-3">Shelters<i
+      id="shelterMegaArrow"
+      class="fa-solid fa-chevron-down text-xs transition-transform duration-300"
+    ></i></a>
               </li>
               <li
                 class="nav-items relative font-[family-name:--font-Manrope] text-sm xl:text-base font-semibold text-[--primary-color-1] transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
@@ -309,10 +330,10 @@
                 id="userMenu"
               >
                 <img
-                    src="Images/user.png"
-                    class="object-fit-contain"
-                    alt="user"
-                    loading="lazy"
+                  src="Images/user.png"
+                  class="object-fit-contain"
+                  alt="user"
+                  loading="lazy"
                 />
               </button>
               <!-- Dropdown -->
@@ -322,40 +343,19 @@
               >
                 <a
                   href="profile.html"
-                  class="block w-full px-3
-    sm:px-4
-    md:px-5
-    lg:px-6
-
-    py-2
-    sm:py-4
-    lg:py-5 text-[10px] sm:text-xs md:text-sm lg:text-base 2xl:text-lg hover:bg-gray-100 transition font-[family-name:--font-poppins] font-medium rounded-t-xl lg:rounded-t-[28px] text-center"
+                  class="block w-full px-3 sm:px-4 md:px-5 lg:px-6 py-2 sm:py-4 lg:py-5 text-[10px] sm:text-xs md:text-sm lg:text-base 2xl:text-lg hover:bg-gray-100 transition font-[family-name:--font-poppins] font-medium rounded-t-xl lg:rounded-t-[28px] text-center"
                 >
                   My Profile
                 </a>
                 <a
                   href="#"
-                  class="block w-full px-3
-    sm:px-4
-    md:px-5
-    lg:px-6
-
-    py-2
-    sm:py-4
-    lg:py-5 text-[10px] sm:text-xs md:text-sm lg:text-base 2xl:text-lg hover:bg-gray-100 transition font-[family-name:--font-poppins] font-medium text-center"
+                  class="block w-full px-3 sm:px-4 md:px-5 lg:px-6 py-2 sm:py-4 lg:py-5 text-[10px] sm:text-xs md:text-sm lg:text-base 2xl:text-lg hover:bg-gray-100 transition font-[family-name:--font-poppins] font-medium text-center"
                 >
-                  My Dashboard 
+                  My Dashboard
                 </a>
                 <button
                   id="logoutBtn"
-                  class="w-full px-3
-    sm:px-4
-    md:px-5
-    lg:px-6
-
-    py-2
-    sm:py-4
-    lg:py-5 text-red-600 hover:bg-red-50 text-[10px] sm:text-xs md:text-sm lg:text-base 2xl:text-lg font-[family-name:--font-poppins] font-medium rounded-b-xl lg:rounded-b-[28px] text-center"
+                  class="w-full px-3 sm:px-4 md:px-5 lg:px-6 py-2 sm:py-4 lg:py-5 text-red-600 hover:bg-red-50 text-[10px] sm:text-xs md:text-sm lg:text-base 2xl:text-lg font-[family-name:--font-poppins] font-medium rounded-b-xl lg:rounded-b-[28px] text-center"
                 >
                   Logout
                 </button>
@@ -370,6 +370,694 @@
               ><i class="fa-solid fa-bars"></i
             ></a>
           </div>
+          <!-- ================= MEGA MENU ================= -->
+  <div
+  id="shelterMegaMenu"
+  class="hidden lg:block fixed z-10 bg-[#F4F1EA]
+  px-6 py-8 xl:px-10 xl:py-12 w-screen
+  left-1/2 -translate-x-1/2 translate-y-5
+  top-[180px] xl:top-[190px] 2xl:top-[210px]
+  min-[1920px]:top-[225px]
+  shadow-2xl rounded-[40px]
+
+  opacity-0 invisible pointer-events-none
+
+  transition-all duration-500 ease-in-out overflow-y-scroll"
+>
+<!-- Top Content -->
+    <div class="flex gap-8">
+      <!-- ========== FILTER SECTION ========== -->
+      <div
+        class="hidden lg:flex
+        w-[260px] shrink-0
+        flex-col justify-center
+        rounded-[25px]
+        border-2 border-[--btn-color]
+        bg-[#f4d9d1]
+        px-8 py-10"
+      >
+      <!-- Location -->
+        <button
+  type="button"
+  class="filter-tab active-tab flex flex-col items-center"
+  onclick="switchTab('location-slider', this)"
+>
+          <span
+            class="font-[family-name:--font-poppins]
+            text-base font-semibold
+            text-[--btn-color]"
+          >
+            Location
+          </span>
+
+          <span
+            class="mt-8 h-[1px] w-full
+            bg-[--btn-color]"
+          ></span>
+        </button>
+
+
+        <!-- Shelter Type -->
+        <button
+  type="button"
+  class="filter-tab mt-12 flex flex-col items-center"
+  onclick="switchTab('type-slider', this)"
+>
+          <span
+            class="font-[family-name:--font-poppins]
+            text-base font-semibold
+            text-[--btn-color]"
+          >
+            Shelter Type
+          </span>
+
+          <span
+            class="mt-8 h-[1px] w-full
+            bg-[--btn-color]"
+          ></span>
+        </button>
+
+
+        <!-- Shelter Capacity -->
+        <button
+  type="button"
+  class="filter-tab mt-12 flex flex-col items-center"
+  onclick="switchTab('capacity-slider', this)"
+>
+          <span
+            class="font-[family-name:--font-poppins]
+            text-base font-semibold
+            text-[--btn-color]"
+          >
+            Shelter Capacity
+          </span>
+
+          <span
+            class="mt-8 h-[1px] w-full
+            bg-[--btn-color]"
+          ></span>
+        </button>
+
+
+    </div>
+    <!-- ========== LOCATION CARDS ========== -->
+     <!-- <div
+    id="location-slider"
+    class="mega-slider-panel block"
+  > -->
+      <div class="min-w-0 flex-1 overflow-hidden">
+<div class="swiper mySwiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <!-- Card 1 -->
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-1.png"
+                      alt="shelter-1"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      Maple Tails Rescue
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Baner, Pune
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <!-- Card 2 -->
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-2.png"
+                      alt="shelter-2"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      The Nest & Nook Sanctuary
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Jubilee Hills, Hyderabad
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <!-- Card 3 -->
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-3.png"
+                      alt="shelter-3"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      Happy Tails Rescue Home
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Banjara Hills, Hyderabad
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <!-- Card 4 -->
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-4.png"
+                      alt="shelter-4"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      Golden Paws Rescue Home
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Andheri West, Mumbai
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <!-- Card 5 -->
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-5.png"
+                      alt="shelter-5"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      Bloom & Bark Shelter
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Sector 29, Gurugram
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <!-- Card 6 -->
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-6.png"
+                      alt="shelter-6"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      The Gentle Nest
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Salt Lake, Kolkata
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+</div>
+<!-- </div> -->
+<!-- ========== TYPE CARDS ========== -->
+     <!-- <div
+    id="type-slider"
+    class="mega-slider-panel hidden"
+  >
+      <div class="min-w-0 flex-1 overflow-hidden">
+<div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-1.png"
+                      alt="shelter-1"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      Maple Tails Rescue
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Baner, Pune
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-2.png"
+                      alt="shelter-2"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      The Nest & Nook Sanctuary
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Jubilee Hills, Hyderabad
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-3.png"
+                      alt="shelter-3"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      Happy Tails Rescue Home
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Banjara Hills, Hyderabad
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-4.png"
+                      alt="shelter-4"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      Golden Paws Rescue Home
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Andheri West, Mumbai
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-5.png"
+                      alt="shelter-5"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      Bloom & Bark Shelter
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Sector 29, Gurugram
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-6.png"
+                      alt="shelter-6"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      The Gentle Nest
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Salt Lake, Kolkata
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+</div>
+</div> -->
+<!-- ========== CAPACITY CARDS ========== -->
+     <!-- <div
+    id="capacity-slider"
+    class="mega-slider-panel hidden"
+  >
+      <div class="min-w-0 flex-1 overflow-hidden">
+<div class="swiper mySwiper">
+            
+            <div class="swiper-wrapper">
+              
+              <div class="swiper-slide">
+                
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-1.png"
+                      alt="shelter-1"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      Maple Tails Rescue
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Baner, Pune
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-2.png"
+                      alt="shelter-2"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      The Nest & Nook Sanctuary
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Jubilee Hills, Hyderabad
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-3.png"
+                      alt="shelter-3"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      Happy Tails Rescue Home
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Banjara Hills, Hyderabad
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-4.png"
+                      alt="shelter-4"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      Golden Paws Rescue Home
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Andheri West, Mumbai
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-5.png"
+                      alt="shelter-5"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      Bloom & Bark Shelter
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Sector 29, Gurugram
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-6.png"
+                      alt="shelter-6"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      The Gentle Nest
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Salt Lake, Kolkata
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+</div>
+</div> -->
+</div>
+    <!-- view more & Share experience button -->
+          <div
+            class="flex flex-wrap items-center justify-center mt-[51px] gap-4"
+          >
+            
+            <!-- Explore Shelters Button -->
+            <a
+              href="shelters.html"
+              class="contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-2 border-[#F4F1EA] shadow-xl hover:border-2 hover:border-[--btn-color] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
+                >
+              Explore Shelters
+              <i class="fa-solid fa-paw"></i>
+            </a>
+            <!-- Register Now as Shelter Button -->
+            <a
+              href="register.html"
+              class="friend-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-[2px] border-[--primary-color-1] shadow-xl bg-[--heading-text] px-4 py-3 font-[family-name:--font-poppins] font-bold text-[--primary-color-1] shadow-xl transition-all duration-300 ease-in min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
+                >
+              Register Now as Shelter
+              <i class="fa-solid fa-paw"></i>
+            </a>
+          </div>
+  </div>
         </nav>
         <!-- Mobile/Tablet View -->
         <!-- overlay -->
@@ -514,182 +1202,29 @@
       <section
         class="mobile-about-banner relative min-h-[500px] min-[375px]:min-h-[560px] min-[480px]:hidden mt-[80px]"
       ></section>
-      <!-- About us -->
-      <section class="about relative py-12 sm:py-16 lg:py-[100px]">
-        <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
-          <div class="flex flex-wrap gap-y-10 lg:gap-y-0 lg:mx-[-15px]">
-            <div
-              class="w-full min-[992px]:max-w-[40%] min-[992px]:basis-[40%] min-[992px]:px-[15px]"
-            >
-              <!-- Left Card -->
-              <div
-                class="mx-auto w-full sm:max-w-[430px] rounded-[20px] border border-[--primary-color-1] bg-[--heading-text] p-5 shadow-xl sm:p-8 lg:p-10"
-              >
-                <img
-                  src="Images/About Us Image.png"
-                  alt="about-us"
-                  class="w-full object-contain"
-                  loading="lazy"
-                />
-                <div
-                  class="-mt-[72px] min-[480px]:-mt-[90px] flex flex-col items-center text-center sm:-mt-16 lg:-mt-[84px]"
-                >
-                  <img
-                    src="Images/about-logo.png"
-                    alt="about-logo"
-                    class="max-w-[220px] object-contain sm:max-w-full"
-                    loading="lazy"
-                  />
-                  <div
-                    class="font-[family-name:--font-Fredoka] text-[25px] font-semibold text-[--primary-color-1] sm:text-[30px] lg:text-[34px]"
-                  >
-                    Fur <span class="text-[--btn-color]">&</span> Feather
-                  </div>
-                  <div
-                    class="mt-4 font-[family-name:--font-poppins] text-base font-semibold text-[--primary-color-1] sm:mt-7 sm:text-xl"
-                  >
-                    Find the One Who
-                    <span class="text-[--btn-color]">Finds You</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Right text -->
-            <div
-              class="w-full mx-auto min-[992px]:max-w-[60%] min-[992px]:basis-[60%] min-[992px]:px-[15px]"
-            >
-              <span
-                class="pt-4 min-[992px]:pt-14 xl:pt-28 mb-5 flex items-center gap-2 font-[family-name:--font-poppins] text-xs font-semibold tracking-[2px] text-[--primary-color-1] sm:gap-3 sm:text-sm md:text-base lg:text-lg xl:text-xl sm:tracking-[4px]"
-              >
-                <i class="fa-solid fa-paw"></i>
-                Our Story
-              </span>
-              <h2
-                class="max-w-[766px] lg:max-w-[500px] font-[family-name:--font-Fredoka] text-xl leading-[1.4] sm:text-2xl lg:text-3xl xl:text-4xl lg:leading-[1.3] 2xl:max-w-[550px] min-[1920px]:max-w-[766px] min-[1920px]:text-5xl"
-              >
-                More Than Adoption. We're Creating
-                <span class="text-[--btn-color]">Forever Families</span>
-              </h2>
-              <p
-                class="mt-5 mb-8 max-w-[766px] xl:max-w-[450px] 2xl:max-w-[500px] min-[1920px]:max-w-[672px] font-[family-name:--font-poppins] text-xs leading-normal font-semibold xl:leading-[1.64] text-[--primary-color-1] opacity-[60%] sm:mt-6 sm:mb-7 md:mt-7 md:mb-8 lg:mt-8 lg:mb-9 xl:mt-9 xl:mb-10 sm:text-sm md:text-base lg:text-lg xl:text-xl"
-              >
-                At Fur & Feather, we believe every pet deserves more than a
-                home—they deserve a family. We connect loving people with dogs,
-                cats, rabbits, birds, hamsters, and many other companions,
-                making every adoption a beautiful beginning.
-              </p>
-              <!-- Button -->
-              <div
-                class="flex flex-wrap min-[480px]:flex-row justify-center min-[992px]:justify-start items-center gap-4"
-              >
-                <!-- Learn More Button -->
-                <a
-                  href="#"
-                  class="friend-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-[2px] border-[--primary-color-1] shadow-xl hover:border-[--btn-color] bg-[--heading-text] px-4 py-3 font-[family-name:--font-poppins] font-bold text-[--primary-color-1] shadow-xl transition-all duration-300 ease-in hover:border-[--btn-color] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
-                >
-                  Learn More
-                  <i class="fa-solid fa-paw"></i>
-                </a>
-                <!-- Adopt now -->
-                <a
-                  href="#"
-                  class="contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-2 border-[#F4F1EA] shadow-xl hover:border-2 hover:border-[--btn-color] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
-                >
-                  Adopt Now
-                  <i class="fa-solid fa-paw"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- image -->
-        <div
-          class="hidden xl:absolute xl:top-[15%] xl:right-0 xl:z-[999] xl:block xl:w-[360px] 2xl:w-[471px]"
-        >
-          <img
-            src="Images/about-us-dog.png"
-            alt="about-us-dog"
-            class="w-full object-contain"
-            loading="lazy"
-          />
-        </div>
-      </section>
       <!-- Our History -->
       <section class="relative py-12 sm:py-14 md:py-16 lg:py-20 xl:py-24">
         <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
-          <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 md:gap-8 lg:gap-12 xl:gap-16">
+          <div
+            class="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 md:gap-8 lg:gap-12 xl:gap-16"
+          >
             <!-- Left Side -->
             <div class="w-full">
               <span
-                class="mb-4 flex items-center gap-2
-            font-[family-name:--font-poppins]
-            text-xs font-semibold
-            tracking-[2px]
-            text-[--primary-color-1]
-
-            sm:mb-5 sm:gap-3 sm:text-sm sm:tracking-[3px]
-
-            md:text-base
-            md:tracking-[3px]
-
-            lg:text-lg
-            lg:tracking-[4px]
-
-            xl:text-xl"
+                class="mb-4 flex items-center gap-2 font-[family-name:--font-poppins] text-xs font-semibold tracking-[2px] text-[--primary-color-1] sm:mb-5 sm:gap-3 sm:text-sm sm:tracking-[3px] md:text-base md:tracking-[3px] lg:text-lg lg:tracking-[4px] xl:text-xl"
               >
                 <i class="fa-solid fa-paw"></i>
                 Our History
               </span>
               <h2
-                class=" max-w-[650px]
-            font-[family-name:--font-Fredoka]
-            text-xl
-            leading-[1.35]
-
-            min-[375px]:text-2xl
-            min-[375px]:leading-[1.35]
-
-            sm:text-2xl
-            sm:leading-[1.3]
-
-            md:text-3xl
-            md:leading-[1.3]
-
-            lg:text-4xl
-            lg:leading-[1.25]
-
-            xl:text-4xl
-            xl:leading-[1.25]
-
-            2xl:text-5xl
-            2xl:leading-[1.2]"
+                class="max-w-[650px] font-[family-name:--font-Fredoka] text-xl leading-[1.35] min-[375px]:text-2xl min-[375px]:leading-[1.35] sm:text-2xl sm:leading-[1.3] md:text-3xl md:leading-[1.3] lg:text-4xl lg:leading-[1.25] xl:text-4xl xl:leading-[1.25] 2xl:text-5xl 2xl:leading-[1.2]"
               >
                 A <span class="text-[--btn-color]">Journey</span> of Love,
                 Rescue & New
                 <span class="text-[--btn-color]">Beginnings</span>
               </h2>
               <p
-                class="mt-5
-            font-[family-name:--font-poppins]
-            text-xs
-            font-semibold
-            leading-[1.7]
-            text-[--primary-color-1]
-
-            sm:mt-6
-            sm:text-sm
-            sm:leading-[1.7]
-
-            md:mt-6
-            md:text-sm
-            md:leading-[1.7]
-
-            lg:mt-7
-            lg:text-base
-            lg:leading-[1.7]
-
-            xl:mt-8
-            xl:leading-[1.64]"
+                class="mt-5 font-[family-name:--font-poppins] text-xs font-semibold leading-[1.7] text-[--primary-color-1] sm:mt-6 sm:text-sm sm:leading-[1.7] md:mt-6 md:text-sm md:leading-[1.7] lg:mt-7 lg:text-base lg:leading-[1.7] xl:mt-8 xl:leading-[1.64]"
               >
                 Our journey has been shaped by countless moments of
                 kindness—from rescuing vulnerable animals to celebrating
@@ -699,25 +1234,7 @@
                 unconditional love of a loyal companion.
               </p>
               <p
-                class="mt-5
-            font-[family-name:--font-poppins]
-            text-xs
-            font-semibold
-            leading-[1.7]
-            text-[--primary-color-1]
-
-            sm:mt-6
-            sm:text-sm
-            sm:leading-[1.7]
-
-            md:mt-7
-            md:text-sm
-
-            lg:mt-8
-            lg:text-base
-
-            xl:mt-9
-            xl:leading-[1.64]"
+                class="mt-5 font-[family-name:--font-poppins] text-xs font-semibold leading-[1.7] text-[--primary-color-1] sm:mt-6 sm:text-sm sm:leading-[1.7] md:mt-7 md:text-sm lg:mt-8 lg:text-base xl:mt-9 xl:leading-[1.64]"
               >
                 What started as a humble initiative has become a growing
                 movement driven by compassion, trust, and a shared vision of
@@ -727,218 +1244,84 @@
               </p>
             </div>
             <!-- Right Side -->
-            <div class="relative
-          mx-auto
-          w-full
-          max-w-[650px]
-          md:max-w-none mt-6 md:mt-12">
+            <div
+              class="relative mx-auto w-full max-w-[650px] md:max-w-none mt-6 md:mt-12"
+            >
               <img
                 src="Images/Image And Frame.png"
                 alt="dog"
-                class="block
-            h-auto
-            w-full
-            object-contain"
+                class="block h-auto w-full object-contain"
               />
               <!-- ========================= MONTHLY ORDERS CARD ========================== -->
               <div
-                class="absolute
-            right-0
-            top-2
-            z-10
-            bg-white
-            shadow-[0_8px_20px_rgba(0,0,0,0.16)]
-            min-[375px]:right-0
-            min-[375px]:top-4
-            px-2
-            py-1
-            min-[480px]:px-5
-            min-[480px]:py-4
-            md:py-8
-            min-[992px]:px-10
-            min-[992px]:py-12
-            lg:px-4
-            lg:py-8
-            sm:top-5
-            rounded-[12px]
-            md:top-6"
+                class="absolute right-0 top-2 z-10 bg-white shadow-[0_8px_20px_rgba(0,0,0,0.16)] min-[375px]:right-0 min-[375px]:top-4 px-2 py-1 min-[480px]:px-5 min-[480px]:py-4 md:py-8 min-[992px]:px-10 min-[992px]:py-12 lg:px-4 lg:py-8 sm:top-5 rounded-[12px] md:top-6"
               >
-                <p class="text-center
-              text-[8px]
-              font-medium
-              text-[#0A303A]
-              min-[375px]:text-[9px]
-              sm:text-[13px]">
+                <p
+                  class="text-center text-[8px] font-medium text-[#0A303A] min-[375px]:text-[9px] sm:text-[13px]"
+                >
                   Monthly Orders
                 </p>
                 <p
-                  class="mt-1
-              text-center
-              text-base
-              font-bold
-              text-[#0A303A]
-              min-[375px]:text-lg
-              sm:text-[28px]
-              md:text-[30px]
-              lg:text-[32px]
-              xl:text-[34px]"
+                  class="mt-1 text-center text-base font-bold text-[#0A303A] min-[375px]:text-lg sm:text-[28px] md:text-[30px] lg:text-[32px] xl:text-[34px]"
                 >
                   1.3k+
                 </p>
               </div>
               <!-- ========================= REVIEWS CARD ========================== -->
-          <div
-            class="absolute
-            bottom-[33px]
-            left-[22px]
-            z-10
-            rounded-[12px]
-            bg-white
-            px-3
-            py-2
-            shadow-[0_8px_20px_rgba(0,0,0,0.15)]
-            min-[375px]:bottom-[30px]
-            min-[375px]:left-[22px]
-            min-[375px]:px-4
-            min-[375px]:py-3
-            sm:bottom-20
-            sm:left-16
-            min-[992px]:bottom-[130px]
-            lg:bottom-[64px]
-            lg:left-[50px]
-            xl:bottom-[84px]
-            xl:left-[54px]"
-          >
-          <div class="flex flex-col items-center gap-1">
-            <!-- Avatars -->
-              <div class="flex -space-x-2">
-                <img
-                  src="Images/about-client-1.png"
-                  class="h-6
-                  w-6
-                  rounded-full
-                  object-contain
-                  shadow-xl
-                  sm:h-7
-                  sm:w-7
-                  md:h-8
-                  md:w-8"
-                  alt=""
-                />
-                <img
-                  src="Images/about-client-3.png"
-                  class="h-6
-                  w-6
-                  rounded-full
-                  object-contain
-                  shadow-xl
-                  sm:h-7
-                  sm:w-7
-                  md:h-8
-                  md:w-8"
-                  alt=""
-                />
-                <img
-                  src="Images/about-client-4.png"
-                  class="h-6
-                  w-6
-                  rounded-full
-                  object-contain
-                  shadow-xl
-                  sm:h-7
-                  sm:w-7
-                  md:h-8
-                  md:w-8"
-                  alt=""
-                />
+              <div
+                class="absolute bottom-[33px] left-[22px] z-10 rounded-[12px] bg-white px-3 py-2 shadow-[0_8px_20px_rgba(0,0,0,0.15)] min-[375px]:bottom-[30px] min-[375px]:left-[22px] min-[375px]:px-4 min-[375px]:py-3 sm:bottom-20 sm:left-16 min-[992px]:bottom-[130px] lg:bottom-[64px] lg:left-[50px] xl:bottom-[84px] xl:left-[54px]"
+              >
+                <div class="flex flex-col items-center gap-1">
+                  <!-- Avatars -->
+                  <div class="flex -space-x-2">
+                    <img
+                      src="Images/about-client-1.png"
+                      class="h-6 w-6 rounded-full object-contain shadow-xl sm:h-7 sm:w-7 md:h-8 md:w-8"
+                      alt=""
+                    />
+                    <img
+                      src="Images/about-client-3.png"
+                      class="h-6 w-6 rounded-full object-contain shadow-xl sm:h-7 sm:w-7 md:h-8 md:w-8"
+                      alt=""
+                    />
+                    <img
+                      src="Images/about-client-4.png"
+                      class="h-6 w-6 rounded-full object-contain shadow-xl sm:h-7 sm:w-7 md:h-8 md:w-8"
+                      alt=""
+                    />
 
-                <img
-                  src="Images/about-client-2.png"
-                  class="h-6
-                  w-6
-                  rounded-full
-                  object-contain
-                  shadow-xl
-                  sm:h-7
-                  sm:w-7
-                  md:h-8
-                  md:w-8"
-                  alt=""
-                />
-                <div
-                  class=" flex
-                  h-6
-                  w-6
-                  items-center
-                  justify-center
-                  rounded-full
-                  border-2 border-gray-200
-                  bg-white
-                  shadow-xl
-
-                  sm:h-7
-                  sm:w-7
-
-                  md:h-8
-                  md:w-8"
-                >
-                  <i class="fa-solid
-                    fa-plus
-                    text-[7px]
-                    text-[#0A303A]
-
-                    sm:text-[8px]
-                    md:text-[9px]"></i>
+                    <img
+                      src="Images/about-client-2.png"
+                      class="h-6 w-6 rounded-full object-contain shadow-xl sm:h-7 sm:w-7 md:h-8 md:w-8"
+                      alt=""
+                    />
+                    <div
+                      class="flex h-6 w-6 items-center justify-center rounded-full border-2 border-gray-200 bg-white shadow-xl sm:h-7 sm:w-7 md:h-8 md:w-8"
+                    >
+                      <i
+                        class="fa-solid fa-plus text-[7px] text-[#0A303A] sm:text-[8px] md:text-[9px]"
+                      ></i>
+                    </div>
+                  </div>
+                  <p
+                    class="mt-1 whitespace-nowrap text-[8px] font-medium text-[#0A303A] min-[375px]:text-[9px] sm:mt-2 sm:text-sm md:text-base xl:text-lg"
+                  >
+                    8000+ reviews
+                  </p>
                 </div>
               </div>
-              <p
-              class=" mt-1
-                whitespace-nowrap
-                text-[8px]
-                font-medium
-                text-[#0A303A]
-
-                min-[375px]:text-[9px]
-
-                sm:mt-2
-                sm:text-sm
-
-                md:text-base
-
-                xl:text-lg"
-            >
-              8000+ reviews
-            </p>
-          </div>
-      </div>
-      <!-- =========================
+              <!-- =========================
              BONE DECORATION
         ========================== -->
-        <div
-          class="absolute
-            right-[45px]
-            -top-[35px]
-            z-10
-            w-12
-            min-[375px]:right-14
-            min-[375px]:-top-10
-            min-[375px]:w-14
-            min-[576px]:right-[80px]
-            sm:right-20
-            sm:-top-12
-            sm:w-20
-            md:-top-[75px]
-            md:w-24
-            min-[992px]:right-[120px]
-            lg:right-6
-            lg:-top-20
-            lg:w-28
-            xl:right-10
-            xl:-top-24
-            xl:w-32"
-        >
-          <img src="Images/bone-shape.png" alt="bone" class="h-auto w-full object-contain">
-        </div>
+              <div
+                class="absolute right-[45px] -top-[35px] z-10 w-12 min-[375px]:right-14 min-[375px]:-top-10 min-[375px]:w-14 min-[576px]:right-[80px] sm:right-20 sm:-top-12 sm:w-20 md:-top-[75px] md:w-24 min-[992px]:right-[120px] lg:right-6 lg:-top-20 lg:w-28 xl:right-10 xl:-top-24 xl:w-32"
+              >
+                <img
+                  src="Images/bone-shape.png"
+                  alt="bone"
+                  class="h-auto w-full object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -946,467 +1329,759 @@
       <!-- Our Story -->
       <section class="relative py-12 sm:py-14 md:py-16 lg:py-20 xl:py-24">
         <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
-          <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 md:gap-8 lg:gap-12 xl:gap-16">
+          <div
+            class="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 md:gap-8 lg:gap-12 xl:gap-16"
+          >
             <!-- Left Side -->
-            <div class="relative
-          mx-auto
-          w-full
-          max-w-[650px]
-          md:max-w-none mt-6">
+            <div
+              class="relative mx-auto w-full max-w-[650px] md:max-w-none mt-6"
+            >
               <img
                 src="Images/Image And Frame - 1.png"
                 alt="dog"
-                class="block
-            h-auto
-            w-full
-            object-contain"
+                class="block h-auto w-full object-contain"
               />
               <!-- ========================= MONTHLY ORDERS CARD ========================== -->
               <div
-                class="absolute
-            right-0
-            top-2
-            z-10
-            bg-white
-            shadow-[0_8px_20px_rgba(0,0,0,0.16)]
-            min-[375px]:right-0
-            min-[375px]:top-4
-            px-2
-            py-1
-            min-[480px]:px-5
-            min-[480px]:py-4
-            md:py-8
-            min-[992px]:px-10
-            min-[992px]:py-12
-            lg:px-4
-            lg:py-8
-            sm:top-5
-            rounded-[12px]
-            md:top-6"
+                class="absolute right-0 top-2 z-10 bg-white shadow-[0_8px_20px_rgba(0,0,0,0.16)] min-[375px]:right-0 min-[375px]:top-4 px-2 py-1 min-[480px]:px-5 min-[480px]:py-4 md:py-8 min-[992px]:px-10 min-[992px]:py-12 lg:px-4 lg:py-8 sm:top-5 rounded-[12px] md:top-6"
               >
-                <p class="text-center
-              text-[8px]
-              font-medium
-              text-[#0A303A]
-              min-[375px]:text-[9px]
-              sm:text-[13px]">
+                <p
+                  class="text-center text-[8px] font-medium text-[#0A303A] min-[375px]:text-[9px] sm:text-[13px]"
+                >
                   Monthly Members
                 </p>
                 <p
-                  class="mt-1
-              text-center
-              text-base
-              font-bold
-              text-[#0A303A]
-              min-[375px]:text-lg
-              sm:text-[28px]
-              md:text-[30px]
-              lg:text-[32px]
-              xl:text-[34px]"
+                  class="mt-1 text-center text-base font-bold text-[#0A303A] min-[375px]:text-lg sm:text-[28px] md:text-[30px] lg:text-[32px] xl:text-[34px]"
                 >
                   5000+
                 </p>
               </div>
               <!-- ========================= REVIEWS CARD ========================== -->
-          <div
-            class="absolute
-            bottom-[33px]
-            left-[22px]
-            z-10
-            rounded-[12px]
-            bg-white
-            px-3
-            py-2
-            shadow-[0_8px_20px_rgba(0,0,0,0.15)]
-            min-[375px]:bottom-[30px]
-            min-[375px]:left-[22px]
-            min-[375px]:px-4
-            min-[375px]:py-3
-            sm:bottom-20
-            sm:left-16
-            min-[992px]:bottom-[130px]
-            lg:bottom-[64px]
-            lg:left-[50px]
-            xl:bottom-[84px]
-            xl:left-[54px]"
-          >
-          <div class="flex flex-col items-center gap-1">
-            <!-- Avatars -->
-              <div class="flex -space-x-2">
-                <img
-                  src="Images/about-client-3.png"
-                  class="h-6
-                  w-6
-                  rounded-full
-                  object-contain
-                  shadow-xl
-                  sm:h-7
-                  sm:w-7
-                  md:h-8
-                  md:w-8"
-                  alt=""
-                />
-                <img
-                  src="Images/about-client-4.png"
-                  class="h-6
-                  w-6
-                  rounded-full
-                  object-contain
-                  shadow-xl
-                  sm:h-7
-                  sm:w-7
-                  md:h-8
-                  md:w-8"
-                  alt=""
-                />
-                <img
-                  src="Images/about-client-5.png"
-                  class="h-6
-                  w-6
-                  rounded-full
-                  object-contain
-                  shadow-xl
-                  sm:h-7
-                  sm:w-7
-                  md:h-8
-                  md:w-8"
-                  alt=""
-                />
-                <img
-                  src="Images/about-client-2.png"
-                  class="h-6
-                  w-6
-                  rounded-full
-                  object-contain
-                  shadow-xl
-                  sm:h-7
-                  sm:w-7
-                  md:h-8
-                  md:w-8"
-                  alt=""
-                />
-                <div
-                  class=" flex
-                  h-6
-                  w-6
-                  items-center
-                  justify-center
-                  rounded-full
-                  border-2 border-gray-200
-                  bg-white
-                  shadow-xl
-
-                  sm:h-7
-                  sm:w-7
-
-                  md:h-8
-                  md:w-8"
-                >
-                  <i class="fa-solid
-                    fa-plus
-                    text-[7px]
-                    text-[#0A303A]
-
-                    sm:text-[8px]
-                    md:text-[9px]"></i>
+              <div
+                class="absolute bottom-[33px] left-[22px] z-10 rounded-[12px] bg-white px-3 py-2 shadow-[0_8px_20px_rgba(0,0,0,0.15)] min-[375px]:bottom-[30px] min-[375px]:left-[22px] min-[375px]:px-4 min-[375px]:py-3 sm:bottom-20 sm:left-16 min-[992px]:bottom-[130px] lg:bottom-[64px] lg:left-[50px] xl:bottom-[84px] xl:left-[54px]"
+              >
+                <div class="flex flex-col items-center gap-1">
+                  <!-- Avatars -->
+                  <div class="flex -space-x-2">
+                    <img
+                      src="Images/about-client-3.png"
+                      class="h-6 w-6 rounded-full object-contain shadow-xl sm:h-7 sm:w-7 md:h-8 md:w-8"
+                      alt=""
+                    />
+                    <img
+                      src="Images/about-client-4.png"
+                      class="h-6 w-6 rounded-full object-contain shadow-xl sm:h-7 sm:w-7 md:h-8 md:w-8"
+                      alt=""
+                    />
+                    <img
+                      src="Images/about-client-5.png"
+                      class="h-6 w-6 rounded-full object-contain shadow-xl sm:h-7 sm:w-7 md:h-8 md:w-8"
+                      alt=""
+                    />
+                    <img
+                      src="Images/about-client-2.png"
+                      class="h-6 w-6 rounded-full object-contain shadow-xl sm:h-7 sm:w-7 md:h-8 md:w-8"
+                      alt=""
+                    />
+                    <div
+                      class="flex h-6 w-6 items-center justify-center rounded-full border-2 border-gray-200 bg-white shadow-xl sm:h-7 sm:w-7 md:h-8 md:w-8"
+                    >
+                      <i
+                        class="fa-solid fa-plus text-[7px] text-[#0A303A] sm:text-[8px] md:text-[9px]"
+                      ></i>
+                    </div>
+                  </div>
+                  <p
+                    class="mt-1 whitespace-nowrap text-[8px] font-medium text-[#0A303A] min-[375px]:text-[9px] sm:mt-2 sm:text-sm md:text-base xl:text-lg"
+                  >
+                    8000+ reviews
+                  </p>
                 </div>
               </div>
-              <p
-              class=" mt-1
-                whitespace-nowrap
-                text-[8px]
-                font-medium
-                text-[#0A303A]
-
-                min-[375px]:text-[9px]
-
-                sm:mt-2
-                sm:text-sm
-
-                md:text-base
-
-                xl:text-lg"
-            >
-              8000+ reviews
-            </p>
-          </div>
-      </div>
-      <!-- =========================
+              <!-- =========================
              DOG FACE  DECORATION
         ========================== -->
-        <div
-          class="absolute
-            right-[70px]
-            -top-[22px]
-            -z-10
-            w-12
-            min-[375px]:-top-[24px]
-            min-[375px]:right-[85px]
-            min-[375px]:w-14
-            min-[480px]:right-28
-            min-[480px]:-top-[17px]
-            min-[576px]:-top-[8px]
-            sm:right-36
-            sm:-top-[26px]
-            sm:w-20
-            md:-top-[30px]
-            md:w-24
-            min-[992px]:right-[200px]
-            min-[992px]:-top-[13px]
-            lg:right-[96px]
-            lg:-top-16
-            lg:w-28
-            xl:-top-[72px]
-            xl:right-[120px]
-            xl:w-32"
-        >
-          <img src="Images/dog-face.png" alt="bone" class="h-auto w-full object-contain">
-        </div>
+              <div
+                class="absolute right-[70px] -top-[22px] -z-10 w-12 min-[375px]:-top-[24px] min-[375px]:right-[85px] min-[375px]:w-14 min-[480px]:right-28 min-[480px]:-top-[17px] min-[576px]:-top-[8px] sm:right-36 sm:-top-[26px] sm:w-20 md:-top-[30px] md:w-24 min-[992px]:right-[200px] min-[992px]:-top-[13px] lg:right-[96px] lg:-top-16 lg:w-28 xl:-top-[72px] xl:right-[120px] xl:w-32"
+              >
+                <img
+                  src="Images/dog-face.png"
+                  alt="bone"
+                  class="h-auto w-full object-contain"
+                />
+              </div>
             </div>
             <!-- Right Side -->
             <div class="w-full">
               <span
-                class="mb-4 flex items-center gap-2
-            font-[family-name:--font-poppins]
-            text-xs font-semibold
-            tracking-[2px]
-            text-[--primary-color-1]
-
-            sm:mb-5 sm:gap-3 sm:text-sm sm:tracking-[3px]
-
-            md:text-base
-            md:tracking-[3px]
-
-            lg:text-lg
-            lg:tracking-[4px]
-
-            xl:text-xl"
+                class="mb-4 flex items-center gap-2 font-[family-name:--font-poppins] text-xs font-semibold tracking-[2px] text-[--primary-color-1] sm:mb-5 sm:gap-3 sm:text-sm sm:tracking-[3px] md:text-base md:tracking-[3px] lg:text-lg lg:tracking-[4px] xl:text-xl"
               >
                 <i class="fa-solid fa-paw"></i>
                 Our Story
               </span>
               <h2
-                class=" max-w-[650px]
-            font-[family-name:--font-Fredoka]
-            text-xl
-            leading-[1.35]
-
-            min-[375px]:text-2xl
-            min-[375px]:leading-[1.35]
-
-            sm:text-2xl
-            sm:leading-[1.3]
-
-            md:text-3xl
-            md:leading-[1.3]
-
-            lg:text-4xl
-            lg:leading-[1.25]
-
-            xl:text-4xl
-            xl:leading-[1.25]
-
-            2xl:text-5xl
-            2xl:leading-[1.2]"
+                class="max-w-[650px] font-[family-name:--font-Fredoka] text-xl leading-[1.35] min-[375px]:text-2xl min-[375px]:leading-[1.35] sm:text-2xl sm:leading-[1.3] md:text-3xl md:leading-[1.3] lg:text-4xl lg:leading-[1.25] xl:text-4xl xl:leading-[1.25] 2xl:text-5xl 2xl:leading-[1.2]"
               >
-                More Than <span class="text-[--btn-color]">Adoption</span>. A<br> 
+                More Than <span class="text-[--btn-color]">Adoption</span>. A<br />
                 Lifetime of <span class="text-[--btn-color]">Love</span>.
-              </h2> 
+              </h2>
               <p
-                class="mt-5
-            font-[family-name:--font-poppins]
-            text-xs
-            font-semibold
-            leading-[1.7]
-            text-[--primary-color-1]
-
-            sm:mt-6
-            sm:text-sm
-            sm:leading-[1.7]
-
-            md:mt-6
-            md:text-sm
-            md:leading-[1.7]
-
-            lg:mt-7
-            lg:text-base
-            lg:leading-[1.7]
-
-            xl:mt-8
-            xl:leading-[1.64]"
+                class="mt-5 font-[family-name:--font-poppins] text-xs font-semibold leading-[1.7] text-[--primary-color-1] sm:mt-6 sm:text-sm sm:leading-[1.7] md:mt-6 md:text-sm md:leading-[1.7] lg:mt-7 lg:text-base lg:leading-[1.7] xl:mt-8 xl:leading-[1.64]"
               >
-                What began as a simple act of kindness for one abandoned pet soon became a heartfelt mission to transform the lives of countless animals in need. We realized that every rescue carries a story, every adoption creates a new beginning, and every wagging tail is a reminder that love has the power to heal.
+                What began as a simple act of kindness for one abandoned pet
+                soon became a heartfelt mission to transform the lives of
+                countless animals in need. We realized that every rescue carries
+                a story, every adoption creates a new beginning, and every
+                wagging tail is a reminder that love has the power to heal.
               </p>
               <p
-                class="mt-5
-            font-[family-name:--font-poppins]
-            text-xs
-            font-semibold
-            leading-[1.7]
-            text-[--primary-color-1]
-
-            sm:mt-6
-            sm:text-sm
-            sm:leading-[1.7]
-
-            md:mt-7
-            md:text-sm
-
-            lg:mt-8
-            lg:text-base
-
-            xl:mt-9
-            xl:leading-[1.64]"
+                class="mt-5 font-[family-name:--font-poppins] text-xs font-semibold leading-[1.7] text-[--primary-color-1] sm:mt-6 sm:text-sm sm:leading-[1.7] md:mt-7 md:text-sm lg:mt-8 lg:text-base xl:mt-9 xl:leading-[1.64]"
               >
-                Today, we're more than just a pet adoption platform—we're a community of compassionate people who believe every pet deserves a safe home, unconditional love, and a family to call their own. With every connection we make, we bring together hopeful hearts and waiting paws, creating lifelong friendships built on trust, care, and second chances.Because sometimes, all it takes is one small act of compassion to change a life forever—and every beautiful story starts with a single paw.
+                Today, we're more than just a pet adoption platform—we're a
+                community of compassionate people who believe every pet deserves
+                a safe home, unconditional love, and a family to call their own.
+                With every connection we make, we bring together hopeful hearts
+                and waiting paws, creating lifelong friendships built on trust,
+                care, and second chances.Because sometimes, all it takes is one
+                small act of compassion to change a life forever—and every
+                beautiful story starts with a single paw.
               </p>
             </div>
           </div>
         </div>
       </section>
+      <!-- Our Team -->
+      <section class="relative py-12 sm:py-14 md:py-16 lg:py-20 xl:py-24">
+        <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
+          <span
+            class="mb-4 flex items-center justify-center gap-2 text-center font-[family-name:--font-poppins] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold tracking-[2px] text-[--primary-color-1] sm:mb-9 sm:gap-3 sm:tracking-[4px]"
+          >
+            <i class="fa-solid fa-paw"></i>
+            Our Team
+          </span>
+          <h2
+            class="mb-[80px] mx-auto max-w-[358px] text-center font-[family-name:--font-Fredoka] text-xl sm:text-2xl lg:text-3xl xl:text-4xl min-[1920px]:text-5xl font-semibold leading-[1.2] text-[--primary-color-1] sm:max-w-[650px] lg:max-w-[756px]"
+          >
+            Meet Our
+            <span class="text-[--btn-color]">Fur & Feather </span>Family
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- card1 -->
+            <div class="p-4 border border-[--primary-color-1] rounded-[30px]">
+              <div>
+                <img
+                  src="Images/about-1.png"
+                  class="w-full object-contain"
+                  alt="about-1"
+                  loading="lazy"
+                />
+              </div>
+              <div class="flex flex-col gap-2 mt-6">
+                <h3
+                  class="font-[family-name:--font-Fredoka] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold text-[--primary-color-1]"
+                >
+                  Dr. Ananya Sen
+                </h3>
+                <span
+                  class="text-[--btn-color] font-[family-name:--font-poppins] text-[8px] sm:text-[10px] md:text-xs lg:text-sm xl:text-base font-semibold"
+                  >Veterinary Care Lead</span
+                >
+                <p
+                  class="text-[#6B7280] font-[family-name:--font-poppins] text-[8px] sm:text-[10px] md:text-xs lg:text-sm xl:text-base font-regular"
+                >
+                  Dedicated to keeping every pet healthy, happy, and well cared
+                  for with compassionate professional attention.
+                </p>
+                <ul class="flex flex-wrap gap-3 items-center mt-4">
+                  <li>
+                    <a href="#" target="_blank"
+                      ><svg
+                        width="16"
+                        height="22"
+                        class="hover:scale-110 transition-transform duration-300"
+                        viewBox="0 0 16 22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M1.93182 9.0833C0.95406 9.0833 0.75 9.2752 0.75 10.1944V11.8611C0.75 12.7804 0.95406 12.9722 1.93182 12.9722H4.29545V19.6389C4.29545 20.5581 4.49951 20.75 5.47727 20.75H7.8409C8.8187 20.75 9.0227 20.5581 9.0227 19.6389V12.9722H11.6767C12.4183 12.9722 12.6094 12.8367 12.8131 12.1664L13.3196 10.4997C13.6685 9.3514 13.4535 9.0833 12.1832 9.0833H9.0227V6.30556C9.0227 5.69191 9.5518 5.19444 10.2045 5.19444H13.5682C14.5459 5.19444 14.75 5.00259 14.75 4.08333V1.86111C14.75 0.94185 14.5459 0.75 13.5682 0.75H10.2045C6.941 0.75 4.29545 3.23731 4.29545 6.30556V9.0833H1.93182Z"
+                          stroke="#141B34"
+                          stroke-width="1.5"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank"
+                      ><svg
+                        width="20"
+                        height="20"
+                        class="hover:scale-110 transition-transform duration-300"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15.1248 4.50024H14.9998M0.75 9.75C0.75 5.50736 0.75 3.38604 2.06802 2.06802C3.38604 0.75 5.50736 0.75 9.75 0.75C13.9926 0.75 16.114 0.75 17.432 2.06802C18.75 3.38604 18.75 5.50736 18.75 9.75C18.75 13.9926 18.75 16.114 17.432 17.432C16.114 18.75 13.9926 18.75 9.75 18.75C5.50736 18.75 3.38604 18.75 2.06802 17.432C0.75 16.114 0.75 13.9926 0.75 9.75ZM13.75 9.75C13.75 11.9591 11.9591 13.75 9.75 13.75C7.54086 13.75 5.75 11.9591 5.75 9.75C5.75 7.54086 7.54086 5.75 9.75 5.75C11.9591 5.75 13.75 7.54086 13.75 9.75ZM15.2498 4.50024C15.2498 4.63832 15.1378 4.75024 14.9998 4.75024C14.8617 4.75024 14.7498 4.63832 14.7498 4.50024C14.7498 4.36217 14.8617 4.25024 14.9998 4.25024C15.1378 4.25024 15.2498 4.36217 15.2498 4.50024Z"
+                          stroke="#141B34"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank"
+                      ><svg
+                        width="20"
+                        height="20"
+                        class="hover:scale-110 transition-transform duration-300"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0.75 18.75L8.2984 11.2016M11.2016 8.2984L18.75 18.75H13.75L8.2984 11.2016L0.75 0.75H5.75L11.2016 8.2984ZM18.75 0.75L11.2016 8.2984"
+                          stroke="#141B34"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank"
+                      ><svg
+                        width="22"
+                        height="22"
+                        class="hover:scale-110 transition-transform duration-300"
+                        viewBox="0 0 22 22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.04289 8.54289L0.512569 8.01255L0.512542 8.01258L1.04289 8.54289ZM1.04289 20.4571L0.512551 20.9874L0.51256 20.9874L1.04289 20.4571ZM4.95711 20.4571L5.48744 20.9874L5.48745 20.9874L4.95711 20.4571ZM4.95711 8.54289L5.48746 8.01258L5.48743 8.01255L4.95711 8.54289ZM8.54289 8.54289L8.01258 8.01254L8.01254 8.01258L8.54289 8.54289ZM8.54289 20.4571L8.01255 20.9874L8.01257 20.9874L8.54289 20.4571ZM12.75 18.75L12 18.75V18.75H12.75ZM12.7501 15.2501L13.5001 15.2501V15.2501H12.7501ZM16.5429 19.9572L17.0733 19.427L17.0732 19.4269L16.5429 19.9572ZM20.7487 18.2506L19.9987 18.2504V18.2504L20.7487 18.2506ZM20.7501 12.7502L21.5001 12.7504V12.7502H20.7501ZM12.7501 9.924L12.0001 9.92412C12.0002 10.246 12.2056 10.5319 12.5106 10.6347C12.8156 10.7375 13.1522 10.6342 13.347 10.3781L12.7501 9.924ZM12.6132 8.745L13.2606 8.36636L13.2605 8.36617L12.6132 8.745ZM12.255 8.38687L11.8762 9.03419L11.8762 9.03419L12.255 8.38687ZM3.25 8.25V7.5H2.75V8.25V9H3.25V8.25ZM2.75 8.25V7.5C2.2998 7.5 1.8867 7.49841 1.55279 7.5433C1.19731 7.59109 0.821594 7.70354 0.512569 8.01255L1.04289 8.54289L1.57321 9.07323C1.57367 9.07277 1.57368 9.07279 1.57334 9.07307C1.57299 9.07336 1.57276 9.07351 1.57283 9.07347C1.57291 9.07341 1.57376 9.07286 1.57567 9.07186C1.5776 9.07085 1.58091 9.06923 1.58596 9.06716C1.60774 9.0582 1.6561 9.0429 1.75266 9.02992C1.96339 9.00159 2.25739 9 2.75 9V8.25ZM1.04289 8.54289L0.512542 8.01258C0.203537 8.3216 0.0910918 8.69732 0.0432991 9.0528C-0.00159276 9.38671 0 9.7998 0 10.25H0.75H1.5C1.5 9.7574 1.50159 9.46339 1.52992 9.25267C1.54291 9.15611 1.5582 9.10775 1.56716 9.08596C1.56924 9.08092 1.57085 9.0776 1.57186 9.07566C1.57286 9.07376 1.57342 9.07291 1.57347 9.07282C1.57352 9.07275 1.57336 9.07299 1.57308 9.07333C1.5728 9.07368 1.57278 9.07366 1.57324 9.0732L1.04289 8.54289ZM0.75 10.25H0V18.75H0.75H1.5V10.25H0.75ZM0.75 18.75H0C0 19.2002 -0.00159276 19.6133 0.0432991 19.9472C0.0910918 20.3027 0.203537 20.6784 0.512551 20.9874L1.04289 20.4571L1.57323 19.9268C1.57277 19.9263 1.57279 19.9263 1.57307 19.9266C1.57336 19.927 1.57351 19.9272 1.57347 19.9272C1.57341 19.9271 1.57286 19.9262 1.57186 19.9243C1.57085 19.9224 1.56923 19.9191 1.56716 19.914C1.5582 19.8922 1.54291 19.8439 1.52992 19.7473C1.50159 19.5366 1.5 19.2426 1.5 18.75H0.75ZM1.04289 20.4571L0.51256 20.9874C0.821583 21.2965 1.19731 21.4089 1.55279 21.4567C1.8867 21.5016 2.2998 21.5 2.75 21.5V20.75V20C2.25739 20 1.96339 19.9984 1.75267 19.9701C1.65611 19.9571 1.60775 19.9418 1.58597 19.9328C1.58092 19.9308 1.57761 19.9291 1.57567 19.9281C1.57377 19.9271 1.57292 19.9266 1.57284 19.9265C1.57277 19.9265 1.573 19.9266 1.57335 19.9269C1.57369 19.9272 1.57368 19.9272 1.57322 19.9268L1.04289 20.4571ZM2.75 20.75V21.5H3.25V20.75V20H2.75V20.75ZM3.25 20.75V21.5C3.7002 21.5 4.1133 21.5016 4.44721 21.4567C4.80269 21.4089 5.17842 21.2965 5.48744 20.9874L4.95711 20.4571L4.42678 19.9268C4.42632 19.9272 4.42631 19.9272 4.42665 19.9269C4.427 19.9266 4.42723 19.9265 4.42716 19.9265C4.42708 19.9266 4.42623 19.9271 4.42433 19.9281C4.42239 19.9291 4.41908 19.9308 4.41403 19.9328C4.39225 19.9418 4.34389 19.9571 4.24733 19.9701C4.03661 19.9984 3.74261 20 3.25 20V20.75ZM4.95711 20.4571L5.48745 20.9874C5.79646 20.6784 5.90891 20.3027 5.9567 19.9472C6.00159 19.6133 6 19.2002 6 18.75H5.25H4.5C4.5 19.2426 4.49841 19.5366 4.47008 19.7473C4.45709 19.8439 4.4418 19.8922 4.43284 19.914C4.43077 19.9191 4.42915 19.9224 4.42814 19.9243C4.42714 19.9262 4.42659 19.9271 4.42653 19.9272C4.42649 19.9272 4.42664 19.927 4.42693 19.9266C4.42721 19.9263 4.42723 19.9263 4.42677 19.9268L4.95711 20.4571ZM5.25 18.75H6V10.25H5.25H4.5V18.75H5.25ZM5.25 10.25H6C6 9.7998 6.00159 9.38671 5.9567 9.0528C5.90891 8.69732 5.79646 8.3216 5.48746 8.01258L4.95711 8.54289L4.42676 9.0732C4.42722 9.07366 4.4272 9.07368 4.42692 9.07333C4.42664 9.07299 4.42648 9.07275 4.42653 9.07282C4.42658 9.07291 4.42714 9.07376 4.42814 9.07566C4.42915 9.0776 4.43076 9.08092 4.43284 9.08596C4.4418 9.10775 4.45709 9.15611 4.47008 9.25267C4.49841 9.46339 4.5 9.7574 4.5 10.25H5.25ZM4.95711 8.54289L5.48743 8.01255C5.17841 7.70354 4.80269 7.59109 4.44721 7.5433C4.1133 7.49841 3.7002 7.5 3.25 7.5V8.25V9C3.74261 9 4.03661 9.00159 4.24734 9.02992C4.3439 9.0429 4.39226 9.0582 4.41404 9.06716C4.41909 9.06923 4.4224 9.07085 4.42433 9.07186C4.42624 9.07286 4.42709 9.07341 4.42717 9.07347C4.42724 9.07351 4.42701 9.07336 4.42666 9.07307C4.42632 9.07279 4.42633 9.07277 4.42679 9.07323L4.95711 8.54289ZM5.25 3H4.5C4.5 3.82843 3.82843 4.5 3 4.5V5.25V6C4.65685 6 6 4.65685 6 3H5.25ZM3 5.25V4.5C2.17157 4.5 1.5 3.82843 1.5 3H0.75H0C0 4.65685 1.34315 6 3 6V5.25ZM0.75 3H1.5C1.5 2.17157 2.17157 1.5 3 1.5V0.75V0C1.34315 0 0 1.34315 0 3H0.75ZM3 0.75V1.5C3.82843 1.5 4.5 2.17157 4.5 3H5.25H6C6 1.34315 4.65685 0 3 0V0.75ZM11.076 8.25V7.5H10.25V8.25V9H11.076V8.25ZM10.25 8.25V7.5C9.7998 7.5 9.38671 7.49841 9.0528 7.5433C8.69732 7.59109 8.3216 7.70354 8.01258 8.01254L8.54289 8.54289L9.0732 9.07324C9.07366 9.07278 9.07368 9.0728 9.07333 9.07308C9.07299 9.07336 9.07275 9.07352 9.07282 9.07347C9.07291 9.07342 9.07376 9.07286 9.07566 9.07186C9.0776 9.07085 9.08092 9.06924 9.08596 9.06716C9.10775 9.0582 9.15611 9.0429 9.25267 9.02992C9.46339 9.00159 9.7574 9 10.25 9V8.25ZM8.54289 8.54289L8.01254 8.01258C7.70354 8.3216 7.59109 8.69732 7.5433 9.0528C7.49841 9.38671 7.5 9.7998 7.5 10.25H8.25H9C9 9.7574 9.00159 9.46339 9.02992 9.25267C9.0429 9.15611 9.0582 9.10775 9.06716 9.08596C9.06924 9.08092 9.07085 9.0776 9.07186 9.07566C9.07286 9.07376 9.07342 9.07291 9.07347 9.07282C9.07352 9.07275 9.07336 9.07299 9.07308 9.07333C9.0728 9.07368 9.07278 9.07366 9.07324 9.0732L8.54289 8.54289ZM8.25 10.25H7.5V18.75H8.25H9V10.25H8.25ZM8.25 18.75H7.5C7.5 19.2002 7.49841 19.6133 7.5433 19.9472C7.59109 20.3027 7.70354 20.6784 8.01255 20.9874L8.54289 20.4571L9.07323 19.9268C9.07277 19.9263 9.07279 19.9263 9.07307 19.9266C9.07336 19.927 9.07351 19.9272 9.07347 19.9272C9.07341 19.9271 9.07286 19.9262 9.07186 19.9243C9.07085 19.9224 9.06923 19.9191 9.06716 19.914C9.0582 19.8922 9.0429 19.8439 9.02992 19.7473C9.00159 19.5366 9 19.2426 9 18.75H8.25ZM8.54289 20.4571L8.01257 20.9874C8.32159 21.2965 8.69731 21.4089 9.0528 21.4567C9.3867 21.5016 9.7998 21.5 10.25 21.5V20.75V20C9.7574 20 9.4634 19.9984 9.25267 19.9701C9.15612 19.9571 9.10775 19.9418 9.08597 19.9328C9.08092 19.9308 9.07761 19.9291 9.07567 19.9281C9.07376 19.9271 9.07292 19.9266 9.07283 19.9265C9.07276 19.9265 9.073 19.9266 9.07334 19.9269C9.07369 19.9272 9.07367 19.9272 9.07321 19.9268L8.54289 20.4571ZM10.25 20.75V21.5H10.75V20.75V20H10.25V20.75ZM10.75 20.75V21.5C11.2002 21.5 11.6133 21.5016 11.9472 21.4567C12.3027 21.4089 12.6784 21.2965 12.9874 20.9874L12.4571 20.4571L11.9268 19.9268C11.9263 19.9272 11.9263 19.9272 11.9266 19.9269C11.927 19.9266 11.9272 19.9265 11.9272 19.9265C11.9271 19.9266 11.9262 19.9271 11.9243 19.9281C11.9224 19.9291 11.9191 19.9308 11.914 19.9328C11.8922 19.9418 11.8439 19.9571 11.7473 19.9701C11.5366 19.9984 11.2426 20 10.75 20V20.75ZM12.4571 20.4571L12.9874 20.9874C13.2965 20.6784 13.4089 20.3027 13.4567 19.9472C13.5016 19.6133 13.5 19.2002 13.5 18.75H12.75H12C12 19.2426 11.9984 19.5366 11.9701 19.7473C11.9571 19.8439 11.9418 19.8922 11.9328 19.914C11.9308 19.9191 11.9291 19.9224 11.9281 19.9243C11.9271 19.9262 11.9266 19.9271 11.9265 19.9272C11.9265 19.9272 11.9266 19.927 11.9269 19.9266C11.9272 19.9263 11.9272 19.9263 11.9268 19.9268L12.4571 20.4571ZM12.75 18.75L13.5 18.75L13.5001 15.2501L12.7501 15.2501L12.0001 15.2501L12 18.75L12.75 18.75ZM12.7501 15.2501H13.5001C13.5001 14.4788 13.6269 13.8888 13.8515 13.5157C14.0427 13.1984 14.3206 13.0001 14.8379 13.0001V12.2501V11.5001C13.7954 11.5001 13.0294 11.9734 12.5666 12.7419C12.1373 13.4546 12.0001 14.3646 12.0001 15.2501H12.7501ZM14.8379 12.2501V13.0001C15.1615 13.0001 15.5 13.2926 15.5 13.7501H16.25H17C17 12.5508 16.0739 11.5001 14.8379 11.5001V12.2501ZM16.25 13.7501H15.5V18.2501H16.25H17V13.7501H16.25ZM16.25 18.2501H15.5C15.5 18.7003 15.4984 19.1134 15.5433 19.4473C15.5911 19.8028 15.7035 20.1785 16.0126 20.4875L16.5429 19.9572L17.0732 19.4269C17.0728 19.4264 17.0728 19.4264 17.0731 19.4267C17.0734 19.4271 17.0735 19.4273 17.0735 19.4273C17.0734 19.4272 17.0729 19.4263 17.0719 19.4244C17.0709 19.4225 17.0692 19.4192 17.0672 19.4141C17.0582 19.3923 17.0429 19.344 17.0299 19.2474C17.0016 19.0367 17 18.7427 17 18.2501H16.25ZM16.5429 19.9572L16.0125 20.4874C16.3215 20.7966 16.6973 20.909 17.0528 20.9568C17.3867 21.0017 17.7998 21.0001 18.25 21.0001V20.2501V19.5001C17.7574 19.5001 17.4634 19.4985 17.2526 19.4702C17.1561 19.4572 17.1077 19.4419 17.0859 19.4329C17.0809 19.4309 17.0776 19.4293 17.0757 19.4283C17.0738 19.4273 17.0729 19.4267 17.0729 19.4267C17.0728 19.4266 17.0731 19.4268 17.0734 19.4271C17.0738 19.4274 17.0738 19.4274 17.0733 19.427L16.5429 19.9572ZM18.25 20.2501V21.0001H18.7487V20.2501V19.5001H18.25V20.2501ZM18.7487 20.2501V21.0001C19.1988 21.0001 19.6118 21.0017 19.9457 20.9568C20.3011 20.909 20.6767 20.7966 20.9857 20.4877L20.4555 19.9573L19.9253 19.4269C19.9248 19.4273 19.9248 19.4273 19.9251 19.427C19.9255 19.4268 19.9257 19.4266 19.9256 19.4266C19.9256 19.4267 19.9247 19.4273 19.9228 19.4283C19.9209 19.4293 19.9175 19.4309 19.9125 19.433C19.8907 19.4419 19.8424 19.4572 19.7458 19.4702C19.5351 19.4985 19.2412 19.5001 18.7487 19.5001V20.2501ZM20.4555 19.9573L20.9857 20.4877C21.2948 20.1788 21.4073 19.8031 21.4552 19.4477C21.5001 19.1139 21.4986 18.7009 21.4987 18.2508L20.7487 18.2506L19.9987 18.2504C19.9986 18.7429 19.9969 19.0369 19.9686 19.2475C19.9556 19.3441 19.9403 19.3924 19.9313 19.4142C19.9292 19.4192 19.9276 19.4225 19.9266 19.4244C19.9256 19.4263 19.9251 19.4272 19.925 19.4273C19.925 19.4273 19.9251 19.4271 19.9254 19.4268C19.9257 19.4264 19.9257 19.4264 19.9253 19.4269L20.4555 19.9573ZM20.7487 18.2506L21.4987 18.2508L21.5001 12.7504L20.7501 12.7502L20.0001 12.75L19.9987 18.2504L20.7487 18.2506ZM20.7501 12.7502H21.5001C21.5001 9.7945 18.742 7.50024 16.0468 7.50024V8.25024V9.00024C18.0308 9.00024 20.0001 10.7355 20.0001 12.7502H20.7501ZM16.0468 8.25024V7.50024C14.4606 7.50024 13.059 8.27913 12.1532 9.46992L12.7501 9.924L13.347 10.3781C13.9944 9.52707 14.9692 9.00024 16.0468 9.00024V8.25024ZM12.7501 9.924L13.5001 9.92388C13.5001 9.62281 13.5008 9.34634 13.4798 9.11749C13.4579 8.87816 13.4075 8.61748 13.2606 8.36636L12.6132 8.745L11.9658 9.12364C11.9557 9.10642 11.9737 9.12019 11.986 9.25436C11.9993 9.39901 12 9.59509 12.0001 9.92412L12.7501 9.924ZM12.6132 8.745L13.2605 8.36617C13.1087 8.10689 12.8928 7.89114 12.6338 7.73955L12.255 8.38687L11.8762 9.03419C11.9134 9.05593 11.9443 9.08683 11.9659 9.12383L12.6132 8.745ZM12.255 8.38687L12.6338 7.73955C12.3826 7.59258 12.1219 7.54217 11.8825 7.52024C11.6536 7.49927 11.3771 7.5 11.076 7.5V8.25V9C11.405 9 11.6011 9.00073 11.7457 9.01398C11.8798 9.02627 11.8935 9.04429 11.8762 9.03419L12.255 8.38687Z"
+                          fill="#141B34"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- card2 -->
+            <div class="p-4 border border-[--primary-color-1] rounded-[30px]">
+              <div>
+                <img
+                  src="Images/about-2.png"
+                  class="w-full object-contain"
+                  alt="about-2"
+                  loading="lazy"
+                />
+              </div>
+              <div class="flex flex-col gap-2 mt-6">
+                <h3
+                  class="font-[family-name:--font-Fredoka] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold text-[--primary-color-1]"
+                >
+                 Arjun Roy
+                </h3>
+                <span
+                  class="text-[--btn-color] font-[family-name:--font-poppins] text-[8px] sm:text-[10px] md:text-xs lg:text-sm xl:text-base font-semibold"
+                  >Adoption Coordinator</span
+                >
+                <p
+                  class="text-[#6B7280] font-[family-name:--font-poppins] text-[8px] sm:text-[10px] md:text-xs lg:text-sm xl:text-base font-regular"
+                >
+                  Helps pets find safe, loving, and forever homes where they can grow, thrive, and belong.
+                </p>
+                <ul class="flex flex-wrap gap-3 items-center mt-4">
+                  <li>
+                    <a href="#" target="_blank"
+                      ><svg
+                        width="16"
+                        height="22"
+                        class="hover:scale-110 transition-transform duration-300"
+                        viewBox="0 0 16 22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M1.93182 9.0833C0.95406 9.0833 0.75 9.2752 0.75 10.1944V11.8611C0.75 12.7804 0.95406 12.9722 1.93182 12.9722H4.29545V19.6389C4.29545 20.5581 4.49951 20.75 5.47727 20.75H7.8409C8.8187 20.75 9.0227 20.5581 9.0227 19.6389V12.9722H11.6767C12.4183 12.9722 12.6094 12.8367 12.8131 12.1664L13.3196 10.4997C13.6685 9.3514 13.4535 9.0833 12.1832 9.0833H9.0227V6.30556C9.0227 5.69191 9.5518 5.19444 10.2045 5.19444H13.5682C14.5459 5.19444 14.75 5.00259 14.75 4.08333V1.86111C14.75 0.94185 14.5459 0.75 13.5682 0.75H10.2045C6.941 0.75 4.29545 3.23731 4.29545 6.30556V9.0833H1.93182Z"
+                          stroke="#141B34"
+                          stroke-width="1.5"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank"
+                      ><svg
+                        width="20"
+                        height="20"
+                        class="hover:scale-110 transition-transform duration-300"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15.1248 4.50024H14.9998M0.75 9.75C0.75 5.50736 0.75 3.38604 2.06802 2.06802C3.38604 0.75 5.50736 0.75 9.75 0.75C13.9926 0.75 16.114 0.75 17.432 2.06802C18.75 3.38604 18.75 5.50736 18.75 9.75C18.75 13.9926 18.75 16.114 17.432 17.432C16.114 18.75 13.9926 18.75 9.75 18.75C5.50736 18.75 3.38604 18.75 2.06802 17.432C0.75 16.114 0.75 13.9926 0.75 9.75ZM13.75 9.75C13.75 11.9591 11.9591 13.75 9.75 13.75C7.54086 13.75 5.75 11.9591 5.75 9.75C5.75 7.54086 7.54086 5.75 9.75 5.75C11.9591 5.75 13.75 7.54086 13.75 9.75ZM15.2498 4.50024C15.2498 4.63832 15.1378 4.75024 14.9998 4.75024C14.8617 4.75024 14.7498 4.63832 14.7498 4.50024C14.7498 4.36217 14.8617 4.25024 14.9998 4.25024C15.1378 4.25024 15.2498 4.36217 15.2498 4.50024Z"
+                          stroke="#141B34"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank"
+                      ><svg
+                        width="20"
+                        height="20"
+                        class="hover:scale-110 transition-transform duration-300"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0.75 18.75L8.2984 11.2016M11.2016 8.2984L18.75 18.75H13.75L8.2984 11.2016L0.75 0.75H5.75L11.2016 8.2984ZM18.75 0.75L11.2016 8.2984"
+                          stroke="#141B34"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank"
+                      ><svg
+                        width="22"
+                        height="22"
+                        class="hover:scale-110 transition-transform duration-300"
+                        viewBox="0 0 22 22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.04289 8.54289L0.512569 8.01255L0.512542 8.01258L1.04289 8.54289ZM1.04289 20.4571L0.512551 20.9874L0.51256 20.9874L1.04289 20.4571ZM4.95711 20.4571L5.48744 20.9874L5.48745 20.9874L4.95711 20.4571ZM4.95711 8.54289L5.48746 8.01258L5.48743 8.01255L4.95711 8.54289ZM8.54289 8.54289L8.01258 8.01254L8.01254 8.01258L8.54289 8.54289ZM8.54289 20.4571L8.01255 20.9874L8.01257 20.9874L8.54289 20.4571ZM12.75 18.75L12 18.75V18.75H12.75ZM12.7501 15.2501L13.5001 15.2501V15.2501H12.7501ZM16.5429 19.9572L17.0733 19.427L17.0732 19.4269L16.5429 19.9572ZM20.7487 18.2506L19.9987 18.2504V18.2504L20.7487 18.2506ZM20.7501 12.7502L21.5001 12.7504V12.7502H20.7501ZM12.7501 9.924L12.0001 9.92412C12.0002 10.246 12.2056 10.5319 12.5106 10.6347C12.8156 10.7375 13.1522 10.6342 13.347 10.3781L12.7501 9.924ZM12.6132 8.745L13.2606 8.36636L13.2605 8.36617L12.6132 8.745ZM12.255 8.38687L11.8762 9.03419L11.8762 9.03419L12.255 8.38687ZM3.25 8.25V7.5H2.75V8.25V9H3.25V8.25ZM2.75 8.25V7.5C2.2998 7.5 1.8867 7.49841 1.55279 7.5433C1.19731 7.59109 0.821594 7.70354 0.512569 8.01255L1.04289 8.54289L1.57321 9.07323C1.57367 9.07277 1.57368 9.07279 1.57334 9.07307C1.57299 9.07336 1.57276 9.07351 1.57283 9.07347C1.57291 9.07341 1.57376 9.07286 1.57567 9.07186C1.5776 9.07085 1.58091 9.06923 1.58596 9.06716C1.60774 9.0582 1.6561 9.0429 1.75266 9.02992C1.96339 9.00159 2.25739 9 2.75 9V8.25ZM1.04289 8.54289L0.512542 8.01258C0.203537 8.3216 0.0910918 8.69732 0.0432991 9.0528C-0.00159276 9.38671 0 9.7998 0 10.25H0.75H1.5C1.5 9.7574 1.50159 9.46339 1.52992 9.25267C1.54291 9.15611 1.5582 9.10775 1.56716 9.08596C1.56924 9.08092 1.57085 9.0776 1.57186 9.07566C1.57286 9.07376 1.57342 9.07291 1.57347 9.07282C1.57352 9.07275 1.57336 9.07299 1.57308 9.07333C1.5728 9.07368 1.57278 9.07366 1.57324 9.0732L1.04289 8.54289ZM0.75 10.25H0V18.75H0.75H1.5V10.25H0.75ZM0.75 18.75H0C0 19.2002 -0.00159276 19.6133 0.0432991 19.9472C0.0910918 20.3027 0.203537 20.6784 0.512551 20.9874L1.04289 20.4571L1.57323 19.9268C1.57277 19.9263 1.57279 19.9263 1.57307 19.9266C1.57336 19.927 1.57351 19.9272 1.57347 19.9272C1.57341 19.9271 1.57286 19.9262 1.57186 19.9243C1.57085 19.9224 1.56923 19.9191 1.56716 19.914C1.5582 19.8922 1.54291 19.8439 1.52992 19.7473C1.50159 19.5366 1.5 19.2426 1.5 18.75H0.75ZM1.04289 20.4571L0.51256 20.9874C0.821583 21.2965 1.19731 21.4089 1.55279 21.4567C1.8867 21.5016 2.2998 21.5 2.75 21.5V20.75V20C2.25739 20 1.96339 19.9984 1.75267 19.9701C1.65611 19.9571 1.60775 19.9418 1.58597 19.9328C1.58092 19.9308 1.57761 19.9291 1.57567 19.9281C1.57377 19.9271 1.57292 19.9266 1.57284 19.9265C1.57277 19.9265 1.573 19.9266 1.57335 19.9269C1.57369 19.9272 1.57368 19.9272 1.57322 19.9268L1.04289 20.4571ZM2.75 20.75V21.5H3.25V20.75V20H2.75V20.75ZM3.25 20.75V21.5C3.7002 21.5 4.1133 21.5016 4.44721 21.4567C4.80269 21.4089 5.17842 21.2965 5.48744 20.9874L4.95711 20.4571L4.42678 19.9268C4.42632 19.9272 4.42631 19.9272 4.42665 19.9269C4.427 19.9266 4.42723 19.9265 4.42716 19.9265C4.42708 19.9266 4.42623 19.9271 4.42433 19.9281C4.42239 19.9291 4.41908 19.9308 4.41403 19.9328C4.39225 19.9418 4.34389 19.9571 4.24733 19.9701C4.03661 19.9984 3.74261 20 3.25 20V20.75ZM4.95711 20.4571L5.48745 20.9874C5.79646 20.6784 5.90891 20.3027 5.9567 19.9472C6.00159 19.6133 6 19.2002 6 18.75H5.25H4.5C4.5 19.2426 4.49841 19.5366 4.47008 19.7473C4.45709 19.8439 4.4418 19.8922 4.43284 19.914C4.43077 19.9191 4.42915 19.9224 4.42814 19.9243C4.42714 19.9262 4.42659 19.9271 4.42653 19.9272C4.42649 19.9272 4.42664 19.927 4.42693 19.9266C4.42721 19.9263 4.42723 19.9263 4.42677 19.9268L4.95711 20.4571ZM5.25 18.75H6V10.25H5.25H4.5V18.75H5.25ZM5.25 10.25H6C6 9.7998 6.00159 9.38671 5.9567 9.0528C5.90891 8.69732 5.79646 8.3216 5.48746 8.01258L4.95711 8.54289L4.42676 9.0732C4.42722 9.07366 4.4272 9.07368 4.42692 9.07333C4.42664 9.07299 4.42648 9.07275 4.42653 9.07282C4.42658 9.07291 4.42714 9.07376 4.42814 9.07566C4.42915 9.0776 4.43076 9.08092 4.43284 9.08596C4.4418 9.10775 4.45709 9.15611 4.47008 9.25267C4.49841 9.46339 4.5 9.7574 4.5 10.25H5.25ZM4.95711 8.54289L5.48743 8.01255C5.17841 7.70354 4.80269 7.59109 4.44721 7.5433C4.1133 7.49841 3.7002 7.5 3.25 7.5V8.25V9C3.74261 9 4.03661 9.00159 4.24734 9.02992C4.3439 9.0429 4.39226 9.0582 4.41404 9.06716C4.41909 9.06923 4.4224 9.07085 4.42433 9.07186C4.42624 9.07286 4.42709 9.07341 4.42717 9.07347C4.42724 9.07351 4.42701 9.07336 4.42666 9.07307C4.42632 9.07279 4.42633 9.07277 4.42679 9.07323L4.95711 8.54289ZM5.25 3H4.5C4.5 3.82843 3.82843 4.5 3 4.5V5.25V6C4.65685 6 6 4.65685 6 3H5.25ZM3 5.25V4.5C2.17157 4.5 1.5 3.82843 1.5 3H0.75H0C0 4.65685 1.34315 6 3 6V5.25ZM0.75 3H1.5C1.5 2.17157 2.17157 1.5 3 1.5V0.75V0C1.34315 0 0 1.34315 0 3H0.75ZM3 0.75V1.5C3.82843 1.5 4.5 2.17157 4.5 3H5.25H6C6 1.34315 4.65685 0 3 0V0.75ZM11.076 8.25V7.5H10.25V8.25V9H11.076V8.25ZM10.25 8.25V7.5C9.7998 7.5 9.38671 7.49841 9.0528 7.5433C8.69732 7.59109 8.3216 7.70354 8.01258 8.01254L8.54289 8.54289L9.0732 9.07324C9.07366 9.07278 9.07368 9.0728 9.07333 9.07308C9.07299 9.07336 9.07275 9.07352 9.07282 9.07347C9.07291 9.07342 9.07376 9.07286 9.07566 9.07186C9.0776 9.07085 9.08092 9.06924 9.08596 9.06716C9.10775 9.0582 9.15611 9.0429 9.25267 9.02992C9.46339 9.00159 9.7574 9 10.25 9V8.25ZM8.54289 8.54289L8.01254 8.01258C7.70354 8.3216 7.59109 8.69732 7.5433 9.0528C7.49841 9.38671 7.5 9.7998 7.5 10.25H8.25H9C9 9.7574 9.00159 9.46339 9.02992 9.25267C9.0429 9.15611 9.0582 9.10775 9.06716 9.08596C9.06924 9.08092 9.07085 9.0776 9.07186 9.07566C9.07286 9.07376 9.07342 9.07291 9.07347 9.07282C9.07352 9.07275 9.07336 9.07299 9.07308 9.07333C9.0728 9.07368 9.07278 9.07366 9.07324 9.0732L8.54289 8.54289ZM8.25 10.25H7.5V18.75H8.25H9V10.25H8.25ZM8.25 18.75H7.5C7.5 19.2002 7.49841 19.6133 7.5433 19.9472C7.59109 20.3027 7.70354 20.6784 8.01255 20.9874L8.54289 20.4571L9.07323 19.9268C9.07277 19.9263 9.07279 19.9263 9.07307 19.9266C9.07336 19.927 9.07351 19.9272 9.07347 19.9272C9.07341 19.9271 9.07286 19.9262 9.07186 19.9243C9.07085 19.9224 9.06923 19.9191 9.06716 19.914C9.0582 19.8922 9.0429 19.8439 9.02992 19.7473C9.00159 19.5366 9 19.2426 9 18.75H8.25ZM8.54289 20.4571L8.01257 20.9874C8.32159 21.2965 8.69731 21.4089 9.0528 21.4567C9.3867 21.5016 9.7998 21.5 10.25 21.5V20.75V20C9.7574 20 9.4634 19.9984 9.25267 19.9701C9.15612 19.9571 9.10775 19.9418 9.08597 19.9328C9.08092 19.9308 9.07761 19.9291 9.07567 19.9281C9.07376 19.9271 9.07292 19.9266 9.07283 19.9265C9.07276 19.9265 9.073 19.9266 9.07334 19.9269C9.07369 19.9272 9.07367 19.9272 9.07321 19.9268L8.54289 20.4571ZM10.25 20.75V21.5H10.75V20.75V20H10.25V20.75ZM10.75 20.75V21.5C11.2002 21.5 11.6133 21.5016 11.9472 21.4567C12.3027 21.4089 12.6784 21.2965 12.9874 20.9874L12.4571 20.4571L11.9268 19.9268C11.9263 19.9272 11.9263 19.9272 11.9266 19.9269C11.927 19.9266 11.9272 19.9265 11.9272 19.9265C11.9271 19.9266 11.9262 19.9271 11.9243 19.9281C11.9224 19.9291 11.9191 19.9308 11.914 19.9328C11.8922 19.9418 11.8439 19.9571 11.7473 19.9701C11.5366 19.9984 11.2426 20 10.75 20V20.75ZM12.4571 20.4571L12.9874 20.9874C13.2965 20.6784 13.4089 20.3027 13.4567 19.9472C13.5016 19.6133 13.5 19.2002 13.5 18.75H12.75H12C12 19.2426 11.9984 19.5366 11.9701 19.7473C11.9571 19.8439 11.9418 19.8922 11.9328 19.914C11.9308 19.9191 11.9291 19.9224 11.9281 19.9243C11.9271 19.9262 11.9266 19.9271 11.9265 19.9272C11.9265 19.9272 11.9266 19.927 11.9269 19.9266C11.9272 19.9263 11.9272 19.9263 11.9268 19.9268L12.4571 20.4571ZM12.75 18.75L13.5 18.75L13.5001 15.2501L12.7501 15.2501L12.0001 15.2501L12 18.75L12.75 18.75ZM12.7501 15.2501H13.5001C13.5001 14.4788 13.6269 13.8888 13.8515 13.5157C14.0427 13.1984 14.3206 13.0001 14.8379 13.0001V12.2501V11.5001C13.7954 11.5001 13.0294 11.9734 12.5666 12.7419C12.1373 13.4546 12.0001 14.3646 12.0001 15.2501H12.7501ZM14.8379 12.2501V13.0001C15.1615 13.0001 15.5 13.2926 15.5 13.7501H16.25H17C17 12.5508 16.0739 11.5001 14.8379 11.5001V12.2501ZM16.25 13.7501H15.5V18.2501H16.25H17V13.7501H16.25ZM16.25 18.2501H15.5C15.5 18.7003 15.4984 19.1134 15.5433 19.4473C15.5911 19.8028 15.7035 20.1785 16.0126 20.4875L16.5429 19.9572L17.0732 19.4269C17.0728 19.4264 17.0728 19.4264 17.0731 19.4267C17.0734 19.4271 17.0735 19.4273 17.0735 19.4273C17.0734 19.4272 17.0729 19.4263 17.0719 19.4244C17.0709 19.4225 17.0692 19.4192 17.0672 19.4141C17.0582 19.3923 17.0429 19.344 17.0299 19.2474C17.0016 19.0367 17 18.7427 17 18.2501H16.25ZM16.5429 19.9572L16.0125 20.4874C16.3215 20.7966 16.6973 20.909 17.0528 20.9568C17.3867 21.0017 17.7998 21.0001 18.25 21.0001V20.2501V19.5001C17.7574 19.5001 17.4634 19.4985 17.2526 19.4702C17.1561 19.4572 17.1077 19.4419 17.0859 19.4329C17.0809 19.4309 17.0776 19.4293 17.0757 19.4283C17.0738 19.4273 17.0729 19.4267 17.0729 19.4267C17.0728 19.4266 17.0731 19.4268 17.0734 19.4271C17.0738 19.4274 17.0738 19.4274 17.0733 19.427L16.5429 19.9572ZM18.25 20.2501V21.0001H18.7487V20.2501V19.5001H18.25V20.2501ZM18.7487 20.2501V21.0001C19.1988 21.0001 19.6118 21.0017 19.9457 20.9568C20.3011 20.909 20.6767 20.7966 20.9857 20.4877L20.4555 19.9573L19.9253 19.4269C19.9248 19.4273 19.9248 19.4273 19.9251 19.427C19.9255 19.4268 19.9257 19.4266 19.9256 19.4266C19.9256 19.4267 19.9247 19.4273 19.9228 19.4283C19.9209 19.4293 19.9175 19.4309 19.9125 19.433C19.8907 19.4419 19.8424 19.4572 19.7458 19.4702C19.5351 19.4985 19.2412 19.5001 18.7487 19.5001V20.2501ZM20.4555 19.9573L20.9857 20.4877C21.2948 20.1788 21.4073 19.8031 21.4552 19.4477C21.5001 19.1139 21.4986 18.7009 21.4987 18.2508L20.7487 18.2506L19.9987 18.2504C19.9986 18.7429 19.9969 19.0369 19.9686 19.2475C19.9556 19.3441 19.9403 19.3924 19.9313 19.4142C19.9292 19.4192 19.9276 19.4225 19.9266 19.4244C19.9256 19.4263 19.9251 19.4272 19.925 19.4273C19.925 19.4273 19.9251 19.4271 19.9254 19.4268C19.9257 19.4264 19.9257 19.4264 19.9253 19.4269L20.4555 19.9573ZM20.7487 18.2506L21.4987 18.2508L21.5001 12.7504L20.7501 12.7502L20.0001 12.75L19.9987 18.2504L20.7487 18.2506ZM20.7501 12.7502H21.5001C21.5001 9.7945 18.742 7.50024 16.0468 7.50024V8.25024V9.00024C18.0308 9.00024 20.0001 10.7355 20.0001 12.7502H20.7501ZM16.0468 8.25024V7.50024C14.4606 7.50024 13.059 8.27913 12.1532 9.46992L12.7501 9.924L13.347 10.3781C13.9944 9.52707 14.9692 9.00024 16.0468 9.00024V8.25024ZM12.7501 9.924L13.5001 9.92388C13.5001 9.62281 13.5008 9.34634 13.4798 9.11749C13.4579 8.87816 13.4075 8.61748 13.2606 8.36636L12.6132 8.745L11.9658 9.12364C11.9557 9.10642 11.9737 9.12019 11.986 9.25436C11.9993 9.39901 12 9.59509 12.0001 9.92412L12.7501 9.924ZM12.6132 8.745L13.2605 8.36617C13.1087 8.10689 12.8928 7.89114 12.6338 7.73955L12.255 8.38687L11.8762 9.03419C11.9134 9.05593 11.9443 9.08683 11.9659 9.12383L12.6132 8.745ZM12.255 8.38687L12.6338 7.73955C12.3826 7.59258 12.1219 7.54217 11.8825 7.52024C11.6536 7.49927 11.3771 7.5 11.076 7.5V8.25V9C11.405 9 11.6011 9.00073 11.7457 9.01398C11.8798 9.02627 11.8935 9.04429 11.8762 9.03419L12.255 8.38687Z"
+                          fill="#141B34"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- card3 -->
+            <div class="p-4 border border-[--primary-color-1] rounded-[30px]">
+              <div>
+                <img
+                  src="Images/about-3.png"
+                  class="w-full object-contain"
+                  alt="about-3"
+                  loading="lazy"
+                />
+              </div>
+              <div class="flex flex-col gap-2 mt-6">
+                <h3
+                  class="font-[family-name:--font-Fredoka] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold text-[--primary-color-1]"
+                >
+                 Riya Mehta
+                </h3>
+                <span
+                  class="text-[--btn-color] font-[family-name:--font-poppins] text-[8px] sm:text-[10px] md:text-xs lg:text-sm xl:text-base font-semibold"
+                  >Pet Care Specialist</span
+                >
+                <p
+                  class="text-[#6B7280] font-[family-name:--font-poppins] text-[8px] sm:text-[10px] md:text-xs lg:text-sm xl:text-base font-regular"
+                >
+                  Ensures every rescued pet receives comfort, care, and attention in a safe and loving environment.
+                </p>
+                <ul class="flex flex-wrap gap-3 items-center mt-4">
+                  <li>
+                    <a href="#" target="_blank"
+                      ><svg
+                        width="16"
+                        height="22"
+                        class="hover:scale-110 transition-transform duration-300"
+                        viewBox="0 0 16 22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M1.93182 9.0833C0.95406 9.0833 0.75 9.2752 0.75 10.1944V11.8611C0.75 12.7804 0.95406 12.9722 1.93182 12.9722H4.29545V19.6389C4.29545 20.5581 4.49951 20.75 5.47727 20.75H7.8409C8.8187 20.75 9.0227 20.5581 9.0227 19.6389V12.9722H11.6767C12.4183 12.9722 12.6094 12.8367 12.8131 12.1664L13.3196 10.4997C13.6685 9.3514 13.4535 9.0833 12.1832 9.0833H9.0227V6.30556C9.0227 5.69191 9.5518 5.19444 10.2045 5.19444H13.5682C14.5459 5.19444 14.75 5.00259 14.75 4.08333V1.86111C14.75 0.94185 14.5459 0.75 13.5682 0.75H10.2045C6.941 0.75 4.29545 3.23731 4.29545 6.30556V9.0833H1.93182Z"
+                          stroke="#141B34"
+                          stroke-width="1.5"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank"
+                      ><svg
+                        width="20"
+                        height="20"
+                        class="hover:scale-110 transition-transform duration-300"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15.1248 4.50024H14.9998M0.75 9.75C0.75 5.50736 0.75 3.38604 2.06802 2.06802C3.38604 0.75 5.50736 0.75 9.75 0.75C13.9926 0.75 16.114 0.75 17.432 2.06802C18.75 3.38604 18.75 5.50736 18.75 9.75C18.75 13.9926 18.75 16.114 17.432 17.432C16.114 18.75 13.9926 18.75 9.75 18.75C5.50736 18.75 3.38604 18.75 2.06802 17.432C0.75 16.114 0.75 13.9926 0.75 9.75ZM13.75 9.75C13.75 11.9591 11.9591 13.75 9.75 13.75C7.54086 13.75 5.75 11.9591 5.75 9.75C5.75 7.54086 7.54086 5.75 9.75 5.75C11.9591 5.75 13.75 7.54086 13.75 9.75ZM15.2498 4.50024C15.2498 4.63832 15.1378 4.75024 14.9998 4.75024C14.8617 4.75024 14.7498 4.63832 14.7498 4.50024C14.7498 4.36217 14.8617 4.25024 14.9998 4.25024C15.1378 4.25024 15.2498 4.36217 15.2498 4.50024Z"
+                          stroke="#141B34"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank"
+                      ><svg
+                        width="20"
+                        height="20"
+                        class="hover:scale-110 transition-transform duration-300"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0.75 18.75L8.2984 11.2016M11.2016 8.2984L18.75 18.75H13.75L8.2984 11.2016L0.75 0.75H5.75L11.2016 8.2984ZM18.75 0.75L11.2016 8.2984"
+                          stroke="#141B34"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank"
+                      ><svg
+                        width="22"
+                        height="22"
+                        class="hover:scale-110 transition-transform duration-300"
+                        viewBox="0 0 22 22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.04289 8.54289L0.512569 8.01255L0.512542 8.01258L1.04289 8.54289ZM1.04289 20.4571L0.512551 20.9874L0.51256 20.9874L1.04289 20.4571ZM4.95711 20.4571L5.48744 20.9874L5.48745 20.9874L4.95711 20.4571ZM4.95711 8.54289L5.48746 8.01258L5.48743 8.01255L4.95711 8.54289ZM8.54289 8.54289L8.01258 8.01254L8.01254 8.01258L8.54289 8.54289ZM8.54289 20.4571L8.01255 20.9874L8.01257 20.9874L8.54289 20.4571ZM12.75 18.75L12 18.75V18.75H12.75ZM12.7501 15.2501L13.5001 15.2501V15.2501H12.7501ZM16.5429 19.9572L17.0733 19.427L17.0732 19.4269L16.5429 19.9572ZM20.7487 18.2506L19.9987 18.2504V18.2504L20.7487 18.2506ZM20.7501 12.7502L21.5001 12.7504V12.7502H20.7501ZM12.7501 9.924L12.0001 9.92412C12.0002 10.246 12.2056 10.5319 12.5106 10.6347C12.8156 10.7375 13.1522 10.6342 13.347 10.3781L12.7501 9.924ZM12.6132 8.745L13.2606 8.36636L13.2605 8.36617L12.6132 8.745ZM12.255 8.38687L11.8762 9.03419L11.8762 9.03419L12.255 8.38687ZM3.25 8.25V7.5H2.75V8.25V9H3.25V8.25ZM2.75 8.25V7.5C2.2998 7.5 1.8867 7.49841 1.55279 7.5433C1.19731 7.59109 0.821594 7.70354 0.512569 8.01255L1.04289 8.54289L1.57321 9.07323C1.57367 9.07277 1.57368 9.07279 1.57334 9.07307C1.57299 9.07336 1.57276 9.07351 1.57283 9.07347C1.57291 9.07341 1.57376 9.07286 1.57567 9.07186C1.5776 9.07085 1.58091 9.06923 1.58596 9.06716C1.60774 9.0582 1.6561 9.0429 1.75266 9.02992C1.96339 9.00159 2.25739 9 2.75 9V8.25ZM1.04289 8.54289L0.512542 8.01258C0.203537 8.3216 0.0910918 8.69732 0.0432991 9.0528C-0.00159276 9.38671 0 9.7998 0 10.25H0.75H1.5C1.5 9.7574 1.50159 9.46339 1.52992 9.25267C1.54291 9.15611 1.5582 9.10775 1.56716 9.08596C1.56924 9.08092 1.57085 9.0776 1.57186 9.07566C1.57286 9.07376 1.57342 9.07291 1.57347 9.07282C1.57352 9.07275 1.57336 9.07299 1.57308 9.07333C1.5728 9.07368 1.57278 9.07366 1.57324 9.0732L1.04289 8.54289ZM0.75 10.25H0V18.75H0.75H1.5V10.25H0.75ZM0.75 18.75H0C0 19.2002 -0.00159276 19.6133 0.0432991 19.9472C0.0910918 20.3027 0.203537 20.6784 0.512551 20.9874L1.04289 20.4571L1.57323 19.9268C1.57277 19.9263 1.57279 19.9263 1.57307 19.9266C1.57336 19.927 1.57351 19.9272 1.57347 19.9272C1.57341 19.9271 1.57286 19.9262 1.57186 19.9243C1.57085 19.9224 1.56923 19.9191 1.56716 19.914C1.5582 19.8922 1.54291 19.8439 1.52992 19.7473C1.50159 19.5366 1.5 19.2426 1.5 18.75H0.75ZM1.04289 20.4571L0.51256 20.9874C0.821583 21.2965 1.19731 21.4089 1.55279 21.4567C1.8867 21.5016 2.2998 21.5 2.75 21.5V20.75V20C2.25739 20 1.96339 19.9984 1.75267 19.9701C1.65611 19.9571 1.60775 19.9418 1.58597 19.9328C1.58092 19.9308 1.57761 19.9291 1.57567 19.9281C1.57377 19.9271 1.57292 19.9266 1.57284 19.9265C1.57277 19.9265 1.573 19.9266 1.57335 19.9269C1.57369 19.9272 1.57368 19.9272 1.57322 19.9268L1.04289 20.4571ZM2.75 20.75V21.5H3.25V20.75V20H2.75V20.75ZM3.25 20.75V21.5C3.7002 21.5 4.1133 21.5016 4.44721 21.4567C4.80269 21.4089 5.17842 21.2965 5.48744 20.9874L4.95711 20.4571L4.42678 19.9268C4.42632 19.9272 4.42631 19.9272 4.42665 19.9269C4.427 19.9266 4.42723 19.9265 4.42716 19.9265C4.42708 19.9266 4.42623 19.9271 4.42433 19.9281C4.42239 19.9291 4.41908 19.9308 4.41403 19.9328C4.39225 19.9418 4.34389 19.9571 4.24733 19.9701C4.03661 19.9984 3.74261 20 3.25 20V20.75ZM4.95711 20.4571L5.48745 20.9874C5.79646 20.6784 5.90891 20.3027 5.9567 19.9472C6.00159 19.6133 6 19.2002 6 18.75H5.25H4.5C4.5 19.2426 4.49841 19.5366 4.47008 19.7473C4.45709 19.8439 4.4418 19.8922 4.43284 19.914C4.43077 19.9191 4.42915 19.9224 4.42814 19.9243C4.42714 19.9262 4.42659 19.9271 4.42653 19.9272C4.42649 19.9272 4.42664 19.927 4.42693 19.9266C4.42721 19.9263 4.42723 19.9263 4.42677 19.9268L4.95711 20.4571ZM5.25 18.75H6V10.25H5.25H4.5V18.75H5.25ZM5.25 10.25H6C6 9.7998 6.00159 9.38671 5.9567 9.0528C5.90891 8.69732 5.79646 8.3216 5.48746 8.01258L4.95711 8.54289L4.42676 9.0732C4.42722 9.07366 4.4272 9.07368 4.42692 9.07333C4.42664 9.07299 4.42648 9.07275 4.42653 9.07282C4.42658 9.07291 4.42714 9.07376 4.42814 9.07566C4.42915 9.0776 4.43076 9.08092 4.43284 9.08596C4.4418 9.10775 4.45709 9.15611 4.47008 9.25267C4.49841 9.46339 4.5 9.7574 4.5 10.25H5.25ZM4.95711 8.54289L5.48743 8.01255C5.17841 7.70354 4.80269 7.59109 4.44721 7.5433C4.1133 7.49841 3.7002 7.5 3.25 7.5V8.25V9C3.74261 9 4.03661 9.00159 4.24734 9.02992C4.3439 9.0429 4.39226 9.0582 4.41404 9.06716C4.41909 9.06923 4.4224 9.07085 4.42433 9.07186C4.42624 9.07286 4.42709 9.07341 4.42717 9.07347C4.42724 9.07351 4.42701 9.07336 4.42666 9.07307C4.42632 9.07279 4.42633 9.07277 4.42679 9.07323L4.95711 8.54289ZM5.25 3H4.5C4.5 3.82843 3.82843 4.5 3 4.5V5.25V6C4.65685 6 6 4.65685 6 3H5.25ZM3 5.25V4.5C2.17157 4.5 1.5 3.82843 1.5 3H0.75H0C0 4.65685 1.34315 6 3 6V5.25ZM0.75 3H1.5C1.5 2.17157 2.17157 1.5 3 1.5V0.75V0C1.34315 0 0 1.34315 0 3H0.75ZM3 0.75V1.5C3.82843 1.5 4.5 2.17157 4.5 3H5.25H6C6 1.34315 4.65685 0 3 0V0.75ZM11.076 8.25V7.5H10.25V8.25V9H11.076V8.25ZM10.25 8.25V7.5C9.7998 7.5 9.38671 7.49841 9.0528 7.5433C8.69732 7.59109 8.3216 7.70354 8.01258 8.01254L8.54289 8.54289L9.0732 9.07324C9.07366 9.07278 9.07368 9.0728 9.07333 9.07308C9.07299 9.07336 9.07275 9.07352 9.07282 9.07347C9.07291 9.07342 9.07376 9.07286 9.07566 9.07186C9.0776 9.07085 9.08092 9.06924 9.08596 9.06716C9.10775 9.0582 9.15611 9.0429 9.25267 9.02992C9.46339 9.00159 9.7574 9 10.25 9V8.25ZM8.54289 8.54289L8.01254 8.01258C7.70354 8.3216 7.59109 8.69732 7.5433 9.0528C7.49841 9.38671 7.5 9.7998 7.5 10.25H8.25H9C9 9.7574 9.00159 9.46339 9.02992 9.25267C9.0429 9.15611 9.0582 9.10775 9.06716 9.08596C9.06924 9.08092 9.07085 9.0776 9.07186 9.07566C9.07286 9.07376 9.07342 9.07291 9.07347 9.07282C9.07352 9.07275 9.07336 9.07299 9.07308 9.07333C9.0728 9.07368 9.07278 9.07366 9.07324 9.0732L8.54289 8.54289ZM8.25 10.25H7.5V18.75H8.25H9V10.25H8.25ZM8.25 18.75H7.5C7.5 19.2002 7.49841 19.6133 7.5433 19.9472C7.59109 20.3027 7.70354 20.6784 8.01255 20.9874L8.54289 20.4571L9.07323 19.9268C9.07277 19.9263 9.07279 19.9263 9.07307 19.9266C9.07336 19.927 9.07351 19.9272 9.07347 19.9272C9.07341 19.9271 9.07286 19.9262 9.07186 19.9243C9.07085 19.9224 9.06923 19.9191 9.06716 19.914C9.0582 19.8922 9.0429 19.8439 9.02992 19.7473C9.00159 19.5366 9 19.2426 9 18.75H8.25ZM8.54289 20.4571L8.01257 20.9874C8.32159 21.2965 8.69731 21.4089 9.0528 21.4567C9.3867 21.5016 9.7998 21.5 10.25 21.5V20.75V20C9.7574 20 9.4634 19.9984 9.25267 19.9701C9.15612 19.9571 9.10775 19.9418 9.08597 19.9328C9.08092 19.9308 9.07761 19.9291 9.07567 19.9281C9.07376 19.9271 9.07292 19.9266 9.07283 19.9265C9.07276 19.9265 9.073 19.9266 9.07334 19.9269C9.07369 19.9272 9.07367 19.9272 9.07321 19.9268L8.54289 20.4571ZM10.25 20.75V21.5H10.75V20.75V20H10.25V20.75ZM10.75 20.75V21.5C11.2002 21.5 11.6133 21.5016 11.9472 21.4567C12.3027 21.4089 12.6784 21.2965 12.9874 20.9874L12.4571 20.4571L11.9268 19.9268C11.9263 19.9272 11.9263 19.9272 11.9266 19.9269C11.927 19.9266 11.9272 19.9265 11.9272 19.9265C11.9271 19.9266 11.9262 19.9271 11.9243 19.9281C11.9224 19.9291 11.9191 19.9308 11.914 19.9328C11.8922 19.9418 11.8439 19.9571 11.7473 19.9701C11.5366 19.9984 11.2426 20 10.75 20V20.75ZM12.4571 20.4571L12.9874 20.9874C13.2965 20.6784 13.4089 20.3027 13.4567 19.9472C13.5016 19.6133 13.5 19.2002 13.5 18.75H12.75H12C12 19.2426 11.9984 19.5366 11.9701 19.7473C11.9571 19.8439 11.9418 19.8922 11.9328 19.914C11.9308 19.9191 11.9291 19.9224 11.9281 19.9243C11.9271 19.9262 11.9266 19.9271 11.9265 19.9272C11.9265 19.9272 11.9266 19.927 11.9269 19.9266C11.9272 19.9263 11.9272 19.9263 11.9268 19.9268L12.4571 20.4571ZM12.75 18.75L13.5 18.75L13.5001 15.2501L12.7501 15.2501L12.0001 15.2501L12 18.75L12.75 18.75ZM12.7501 15.2501H13.5001C13.5001 14.4788 13.6269 13.8888 13.8515 13.5157C14.0427 13.1984 14.3206 13.0001 14.8379 13.0001V12.2501V11.5001C13.7954 11.5001 13.0294 11.9734 12.5666 12.7419C12.1373 13.4546 12.0001 14.3646 12.0001 15.2501H12.7501ZM14.8379 12.2501V13.0001C15.1615 13.0001 15.5 13.2926 15.5 13.7501H16.25H17C17 12.5508 16.0739 11.5001 14.8379 11.5001V12.2501ZM16.25 13.7501H15.5V18.2501H16.25H17V13.7501H16.25ZM16.25 18.2501H15.5C15.5 18.7003 15.4984 19.1134 15.5433 19.4473C15.5911 19.8028 15.7035 20.1785 16.0126 20.4875L16.5429 19.9572L17.0732 19.4269C17.0728 19.4264 17.0728 19.4264 17.0731 19.4267C17.0734 19.4271 17.0735 19.4273 17.0735 19.4273C17.0734 19.4272 17.0729 19.4263 17.0719 19.4244C17.0709 19.4225 17.0692 19.4192 17.0672 19.4141C17.0582 19.3923 17.0429 19.344 17.0299 19.2474C17.0016 19.0367 17 18.7427 17 18.2501H16.25ZM16.5429 19.9572L16.0125 20.4874C16.3215 20.7966 16.6973 20.909 17.0528 20.9568C17.3867 21.0017 17.7998 21.0001 18.25 21.0001V20.2501V19.5001C17.7574 19.5001 17.4634 19.4985 17.2526 19.4702C17.1561 19.4572 17.1077 19.4419 17.0859 19.4329C17.0809 19.4309 17.0776 19.4293 17.0757 19.4283C17.0738 19.4273 17.0729 19.4267 17.0729 19.4267C17.0728 19.4266 17.0731 19.4268 17.0734 19.4271C17.0738 19.4274 17.0738 19.4274 17.0733 19.427L16.5429 19.9572ZM18.25 20.2501V21.0001H18.7487V20.2501V19.5001H18.25V20.2501ZM18.7487 20.2501V21.0001C19.1988 21.0001 19.6118 21.0017 19.9457 20.9568C20.3011 20.909 20.6767 20.7966 20.9857 20.4877L20.4555 19.9573L19.9253 19.4269C19.9248 19.4273 19.9248 19.4273 19.9251 19.427C19.9255 19.4268 19.9257 19.4266 19.9256 19.4266C19.9256 19.4267 19.9247 19.4273 19.9228 19.4283C19.9209 19.4293 19.9175 19.4309 19.9125 19.433C19.8907 19.4419 19.8424 19.4572 19.7458 19.4702C19.5351 19.4985 19.2412 19.5001 18.7487 19.5001V20.2501ZM20.4555 19.9573L20.9857 20.4877C21.2948 20.1788 21.4073 19.8031 21.4552 19.4477C21.5001 19.1139 21.4986 18.7009 21.4987 18.2508L20.7487 18.2506L19.9987 18.2504C19.9986 18.7429 19.9969 19.0369 19.9686 19.2475C19.9556 19.3441 19.9403 19.3924 19.9313 19.4142C19.9292 19.4192 19.9276 19.4225 19.9266 19.4244C19.9256 19.4263 19.9251 19.4272 19.925 19.4273C19.925 19.4273 19.9251 19.4271 19.9254 19.4268C19.9257 19.4264 19.9257 19.4264 19.9253 19.4269L20.4555 19.9573ZM20.7487 18.2506L21.4987 18.2508L21.5001 12.7504L20.7501 12.7502L20.0001 12.75L19.9987 18.2504L20.7487 18.2506ZM20.7501 12.7502H21.5001C21.5001 9.7945 18.742 7.50024 16.0468 7.50024V8.25024V9.00024C18.0308 9.00024 20.0001 10.7355 20.0001 12.7502H20.7501ZM16.0468 8.25024V7.50024C14.4606 7.50024 13.059 8.27913 12.1532 9.46992L12.7501 9.924L13.347 10.3781C13.9944 9.52707 14.9692 9.00024 16.0468 9.00024V8.25024ZM12.7501 9.924L13.5001 9.92388C13.5001 9.62281 13.5008 9.34634 13.4798 9.11749C13.4579 8.87816 13.4075 8.61748 13.2606 8.36636L12.6132 8.745L11.9658 9.12364C11.9557 9.10642 11.9737 9.12019 11.986 9.25436C11.9993 9.39901 12 9.59509 12.0001 9.92412L12.7501 9.924ZM12.6132 8.745L13.2605 8.36617C13.1087 8.10689 12.8928 7.89114 12.6338 7.73955L12.255 8.38687L11.8762 9.03419C11.9134 9.05593 11.9443 9.08683 11.9659 9.12383L12.6132 8.745ZM12.255 8.38687L12.6338 7.73955C12.3826 7.59258 12.1219 7.54217 11.8825 7.52024C11.6536 7.49927 11.3771 7.5 11.076 7.5V8.25V9C11.405 9 11.6011 9.00073 11.7457 9.01398C11.8798 9.02627 11.8935 9.04429 11.8762 9.03419L12.255 8.38687Z"
+                          fill="#141B34"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- card4 -->
+            <div class="p-4 border border-[--primary-color-1] rounded-[30px]">
+              <div>
+                <img
+                  src="Images/about-4.png"
+                  class="w-full object-contain"
+                  alt="about-4"
+                  loading="lazy"
+                />
+              </div>
+              <div class="flex flex-col gap-2 mt-6">
+                <h3
+                  class="font-[family-name:--font-Fredoka] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold text-[--primary-color-1]"
+                >
+                 Maya Das
+                </h3>
+                <span
+                  class="text-[--btn-color] font-[family-name:--font-poppins] text-[8px] sm:text-[10px] md:text-xs lg:text-sm xl:text-base font-semibold"
+                  >Animal Welfare Manager</span
+                >
+                <p
+                  class="text-[#6B7280] font-[family-name:--font-poppins] text-[8px] sm:text-[10px] md:text-xs lg:text-sm xl:text-base font-regular"
+                >
+                  Works to protect, support, and improve the lives of rescued animals through responsible and compassionate care.
+                </p>
+                <ul class="flex flex-wrap gap-3 items-center mt-4">
+                  <li>
+                    <a href="#" target="_blank"
+                      ><svg
+                        width="16"
+                        height="22"
+                        class="hover:scale-110 transition-transform duration-300"
+                        viewBox="0 0 16 22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M1.93182 9.0833C0.95406 9.0833 0.75 9.2752 0.75 10.1944V11.8611C0.75 12.7804 0.95406 12.9722 1.93182 12.9722H4.29545V19.6389C4.29545 20.5581 4.49951 20.75 5.47727 20.75H7.8409C8.8187 20.75 9.0227 20.5581 9.0227 19.6389V12.9722H11.6767C12.4183 12.9722 12.6094 12.8367 12.8131 12.1664L13.3196 10.4997C13.6685 9.3514 13.4535 9.0833 12.1832 9.0833H9.0227V6.30556C9.0227 5.69191 9.5518 5.19444 10.2045 5.19444H13.5682C14.5459 5.19444 14.75 5.00259 14.75 4.08333V1.86111C14.75 0.94185 14.5459 0.75 13.5682 0.75H10.2045C6.941 0.75 4.29545 3.23731 4.29545 6.30556V9.0833H1.93182Z"
+                          stroke="#141B34"
+                          stroke-width="1.5"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank"
+                      ><svg
+                        width="20"
+                        height="20"
+                        class="hover:scale-110 transition-transform duration-300"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15.1248 4.50024H14.9998M0.75 9.75C0.75 5.50736 0.75 3.38604 2.06802 2.06802C3.38604 0.75 5.50736 0.75 9.75 0.75C13.9926 0.75 16.114 0.75 17.432 2.06802C18.75 3.38604 18.75 5.50736 18.75 9.75C18.75 13.9926 18.75 16.114 17.432 17.432C16.114 18.75 13.9926 18.75 9.75 18.75C5.50736 18.75 3.38604 18.75 2.06802 17.432C0.75 16.114 0.75 13.9926 0.75 9.75ZM13.75 9.75C13.75 11.9591 11.9591 13.75 9.75 13.75C7.54086 13.75 5.75 11.9591 5.75 9.75C5.75 7.54086 7.54086 5.75 9.75 5.75C11.9591 5.75 13.75 7.54086 13.75 9.75ZM15.2498 4.50024C15.2498 4.63832 15.1378 4.75024 14.9998 4.75024C14.8617 4.75024 14.7498 4.63832 14.7498 4.50024C14.7498 4.36217 14.8617 4.25024 14.9998 4.25024C15.1378 4.25024 15.2498 4.36217 15.2498 4.50024Z"
+                          stroke="#141B34"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank"
+                      ><svg
+                        width="20"
+                        height="20"
+                        class="hover:scale-110 transition-transform duration-300"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0.75 18.75L8.2984 11.2016M11.2016 8.2984L18.75 18.75H13.75L8.2984 11.2016L0.75 0.75H5.75L11.2016 8.2984ZM18.75 0.75L11.2016 8.2984"
+                          stroke="#141B34"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank"
+                      ><svg
+                        width="22"
+                        height="22"
+                        class="hover:scale-110 transition-transform duration-300"
+                        viewBox="0 0 22 22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.04289 8.54289L0.512569 8.01255L0.512542 8.01258L1.04289 8.54289ZM1.04289 20.4571L0.512551 20.9874L0.51256 20.9874L1.04289 20.4571ZM4.95711 20.4571L5.48744 20.9874L5.48745 20.9874L4.95711 20.4571ZM4.95711 8.54289L5.48746 8.01258L5.48743 8.01255L4.95711 8.54289ZM8.54289 8.54289L8.01258 8.01254L8.01254 8.01258L8.54289 8.54289ZM8.54289 20.4571L8.01255 20.9874L8.01257 20.9874L8.54289 20.4571ZM12.75 18.75L12 18.75V18.75H12.75ZM12.7501 15.2501L13.5001 15.2501V15.2501H12.7501ZM16.5429 19.9572L17.0733 19.427L17.0732 19.4269L16.5429 19.9572ZM20.7487 18.2506L19.9987 18.2504V18.2504L20.7487 18.2506ZM20.7501 12.7502L21.5001 12.7504V12.7502H20.7501ZM12.7501 9.924L12.0001 9.92412C12.0002 10.246 12.2056 10.5319 12.5106 10.6347C12.8156 10.7375 13.1522 10.6342 13.347 10.3781L12.7501 9.924ZM12.6132 8.745L13.2606 8.36636L13.2605 8.36617L12.6132 8.745ZM12.255 8.38687L11.8762 9.03419L11.8762 9.03419L12.255 8.38687ZM3.25 8.25V7.5H2.75V8.25V9H3.25V8.25ZM2.75 8.25V7.5C2.2998 7.5 1.8867 7.49841 1.55279 7.5433C1.19731 7.59109 0.821594 7.70354 0.512569 8.01255L1.04289 8.54289L1.57321 9.07323C1.57367 9.07277 1.57368 9.07279 1.57334 9.07307C1.57299 9.07336 1.57276 9.07351 1.57283 9.07347C1.57291 9.07341 1.57376 9.07286 1.57567 9.07186C1.5776 9.07085 1.58091 9.06923 1.58596 9.06716C1.60774 9.0582 1.6561 9.0429 1.75266 9.02992C1.96339 9.00159 2.25739 9 2.75 9V8.25ZM1.04289 8.54289L0.512542 8.01258C0.203537 8.3216 0.0910918 8.69732 0.0432991 9.0528C-0.00159276 9.38671 0 9.7998 0 10.25H0.75H1.5C1.5 9.7574 1.50159 9.46339 1.52992 9.25267C1.54291 9.15611 1.5582 9.10775 1.56716 9.08596C1.56924 9.08092 1.57085 9.0776 1.57186 9.07566C1.57286 9.07376 1.57342 9.07291 1.57347 9.07282C1.57352 9.07275 1.57336 9.07299 1.57308 9.07333C1.5728 9.07368 1.57278 9.07366 1.57324 9.0732L1.04289 8.54289ZM0.75 10.25H0V18.75H0.75H1.5V10.25H0.75ZM0.75 18.75H0C0 19.2002 -0.00159276 19.6133 0.0432991 19.9472C0.0910918 20.3027 0.203537 20.6784 0.512551 20.9874L1.04289 20.4571L1.57323 19.9268C1.57277 19.9263 1.57279 19.9263 1.57307 19.9266C1.57336 19.927 1.57351 19.9272 1.57347 19.9272C1.57341 19.9271 1.57286 19.9262 1.57186 19.9243C1.57085 19.9224 1.56923 19.9191 1.56716 19.914C1.5582 19.8922 1.54291 19.8439 1.52992 19.7473C1.50159 19.5366 1.5 19.2426 1.5 18.75H0.75ZM1.04289 20.4571L0.51256 20.9874C0.821583 21.2965 1.19731 21.4089 1.55279 21.4567C1.8867 21.5016 2.2998 21.5 2.75 21.5V20.75V20C2.25739 20 1.96339 19.9984 1.75267 19.9701C1.65611 19.9571 1.60775 19.9418 1.58597 19.9328C1.58092 19.9308 1.57761 19.9291 1.57567 19.9281C1.57377 19.9271 1.57292 19.9266 1.57284 19.9265C1.57277 19.9265 1.573 19.9266 1.57335 19.9269C1.57369 19.9272 1.57368 19.9272 1.57322 19.9268L1.04289 20.4571ZM2.75 20.75V21.5H3.25V20.75V20H2.75V20.75ZM3.25 20.75V21.5C3.7002 21.5 4.1133 21.5016 4.44721 21.4567C4.80269 21.4089 5.17842 21.2965 5.48744 20.9874L4.95711 20.4571L4.42678 19.9268C4.42632 19.9272 4.42631 19.9272 4.42665 19.9269C4.427 19.9266 4.42723 19.9265 4.42716 19.9265C4.42708 19.9266 4.42623 19.9271 4.42433 19.9281C4.42239 19.9291 4.41908 19.9308 4.41403 19.9328C4.39225 19.9418 4.34389 19.9571 4.24733 19.9701C4.03661 19.9984 3.74261 20 3.25 20V20.75ZM4.95711 20.4571L5.48745 20.9874C5.79646 20.6784 5.90891 20.3027 5.9567 19.9472C6.00159 19.6133 6 19.2002 6 18.75H5.25H4.5C4.5 19.2426 4.49841 19.5366 4.47008 19.7473C4.45709 19.8439 4.4418 19.8922 4.43284 19.914C4.43077 19.9191 4.42915 19.9224 4.42814 19.9243C4.42714 19.9262 4.42659 19.9271 4.42653 19.9272C4.42649 19.9272 4.42664 19.927 4.42693 19.9266C4.42721 19.9263 4.42723 19.9263 4.42677 19.9268L4.95711 20.4571ZM5.25 18.75H6V10.25H5.25H4.5V18.75H5.25ZM5.25 10.25H6C6 9.7998 6.00159 9.38671 5.9567 9.0528C5.90891 8.69732 5.79646 8.3216 5.48746 8.01258L4.95711 8.54289L4.42676 9.0732C4.42722 9.07366 4.4272 9.07368 4.42692 9.07333C4.42664 9.07299 4.42648 9.07275 4.42653 9.07282C4.42658 9.07291 4.42714 9.07376 4.42814 9.07566C4.42915 9.0776 4.43076 9.08092 4.43284 9.08596C4.4418 9.10775 4.45709 9.15611 4.47008 9.25267C4.49841 9.46339 4.5 9.7574 4.5 10.25H5.25ZM4.95711 8.54289L5.48743 8.01255C5.17841 7.70354 4.80269 7.59109 4.44721 7.5433C4.1133 7.49841 3.7002 7.5 3.25 7.5V8.25V9C3.74261 9 4.03661 9.00159 4.24734 9.02992C4.3439 9.0429 4.39226 9.0582 4.41404 9.06716C4.41909 9.06923 4.4224 9.07085 4.42433 9.07186C4.42624 9.07286 4.42709 9.07341 4.42717 9.07347C4.42724 9.07351 4.42701 9.07336 4.42666 9.07307C4.42632 9.07279 4.42633 9.07277 4.42679 9.07323L4.95711 8.54289ZM5.25 3H4.5C4.5 3.82843 3.82843 4.5 3 4.5V5.25V6C4.65685 6 6 4.65685 6 3H5.25ZM3 5.25V4.5C2.17157 4.5 1.5 3.82843 1.5 3H0.75H0C0 4.65685 1.34315 6 3 6V5.25ZM0.75 3H1.5C1.5 2.17157 2.17157 1.5 3 1.5V0.75V0C1.34315 0 0 1.34315 0 3H0.75ZM3 0.75V1.5C3.82843 1.5 4.5 2.17157 4.5 3H5.25H6C6 1.34315 4.65685 0 3 0V0.75ZM11.076 8.25V7.5H10.25V8.25V9H11.076V8.25ZM10.25 8.25V7.5C9.7998 7.5 9.38671 7.49841 9.0528 7.5433C8.69732 7.59109 8.3216 7.70354 8.01258 8.01254L8.54289 8.54289L9.0732 9.07324C9.07366 9.07278 9.07368 9.0728 9.07333 9.07308C9.07299 9.07336 9.07275 9.07352 9.07282 9.07347C9.07291 9.07342 9.07376 9.07286 9.07566 9.07186C9.0776 9.07085 9.08092 9.06924 9.08596 9.06716C9.10775 9.0582 9.15611 9.0429 9.25267 9.02992C9.46339 9.00159 9.7574 9 10.25 9V8.25ZM8.54289 8.54289L8.01254 8.01258C7.70354 8.3216 7.59109 8.69732 7.5433 9.0528C7.49841 9.38671 7.5 9.7998 7.5 10.25H8.25H9C9 9.7574 9.00159 9.46339 9.02992 9.25267C9.0429 9.15611 9.0582 9.10775 9.06716 9.08596C9.06924 9.08092 9.07085 9.0776 9.07186 9.07566C9.07286 9.07376 9.07342 9.07291 9.07347 9.07282C9.07352 9.07275 9.07336 9.07299 9.07308 9.07333C9.0728 9.07368 9.07278 9.07366 9.07324 9.0732L8.54289 8.54289ZM8.25 10.25H7.5V18.75H8.25H9V10.25H8.25ZM8.25 18.75H7.5C7.5 19.2002 7.49841 19.6133 7.5433 19.9472C7.59109 20.3027 7.70354 20.6784 8.01255 20.9874L8.54289 20.4571L9.07323 19.9268C9.07277 19.9263 9.07279 19.9263 9.07307 19.9266C9.07336 19.927 9.07351 19.9272 9.07347 19.9272C9.07341 19.9271 9.07286 19.9262 9.07186 19.9243C9.07085 19.9224 9.06923 19.9191 9.06716 19.914C9.0582 19.8922 9.0429 19.8439 9.02992 19.7473C9.00159 19.5366 9 19.2426 9 18.75H8.25ZM8.54289 20.4571L8.01257 20.9874C8.32159 21.2965 8.69731 21.4089 9.0528 21.4567C9.3867 21.5016 9.7998 21.5 10.25 21.5V20.75V20C9.7574 20 9.4634 19.9984 9.25267 19.9701C9.15612 19.9571 9.10775 19.9418 9.08597 19.9328C9.08092 19.9308 9.07761 19.9291 9.07567 19.9281C9.07376 19.9271 9.07292 19.9266 9.07283 19.9265C9.07276 19.9265 9.073 19.9266 9.07334 19.9269C9.07369 19.9272 9.07367 19.9272 9.07321 19.9268L8.54289 20.4571ZM10.25 20.75V21.5H10.75V20.75V20H10.25V20.75ZM10.75 20.75V21.5C11.2002 21.5 11.6133 21.5016 11.9472 21.4567C12.3027 21.4089 12.6784 21.2965 12.9874 20.9874L12.4571 20.4571L11.9268 19.9268C11.9263 19.9272 11.9263 19.9272 11.9266 19.9269C11.927 19.9266 11.9272 19.9265 11.9272 19.9265C11.9271 19.9266 11.9262 19.9271 11.9243 19.9281C11.9224 19.9291 11.9191 19.9308 11.914 19.9328C11.8922 19.9418 11.8439 19.9571 11.7473 19.9701C11.5366 19.9984 11.2426 20 10.75 20V20.75ZM12.4571 20.4571L12.9874 20.9874C13.2965 20.6784 13.4089 20.3027 13.4567 19.9472C13.5016 19.6133 13.5 19.2002 13.5 18.75H12.75H12C12 19.2426 11.9984 19.5366 11.9701 19.7473C11.9571 19.8439 11.9418 19.8922 11.9328 19.914C11.9308 19.9191 11.9291 19.9224 11.9281 19.9243C11.9271 19.9262 11.9266 19.9271 11.9265 19.9272C11.9265 19.9272 11.9266 19.927 11.9269 19.9266C11.9272 19.9263 11.9272 19.9263 11.9268 19.9268L12.4571 20.4571ZM12.75 18.75L13.5 18.75L13.5001 15.2501L12.7501 15.2501L12.0001 15.2501L12 18.75L12.75 18.75ZM12.7501 15.2501H13.5001C13.5001 14.4788 13.6269 13.8888 13.8515 13.5157C14.0427 13.1984 14.3206 13.0001 14.8379 13.0001V12.2501V11.5001C13.7954 11.5001 13.0294 11.9734 12.5666 12.7419C12.1373 13.4546 12.0001 14.3646 12.0001 15.2501H12.7501ZM14.8379 12.2501V13.0001C15.1615 13.0001 15.5 13.2926 15.5 13.7501H16.25H17C17 12.5508 16.0739 11.5001 14.8379 11.5001V12.2501ZM16.25 13.7501H15.5V18.2501H16.25H17V13.7501H16.25ZM16.25 18.2501H15.5C15.5 18.7003 15.4984 19.1134 15.5433 19.4473C15.5911 19.8028 15.7035 20.1785 16.0126 20.4875L16.5429 19.9572L17.0732 19.4269C17.0728 19.4264 17.0728 19.4264 17.0731 19.4267C17.0734 19.4271 17.0735 19.4273 17.0735 19.4273C17.0734 19.4272 17.0729 19.4263 17.0719 19.4244C17.0709 19.4225 17.0692 19.4192 17.0672 19.4141C17.0582 19.3923 17.0429 19.344 17.0299 19.2474C17.0016 19.0367 17 18.7427 17 18.2501H16.25ZM16.5429 19.9572L16.0125 20.4874C16.3215 20.7966 16.6973 20.909 17.0528 20.9568C17.3867 21.0017 17.7998 21.0001 18.25 21.0001V20.2501V19.5001C17.7574 19.5001 17.4634 19.4985 17.2526 19.4702C17.1561 19.4572 17.1077 19.4419 17.0859 19.4329C17.0809 19.4309 17.0776 19.4293 17.0757 19.4283C17.0738 19.4273 17.0729 19.4267 17.0729 19.4267C17.0728 19.4266 17.0731 19.4268 17.0734 19.4271C17.0738 19.4274 17.0738 19.4274 17.0733 19.427L16.5429 19.9572ZM18.25 20.2501V21.0001H18.7487V20.2501V19.5001H18.25V20.2501ZM18.7487 20.2501V21.0001C19.1988 21.0001 19.6118 21.0017 19.9457 20.9568C20.3011 20.909 20.6767 20.7966 20.9857 20.4877L20.4555 19.9573L19.9253 19.4269C19.9248 19.4273 19.9248 19.4273 19.9251 19.427C19.9255 19.4268 19.9257 19.4266 19.9256 19.4266C19.9256 19.4267 19.9247 19.4273 19.9228 19.4283C19.9209 19.4293 19.9175 19.4309 19.9125 19.433C19.8907 19.4419 19.8424 19.4572 19.7458 19.4702C19.5351 19.4985 19.2412 19.5001 18.7487 19.5001V20.2501ZM20.4555 19.9573L20.9857 20.4877C21.2948 20.1788 21.4073 19.8031 21.4552 19.4477C21.5001 19.1139 21.4986 18.7009 21.4987 18.2508L20.7487 18.2506L19.9987 18.2504C19.9986 18.7429 19.9969 19.0369 19.9686 19.2475C19.9556 19.3441 19.9403 19.3924 19.9313 19.4142C19.9292 19.4192 19.9276 19.4225 19.9266 19.4244C19.9256 19.4263 19.9251 19.4272 19.925 19.4273C19.925 19.4273 19.9251 19.4271 19.9254 19.4268C19.9257 19.4264 19.9257 19.4264 19.9253 19.4269L20.4555 19.9573ZM20.7487 18.2506L21.4987 18.2508L21.5001 12.7504L20.7501 12.7502L20.0001 12.75L19.9987 18.2504L20.7487 18.2506ZM20.7501 12.7502H21.5001C21.5001 9.7945 18.742 7.50024 16.0468 7.50024V8.25024V9.00024C18.0308 9.00024 20.0001 10.7355 20.0001 12.7502H20.7501ZM16.0468 8.25024V7.50024C14.4606 7.50024 13.059 8.27913 12.1532 9.46992L12.7501 9.924L13.347 10.3781C13.9944 9.52707 14.9692 9.00024 16.0468 9.00024V8.25024ZM12.7501 9.924L13.5001 9.92388C13.5001 9.62281 13.5008 9.34634 13.4798 9.11749C13.4579 8.87816 13.4075 8.61748 13.2606 8.36636L12.6132 8.745L11.9658 9.12364C11.9557 9.10642 11.9737 9.12019 11.986 9.25436C11.9993 9.39901 12 9.59509 12.0001 9.92412L12.7501 9.924ZM12.6132 8.745L13.2605 8.36617C13.1087 8.10689 12.8928 7.89114 12.6338 7.73955L12.255 8.38687L11.8762 9.03419C11.9134 9.05593 11.9443 9.08683 11.9659 9.12383L12.6132 8.745ZM12.255 8.38687L12.6338 7.73955C12.3826 7.59258 12.1219 7.54217 11.8825 7.52024C11.6536 7.49927 11.3771 7.5 11.076 7.5V8.25V9C11.405 9 11.6011 9.00073 11.7457 9.01398C11.8798 9.02627 11.8935 9.04429 11.8762 9.03419L12.255 8.38687Z"
+                          fill="#141B34"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-<!-- Footer -->
+    <!-- Footer -->
     <footer
       class="footer-banner relative pt-24 pb-16 sm:pt-24 lg:pt-28 lg:pb-8"
     >
-    <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
-      <div class="flex flex-wrap mx-[-15px]">
-        <div class="max-w-full lg:max-w-[40%] lg:basis-[40%] lg:px-[15px]">
-          <!-- Footer Logo -->
-          <div
-            class="flex flex-col items-center text-center lg:items-start lg:text-left gap-6 pt-28 lg:pt-0"
-          >
-            <a
-              href="index.html"
-              class="block max-w-[260px] lg:max-w-[320px] xl:max-w-[420px]"
+      <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
+        <div class="flex flex-wrap mx-[-15px]">
+          <div class="max-w-full lg:max-w-[40%] lg:basis-[40%] lg:px-[15px]">
+            <!-- Footer Logo -->
+            <div
+              class="flex flex-col items-center text-center lg:items-start lg:text-left gap-6 pt-28 lg:pt-0"
             >
-              <img
-                src="Images/footer-logo.png"
-                alt="footer"
-                class="w-full object-contain"
-              />
-            </a>
-            <p
-              class="max-w-full lg:max-w-[430px] text-[#F4F1EA] font-medium leading-7 text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg"
-            >
-              Some companions don't just enter your life.They become a part of
-              who you are—through every ordinary moment and every unforgettable
-              memory.
-            </p>
-            <div class="flex flex-wrap flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start items-center mt-4 lg:mt-8">
-              <!-- Contact Button -->
               <a
-                href="contact.html"
-                class="friend-btn inline-flex w-full min-[480px]:w-auto items-center justify-center gap-2 overflow-hidden rounded-[30px] border-[2px] border-[--primary-color-1] shadow-xl bg-[--heading-text] px-4 py-3 font-[family-name:--font-poppins] font-bold text-[--primary-color-1] shadow-xl transition-all duration-300 ease-in min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
+                href="index.html"
+                class="block max-w-[260px] lg:max-w-[320px] xl:max-w-[420px]"
+              >
+                <img
+                  src="Images/footer-logo.png"
+                  alt="footer"
+                  class="w-full object-contain"
+                />
+              </a>
+              <p
+                class="max-w-full lg:max-w-[430px] text-[#F4F1EA] font-medium leading-7 text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg"
+              >
+                Some companions don't just enter your life.They become a part of
+                who you are—through every ordinary moment and every
+                unforgettable memory.
+              </p>
+              <div
+                class="flex flex-wrap flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start items-center mt-4 lg:mt-8"
+              >
+                <!-- Contact Button -->
+                <a
+                  href="contact.html"
+                  class="friend-btn inline-flex w-full min-[480px]:w-auto items-center justify-center gap-2 overflow-hidden rounded-[30px] border-[2px] border-[--primary-color-1] shadow-xl bg-[--heading-text] px-4 py-3 font-[family-name:--font-poppins] font-bold text-[--primary-color-1] shadow-xl transition-all duration-300 ease-in min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
                 >
-                Contact Us
-                <i class="fa-solid fa-paw"></i>
-              </a>
-              <!-- Adopt now -->
-              <a
-                href="#"
-                class="contact-btn inline-flex w-full min-[480px]:w-auto items-center justify-center gap-2 overflow-hidden rounded-[30px] border-2 border-[#F4F1EA] shadow-xl hover:border-2 hover:border-[--btn-color] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl">
-                Adopt Now
-                <i class="fa-solid fa-paw"></i>
-              </a>
+                  Contact Us
+                  <i class="fa-solid fa-paw"></i>
+                </a>
+                <!-- Adopt now -->
+                <a
+                  href="#"
+                  class="contact-btn inline-flex w-full min-[480px]:w-auto items-center justify-center gap-2 overflow-hidden rounded-[30px] border-2 border-[#F4F1EA] shadow-xl hover:border-2 hover:border-[--btn-color] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
+                >
+                  Adopt Now
+                  <i class="fa-solid fa-paw"></i>
+                </a>
+              </div>
             </div>
-        </div>
-        </div>
-        <div class="max-w-full w-full lg:max-w-[20%] lg:basis-[20%] lg:px-[15px]">
-          <div class="pt-4 sm:pt-8 text-center lg:text-left">
-            <span
-              class="text-[--btn-color] font-[family-name:--font-poppins] font-semibold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
-              >Utility pages</span
-            >
-            <ul class="space-y-4 mt-4 lg:mt-6">
-              <li
-                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-xs text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
+          </div>
+          <div
+            class="max-w-full w-full lg:max-w-[20%] lg:basis-[20%] lg:px-[15px]"
+          >
+            <div class="pt-4 sm:pt-8 text-center lg:text-left">
+              <span
+                class="text-[--btn-color] font-[family-name:--font-poppins] font-semibold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
+                >Utility pages</span
               >
-                <a href="index.html">Home</a>
-              </li>
-              <li
-                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-xs text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
+              <ul class="space-y-4 mt-4 lg:mt-6">
+                <li
+                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-xs text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
+                >
+                  <a href="index.html">Home</a>
+                </li>
+                <li
+                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-xs text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
+                >
+                  <a href="aboutus.html">About Us</a>
+                </li>
+                <li
+                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-xs text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
+                >
+                  <a href="blog.html">Blog</a>
+                </li>
+                <li
+                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-xs text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
+                >
+                  <a href="faq.html">FAQ</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="max-w-full w-full lg:max-w-[20%] lg:basis-[20%] lg:px-[15px]"
+          >
+            <div class="pt-4 sm:pt-8 text-center lg:text-left">
+              <span
+                class="text-[--btn-color] font-[family-name:--font-poppins] font-semibold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
+                >Our Services</span
               >
-                <a href="aboutus.html">About Us</a>
-              </li>
-              <li
-                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-xs text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
+              <ul class="space-y-4 mt-4 lg:mt-6">
+                <li
+                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
+                >
+                  <a href="#">Adoption</a>
+                </li>
+                <li
+                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
+                >
+                  <a href="#">Shelter Networking</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="max-w-full w-full lg:max-w-[20%] lg:basis-[20%] lg:px-[15px]"
+          >
+            <div class="pt-4 sm:pt-8 text-center lg:text-left">
+              <span
+                class="text-[--btn-color] font-[family-name:--font-poppins] font-semibold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
+                >Our Partner</span
               >
-                <a href="blog.html">Blog</a>
-              </li>
-              <li
-                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-xs text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
-              >
-                <a href="faq.html">FAQ</a>
-              </li>
-            </ul>
+              <ul class="space-y-4 mt-4 lg:mt-6">
+                <li
+                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA]"
+                >
+                  People for the Ethical Treatment of Animals
+                </li>
+                <li
+                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA]"
+                >
+                  Blue Cross of India
+                </li>
+                <li
+                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA]"
+                >
+                  People For Animals
+                </li>
+                <li
+                  class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA]"
+                >
+                  World Animal Protection
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div class="max-w-full w-full lg:max-w-[20%] lg:basis-[20%] lg:px-[15px]">
-          <div class="pt-4 sm:pt-8 text-center lg:text-left">
-            <span
-              class="text-[--btn-color] font-[family-name:--font-poppins] font-semibold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
-              >Our Services</span
+        <div class="bg-[#F4F1EA] w-full h-[1px] my-6"></div>
+        <div
+          class="flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-4"
+        >
+          <div
+            class="text-[#F4F1EA] font-[family-name:--font-poppins] text-xs md:text-sm xl:text-base font-semibold text-center lg:text-left"
+          >
+            Copyright &copy 2026
+            <a href="index.html" class="hover:text-[--btn-color]"
+              >Fur & Feather.</a
             >
-            <ul class="space-y-4 mt-4 lg:mt-6">
-              <li
-                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
-              >
-                <a href="#">Adoption</a>
-              </li>
-              <li
-                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA] hover:text-[--btn-color] ease-in-out duration-300"
-              >
-                <a href="#">Shelter Networking</a>
-              </li>
-            </ul>
+            All Rights Reserved.
           </div>
-        </div>
-        <div class="max-w-full w-full lg:max-w-[20%] lg:basis-[20%] lg:px-[15px]">
-          <div class="pt-4 sm:pt-8 text-center lg:text-left">
-            <span
-              class="text-[--btn-color] font-[family-name:--font-poppins] font-semibold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
-              >Our Partner</span
-            >
-            <ul class="space-y-4 mt-4 lg:mt-6">
-              <li
-                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA]"
-              >
-                People for the Ethical Treatment of Animals
-              </li>
-              <li
-                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA]"
-              >
-                Blue Cross of India
-              </li>
-              <li
-                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA]"
-              >
-                People For Animals
-              </li>
-              <li
-                class="font-[family-name:--font-poppins] font-semibold text-xs md:text-sm xl:text-base text-[#F4F1EA]"
-              >
-                World Animal Protection
-              </li>
-            </ul>
-          </div>
+          <ul class="text-white flex flex-wrap gap-4">
+            <li>
+              <a href="" target="_blank"
+                ><i
+                  class="fa-brands fa-facebook text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"
+                ></i
+              ></a>
+            </li>
+            <li>
+              <a href="" target="_blank"
+                ><i
+                  class="fa-brands fa-instagram text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"
+                ></i
+              ></a>
+            </li>
+            <li>
+              <a href="" target="_blank"
+                ><i
+                  class="fa-brands fa-linkedin-in text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"
+                ></i
+              ></a>
+            </li>
+            <li>
+              <a href="" target="_blank"
+                ><i
+                  class="fa-brands fa-x-twitter text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"
+                ></i
+              ></a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="bg-[#F4F1EA] w-full h-[1px] my-6"></div>
-      <div class="flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-4">
-        <div class="text-[#F4F1EA] font-[family-name:--font-poppins] text-xs md:text-sm xl:text-base font-semibold text-center lg:text-left">Copyright
-          &copy 2026 <a href="index.html" class="hover:text-[--btn-color]">Fur & Feather.</a> All Rights Reserved.
-        </div>
-        <ul class="text-white flex flex-wrap gap-4">
-          <li><a href="" target="_blank"><i class="fa-brands fa-facebook text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"></i></a></li>
-          <li><a href="" target="_blank"><i class="fa-brands fa-instagram text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"></i></a></li>
-          <li><a href="" target="_blank"><i class="fa-brands fa-linkedin-in text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"></i></a></li>
-          <li><a href="" target="_blank"><i class="fa-brands fa-x-twitter text-xl hover:scale-110 hover:text-[--btn-color] duration-300 ease-in-out"></i></a></li>
-        </ul>
-      </div>
-    </div>
-    <!-- left -->
+      <!-- left -->
       <div
         class="absolute left-0 bottom-0 z-10 w-[140px] sm:w-[120px] md:w-[200px] lg:hidden 2xl:block min-[1920px]:w-[400px] pointer-events-none"
       >
@@ -1431,16 +2106,17 @@
     </footer>
     <!-- Scroll to top button -->
     <button
-    id="backToTop"
-    type="button"
-    aria-label="Back to top"
-    class="invisible fixed bottom-6 right-6 z-50 flex h-12 w-12 translate-y-5 items-center justify-center rounded-full bg-[--btn-color] text-xl text-white opacity-0 shadow-lg transition-all duration-300 ease-in-out hover:bg-[#A7893B] md:bottom-8 md:right-8"
-  >
-  <!-- Arrow -->
-    <i class="fa-solid fa-chevron-down text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl" id="backToTopIcon"></i>
-
-  </button>
-
+      id="backToTop"
+      type="button"
+      aria-label="Back to top"
+      class="invisible fixed bottom-6 right-6 z-50 flex h-12 w-12 translate-y-5 items-center justify-center rounded-full bg-[--btn-color] text-xl text-white opacity-0 shadow-lg transition-all duration-300 ease-in-out hover:bg-[#A7893B] md:bottom-8 md:right-8"
+    >
+      <!-- Arrow -->
+      <i
+        class="fa-solid fa-chevron-down text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+        id="backToTopIcon"
+      ></i>
+    </button>
 
     <!-- AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

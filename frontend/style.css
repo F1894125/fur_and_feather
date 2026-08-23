@@ -71,6 +71,12 @@ img {
   font-style: normal;
 }
 
+.login-banner{
+  background: url("Images/mobile-login-banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 /* Header */
 .header {
   background: url(Images/header.png) no-repeat;
@@ -361,3 +367,72 @@ img {
     .option-active {
       font-weight: 700;
     }
+/* Shelter */
+.shelter-banner{
+  background: url("Images/shelter-banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.mobile-shelter-banner{
+  background: url("Images/mobile-shelter-banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.Error-banner{
+  background: url("Images/Error.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* .mega-slider-panel {
+  animation: slideFade 0.4s ease;
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mega-option-card {
+  min-height: 350px;
+  padding: 40px 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  border: 2px solid var(--primary-color-1);
+  border-radius: 30px;
+
+  background: #f4f1ea;
+  color: var(--primary-color-1);
+
+  transition: 0.3s ease;
+}
+
+.mega-option-card:hover {
+  background: var(--primary-color-1);
+  color: white;
+  transform: translateY(-5px);
+}
+
+.mega-option-card h3 {
+  margin-top: 25px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.mega-option-card p {
+  margin-top: 10px;
+  font-size: 14px;
+} */

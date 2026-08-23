@@ -44,14 +44,22 @@
   <body
     class="font-[family-name:--font-poppins] text-xl font-semibold text-[#0A303A]"
   >
-    <section class="bg-[#F4F1EA] relative overflow-hidden min-h-screen">
+    <section class="bg-[#F4F1EA] relative overflow-hidden">
       <div>
         <img
           src="Images/left-frame.png"
-          class="hidden relative lg:block lg:w-[426px] xl:w-[41%] lg:min-h-[835px] 2xl:w-[960px] object-fill xl:min-h-[960px] 2xl:min-h-screen"
+          class="hidden relative lg:block lg:w-[426px] xl:w-[41%] lg:min-h-[824px] 2xl:w-[960px] object-fill xl:min-h-[915px] 2xl:min-h-[1098px] min-[1920px]:min-h-screen"
           alt="left-frame"
           loading="lazy"
         />
+            <!-- Cat vector -->
+            <div>
+              <img
+                src="Images/cat-vector.png"
+                alt=""
+                class="absolute z-10 lg:left-[34px] lg:top-[31px] xl:left-[57px] xl:top-[45px] 2xl:left-[107px] 2xl:top-[57px] lg:w-[65px] xl:w-[75px] 2xl:w-[85px] object-contain"
+              />
+            </div>
       </div>
       <div class="absolute z-10 top-0 right-0">
         <img
@@ -61,25 +69,17 @@
           loading="lazy"
         />
       </div>
-      <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
-        <div class="flex flex-wrap mx-[-15px]">
-          <!-- left -->
-          <div class="hidden lg:block lg:basis-[60%] lg:max-w-[60%] px-[15px]">
-            <!-- Cat vector -->
-            <div>
-              <img
-                src="Images/cat-vector.png"
-                alt=""
-                class="absolute z-10 lg:left-[34px] lg:top-[31px] xl:left-[57px] xl:top-[45px] 2xl:left-[107px] 2xl:top-[57px] lg:w-[65px] xl:w-[75px] 2xl:w-[85px] object-contain"
-              />
-            </div>
-            <div class="absolute z-20 inset-0">
-              <!-- headings -->
+      
+       <div class="relative z-20 grid grid-cols-12 min-h-screen">
+      <!-- Left -->
+       <div class="hidden lg:block lg:col-span-7">
+        <div class="absolute z-20 inset-0">
+        <!-- headings -->
               <div
                 class="flex flex-wrap gap-4 lg:pt-[60px] lg:ps-[144px] xl:pt-[100px] xl:ps-[210px] 2xl:pt-[108px] 2xl:ps-[273px]"
               >
                 <h2
-                  class="font-[family-name:--font-Fredoka] font-bold text-[--primary-color-1] leading-none lg:text-[50px] xl:text-[60px] 2xl:text-[80px]"
+                  class="font-[family-name:--font-Fredoka] font-bold text-[--primary-color-1] leading-none lg:text-[50px] xl:text-[60px] 2xl:text-[70px] min-[1920px]:text-[80px]"
                 >
                   Welcome
                 </h2>
@@ -116,11 +116,12 @@
                   alt="heart"
                   loading="lazy"
                 />
-                <!-- red vector and dog -->
+</div>
+<!-- red vector and dog -->
                 <div>
                   <img
                     src="Images/red-vector.svg"
-                    class="absolute z-30 object-contain lg:w-[410px] lg:mt-36 lg:ms-24 xl:w-[550px] xl:mt-[135px] 2xl:ms-[60px] min-[1920px]:mt-[184px] min-[1920px]:ms-[100px] xl:ms-[40px] 2xl:ms-[127px] 2xl:w-[744px]"
+                    class="absolute z-30 object-contain lg:w-[410px] lg:mt-[80px] lg:ms-24 xl:w-[550px] xl:mt-[135px] 2xl:ms-[60px] min-[1920px]:mt-[184px] min-[1920px]:ms-[100px] xl:ms-[40px] 2xl:ms-[127px] 2xl:w-[744px]"
                     alt="red-vector"
                     loading="lazy"
                   />
@@ -131,8 +132,7 @@
                     loading="lazy"
                   />
                 </div>
-              </div>
-              <!-- Banner-dog -->
+                <!-- Banner-dog -->
               <div>
                 <img
                   src="Images/banner-right-dog.png"
@@ -147,7 +147,7 @@
                 alt="paw"
                 class="absolute z-[999] xl:left-[30px] lg:top-[78%] xl:top-[87%] 2xl:left-[35px] min-[1920px]:left-[61px] w-[138px] object-contain lg:w-[100px] 2xl:w-[150px] lg:left-[50px]"
               />
-              <!-- blue vector -->
+<!-- blue vector -->
               <div>
                 <img
                   src="Images/blue vector.svg"
@@ -172,13 +172,36 @@
                   />
                 </div>
               </div>
-            </div>
-          </div>
-          <!-- Right -->
+
+              </div>
+
+       </div>
+       <!-- Right -->
+        
+        <div
+      class="col-span-12
+             lg:col-span-5
+
+             flex
+             items-center
+             justify-center
+
+             min-h-screen
+
+             px-4
+             sm:px-6
+             md:px-10
+             lg:px-5"
+    >
+        <!-- <div class="login-banner"> -->
           <div
-            class="w-full max-w-full lg:max-w-[40%] lg:basis-[40%] px-3 sm:px-5 lg:px-[15px] mx-auto"
-          >
-            <div class="lg:absolute lg:top-0 lg:z-20 pr-4">
+        class="w-full
+               max-w-[600px]
+               lg:max-w-none
+               lg:w-[80%]
+               xl:w-[85%]"
+      >
+<div class="lg:absolute lg:top-0 lg:z-20 lg:right-[52px] xl:right-[70px] pr-4">
               <div
                   class="pt-4 lg:pt-5"
                 >
@@ -192,7 +215,7 @@
                     />
                   </a>
                 </div>
-              <h1
+                <h1
                 class="mt-0 lg:mt-[21px] max-w-[648px] font-[family-name:--font-Fredoka] font-bold text-[--primary-color-1] leading-none text-center font-bold leading-tight text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl min-[1920px]:text-5xl text-center mx-auto"
               >
                 Welcome Back To
@@ -353,7 +376,7 @@
     <i class="fa-solid fa-paw ml-2"></i>
   </span>
 </button>              </form>
-              <!-- Divider -->
+<!-- Divider -->
               <div class="mt-0 lg:mt-3 xl:mt-4 2xl:mt-8 min-[1920px]:mt-[30px] flex items-center gap-4 max-w-[300px] md:max-w-[500px] mx-auto">
                 <span class="h-[1px] flex-1 bg-[--primary-color-1]"></span>
                 <span
@@ -362,75 +385,14 @@
                 >
                 <span class="h-[1px] flex-1 bg-[--primary-color-1]"></span>
               </div>
-              <!-- social links -->
-              <div class="socials mt-3 lg:mt-6 xl:mt-8 2xl:mt-12 min-[1920px]:mt-10 grid grid-cols-2 gap-4 w-auto max-w-[300px] md:max-w-[500px] mx-auto">
-                <button
-                  type="button"
-                  data-provider="Google"
-                  class="social-btn flex w-auto h-[35px] lg:h-[40px] xl:h-[50px] 2xl:h-[56px] min-[1920px]:h-[60px] items-center justify-center rounded-full border-[1.5px] border-navy/70 bg-white transition hover:bg-[#F7F8F9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy/30"
-                  aria-label="Continue with Google"
-                >
-                  <svg
-                    class="w-[15px] h-[15px] xl:h-[26px] xl:w-[26px] lg:w-[20px] lg:h-[20px]"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill="#4285F4"
-                      d="M23.5 12.27c0-.85-.08-1.66-.22-2.45H12v4.64h6.45a5.52 5.52 0 0 1-2.4 3.62v3h3.88c2.27-2.1 3.57-5.17 3.57-8.81Z"
-                    ></path>
-                    <path
-                      fill="#34A853"
-                      d="M12 24c3.24 0 5.96-1.07 7.94-2.91l-3.88-3c-1.08.72-2.45 1.15-4.06 1.15-3.13 0-5.78-2.11-6.72-4.95H1.27v3.1A12 12 0 0 0 12 24Z"
-                    ></path>
-                    <path
-                      fill="#FBBC05"
-                      d="M5.28 14.29a7.2 7.2 0 0 1 0-4.58v-3.1H1.27a12 12 0 0 0 0 10.78l4.01-3.1Z"
-                    ></path>
-                    <path
-                      fill="#EA4335"
-                      d="M12 4.76c1.76 0 3.34.6 4.59 1.8l3.44-3.44A11.98 11.98 0 0 0 1.27 6.6l4.01 3.1C6.22 6.87 8.87 4.76 12 4.76Z"
-                    ></path>
-                  </svg>
-                </button>
-                <button
-                  type="button"
-                  data-provider="Facebook"
-                  class="social-btn flex w-auto h-[35px] lg:h-[40px] xl:h-[50px] 2xl:h-[56px] min-[1920px]:h-[60px] items-center justify-center rounded-full border-[1.5px] border-navy/70 bg-white transition hover:bg-[#F7F8F9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy/30"
-                  aria-label="Continue with Facebook"
-                >
-                  <svg
-                    class="w-[15px] h-[15px] xl:h-[26px] xl:w-[26px] lg:w-[20px] lg:h-[20px]"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill="#1877F2"
-                      d="M24 12a12 12 0 1 0-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.95.92-1.95 1.87V12h3.32l-.53 3.47h-2.79v8.38A12 12 0 0 0 24 12Z"
-                    ></path>
-                    <path
-                      fill="#fff"
-                      d="M16.67 15.47 17.2 12h-3.32V9.75c0-.95.46-1.87 1.95-1.87h1.51V4.93s-1.37-.24-2.68-.24c-2.74 0-4.53 1.67-4.53 4.67V12H7.08v3.47h3.04v8.38a12.1 12.1 0 0 0 3.76 0v-8.38h2.79Z"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-              <!-- footer -->
-              <p
-                class="mt-[10px] text-sm lg:mt-[25px] xl:mt-[23px] 2xl:mt-[56px] lg:mb-[20px] text-center lg:text-base xl:text-[24px] font-bold text-[--primary-color-1] font-[family-name:--font-poppins]"
-              >
-                New here ?
-                <a
-                  href="create-account.html"
-                  class="text-[--btn-color] transition hover:text-[--primary-color-1] hover:underline"
-                  >Create an account</a
-                >
-              </p>
-            </div>
-          </div>
-        </div>
+<!-- </div> -->
+</div>
+</div>
+       </div>
+       
       </div>
     </section>
+
     <!-- AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Swiper JS CDN  -->
