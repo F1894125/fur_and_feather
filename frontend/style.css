@@ -71,6 +71,12 @@ img {
   font-style: normal;
 }
 
+.login-banner{
+  background: url("Images/mobile-login-banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 /* Header */
 .header {
   background: url(Images/header.png) no-repeat;

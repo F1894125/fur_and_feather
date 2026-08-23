@@ -44,27 +44,14 @@
   <body
     class="font-[family-name:--font-poppins] text-xl font-semibold text-[#0A303A]"
   >
-    <section class="bg-[#F4F1EA] relative overflow-hidden min-h-screen">
+    <section class="bg-[#F4F1EA] relative overflow-hidden">
       <div>
         <img
           src="Images/left-frame.png"
-          class="hidden relative lg:block lg:w-[426px] xl:w-[41%] lg:min-h-[835px] 2xl:w-[960px] object-fill xl:min-h-[960px] 2xl:min-h-screen"
+          class="hidden relative lg:block lg:w-[426px] xl:w-[41%] lg:min-h-[824px] 2xl:w-[960px] object-fill xl:min-h-[915px] 2xl:min-h-[1098px] min-[1920px]:min-h-screen"
           alt="left-frame"
           loading="lazy"
         />
-      </div>
-      <div class="absolute z-10 top-0 right-0">
-        <img
-          src="Images/Right-login-frame.png"
-          class="hidden lg:block lg:w-[490px] xl:w-[650px] 2xl:w-[739px] min-[1920px]:w-[970px] lg:min-h-[1400px] object-fill"
-          alt=""
-          loading="lazy"
-        />
-      </div>
-      <div class="max-w-[1350px] mx-auto px-4 sm:px-5 lg:px-[15px]">
-        <div class="flex flex-wrap mx-[-15px]">
-          <!-- left -->
-          <div class="hidden lg:block lg:basis-[60%] lg:max-w-[60%] px-[15px]">
             <!-- Cat vector -->
             <div>
               <img
@@ -73,13 +60,18 @@
                 class="absolute z-10 lg:left-[34px] lg:top-[31px] xl:left-[57px] xl:top-[45px] 2xl:left-[107px] 2xl:top-[57px] lg:w-[65px] xl:w-[75px] 2xl:w-[85px] object-contain"
               />
             </div>
-            <div class="absolute z-20 inset-0">
-              <!-- headings -->
+      </div>
+      
+      <div class="grid grid-cols-12 gap-10">
+      <!-- Left -->
+       <div class="col-span-7">
+        <div class="absolute z-20 inset-0">
+        <!-- headings -->
               <div
                 class="flex flex-wrap gap-4 lg:pt-[60px] lg:ps-[144px] xl:pt-[100px] xl:ps-[210px] 2xl:pt-[108px] 2xl:ps-[273px]"
               >
                 <h2
-                  class="font-[family-name:--font-Fredoka] font-bold text-[--primary-color-1] leading-none lg:text-[50px] xl:text-[60px] 2xl:text-[80px]"
+                  class="font-[family-name:--font-Fredoka] font-bold text-[--primary-color-1] leading-none lg:text-[50px] xl:text-[60px] 2xl:text-[70px] min-[1920px]:text-[80px]"
                 >
                   Welcome
                 </h2>
@@ -116,11 +108,12 @@
                   alt="heart"
                   loading="lazy"
                 />
-                <!-- red vector and dog -->
+</div>
+<!-- red vector and dog -->
                 <div>
                   <img
                     src="Images/red-vector.svg"
-                    class="absolute z-30 object-contain lg:w-[410px] lg:mt-36 lg:ms-24 xl:w-[550px] xl:mt-[135px] 2xl:ms-[60px] min-[1920px]:mt-[184px] min-[1920px]:ms-[100px] xl:ms-[40px] 2xl:ms-[127px] 2xl:w-[744px]"
+                    class="absolute z-30 object-contain lg:w-[410px] lg:mt-[80px] lg:ms-24 xl:w-[550px] xl:mt-[135px] 2xl:ms-[60px] min-[1920px]:mt-[184px] min-[1920px]:ms-[100px] xl:ms-[40px] 2xl:ms-[127px] 2xl:w-[744px]"
                     alt="red-vector"
                     loading="lazy"
                   />
@@ -131,8 +124,7 @@
                     loading="lazy"
                   />
                 </div>
-              </div>
-              <!-- Banner-dog -->
+                <!-- Banner-dog -->
               <div>
                 <img
                   src="Images/banner-right-dog.png"
@@ -147,7 +139,7 @@
                 alt="paw"
                 class="absolute z-[999] xl:left-[30px] lg:top-[78%] xl:top-[87%] 2xl:left-[35px] min-[1920px]:left-[61px] w-[138px] object-contain lg:w-[100px] 2xl:w-[150px] lg:left-[50px]"
               />
-              <!-- blue vector -->
+<!-- blue vector -->
               <div>
                 <img
                   src="Images/blue vector.svg"
@@ -172,13 +164,25 @@
                   />
                 </div>
               </div>
-            </div>
-          </div>
-          <!-- Right -->
+
+              </div>
+
+       </div>
+       <!-- Right -->
+        <div class="absolute z-10 top-0 right-0">
+        <img
+          src="Images/Right-login-frame.png"
+          class="hidden lg:block lg:w-[490px] xl:w-[650px] 2xl:w-[739px] min-[1920px]:w-[970px] lg:min-h-[1400px] object-fill"
+          alt=""
+          loading="lazy"
+        />
+        <div class="col-span-5">
+        <!-- <div class="login-banner"> -->
           <div
-            class="w-full max-w-full lg:max-w-[40%] lg:basis-[40%] px-3 sm:px-5 lg:px-[15px] mx-auto"
-          >
-            <div class="lg:absolute lg:top-0 lg:z-20 pr-4">
+  class="w-full max-w-full
+         min-h-screen"
+>
+<div class="lg:absolute lg:top-0 lg:z-20 lg:right-[52px] xl:right-[70px] pr-4">
               <div
                   class="pt-4 lg:pt-5"
                 >
@@ -192,245 +196,21 @@
                     />
                   </a>
                 </div>
-              <h1
+                <h1
                 class="mt-0 lg:mt-[21px] max-w-[648px] font-[family-name:--font-Fredoka] font-bold text-[--primary-color-1] leading-none text-center font-bold leading-tight text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl min-[1920px]:text-5xl text-center mx-auto"
               >
                 Welcome Back To
                 <span class="text-brand text-[--btn-color]">Compassion</span>
               </h1>
-              <form action="#" method="post" class="mt-4 lg:mt-[40px] xl:mt-[60px] 2xl:mt-[82px]" id="loginForm">
-                <!-- Email -->
-                <div id="emailField">
-                  <label
-                    for="email"
-                    class="block mb-2 lg:mb-5 font-[family-name:--font-poppins] text-[--primary-color-1] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl font-bold"
-                    >Email Address</label
-                  >
-                  <div class="relative">
-                    <svg
-                      width="22"
-                      height="19"
-                      viewBox="0 0 22 19"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="pointer-events-none absolute left-[24px] top-1/2 w-[20px] h-[17px] -translate-y-1/2 text-[#0A303A]"
-                    >
-                      <path
-                        d="M5.75 5.75L8.69202 7.4894C10.4072 8.5035 11.0928 8.5035 12.808 7.4894L15.75 5.75M0.76577 10.7256C0.83114 13.7912 0.86383 15.3239 1.99496 16.4594C3.12608 17.5948 4.70033 17.6343 7.84883 17.7134C9.7893 17.7622 11.7107 17.7622 13.6512 17.7134C16.7997 17.6343 18.3739 17.5948 19.5051 16.4594C20.6362 15.3239 20.6689 13.7912 20.7342 10.7256C20.7553 9.7399 20.7553 8.7601 20.7342 7.7744C20.6689 4.70886 20.6362 3.17609 19.5051 2.04066C18.3739 0.905231 16.7997 0.865681 13.6512 0.786571C11.7107 0.737811 9.7893 0.737811 7.84882 0.786561C4.70033 0.865661 3.12608 0.905211 1.99495 2.04065C0.86382 3.17608 0.83114 4.70885 0.76576 7.7744C0.74474 8.7601 0.74475 9.7399 0.76577 10.7256Z"
-                        stroke="#0A303A"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <input
-                      type="email"
-                      name="email"
-                      id="email"
-                      placeholder="Enter your email"
-                      class="w-full border-[1.5px] border-[#0A303A]/80 bg-white pl-[62px] pr-[24px] font-normal font-[family-name:--font-poppins] placeholder:text-[#0A303A]/40 placeholder:font-normal outline-none transition focus:border-[#0A303A] focus:ring-2 focus:ring-[#0A303A]/20 w-full h-[48px] min-[375px]:h-[50px] min-[480px]:h-[52px] min-[576px]:h-[54px] md:h-[56px] lg:h-[60px] pl-10 min-[480px]:pl-12 lg:pl-16 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl rounded-[18px] lg:rounded-[26px]"
-                    />
-                  </div>
-                  <p
-                    class="error-msg mt-1 text-[14px] font-normal text-red-600"
-                    role="alert"
-                  >
-                    Please enter a valid email address.
-                  </p>
-                </div>
-                <!-- Password -->
-                <div class="mt-[20px] lg:mt-[30px] 2xl:mt-10" id="passwordField">
-                  <div
-                    class="mb-2 lg:mb-3 xl:mb-5 flex flex-wrap items-center justify-between"
-                  >
-                    <label
-                      for="password"
-                      class="block font-[family-name:--font-poppins] text-[--primary-color-1] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl leading-none font-bold"
-                      >Password</label
-                    >
-                    <a
-                      href="forget-password.html"
-                      class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl leading-none font-[family-name:--font-poppins] font-semibold text-[--btn-color] transition hover:text-[--primary-color-1]"
-                      >Forgot password?</a
-                    >
-                  </div>
-                  <div class="relative">
-                    <svg
-                      width="24"
-                      height="26"
-                      viewBox="0 0 24 26"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="pointer-events-none absolute left-[24px] top-1/2 w-[20px] h-[17px] -translate-y-1/2 text-[#0A303A]"
-                    >
-                      <path
-                        opacity="0.8"
-                        d="M17.8611 9.85751C17.2807 9.512 16.6121 9.3012 15.8994 9.26891C14.1744 9.19076 12.422 9.15 10.4922 9.15C8.56237 9.15 6.80996 9.19076 5.08486 9.26891C3.0347 9.36179 1.34999 10.932 1.07614 12.9364C0.8974 14.2444 0.75 15.5849 0.75 16.95C0.75 18.3151 0.897412 19.6556 1.07614 20.9636C1.34999 22.968 3.0347 24.5382 5.08486 24.6311C6.80996 24.7092 8.56237 24.75 10.4922 24.75C12.2422 24.75 13.8465 24.7165 15.4167 24.652M5.02778 9.15V6.15C5.02778 3.16766 7.49021 0.75 10.5278 0.75C13.5654 0.75 16.0278 3.16766 16.0278 6.15V9.15M11.9028 16.95H11.75M20.4583 24.45H20.3056M7.01389 16.95H6.86111M17.8611 16.35C17.8611 15.0245 18.9555 13.95 20.3056 13.95C21.6556 13.95 22.75 15.0245 22.75 16.35C22.75 17.0434 22.4506 17.668 21.9717 18.1061C21.231 18.7838 20.3056 19.5559 20.3056 20.55M12.0556 16.95C12.0556 17.1157 11.9188 17.25 11.75 17.25C11.5812 17.25 11.4444 17.1157 11.4444 16.95C11.4444 16.7843 11.5812 16.65 11.75 16.65C11.9188 16.65 12.0556 16.7843 12.0556 16.95ZM20.6111 24.45C20.6111 24.6157 20.4743 24.75 20.3056 24.75C20.1368 24.75 20 24.6157 20 24.45C20 24.2843 20.1368 24.15 20.3056 24.15C20.4743 24.15 20.6111 24.2843 20.6111 24.45ZM7.16667 16.95C7.16667 17.1157 7.02986 17.25 6.86111 17.25C6.69236 17.25 6.55556 17.1157 6.55556 16.95C6.55556 16.7843 6.69236 16.65 6.86111 16.65C7.02986 16.65 7.16667 16.7843 7.16667 16.95Z"
-                        stroke="#0A303A"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <input
-                      type="password"
-                      name="password"
-                      id="password"
-                      placeholder="Enter your password"
-                      class="w-full border-[1.5px] border-[#0A303A]/80 bg-white pl-[62px] pr-[24px] font-normal font-[family-name:--font-poppins] placeholder:text-[#0A303A]/40 placeholder:font-normal outline-none transition focus:border-[#0A303A] focus:ring-2 focus:ring-[#0A303A]/20 h-[48px] min-[375px]:h-[50px] min-[480px]:h-[52px] min-[576px]:h-[54px] md:h-[56px] lg:h-[64px] min-[480px]:pl-12 lg:pl-16 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl rounded-[18px] lg:rounded-[26px]"
-                    />
-                    <button type="button" id="togglePassword"
-                      aria-label="Show password"
-                      aria-pressed="false"
-                      class="absolute right-[22px] top-1/2 -translate-y-1/2 rounded p-1 text-[#0A303A]/60 transition hover:text-[#0A303A] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A303A]/30"
-                    >
-                    <!-- eye off -->
-                    <svg id="eyeOffIcon" class="h-[22px] w-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                    <path d="M3 3l18 18"></path>
-                <path d="M10.6 5.1A10.8 10.8 0 0 1 12 5c5 0 9 4.5 10 7a13.2 13.2 0 0 1-2.2 3.2M6.2 6.2C4 7.7 2.6 10 2 12c1 2.5 5 7 10 7 1.8 0 3.4-.5 4.8-1.3"></path>
-                <path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"></path>
-              </svg>
-                  <!-- eye on -->
-                   <svg id="eyeIcon" class="hidden h-[22px] w-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                <path d="M2 12c1-2.5 5-7 10-7s9 4.5 10 7c-1 2.5-5 7-10 7S3 14.5 2 12Z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-                  </svg>
-                    </button>
-                  </div>
-                  <p
-                    class="error-msg mt-1 text-[14px] font-normal text-red-600"
-                    role="alert"
-                  >
-                    Password must be at least 8 characters.
-                  </p>
-                </div>
-                <!-- remember me -->
-                <!-- <label
-                  class="mt-6 lg:mt-5 xl:mt-[30px] 2xl:mt-10 flex cursor-pointer items-center gap-3 font-normal text-[#0A303A] text-sm max-[375px]:text-[15px] max-[480px]:text-base max-[576px]:text-[17px] md:text-lg lg:text-lg xl:text-xl 2xl:text-2xl"
-                >
-                  <input
-                    type="checkbox"
-                    id="remember"
-                    class="h-[22px] w-[22px] rounded border-[#0A303A]"
-                  />
-                  Remember me
-                </label> -->
-                <!-- logIn Button -->
-                <button
-  type="submit"
-  id="loginBtn"
-  class="contact-btn my-6 lg:my-12 w-full flex items-center justify-center
-         bg-[--btn-color]
-         border-2 border-[--btn-color]
-         py-2 sm:py-3
-         lg:py-4 lg:px-5
-         rounded-[20px] lg:rounded-[30px]
-         shadow-xl
-         outline-none
-         transition-all duration-300 ease-in-out
-         hover:-translate-y-px
-         hover:bg-[#d65a4c]
-         hover:text-[--primary-color-1]
-         active:translate-y-0
-         focus-visible:outline-none
-         focus-visible:ring-2
-         focus-visible:ring-brand/50
-         focus-visible:ring-offset-2
-         text-white
-         font-regular
-         font-[family-name:--font-poppins]
-         text-xs sm:text-sm
-         md:text-base
-         lg:text-lg
-         xl:text-xl
-         2xl:text-2xl"
->
-  <span
-    id="loginBtnLabel"
-    class="flex items-center gap-3"
-  >
-    LogIn
-    <i class="fa-solid fa-paw ml-2"></i>
-  </span>
-</button>              </form>
-              <!-- Divider -->
-              <div class="mt-0 lg:mt-3 xl:mt-4 2xl:mt-8 min-[1920px]:mt-[30px] flex items-center gap-4 max-w-[300px] md:max-w-[500px] mx-auto">
-                <span class="h-[1px] flex-1 bg-[--primary-color-1]"></span>
-                <span
-                  class="text-xs sm:text-sm md:text-base lg:text-sm xl:text-base 2xl:text-2xl font-normal text-red-600 font-[family-name:--font-poppins]"
-                  >or continue with</span
-                >
-                <span class="h-[1px] flex-1 bg-[--primary-color-1]"></span>
-              </div>
-              <!-- social links -->
-              <div class="socials mt-3 lg:mt-6 xl:mt-8 2xl:mt-12 min-[1920px]:mt-10 grid grid-cols-2 gap-4 w-auto max-w-[300px] md:max-w-[500px] mx-auto">
-                <button
-                  type="button"
-                  data-provider="Google"
-                  class="social-btn flex w-auto h-[35px] lg:h-[40px] xl:h-[50px] 2xl:h-[56px] min-[1920px]:h-[60px] items-center justify-center rounded-full border-[1.5px] border-navy/70 bg-white transition hover:bg-[#F7F8F9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy/30"
-                  aria-label="Continue with Google"
-                >
-                  <svg
-                    class="w-[15px] h-[15px] xl:h-[26px] xl:w-[26px] lg:w-[20px] lg:h-[20px]"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill="#4285F4"
-                      d="M23.5 12.27c0-.85-.08-1.66-.22-2.45H12v4.64h6.45a5.52 5.52 0 0 1-2.4 3.62v3h3.88c2.27-2.1 3.57-5.17 3.57-8.81Z"
-                    ></path>
-                    <path
-                      fill="#34A853"
-                      d="M12 24c3.24 0 5.96-1.07 7.94-2.91l-3.88-3c-1.08.72-2.45 1.15-4.06 1.15-3.13 0-5.78-2.11-6.72-4.95H1.27v3.1A12 12 0 0 0 12 24Z"
-                    ></path>
-                    <path
-                      fill="#FBBC05"
-                      d="M5.28 14.29a7.2 7.2 0 0 1 0-4.58v-3.1H1.27a12 12 0 0 0 0 10.78l4.01-3.1Z"
-                    ></path>
-                    <path
-                      fill="#EA4335"
-                      d="M12 4.76c1.76 0 3.34.6 4.59 1.8l3.44-3.44A11.98 11.98 0 0 0 1.27 6.6l4.01 3.1C6.22 6.87 8.87 4.76 12 4.76Z"
-                    ></path>
-                  </svg>
-                </button>
-                <button
-                  type="button"
-                  data-provider="Facebook"
-                  class="social-btn flex w-auto h-[35px] lg:h-[40px] xl:h-[50px] 2xl:h-[56px] min-[1920px]:h-[60px] items-center justify-center rounded-full border-[1.5px] border-navy/70 bg-white transition hover:bg-[#F7F8F9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy/30"
-                  aria-label="Continue with Facebook"
-                >
-                  <svg
-                    class="w-[15px] h-[15px] xl:h-[26px] xl:w-[26px] lg:w-[20px] lg:h-[20px]"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill="#1877F2"
-                      d="M24 12a12 12 0 1 0-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.95.92-1.95 1.87V12h3.32l-.53 3.47h-2.79v8.38A12 12 0 0 0 24 12Z"
-                    ></path>
-                    <path
-                      fill="#fff"
-                      d="M16.67 15.47 17.2 12h-3.32V9.75c0-.95.46-1.87 1.95-1.87h1.51V4.93s-1.37-.24-2.68-.24c-2.74 0-4.53 1.67-4.53 4.67V12H7.08v3.47h3.04v8.38a12.1 12.1 0 0 0 3.76 0v-8.38h2.79Z"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-              <!-- footer -->
-              <p
-                class="mt-[10px] text-sm lg:mt-[25px] xl:mt-[23px] 2xl:mt-[56px] lg:mb-[20px] text-center lg:text-base xl:text-[24px] font-bold text-[--primary-color-1] font-[family-name:--font-poppins]"
-              >
-                New here ?
-                <a
-                  href="create-account.html"
-                  class="text-[--btn-color] transition hover:text-[--primary-color-1] hover:underline"
-                  >Create an account</a
-                >
-              </p>
-            </div>
-          </div>
-        </div>
+<!-- </div> -->
+</div>
+</div>
+       </div>
+      </div>
+       
       </div>
     </section>
+
     <!-- AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Swiper JS CDN  -->
