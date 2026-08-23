@@ -65,7 +65,7 @@
 </div>
     <!-- Header Section -->
     <header
-      class="header absolute top-0 left-0 w-full z-[999] pt-4 pb-[30px] sm:pb-8 md:pb-10 lg:pb-12 2xl:pb-[66px]"
+      class="header fixed top-0 left-0 w-full z-[999] pt-4 pb-[30px] sm:pb-8 md:pb-10 lg:pb-12 2xl:pb-[66px]"
       id="header"
     >
       <!-- Header Content -->
@@ -290,7 +290,10 @@
               <li
                 class="nav-items relative font-[family-name:--font-Manrope] text-sm xl:text-base font-semibold text-[--primary-color-1] transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
               >
-                <a href="shelters.html">Shelters</a>
+                <a href="shelters.html" id="shelterMegaBtn" class="flex items-center gap-3">Shelters<i
+      id="shelterMegaArrow"
+      class="fa-solid fa-chevron-down text-xs transition-transform duration-300"
+    ></i></a>
               </li>
               <li
                 class="nav-items relative font-[family-name:--font-Manrope] text-sm xl:text-base font-semibold text-[--primary-color-1] transition ease-in-out duration-500 hover:text-[--btn-color] hover:scale-[1.1]"
@@ -389,6 +392,694 @@
               ><i class="fa-solid fa-bars"></i
             ></a>
           </div>
+          <!-- ================= MEGA MENU ================= -->
+  <div
+  id="shelterMegaMenu"
+  class="hidden lg:block fixed z-10 bg-[#F4F1EA]
+  px-6 py-8 xl:px-10 xl:py-12 w-screen
+  left-1/2 -translate-x-1/2 translate-y-5
+  top-[180px] xl:top-[190px] 2xl:top-[210px]
+  min-[1920px]:top-[225px]
+  shadow-2xl rounded-[40px]
+
+  opacity-0 invisible pointer-events-none
+
+  transition-all duration-500 ease-in-out overflow-y-scroll"
+>
+<!-- Top Content -->
+    <div class="flex gap-8">
+      <!-- ========== FILTER SECTION ========== -->
+      <div
+        class="hidden lg:flex
+        w-[260px] shrink-0
+        flex-col justify-center
+        rounded-[25px]
+        border-2 border-[--btn-color]
+        bg-[#f4d9d1]
+        px-8 py-10"
+      >
+      <!-- Location -->
+        <button
+  type="button"
+  class="filter-tab active-tab flex flex-col items-center"
+  onclick="switchTab('location-slider', this)"
+>
+          <span
+            class="font-[family-name:--font-poppins]
+            text-base font-semibold
+            text-[--btn-color]"
+          >
+            Location
+          </span>
+
+          <span
+            class="mt-8 h-[1px] w-full
+            bg-[--btn-color]"
+          ></span>
+        </button>
+
+
+        <!-- Shelter Type -->
+        <button
+  type="button"
+  class="filter-tab mt-12 flex flex-col items-center"
+  onclick="switchTab('type-slider', this)"
+>
+          <span
+            class="font-[family-name:--font-poppins]
+            text-base font-semibold
+            text-[--btn-color]"
+          >
+            Shelter Type
+          </span>
+
+          <span
+            class="mt-8 h-[1px] w-full
+            bg-[--btn-color]"
+          ></span>
+        </button>
+
+
+        <!-- Shelter Capacity -->
+        <button
+  type="button"
+  class="filter-tab mt-12 flex flex-col items-center"
+  onclick="switchTab('capacity-slider', this)"
+>
+          <span
+            class="font-[family-name:--font-poppins]
+            text-base font-semibold
+            text-[--btn-color]"
+          >
+            Shelter Capacity
+          </span>
+
+          <span
+            class="mt-8 h-[1px] w-full
+            bg-[--btn-color]"
+          ></span>
+        </button>
+
+
+    </div>
+    <!-- ========== LOCATION CARDS ========== -->
+     <!-- <div
+    id="location-slider"
+    class="mega-slider-panel block"
+  > -->
+      <div class="min-w-0 flex-1 overflow-hidden">
+<div class="swiper mySwiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <!-- Card 1 -->
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-1.png"
+                      alt="shelter-1"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      Maple Tails Rescue
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Baner, Pune
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <!-- Card 2 -->
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-2.png"
+                      alt="shelter-2"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      The Nest & Nook Sanctuary
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Jubilee Hills, Hyderabad
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <!-- Card 3 -->
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-3.png"
+                      alt="shelter-3"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      Happy Tails Rescue Home
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Banjara Hills, Hyderabad
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <!-- Card 4 -->
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-4.png"
+                      alt="shelter-4"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      Golden Paws Rescue Home
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Andheri West, Mumbai
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <!-- Card 5 -->
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-5.png"
+                      alt="shelter-5"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      Bloom & Bark Shelter
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Sector 29, Gurugram
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <!-- Card 6 -->
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-6.png"
+                      alt="shelter-6"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      The Gentle Nest
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Salt Lake, Kolkata
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+</div>
+<!-- </div> -->
+<!-- ========== TYPE CARDS ========== -->
+     <!-- <div
+    id="type-slider"
+    class="mega-slider-panel hidden"
+  >
+      <div class="min-w-0 flex-1 overflow-hidden">
+<div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-1.png"
+                      alt="shelter-1"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      Maple Tails Rescue
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Baner, Pune
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-2.png"
+                      alt="shelter-2"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      The Nest & Nook Sanctuary
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Jubilee Hills, Hyderabad
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-3.png"
+                      alt="shelter-3"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      Happy Tails Rescue Home
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Banjara Hills, Hyderabad
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-4.png"
+                      alt="shelter-4"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      Golden Paws Rescue Home
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Andheri West, Mumbai
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-5.png"
+                      alt="shelter-5"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      Bloom & Bark Shelter
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Sector 29, Gurugram
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-6.png"
+                      alt="shelter-6"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      The Gentle Nest
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Salt Lake, Kolkata
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+</div>
+</div> -->
+<!-- ========== CAPACITY CARDS ========== -->
+     <!-- <div
+    id="capacity-slider"
+    class="mega-slider-panel hidden"
+  >
+      <div class="min-w-0 flex-1 overflow-hidden">
+<div class="swiper mySwiper">
+            
+            <div class="swiper-wrapper">
+              
+              <div class="swiper-slide">
+                
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-1.png"
+                      alt="shelter-1"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      Maple Tails Rescue
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Baner, Pune
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-2.png"
+                      alt="shelter-2"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      The Nest & Nook Sanctuary
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Jubilee Hills, Hyderabad
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-3.png"
+                      alt="shelter-3"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      Happy Tails Rescue Home
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Banjara Hills, Hyderabad
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-4.png"
+                      alt="shelter-4"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      Golden Paws Rescue Home
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Andheri West, Mumbai
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-5.png"
+                      alt="shelter-5"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      Bloom & Bark Shelter
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Sector 29, Gurugram
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                
+                <div
+                  class="w-full xl:max-w-[350px] p-[30px] bg-[#F4F1EA] border-[2px] border-[--primary-color-1] rounded-[30px] hover:bg-[--primary-color-1] text-[--primary-color-1] hover:text-white ease-in-out duration-300"
+                >
+                  <div class="overflow-hidden rounded-[30px]">
+                    <img
+                      src="Images/shelter-6.png"
+                      alt="shelter-6"
+                      class="w-full object-contain ease-in-out duration-300 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="mx-auto text-center mt-[-11px]">
+                    <i class="fa-solid fa-paw text-3xl"></i>
+                  </div>
+                  <div class="mx-auto text-center mt-[33px]">
+                    <h6
+                      class="mb-[21px] font-[family-name:--font-poppins] text-[9px] xl:text-sm font-semibold"
+                    >
+                      The Gentle Nest
+                    </h6>
+                    <p
+                      class="font-[family-name:--font-poppins] text-[10px] xl:text-xs font-normal"
+                    >
+                      Salt Lake, Kolkata
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+</div>
+</div> -->
+</div>
+    <!-- view more & Share experience button -->
+          <div
+            class="flex flex-wrap items-center justify-center mt-[51px] gap-4"
+          >
+            
+            <!-- Explore Shelters Button -->
+            <a
+              href="shelters.html"
+              class="contact-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-2 border-[#F4F1EA] shadow-xl hover:border-2 hover:border-[--btn-color] bg-[--btn-color] px-4 py-3 font-[family-name:--font-poppins] font-bold text-white shadow-xl transition-all duration-300 ease-in hover:bg-[--heading-text] hover:text-[--btn-color] min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
+                >
+              Explore Shelters
+              <i class="fa-solid fa-paw"></i>
+            </a>
+            <!-- Register Now as Shelter Button -->
+            <a
+              href="register.html"
+              class="friend-btn inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-[30px] border-[2px] border-[--primary-color-1] shadow-xl bg-[--heading-text] px-4 py-3 font-[family-name:--font-poppins] font-bold text-[--primary-color-1] shadow-xl transition-all duration-300 ease-in min-[480px]:w-auto sm:px-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg xl:px-7 xl:text-xl"
+                >
+              Register Now as Shelter
+              <i class="fa-solid fa-paw"></i>
+            </a>
+          </div>
+  </div>
         </nav>
         <!-- Mobile/Tablet View -->
         <!-- overlay -->
@@ -578,7 +1269,7 @@
               </div>
               <!-- Adopter's card -->
               <div
-                class="bg-white shadow-lg p-6 mt-9 rounded-[50px] max-w-[400px] mx-auto min-[992px]:mx-0"
+                class="bg-white shadow-lg p-6 mt-9 rounded-[50px] max-w-[250px] sm:max-w-[400px] mx-auto min-[992px]:mx-0"
               >
                 <div class="flex flex-col justify-center items-center">
                   <div>
@@ -590,7 +1281,7 @@
                     />
                   </div>
                   <span
-                    class="text-center font-[family-name:--font-poppins] min-[320px]:text-sm md:text-lg xl:text-2xl font-bold"
+                    class="text-center font-[family-name:--font-poppins] text-xs sm:text-sm md:text-lg xl:text-2xl font-bold"
                     >More Than 150k + adopters around the World</span
                   >
                 </div>
@@ -689,7 +1380,7 @@
         </div>
         <!-- image -->
         <div
-          class="hidden xl:absolute xl:top-[15%] xl:right-0 xl:z-[999] xl:block xl:w-[360px] 2xl:w-[471px]"
+          class="hidden xl:absolute xl:top-[15%] xl:right-0 xl:z-10 xl:block xl:w-[360px] 2xl:w-[471px]"
         >
           <img
             src="Images/about-us-dog.png"
@@ -1007,7 +1698,7 @@
         </div>
         <!-- bird image -->
         <div
-          class="hidden xl:absolute xl:top-[-142px] xl:z-[999] xl:block xl:w-[480px] 2xl:w-full"
+          class="hidden xl:absolute xl:top-[-142px] xl:z-10 xl:block xl:w-[480px] 2xl:w-full"
         >
           <img
             src="Images/bird.png"
@@ -1390,7 +2081,7 @@
                       class="max-w-full lg:max-w-[60%] lg:basis-[60%] lg:px-[15px]"
                     >
                       <div
-                        class="w-full bg-[#D9D9D9] border border-[--primary-color-1] rounded-[20px] pt-[35px] min-[992px]:pt-[54px] lg:pt-[50px] xl:pt-[56px] px-[16px] pb-[21px] 2xl:pt-[58px] h-full"
+                        class="w-full bg-[#F4F1EA] border border-[--primary-color-1] rounded-[20px] pt-[35px] min-[992px]:pt-[54px] lg:pt-[50px] xl:pt-[56px] px-[16px] pb-[21px] 2xl:pt-[58px] h-full"
                       >
                         <h3
                           class="max-w-3xs font-[family-name:--font-poppins] text-xs sm:text-sm md:text-base lg:text-xl lg:max-w-[244px] lg:mx-auto xl:max-w-[266px] xl:text-2xl text-[--primary-color-1] text-center font-bold leading-6"
@@ -1476,7 +2167,7 @@
                       class="max-w-full lg:max-w-[60%] lg:basis-[60%] lg:px-[15px]"
                     >
                       <div
-                        class="w-full bg-[#D9D9D9] border border-[--primary-color-1] rounded-[20px] pt-[35px] min-[992px]:pt-[54px] lg:pt-[50px] xl:pt-[56px] px-[16px] pb-[21px] 2xl:pt-[58px] h-full">
+                        class="w-full bg-[#F4F1EA] border border-[--primary-color-1] rounded-[20px] pt-[35px] min-[992px]:pt-[54px] lg:pt-[50px] xl:pt-[56px] px-[16px] pb-[21px] 2xl:pt-[58px] h-full">
                         <h3
                           class="max-w-3xs font-[family-name:--font-poppins] text-xs sm:text-sm md:text-base lg:text-xl lg:max-w-[244px] lg:mx-auto xl:max-w-[266px] xl:text-2xl text-[--primary-color-1] text-center font-bold leading-normal mb-0"
                         >
@@ -1560,7 +2251,7 @@
                       class="max-w-full lg:max-w-[60%] lg:basis-[60%] lg:px-[15px]"
                     >
                       <div
-                        class="w-full bg-[#D9D9D9] border border-[--primary-color-1] rounded-[20px] pt-[35px] min-[992px]:pt-[54px] lg:pt-[50px] xl:pt-[56px] px-[16px] pb-[21px] 2xl:pt-[58px] h-full">
+                        class="w-full bg-[#F4F1EA] border border-[--primary-color-1] rounded-[20px] pt-[35px] min-[992px]:pt-[54px] lg:pt-[50px] xl:pt-[56px] px-[16px] pb-[21px] 2xl:pt-[58px] h-full">
                         <h3
                           class="max-w-3xs font-[family-name:--font-poppins] text-xs sm:text-sm md:text-base lg:text-lg lg:max-w-[244px] lg:mx-auto xl:max-w-[266px] xl:text-2xl text-[--primary-color-1] text-center font-bold leading-normal mb-0"
                         >
@@ -1641,7 +2332,7 @@
               src="Images/cat.png"
               alt="cat"
               loading="lazy"
-              class="hidden xl:bottom-0 xl:right-0 xl:absolute xl:z-[999] xl:block xl:w-[420px] 2xl:w-[460px] min-[1920px]:max-w-full object-contain"
+              class="hidden xl:bottom-0 xl:right-0 xl:absolute xl:z-10 xl:block xl:w-[420px] 2xl:w-[460px] min-[1920px]:max-w-full object-contain"
             />
           </div>
         </div>
@@ -2466,7 +3157,7 @@
     class="invisible fixed bottom-6 right-6 z-50 flex h-12 w-12 translate-y-5 items-center justify-center rounded-full bg-[--btn-color] text-xl text-white opacity-0 shadow-lg transition-all duration-300 ease-in-out hover:bg-[#A7893B] md:bottom-8 md:right-8"
   >
   <!-- Arrow -->
-    <i class="fa-solid fa-chevron-down text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl" id="backToTopIcon"></i>
+    <i class="fa-solid fa-chevron-up text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl" id="backToTopIcon"></i>
 
   </button>
     <!-- AOS Animation -->
