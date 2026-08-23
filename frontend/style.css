@@ -373,7 +373,12 @@ img {
   background-position: center;
 }
 
-.mega-slider-panel {
+.Error-banner{
+  background: url("Images/Error.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* .mega-slider-panel {
   animation: slideFade 0.4s ease;
 }
 
@@ -424,4 +429,4 @@ img {
 .mega-option-card p {
   margin-top: 10px;
   font-size: 14px;
-}
+} */
