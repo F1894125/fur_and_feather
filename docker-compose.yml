@@ -1,7 +1,5 @@
-version: '3.8'
-
 services:
-  db:
+  fur_and_feather_db:
     image: postgres:15-alpine
     container_name: fur_and_feather_pg
     restart: always
@@ -28,11 +26,11 @@ services:
       dockerfile: Dockerfile.backend
     container_name: fur_and_feather_app
     restart: always
+    env_file:
+      - ./backend/.env
     depends_on:
-      db:
+      fur_and_feather_db:
         condition: service_healthy
-    environment:
-      DATABASE_URL: postgresql://postgres:furandfeather123@db:5432/fur_and_feather
     ports:
       - "8000:8000"
     networks:

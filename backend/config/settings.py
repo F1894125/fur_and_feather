@@ -160,6 +160,10 @@ FILE_ENCRYPTION_KEY = config('FILE_ENCRYPTION_KEY')
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000", # For standard React development port
     "http://127.0.0.1:3000", # For standard React development port
+    "http://localhost:5173", # For standard Vite development port
+    "http://127.0.0.1:5173", # For standard Vite development port
+    "http://localhost:5174", # For standard Vite development port
+    "http://127.0.0.1:5174", # For standard Vite development port
     "http://localhost:8000", # For standard Django development port
     "http://127.0.0.1:8000", # For standard Django development port
 ]
