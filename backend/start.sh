@@ -2,17 +2,17 @@
 
 set -e # exit if any command fails
 
-echo("Running makemigrations...")
+echo "Running makemigrations..."
 python manage.py makemigrations
 
-echo("Running migrate...")
+echo "Running migrate..."
 python manage.py migrate
 
-echo("Loading initial data...")
+echo "Loading initial data..."
 python manage.py loaddata fur_and_feather_data.json
 
-echo("Running check")
+echo "Running check"
 python manage.py check
 
-echo("Starting Django development server...")
+echo "Starting Django development server..."
 python manage.py runserver 0.0.0.0:8000
